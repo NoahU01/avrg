@@ -2,3 +2,6 @@
 entwicklung/schriften/
 *.ttf
 *.otf
+# PowerPoint mit eingebetteten Schriften – nur im Nextcloud-Projektordner
+*.pptx
+*.potx
