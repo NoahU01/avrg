@@ -31,6 +31,28 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
 .i .s{font-size:27px;line-height:1.35;margin-top:10px}
 </style></head><body>
 
+<!-- FESTGELEGT · Deckblatt (aus D3, Headline komplett schwarz) -->
+<div class="folie d" id="deckblatt">
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:150px">
+    <h1 class="h">Die neue Altersvorsorge 2027</h1>
+    <p class="s">Optionale Subline in einer Zeile</p>
+  </div>
+  <div class="logo" style="left:var(--rand);bottom:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="meta" style="right:var(--rand);bottom:calc(var(--oben) + 2px)">Anlass · Ort · Datum</div>
+</div>
+
+<!-- FESTGELEGT · Inhaltsseite (aus I1, Headline komplett schwarz, optionale Fußzeile mittig) -->
+<div class="folie i" id="inhaltsseite">
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:var(--oben)">
+    <h2 class="h">Headline der Inhaltsseite</h2>
+    <p class="s">Optionale Subline für den Kontext</p>
+  </div>
+  <div class="inhalt" style="left:var(--rand);right:var(--rand);top:230px;bottom:150px">Inhalt</div>
+  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--oben)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
+  <div class="nr" style="right:var(--rand);bottom:var(--oben)">4</div>
+</div>
+
 <!-- D1 · Logo oben links, Titel unten links -->
 <div class="folie d" id="d1">
   <div class="logo" style="left:var(--rand);top:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
