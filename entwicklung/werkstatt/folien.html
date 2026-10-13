@@ -11,6 +11,7 @@
 :root{--rot:#ee0000;--schwarz:#000;--grau:#666666;--hell:#d9d9d9;
   --rand:76px;   /* 1,6 cm */
   --oben:66px;   /* 1,4 cm */
+  --unten:42px;  /* 0,9 cm – Fuß näher an die Unterkante */
   --logo:38px;   /* 0,8 cm Höhe */
 }
 body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;padding:40px}
@@ -63,8 +64,8 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
     <h1 class="h">Die neue Altersvorsorge 2027</h1>
     <p class="s">Optionale Subline in einer Zeile</p>
   </div>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="meta" style="right:var(--rand);bottom:calc(var(--oben) + 2px)">Anlass · Ort · Datum</div>
+  <div class="logo" style="left:var(--rand);bottom:var(--unten)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="meta" style="right:var(--rand);bottom:calc(var(--unten) + 2px)">Anlass · Ort · Datum</div>
 </div>
 
 <!-- FESTGELEGT · Inhaltsseite (aus I1, Headline komplett schwarz, optionale Fußzeile mittig) -->
@@ -73,10 +74,10 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
     <h2 class="h">Headline der Inhaltsseite</h2>
     <p class="s">Optionale Subline für den Kontext</p>
   </div>
-  <div class="inhalt" style="left:var(--rand);right:var(--rand);top:230px;bottom:150px">Inhalt</div>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--oben)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
-  <div class="nr" style="right:var(--rand);bottom:var(--oben)">4</div>
+  <div class="inhalt" style="left:var(--rand);right:var(--rand);top:230px;bottom:120px">Inhalt</div>
+  <div class="logo" style="left:var(--rand);bottom:var(--unten);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--unten)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
+  <div class="nr" style="right:var(--rand);bottom:var(--unten)">4</div>
 </div>
 
 <!-- FOLIENTYP · Agenda -->
@@ -85,9 +86,9 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
     <h2 class="h">Agenda</h2>
   </div>
   <ol class="agenda"><li><span>01</span>Ausgangslage</li><li><span>02</span>Was sich 2027 ändert</li><li><span>03</span>Was das für Sie bedeutet</li><li><span>04</span>Nächste Schritte</li></ol>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--oben)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
-  <div class="nr" style="right:var(--rand);bottom:var(--oben)">2</div>
+  <div class="logo" style="left:var(--rand);bottom:var(--unten);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--unten)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
+  <div class="nr" style="right:var(--rand);bottom:var(--unten)">2</div>
 </div>
 
 <!-- FOLIENTYP · Zwei Seiten im Vergleich -->
@@ -99,9 +100,9 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
     <div><h3 class="vgl-a">Heute</h3><ul><li>Erster Punkt der linken Seite</li><li>Zweiter Punkt in einer Zeile</li><li>Dritter Punkt, kurz gehalten</li></ul></div>
     <div><h3>Ab 2027</h3><ul><li>Erster Punkt der rechten Seite</li><li>Zweiter Punkt in einer Zeile</li><li>Dritter Punkt, kurz gehalten</li></ul></div>
   </div>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--oben)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
-  <div class="nr" style="right:var(--rand);bottom:var(--oben)">5</div>
+  <div class="logo" style="left:var(--rand);bottom:var(--unten);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--unten)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
+  <div class="nr" style="right:var(--rand);bottom:var(--unten)">5</div>
 </div>
 
 <!-- FOLIENTYP · Kontakt -->
@@ -117,16 +118,16 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
       <dl><dt>Telefon</dt><dd>07021 9808021</dd><dt>E-Mail</dt><dd>sandra.hild@sv-owen.de</dd></dl>
     </div>
   </div>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--oben)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
-  <div class="nr" style="right:var(--rand);bottom:var(--oben)">12</div>
+  <div class="logo" style="left:var(--rand);bottom:var(--unten);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--unten)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
+  <div class="nr" style="right:var(--rand);bottom:var(--unten)">12</div>
 </div>
 
 <!-- KAPITELTRENNER K1 · Große Zahl -->
 <div class="folie" id="k1">
   <div class="k1-zahl">02</div>
   <div class="k1-text"><p class="k-kicker">Kapitel</p><h2 class="h">Was sich 2027 ändert</h2></div>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="logo" style="left:var(--rand);bottom:var(--unten);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
 </div>
 
 <!-- KAPITELTRENNER K2 · Rote Seite -->
@@ -135,7 +136,7 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
     <p class="k-kicker" style="color:rgba(255,255,255,.75)">Kapitel 2</p>
     <h2 class="h" style="font-size:73px;line-height:1.08;color:#fff">Was sich 2027 ändert</h2>
   </div>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/entwicklung/ppt/sv-owen-logo-weiss.svg" alt=""></div>
+  <div class="logo" style="left:var(--rand);bottom:var(--unten);height:30px"><img src="/entwicklung/ppt/sv-owen-logo-weiss.svg" alt=""></div>
 </div>
 
 <!-- KAPITELTRENNER K3 · Wegweiser -->
@@ -146,7 +147,7 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
     <li><span>03</span>Was das für Sie bedeutet</li>
     <li><span>04</span>Nächste Schritte</li>
   </ol>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="logo" style="left:var(--rand);bottom:var(--unten);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
 </div>
 
 </body></html>
