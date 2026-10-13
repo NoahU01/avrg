@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<title>Werkstatt · Folien SV Owen</title>
+<!-- Erzeugt die Vorschaubilder in /entwicklung/ppt/. Braucht die lizenzierten Schriften lokal
+     unter /entwicklung/schriften/ (nicht im Repo). Folie = 1600 × 900 px = 33,867 × 19,05 cm;
+     1 cm = 47,24 px, 1 pt = 1,667 px. -->
+<style>
+@font-face{font-family:"Sparkasse Head";src:url("/entwicklung/schriften/SparkasseHead_Rg.ttf")}
+@font-face{font-family:"Sparkasse Lt";src:url("/entwicklung/schriften/SparLt.ttf")}
+@font-face{font-family:"Sparkasse Rg";src:url("/entwicklung/schriften/SparRg.ttf")}
+:root{--rot:#ee0000;--schwarz:#000;--grau:#666666;--hell:#d9d9d9;
+  --rand:76px;   /* 1,6 cm */
+  --oben:66px;   /* 1,4 cm */
+  --logo:38px;   /* 0,8 cm Höhe */
+}
+body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;padding:40px}
+.folie{position:relative;width:1600px;height:900px;background:#fff;overflow:hidden;color:var(--schwarz);font-family:"Sparkasse Lt"}
+.logo{position:absolute;height:var(--logo)}
+.logo img{height:100%;display:block}
+.h{font-family:"Sparkasse Head";font-weight:400;margin:0;letter-spacing:-.005em}
+.h .p{color:var(--rot)}
+.s{font-family:"Sparkasse Lt";color:var(--grau);margin:0}
+.meta{position:absolute;font-family:"Sparkasse Lt";font-size:17px;color:var(--grau)}
+.nr{position:absolute;font-family:"Sparkasse Head";font-size:17px;color:var(--grau)}
+.inhalt{position:absolute;border:2px dashed #e3e3e3;border-radius:4px;display:flex;align-items:center;justify-content:center;font:17px "Sparkasse Lt";color:#bbb}
+/* Deckblatt: Headline 44 pt, Subline 22 pt */
+.d .h{font-size:73px;line-height:1.08}
+.d .s{font-size:37px;line-height:1.3;margin-top:22px}
+/* Inhaltsseite: Headline 28 pt, Subline 16 pt */
+.i .h{font-size:47px;line-height:1.15}
+.i .s{font-size:27px;line-height:1.35;margin-top:10px}
+</style></head><body>
+
+<!-- D1 · Logo oben links, Titel unten links -->
+<div class="folie d" id="d1">
+  <div class="logo" style="left:var(--rand);top:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div style="position:absolute;left:var(--rand);right:var(--rand);bottom:150px">
+    <h1 class="h">Die neue Altersvorsorge 2027<span class="p">.</span></h1>
+    <p class="s">Optionale Subline in einer Zeile</p>
+  </div>
+  <div class="meta" style="left:var(--rand);bottom:var(--oben)">Anlass · Ort · Datum</div>
+</div>
+
+<!-- D2 · Titel auf der Mittelachse, Logo oben rechts -->
+<div class="folie d" id="d2">
+  <div class="logo" style="right:var(--rand);top:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:50%;transform:translateY(-50%)">
+    <h1 class="h">Die neue Altersvorsorge 2027<span class="p">.</span></h1>
+    <p class="s">Optionale Subline in einer Zeile</p>
+  </div>
+  <div class="meta" style="left:var(--rand);bottom:var(--oben)">Anlass · Ort · Datum</div>
+</div>
+
+<!-- D3 · Titel oben, Logo unten links -->
+<div class="folie d" id="d3">
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:150px">
+    <h1 class="h">Die neue Altersvorsorge 2027<span class="p">.</span></h1>
+    <p class="s">Optionale Subline in einer Zeile</p>
+  </div>
+  <div class="logo" style="left:var(--rand);bottom:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="meta" style="right:var(--rand);bottom:calc(var(--oben) + 2px)">Anlass · Ort · Datum</div>
+</div>
+
+<!-- D4 · Zentriert -->
+<div class="folie d" id="d4">
+  <div class="logo" style="left:50%;transform:translateX(-50%);top:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:50%;transform:translateY(-50%);text-align:center">
+    <h1 class="h">Die neue Altersvorsorge 2027<span class="p">.</span></h1>
+    <p class="s">Optionale Subline in einer Zeile</p>
+  </div>
+  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--oben)">Anlass · Ort · Datum</div>
+</div>
+
+<!-- I1 · Titel oben links, Logo unten links, Seitenzahl unten rechts -->
+<div class="folie i" id="i1">
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:var(--oben)">
+    <h2 class="h">Headline der Inhaltsseite<span class="p">.</span></h2>
+    <p class="s">Optionale Subline für den Kontext</p>
+  </div>
+  <div class="inhalt" style="left:var(--rand);right:var(--rand);top:230px;bottom:150px">Inhalt</div>
+  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="nr" style="right:var(--rand);bottom:var(--oben)">4</div>
+</div>
+
+<!-- I2 · Logo oben rechts auf Höhe der Headline, Seitenzahl unten rechts -->
+<div class="folie i" id="i2">
+  <div style="position:absolute;left:var(--rand);right:320px;top:var(--oben)">
+    <h2 class="h">Headline der Inhaltsseite<span class="p">.</span></h2>
+    <p class="s">Optionale Subline für den Kontext</p>
+  </div>
+  <div class="logo" style="right:var(--rand);top:calc(var(--oben) + 10px);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="inhalt" style="left:var(--rand);right:var(--rand);top:230px;bottom:150px">Inhalt</div>
+  <div class="nr" style="right:var(--rand);bottom:var(--oben)">4</div>
+</div>
+
+<!-- I3 · Feine Linie trennt Kopf und Inhalt, Fuß: Seitenzahl links, Logo rechts -->
+<div class="folie i" id="i3">
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:var(--oben)">
+    <h2 class="h">Headline der Inhaltsseite<span class="p">.</span></h2>
+    <p class="s">Optionale Subline für den Kontext</p>
+  </div>
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:205px;border-top:2px solid var(--hell)"></div>
+  <div class="inhalt" style="left:var(--rand);right:var(--rand);top:245px;bottom:150px">Inhalt</div>
+  <div class="nr" style="left:var(--rand);bottom:var(--oben)">4</div>
+  <div class="logo" style="right:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+</div>
+
+<!-- I4 · Zwei Spalten: Titel links (ein Drittel), Inhalt rechts -->
+<div class="folie i" id="i4">
+  <div style="position:absolute;left:var(--rand);width:440px;top:var(--oben)">
+    <h2 class="h">Headline der Inhaltsseite<span class="p">.</span></h2>
+    <p class="s">Optionale Subline für den Kontext</p>
+  </div>
+  <div class="inhalt" style="left:600px;right:var(--rand);top:var(--oben);bottom:150px">Inhalt</div>
+  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="nr" style="right:var(--rand);bottom:var(--oben)">4</div>
+</div>
+
+</body></html>
