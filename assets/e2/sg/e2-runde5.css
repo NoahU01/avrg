@@ -1,0 +1,1219 @@
+/* ================= empiria 2.0 · Runde 5 (Daniel, 10.10.2026) ================= */
+
+/* ---------- Hauptüberschrift: Kasten darf keine Unterlängen der Zeile darüber berühren ----------
+   Zeilenabstand größer, Kasten oben um --hl-t gekürzt (Umlaut-Punkte bleiben drin),
+   unten etwas Luft, damit eigene Unterlängen (g, p) im Kasten bleiben. Runde Ecken oben per Verlauf. */
+.e2 h1 { line-height: 1.24 !important; text-wrap: balance; }
+.e2 h1 .hl, .e2-alt h1 .hl, .e2-alt--magenta h1 .hl, .e2-dl-hl {
+  --hl: var(--e2-gelb, #fff400); --hl-t: .1em; --hl-r: .14em;
+  padding: 0 .12em .06em !important; border-radius: 0 0 var(--hl-r) var(--hl-r) !important;
+  color: var(--e2-ink, #1a1817) !important; box-shadow: none !important;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  background:
+    radial-gradient(circle var(--hl-r) at 100% 100%, var(--hl) 96%, transparent 100%) left 0 top var(--hl-t) / var(--hl-r) var(--hl-r) no-repeat,
+    radial-gradient(circle var(--hl-r) at 0 100%, var(--hl) 96%, transparent 100%) right 0 top var(--hl-t) / var(--hl-r) var(--hl-r) no-repeat,
+    linear-gradient(var(--hl), var(--hl)) left calc(var(--hl-r) - 3px) top var(--hl-t) / calc(100% - 2 * var(--hl-r) + 6px) calc(var(--hl-r) + 1px) no-repeat,
+    linear-gradient(var(--hl), var(--hl)) left 0 bottom 0 / 100% calc(100% - var(--hl-t) - var(--hl-r) + 1.5px) no-repeat !important;
+}
+.e2-alt--magenta h1 .hl, .e2-dl-hl--magenta { --hl: #fff400; color: #1a1817 !important; }
+
+/* ---------- Logo-Leiste: Verlauf genau an der Kante ---------- */
+.e2-logos .marquee::before { left: 0; }
+.e2-logos .marquee::after { right: 0; }
+
+/* ---------- Formate: drei gleich gebaute Karten, alles auf gleicher Höhe ---------- */
+.e2-formate3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto 1fr auto; column-gap: 1.4rem; margin-top: 3.2rem; }
+.e2-f3 { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; border-radius: var(--e2-r); background: #fff; overflow: hidden; }
+.e2-f3__kopf { display: flex; flex-direction: column; justify-content: flex-end; min-height: 8.5rem; padding: 1.5rem 1.6rem 1.4rem; background: var(--e2-akzent); color: #1a1817; }
+.e2-f3__kopf h3 { font-size: 1.85rem; color: #fff; }
+.e2-f3__satz { padding: 1.3rem 1.6rem 0; font-size: 1rem; line-height: 1.55; color: var(--e2-ink); font-weight: 500; }
+.e2-f3__liste { list-style: none; margin: 1.1rem 1.6rem 0; padding: 0; align-self: start; }
+.e2-f3__liste li { display: grid; grid-template-columns: 2.3rem minmax(0, 1fr); gap: .8rem; align-items: center; padding: .6rem 0; border-top: 1px solid var(--e2-linie); }
+.e2-f3__liste li:last-child { border-bottom: 1px solid var(--e2-linie); }
+.e2-f3__liste i { display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border-radius: 10px; background: color-mix(in srgb, var(--e2-akzent) 12%, #fff); color: #1a1817; }
+.e2-f3__liste i svg { width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.e2-f3__liste b { font-size: .95rem; font-weight: 600; line-height: 1.3; }
+.e2-f3__fuss { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.2rem; padding: 1.6rem; }
+.e2-f3__fuss .e2-knopf { padding: .7rem 1.15rem; font-size: .92rem; }
+.e2-f3__blick { padding: 0; border: 0; background: none; font: 600 .92rem/1.2 var(--font-sans); color: var(--e2-ink); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #1a1817; text-decoration-thickness: 2px; cursor: pointer; }
+/* Fenster „Formate ansehen“: Text + die Skizzen der bisherigen Startseite */
+.e2-fdialog { width: min(52rem, calc(100vw - 2rem)); }
+.e2-fdialog .e2-fdialog__band { height: 6px; margin: -2.4rem -2.4rem 2rem; background: var(--e2-akzent); }
+.e2-fdialog .formate-preview-grid { margin-top: 1.6rem; }
+.e2-fdialog .formate-preview-grid--2x2 { max-width: none; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.e2-fdialog.formate-acc--violet .formate-preview-grid { max-width: none; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.e2-fdialog .formate-preview-card { opacity: 1 !important; transform: none !important; }
+.e2-fdialog .produkt-mock-sketch { opacity: 1 !important; transform: none !important; }
+.e2-fdialog .formate-preview-card p.formate-preview-desc { color: rgba(255,255,255,.88); }
+.e2-fdialog .e2-knopf { margin-top: 1.8rem; }
+@media (max-width: 960px) {
+  .e2-formate3 { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; row-gap: 1.2rem; }
+  .e2-f3 { grid-row: auto; grid-template-rows: auto; }
+  .e2-fdialog .formate-preview-grid--2x2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- Kontakt Startseite: Anordnung wie die bisherige Startseite, ohne Doppelpfeil ---------- */
+.e2-kontakt5 { padding: 6.5rem 0 0; background: #fff; overflow: hidden; }
+.e2-kontakt5__oben { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 4rem; align-items: start; }
+.e2-kontakt5__text .e2-h2 { font-size: clamp(2.8rem, 6vw, 5rem); max-width: 11ch; line-height: 1.12; }
+.e2-kontakt5__text .e2-lead { max-width: 34rem; }
+.e2-kontakt5__notiz { margin-top: 1.2rem !important; font-weight: 600; }
+.e2-kontakt5__seite { padding-top: 4.6rem; }
+.e2-kontakt5__wege { display: flex; flex-direction: column; gap: .75rem; }
+.e2-kontakt5__seite .ks-marquee { margin-top: 3.2rem; }
+.e2-kontakt5__team { display: flex; justify-content: center; margin-top: 2.6rem; }
+.e2-kontakt5__team img { display: block; width: min(100%, 560px) !important; min-width: 0 !important; height: auto; opacity: 1 !important; transform: none !important; }
+@media (max-width: 960px) {
+  .e2-kontakt5__oben { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .e2-kontakt5__seite { padding-top: 0; }
+  .e2-kontakt5__seite .ks-marquee { margin-top: 1.6rem; }
+  .e2-kontakt5 { padding-top: 4.5rem; }
+}
+
+/* ---------- Kontakt Detailseiten: Personen im Kreis (wie Workshops), darunter die Kontaktwege ---------- */
+.e2-kontakt-team__wege { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; margin-top: 2.6rem; }
+.e2-kontakt-team__notiz { margin-top: 1.2rem !important; text-align: center; font-weight: 600; color: var(--e2-ink); }
+.e2-alt .e2-kontakt-team .ansprechpartner-grid { margin-bottom: 0 !important; }
+@media (max-width: 600px) { .e2-kontakt-team__wege .e2-pille { width: 100%; justify-content: center; } }
+
+/* ---------- Problem-Abschnitte allgemein: keine Nummern (Probleme sind keine Schritte) ---------- */
+.e2-problem > li::before { content: "" !important; top: .55rem !important; left: 1.05rem !important; width: .75rem !important; height: .75rem !important; border-radius: 50% !important; background: var(--e2-gelb) !important; box-shadow: 0 0 0 4px var(--e2-hell); }
+.e2-alt--magenta .e2-problem > li::before { background: #1a1817 !important; }
+.e2-problem > li:not(:last-child)::after { top: 1.6rem !important; }
+
+/* ---------- Strategie › Perspektivwechsel: kompakt, Kette Gedankenexperiment » Wirkung » Ergebnis ---------- */
+.e2-pv { background: var(--e2-gelb); padding: 5.5rem 0; }
+.e2-pv__oben { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
+.e2-pv .h-serif { max-width: 14ch !important; }
+.e2-pv .lead { margin-top: 1.3rem; color: var(--e2-ink) !important; }
+.e2-pv__browser .perspektive-browser { margin: 0; max-width: none; width: 100%; }
+.e2-pv__kette { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1.15fr); align-items: stretch; margin-top: 3.4rem; border-radius: var(--e2-r); background: #fff; overflow: hidden; }
+.e2-pv__glied { padding: 1.8rem 1.6rem; }
+.e2-pv__glied p { font-size: 1rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2-pv__glied b { color: var(--e2-ink); }
+.e2-pv__tag { margin-bottom: .7rem !important; font-size: .74rem !important; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--e2-grau) !important; }
+.e2-pv__pfeil { display: grid; place-items: center; width: 2.2rem; color: var(--e2-ink); }
+.e2-doppel { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.e2-pv__glied--ergebnis { display: flex; flex-direction: column; justify-content: center; background: var(--e2-ink); }
+.e2-pv__glied--ergebnis .e2-pv__tag { color: var(--e2-gelb) !important; }
+.e2-pv__punch { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.4rem, 2.2vw, 1.85rem) !important; line-height: 1.2 !important; color: #fff !important; }
+@media (max-width: 960px) {
+  .e2-pv__oben { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; }
+  .e2-pv__kette { grid-template-columns: minmax(0, 1fr); }
+  .e2-pv__pfeil { width: auto; height: 1.6rem; transform: rotate(90deg); }
+}
+
+/* ---------- Komplexe Themen › Problem: Folienstapel statt Nummern ---------- */
+.e2-pkt__raster { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
+.e2-pkt__label { font-size: 1.1rem; font-weight: 600; color: var(--e2-ink); }
+.e2-folien { position: relative; height: 16rem; margin-top: 1.4rem; }
+.e2-folie { position: absolute; width: 74%; padding: 1rem 1.3rem 1.3rem; border-radius: 12px; background: #fff; border: 1.5px solid #d9d5ce; box-shadow: 0 14px 30px rgba(26,24,23,.08); }
+.e2-folie__kopf { display: flex; gap: .3rem; margin-bottom: .8rem; }
+.e2-folie__kopf i { width: .45rem; height: .45rem; border-radius: 50%; background: #d9d5ce; }
+.e2-folie p { font-family: var(--font-serif); font-weight: 700; font-size: 1.3rem; line-height: 1.25; color: var(--e2-ink); }
+.e2-folie--0 { left: 0; top: 0; transform: rotate(-3deg); }
+.e2-folie--1 { left: 13%; top: 4.6rem; transform: rotate(2deg); }
+.e2-folie--2 { left: 26%; top: 9.4rem; transform: rotate(-1.5deg); border-color: var(--e2-ink); }
+.e2-pkt__folge { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.4rem; margin-top: 3.4rem; }
+.e2-pkt__aber { padding: 2rem; border-radius: var(--e2-r); background: var(--e2-ink); }
+.e2-pkt__aber p { font-family: var(--font-serif); font-size: 1.35rem; line-height: 1.4; color: #fff !important; }
+.e2-pkt__fragen { padding: 2rem; border-radius: var(--e2-r); background: #fff; }
+.e2-pkt__fragen ul { list-style: none; margin: 0; padding: 0; }
+.e2-pkt__fragen li { display: flex; align-items: center; gap: .8rem; padding: .55rem 0; font-weight: 600; font-size: 1.02rem; color: var(--e2-ink); }
+.e2-pkt__fragen li span { display: grid; place-items: center; flex: 0 0 auto; width: 1.8rem; height: 1.8rem; border-radius: 50%; border: 2px dashed #b9b3ab; font-weight: 700; font-size: .85rem; color: var(--e2-grau); }
+.e2-pkt__fragen p { margin-top: .9rem !important; color: var(--e2-ink-2); font-size: 1rem; line-height: 1.55; }
+@media (max-width: 960px) {
+  .e2-pkt__raster, .e2-pkt__folge { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .e2-folien { height: 15rem; }
+  .e2-folie { width: 80%; }
+  .e2-folie p { font-size: 1.1rem; }
+}
+
+/* ---------- Komplexe Themen › Lösung: zwei Phasen als Karten, dazwischen das Zwischenergebnis ---------- */
+.e2-lkt__kopf .leistung-stufen-head { margin-bottom: 3rem !important; }
+.e2-lkt__phase { display: flex; align-items: center; gap: .8rem; margin: 0 0 1.1rem !important; font-size: .95rem; color: var(--e2-grau); }
+.e2-lkt__phase b { color: var(--e2-ink); font-weight: 700; }
+.e2-lkt__phase::before { content: ""; width: 1.4rem; height: 3px; border-radius: 2px; background: var(--e2-ink); }
+.e2-lkt__paar { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.4rem; }
+.e2-lk { display: flex; flex-direction: column; border-radius: var(--e2-r); border: 1px solid var(--e2-linie); background: #fff; overflow: hidden; }
+.e2-lk__kopf { display: flex; align-items: center; gap: 1rem; padding: 1.4rem 1.8rem; border-bottom: 1px solid var(--e2-linie); }
+.e2-lk__nr { display: grid; place-items: center; flex: 0 0 auto; width: 2.8rem; height: 2.8rem; border-radius: 10px; background: var(--e2-gelb); font-family: var(--font-serif); font-weight: 700; font-size: 1.05rem; color: var(--e2-ink); }
+.e2-lk__kopf h3 { font-size: 1.6rem !important; margin: 0 !important; }
+.e2-lk__inhalt { flex: 1; padding: 1.5rem 1.8rem 1.8rem; }
+.e2-lk__inhalt > p { font-size: 1rem; line-height: 1.62; color: var(--e2-ink-2); }
+.e2-lk__inhalt > p + p { margin-top: .8rem; }
+.e2-lk .stufe-content-text p + p { margin-top: .8rem; }
+.e2-lk .stufe-content-text p { font-size: 1rem; line-height: 1.62; color: var(--e2-ink-2); }
+.e2-lk .stufe-content--with-pdf { display: block !important; }
+.e2-lk .stufe-pdf-card { margin-top: 1.4rem !important; max-width: none !important; }
+.e2-story { margin: 1.3rem 0 0; display: grid; gap: .6rem; }
+.e2-story > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; align-items: center; padding: .85rem 1rem; border-radius: 12px; background: var(--e2-hell); }
+.e2-story dt { font-family: var(--font-serif); font-weight: 700; font-size: 1.05rem; color: var(--e2-ink); }
+.e2-story dd { margin: 0; font-size: .95rem; line-height: 1.45; color: var(--e2-ink-2); }
+.e2-lk .medien-sketches { margin-top: 1.3rem !important; }
+.e2-lk .medien-sketches-cta-wrap { margin-top: 1.2rem !important; text-align: left !important; }
+.e2-lk .stufe-note { margin-top: 1.3rem !important; padding-left: 1rem; border-left: 3px solid var(--e2-gelb); font-style: normal !important; font-size: .95rem !important; color: var(--e2-ink-2); }
+.e2-lk .stufe-bullets { list-style: none; margin: 1.3rem 0 0 !important; padding: 0 !important; display: grid; gap: .6rem; }
+.e2-lk .stufe-bullets li { padding: .95rem 1.1rem !important; border-radius: 12px; background: var(--e2-hell); font-size: .95rem; line-height: 1.5; color: var(--e2-ink-2); }
+.e2-lk .stufe-bullets li::before { display: none !important; }
+.e2-lk .stufe-bullets strong { display: block; margin-bottom: .2rem; font-family: var(--font-serif); font-size: 1.05rem; color: var(--e2-ink); }
+.e2-lkt__pause { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2.4rem; align-items: center; margin: 2.2rem 0 3rem; padding: 2.4rem 2.6rem; border-radius: var(--e2-r); background: var(--e2-gelb); }
+.e2-lkt__tag { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: .8rem !important; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.e2-lkt__tag::before { content: ""; width: 1.4rem; height: 3px; border-radius: 2px; background: currentColor; }
+.e2-lkt__pause h3 { font-size: clamp(1.8rem, 3vw, 2.5rem) !important; margin: 0 0 .8rem !important; }
+.e2-lkt__pause p { font-size: 1.05rem; line-height: 1.6; color: var(--e2-ink); max-width: 40rem; }
+.e2-lkt__spoiler { width: 15rem; padding: 1.2rem 1.3rem; border-radius: 14px; background: var(--e2-ink); color: #fff; transform: rotate(2.5deg); box-shadow: 0 16px 30px rgba(26,24,23,.18); }
+.e2-lkt__spoiler b { display: block; margin-bottom: .4rem; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--e2-gelb); }
+.e2-lkt__spoiler span { font-size: .98rem; line-height: 1.5; }
+@media (max-width: 960px) {
+  .e2-lkt__paar, .e2-lkt__pause { grid-template-columns: minmax(0, 1fr); }
+  .e2-lkt__spoiler { width: auto; transform: none; }
+}
+
+/* ---------- Download-Kästen: Kicker in der Farbe der Seite, Hervorhebung als Kasten ---------- */
+.e2-alt--gelb .pdf-dl .pdf-dl-kicker { color: var(--e2-gelb) !important; }
+.e2-alt--magenta .pdf-dl .pdf-dl-kicker { color: #fff400 !important; }
+.e2-alt .pdf-dl-h { line-height: 1.24 !important; }
+
+/* ---------- Kopf: Überschrift etwas kleiner, damit Zeilen sinnvoll umbrechen ---------- */
+.e2-kopf h1, .e2-alt .e2-kopf h1 { font-size: clamp(2.5rem, 5vw, 4.3rem) !important; }
+.e2-held.e2-kopf h1 { font-size: clamp(2.8rem, 6vw, 5.2rem) !important; }
+@media (max-width: 600px) {
+  .e2-folien { height: 18.5rem; }
+  .e2-folie { width: 78%; }
+  .e2-folie--1 { left: 11%; top: 6.2rem; }
+  .e2-folie--2 { left: 22%; top: 12.2rem; }
+}
+@media (max-width: 600px) {
+  .e2-story > div { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+  .e2-lk__kopf, .e2-lk__inhalt { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .e2-lkt__pause { padding: 1.8rem 1.4rem; }
+}
+
+/* ---------- Runde 5b: Überschriften enger, Kästen hugging ----------
+   Lora: Oberkante Schriftbox 1.01em, Großbuchstaben/Oberlängen bis .76em, Unterlängen bis .27em.
+   Kasten: von .79em über bis .30em unter der Grundlinie (1.09em hoch). Zeilenabstand 1.18 →
+   zwei Kästen übereinander haben .09em Luft, Unterlängen der Zeile darüber .12em. */
+.e2 h1 { line-height: 1.18 !important; }
+.e2-alt .pdf-dl-h { line-height: 1.18 !important; }
+.e2 h1 .hl, .e2-alt h1 .hl, .e2-alt--magenta h1 .hl, .e2-dl-hl { --hl-t: .22em; padding-bottom: .03em !important; }
+
+/* ---------- Runde 5c: Kasten mit Luft, dafür nie über zwei Zeilen ----------
+   Ein Kasten mit Luft (oben ~.1em über den Oberlängen, unten ~.07em unter dem g) ist ~1.2em hoch.
+   Zwei solche Kästen in Folgezeilen bräuchten ~1.35 Zeilenabstand – zu luftig für den Rest.
+   Lösung: die Hervorhebung bleibt immer in einer Zeile (nowrap), dann reicht 1.22. */
+.e2 h1 { line-height: 1.22 !important; }
+.e2-alt .pdf-dl-h { line-height: 1.22 !important; }
+.e2 h1 .hl, .e2-alt h1 .hl, .e2-alt--magenta h1 .hl, .e2-dl-hl { --hl-t: .15em; padding-bottom: .07em !important; white-space: nowrap; }
+
+/* ================= Runde 6 (Daniel, 10.10.2026) ================= */
+/* Grundregel: Symbole nur in der Akzentfarbe – keine farbige Fläche, kein Rahmen dahinter. */
+.e2-var-band { display: inline-flex; gap: .6rem; align-items: center; margin: 0 0 2rem !important; padding: .45rem .9rem; border-radius: 999px; background: #1a1817; color: #fff; font-size: .82rem; }
+.e2-var-band b { color: #fff400; }
+.e2-formate-a i svg, .e2-formate-b i svg { width: 1.3rem; height: 1.3rem; fill: none; stroke: #1a1817; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; display: block; }
+
+/* Variante A: Leistungs-Karten */
+.e2-formate-a { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto 1fr auto; column-gap: 1.4rem; margin-top: 3.2rem; }
+.e2-fa { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; border-radius: var(--e2-r); background: #fff; border: 1px solid var(--e2-linie); overflow: hidden; }
+.e2-fa__mitte { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 12rem; padding: 1.6rem; background: var(--e2-akzent); color: #1a1817; }
+.e2-fa__mitte h3 { font-size: clamp(1.6rem, 2.2vw, 2rem); color: #fff; }
+.e2-fa__sym { position: absolute; right: 1.4rem; top: 1.4rem; width: 3.4rem; height: 3.4rem; }
+.e2-fa__sym svg { width: 100%; height: 100%; fill: none; stroke: #fff; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.e2-fa__satz { padding: 1.3rem 1.4rem 0; font-size: .98rem; line-height: 1.55; color: var(--e2-ink-2); }
+.e2-fa__liste { list-style: none; margin: 1rem 1.4rem 0; padding: 0; align-self: start; }
+.e2-fa__liste a { display: grid; grid-template-columns: 1.6rem minmax(0, 1fr) auto; gap: .7rem; align-items: center; padding: .7rem 0; border-top: 1px solid var(--e2-linie); color: var(--e2-ink); font-weight: 600; font-size: .95rem; text-decoration: none; }
+.e2-fa__liste li:last-child a { border-bottom: 1px solid var(--e2-linie); }
+.e2-fa__liste .e2-pfeil { color: var(--e2-grau); transition: transform .15s; }
+.e2-fa__liste a:hover .e2-pfeil { transform: translateX(3px); color: #1a1817; }
+.e2-fa__fuss { padding: 1.6rem 1.4rem 1.5rem; }
+.e2-fa__fuss .e2-knopf { padding: .7rem 1.15rem; font-size: .92rem; }
+
+/* Variante B: Zeilen */
+.e2-formate-b { display: grid; gap: 1.2rem; margin-top: 3.2rem; }
+.e2-fb { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2.4rem; padding: 2rem 2.2rem; border-radius: var(--e2-r); background: #fff; border: 1px solid var(--e2-linie); }
+.e2-fb__strich { display: block; width: 2.6rem; height: 5px; border-radius: 3px; margin-bottom: 1rem; background: var(--e2-akzent); }
+.e2-fb__links h3 { font-size: 1.9rem; }
+.e2-fb__links p { margin: .8rem 0 1.4rem !important; font-size: 1rem; line-height: 1.55; color: var(--e2-ink-2); }
+.e2-fb__links .e2-knopf { padding: .7rem 1.15rem; font-size: .92rem; }
+.e2-fb__felder { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--e2-linie); border-left: 1px solid var(--e2-linie); align-self: start; }
+.e2-fb__feld { position: relative; display: grid; grid-template-columns: 1.6rem minmax(0, 1fr); column-gap: .7rem; padding: 1rem 2.4rem 1rem 1rem; border-right: 1px solid var(--e2-linie); border-bottom: 1px solid var(--e2-linie); color: var(--e2-ink); text-decoration: none; }
+.e2-fb__feld b { font-size: .95rem; }
+.e2-fb__feld small { grid-column: 2; margin-top: .2rem; font-size: .85rem; line-height: 1.4; color: var(--e2-grau); }
+.e2-fb__pfeil { position: absolute; right: .9rem; top: 1rem; color: var(--e2-grau); }
+.e2-fb__feld:hover { background: var(--e2-hell); }
+.e2-fb__feld:hover .e2-fb__pfeil { color: #1a1817; }
+
+/* Variante C: Reiter mit Skizzen */
+.e2-formate-c { margin-top: 3.2rem; border-radius: var(--e2-r); background: #fff; overflow: hidden; }
+.e2-fc__leiste { display: flex; border-bottom: 1px solid var(--e2-linie); }
+.e2-fc__reiter { flex: 1; padding: 1.2rem 1rem; border: 0; border-bottom: 4px solid transparent; background: none; font: 600 1.05rem/1.2 var(--font-sans); color: var(--e2-grau); cursor: pointer; }
+.e2-fc__reiter.ist-aktiv { color: var(--e2-ink); border-bottom-color: var(--e2-akzent); }
+.e2-fc__tafel { display: none; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: 2.6rem; padding: 2.4rem; }
+.e2-fc__tafel.ist-aktiv { display: grid; }
+.e2-fc__text h3 { font-size: 2rem; }
+.e2-fc__text p { margin: .9rem 0 1.6rem !important; font-size: 1rem; line-height: 1.62; color: var(--e2-ink-2); }
+.e2-fc__karten { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1rem; align-self: start; }
+.e2-fc__karte { display: flex; flex-direction: column; padding: 1rem; border-radius: 14px; background: var(--e2-hell); color: var(--e2-ink); text-decoration: none; transition: transform .15s; }
+.e2-fc__karte:hover { transform: translateY(-3px); }
+.e2-fc__skizze { height: 6.5rem; margin-bottom: .8rem; display: flex; align-items: center; justify-content: center; }
+.e2-fc__skizze .produkt-mock-sketch { width: 100%; height: 100%; opacity: 1 !important; transform: none !important; display: flex; align-items: center; justify-content: center; }
+.e2-fc__skizze svg { width: 100%; height: 100%; filter: invert(1) grayscale(1) contrast(1.2); }
+.e2-fc__karte b { font-size: .95rem; }
+.e2-fc__karte small { margin-top: .3rem; font-size: .84rem; line-height: 1.4; color: var(--e2-grau); }
+@media (max-width: 960px) {
+  .e2-formate-a { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; row-gap: 1.2rem; }
+  .e2-fa { grid-row: auto; grid-template-rows: auto; }
+  .e2-fb, .e2-fc__tafel.ist-aktiv { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; }
+  .e2-fb { padding: 1.6rem 1.3rem; }
+  .e2-fc__tafel { padding: 1.6rem 1.3rem; }
+  .e2-fc__reiter { font-size: .9rem; padding: 1rem .5rem; }
+}
+@media (max-width: 600px) { .e2-fb__felder { grid-template-columns: minmax(0, 1fr); } .e2-fa__fuss .e2-knopf, .e2-fb__links .e2-knopf { width: auto; } }
+
+/* Kontakt Startseite: wärmer – Hervorhebung, gelber Mail-Knopf, Team vor gelbem Halbkreis */
+.e2-kontakt6 .e2-h2 { line-height: 1.22 !important; max-width: 12ch !important; }
+.e2-kontakt6 .e2-kontakt5__wege .e2-pille:first-child { background: var(--e2-gelb); color: var(--e2-ink); }
+.e2-kontakt6 .e2-pille { transition: transform .15s ease, box-shadow .15s ease; }
+.e2-kontakt6 .e2-pille:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(26,24,23,.14); }
+.e2-kontakt6 .e2-kontakt5__team { position: relative; }
+.e2-kontakt6__sonne { position: absolute; left: 50%; bottom: 0; width: min(46rem, 96%); aspect-ratio: 2 / 1; transform: translateX(-50%); border-radius: 999px 999px 0 0; background: var(--e2-gelb); }
+.e2-kontakt6 .e2-kontakt5__team img { position: relative; }
+.e2-fc__skizze img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; filter: grayscale(1); }
+.e2-kontakt6 .e2-kontakt5__team { margin-top: 4rem; }
+.e2-kontakt6__sonne { width: min(36rem, 92%); }
+
+/* ================= Runde 10 (Daniel, 10.10.2026) ================= */
+/* Perspektivwechsel ruhig: links Text in klarer Folge, rechts die Abteilungs-Homepage – keine Kästen */
+.e2-pv--ruhig .e2-pv__oben { align-items: start; }
+.e2-pv__schritt { margin-top: 2rem; padding-top: 1.2rem; border-top: 2px solid var(--e2-ink); }
+.e2-pv__schritt p { font-size: 1.05rem; line-height: 1.6; color: var(--e2-ink); }
+.e2-pv--ruhig .e2-pv__tag { color: var(--e2-ink) !important; }
+.e2-pv--ruhig .e2-pv__punch { color: var(--e2-ink) !important; font-size: clamp(1.35rem, 2vw, 1.65rem) !important; line-height: 1.3 !important; }
+.e2-pv--ruhig .e2-pv__browser { padding-top: 2.4rem; }
+.e2-pv--ruhig .perspektive-browser { box-shadow: none !important; border: 2px solid var(--e2-ink) !important; }
+@media (max-width: 960px) { .e2-pv--ruhig .e2-pv__browser { padding-top: 0; } }
+/* Kontakt Startseite 1:1 wie live: 2.0-Typografie hier nicht anwenden */
+.e2 .kontakt-standalone-text h2 { font-weight: 500 !important; line-height: 1.22 !important; letter-spacing: -.015em !important; margin: .5rem 0 1.1rem !important; }
+.e2 .kontakt-standalone-text .lead { margin: 0 0 1rem !important; }
+.e2-pv--ruhig .e2-pv__oben { align-items: center !important; }
+.e2-pv--ruhig .e2-pv__browser { padding-top: 0 !important; }
+/* Startseite: großer Doppelpfeil der Marke statt Grafik (Daniel) */
+.e2-kopfbild--pfeil { align-self: center; width: min(100%, 22rem) !important; }
+@media (max-width: 960px) { .e2-kopfbild--pfeil { width: 9rem !important; } }
+
+/* ================= Runde 11 (Daniel) – Komplexe Themen ================= */
+/* Problem: ein schwarzer Kasten, Dramaturgie von oben nach unten (wie live) */
+.e2-pkt2 .e2-zwei { align-items: center; }
+.e2-pkt2__auftakt { color: #bdb7af !important; font-size: 1rem !important; }
+.e2-pkt2__kasten ul { margin: 1rem 0 1.4rem !important; }
+.e2-pkt2__folge { color: #fff !important; font-size: 1.08rem !important; line-height: 1.6 !important; padding-top: 1.2rem; border-top: 2px solid var(--e2-gelb); }
+.e2-pkt2__fragen { margin-top: .9rem !important; color: #bdb7af !important; font-size: 1rem !important; line-height: 1.6 !important; }
+
+/* Lösung: vier gleiche Schritte wie die Wagenpaten-Seite */
+.e2-schritte { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; margin-top: 2.6rem; }
+.e2-schritt { display: flex; flex-direction: column; padding: 1.4rem 1.3rem 1.3rem; border: 1px solid var(--e2-linie); border-radius: var(--e2-r); background: #fff; }
+.e2-schritt__kopf { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.4rem; }
+.e2-schritt__sym { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 10px; background: var(--e2-ink); }
+.e2-schritt__sym svg { width: 1.3rem; height: 1.3rem; }
+.e2-schritt__nr { font-family: var(--font-serif); font-weight: 700; font-size: .9rem; color: #b9b3ab; }
+.e2-schritt h3 { font-size: 1.3rem !important; margin: 0 0 .5rem !important; }
+.e2-schritt p { font-size: .95rem; line-height: 1.55; color: var(--e2-ink-2); }
+.e2-schritt__mehr { margin-top: auto; padding: 1rem 0 0; align-self: flex-start; border: 0; background: none; font: 600 .92rem/1.2 var(--font-sans); color: var(--e2-ink); cursor: pointer; display: inline-flex; gap: .4rem; align-items: center; }
+.e2-zwischen { margin-top: 1.6rem; padding: 1.8rem 2rem; border-radius: var(--e2-r); background: var(--e2-gelb); }
+.e2-zwischen__tag { margin-bottom: .5rem !important; font-size: .76rem !important; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.e2-zwischen h3 { font-size: clamp(1.5rem, 2.4vw, 2rem) !important; margin: 0 0 .6rem !important; }
+.e2-zwischen p { max-width: 52rem; font-size: 1rem; line-height: 1.6; }
+.e2-dialog--breit { width: min(46rem, calc(100vw - 2rem)); }
+.e2-dialog--breit .stufe-pdf-card, .e2-dialog--breit .medien-sketches { margin-top: 1.2rem; }
+@media (max-width: 1000px) { .e2-schritte { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .e2-schritte { grid-template-columns: minmax(0, 1fr); } .e2-zwischen { padding: 1.4rem 1.2rem; } }
+.e2-dialog--breit .e2-lk__inhalt { padding: 0 !important; }
+
+/* ================= Strategie 2 (Aufbau der Workshop-Seiten) ================= */
+.e2-seite--strategie-2 .produkt-section-head p + p { margin-top: .9rem !important; }
+.e2-s2-notiz { margin-top: 1.4rem !important; max-width: 46rem; font-size: 1.02rem; color: var(--e2-ink-2); }
+.e2-seite--strategie-2 .feature-icon svg { width: 26px; height: 26px; }
+.e2-seite--strategie-2 .kicker { color: var(--e2-ink) !important; }
+
+/* ================= Runde 12 (Daniel): Startseite im Aufbau der Volksfest-Seite ================= */
+.e2v-held { padding: 5.5rem 0 1rem; }
+.e2v-held__raster { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 3rem; align-items: center; }
+.e2v-held h1 { font-size: clamp(3rem, 8vw, 6.4rem) !important; line-height: 1.2 !important; }
+.e2v-held__text { margin-top: 1.4rem; }
+.e2v-held__text p { max-width: 38rem; font-size: 1.2rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2v-held__text p + p { margin-top: .9rem; }
+.e2v-fakten { display: flex; flex-wrap: wrap; gap: 1.4rem 2.6rem; margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--e2-linie); font-size: .95rem; line-height: 1.4; color: var(--e2-ink-2); }
+.e2v-fakten > div { max-width: 13rem; }
+.e2v-fakten b { display: block; margin-bottom: .2rem; font-family: var(--font-serif); font-size: 1.8rem; color: var(--e2-ink); }
+.e2v-held__pfeil { justify-self: center; width: min(100%, 24rem); }
+.e2v-held__pfeil svg { display: block; width: 100%; height: auto; }
+.e2v-held .e2-logos { margin-top: 3.5rem; }
+.e2v-zwei { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
+.e2v-text { margin-top: 1.3rem !important; max-width: 34rem; font-size: 1.12rem; line-height: 1.6; color: var(--e2-ink); }
+.e2v-zitat { padding: 2.2rem; border-radius: var(--e2-r); background: var(--e2-ink); color: #fff; }
+.e2v-zitat ul { list-style: none; margin: 0; padding: 0; }
+.e2v-zitat li { padding: .55rem 0; font-family: var(--font-serif); font-size: 1.45rem; line-height: 1.3; }
+.e2v-zitat p { margin-top: 1.2rem !important; padding-top: 1.1rem; border-top: 2px solid var(--e2-gelb); font-size: 1rem; line-height: 1.6; color: #cfcac3; }
+.e2v-schritte { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin: 3rem 0 0; }
+.e2v-schritt { position: relative; padding: 1.8rem 1.5rem 1.6rem; border-radius: var(--e2-r); border: 1px solid var(--e2-linie); background: #fff; }
+.e2v-schritt__ico { display: grid; place-items: center; width: 3.4rem; height: 3.4rem; border-radius: 14px; background: var(--e2-gelb); }
+.e2v-ico { width: 1.8rem; height: 1.8rem; }
+.e2v-schritt__nr { position: absolute; right: 1.3rem; top: 1.4rem; font-family: var(--font-serif); font-weight: 700; font-size: 1.1rem; color: #cfcac3; }
+.e2v-schritt h3 { margin-top: 1.3rem !important; font-size: 1.45rem; }
+.e2v-schritt p { margin-top: .5rem !important; font-size: 1rem; line-height: 1.55; color: var(--e2-ink-2); }
+.e2v-nutzen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+.e2v-nutzen a { display: flex; flex-direction: column; padding: 2rem 1.8rem; border-radius: var(--e2-r); background: #252220; color: #fff; text-decoration: none; transition: transform .15s; }
+.e2v-nutzen a:hover { transform: translateY(-3px); }
+.e2v-form { width: 2.6rem; height: 2.6rem; }
+.e2v-nutzen h3 { margin-top: 1.3rem !important; font-size: 1.45rem; color: #fff; }
+.e2v-nutzen p { margin-top: .7rem !important; font-size: 1rem; line-height: 1.55; color: #cfcac3; }
+.e2v-nutzen span { margin-top: auto; padding-top: 1.2rem; display: inline-flex; gap: .4rem; align-items: center; font-weight: 600; color: var(--e2-gelb); }
+@media (max-width: 960px) {
+  .e2v-held__raster, .e2v-zwei { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; }
+  .e2v-held__pfeil { justify-self: start; width: 9rem; order: -1; }
+  .e2v-schritte, .e2v-nutzen { grid-template-columns: minmax(0, 1fr); }
+}
+.e2v-fakten { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+.e2v-fakten > div { max-width: none; }
+.e2v-zitat li { font-size: 1.6rem !important; }
+@media (max-width: 600px) { .e2v-fakten { grid-template-columns: minmax(0, 1fr); } }
+/* Strategie 2: Hintergründe wie bei den Workshop-Seiten – Problem direkt weiß unter dem Kopf, Lösung grau, Zusammenarbeit grau */
+.e2-seite--strategie-2 #problem { background: #fff !important; padding-top: 2rem !important; }
+.e2-seite--strategie-2 #problem .watermark { display: none !important; }
+.e2-seite--strategie-2 #loesung-baustein { background: var(--e2-hell) !important; }
+.e2-seite--strategie-2 #loesung-baustein .produkt-glass { background: #fff !important; }
+.e2-seite--strategie-2 #zusammenarbeit { background: var(--e2-hell) !important; }
+
+/* Satzkante = Kante von Logo und Menü (wie live: --container + --pad-x) – gilt für alle 2.0-Seiten */
+.e2 .e2-wrap, .e2-alt .container, .e2 main .container { max-width: var(--container) !important; padding-left: var(--pad-x) !important; padding-right: var(--pad-x) !important; margin-left: auto !important; margin-right: auto !important; }
+.hv-st-scroll { margin: 0 var(--pad-x) !important; }
+/* Kopf Startseite (Daniel): ohne Kennzahlen; Doppelpfeil unten bündig mit dem Text; Knöpfe etwas tiefer; Logos näher */
+.e2v-held__raster { grid-template-rows: auto auto; row-gap: 0; align-items: end !important; }
+.e2v-held__text-oben { grid-column: 1; grid-row: 1; }
+.e2v-held__pfeil { grid-column: 2; grid-row: 1; align-self: end; }
+.e2v-held__knoepfe { grid-column: 1; grid-row: 2; margin-top: 3rem !important; }
+.e2v-held .e2-logos { margin-top: 2.6rem !important; }
+@media (max-width: 960px) { .e2v-held__pfeil { grid-column: 1; grid-row: auto; order: -1; } .e2v-held__text-oben, .e2v-held__knoepfe { grid-column: 1; grid-row: auto; } }
+/* Runde 13: Kopf mit mehr Luft um das Logo-Band, Lösung ohne Kästen */
+.e2v-held { padding-bottom: 4.5rem !important; }
+.e2v-held .e2-logos { margin-top: 4.5rem !important; }
+.e2v-held__pfeil { width: min(100%, 22rem) !important; }
+.e2v-loesung { align-items: start !important; }
+.e2v-ergebnis { padding-top: 1.4rem; border-top: 3px solid var(--e2-ink); }
+.e2v-ergebnis__satz { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.25; color: var(--e2-ink); }
+.e2v-ergebnis__nach { margin-top: 1.1rem !important; font-size: 1.05rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2-sek--schwarz .e2-var-band { background: #fff; color: #1a1817; }
+.e2-var-band { display: flex !important; width: fit-content; }
+.e2-sek--schwarz .e2-var-band b { color: #1a1817; }
+/* Strategie 2 (Runde 13): Problem auf Gelb wie die Bereichsfarbe, Lösung mit Strategiemodell, Ergebnis mit gelber Unterzeile */
+.e2-seite--strategie-2 #problem { background: var(--e2-gelb) !important; padding-top: 6.5rem !important; }
+.e2-seite--strategie-2 #problem .produkt-section-head p { color: var(--e2-ink) !important; }
+.e2-seite--strategie-2 #loesung-baustein { background: #fff !important; }
+.e2-seite--strategie-2 .section--dark .kicker { color: var(--e2-gelb) !important; }
+.e2-s2-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
+.e2-s2-liste { list-style: none; margin: 1.6rem 0 0; padding: 0; border-top: 1px solid var(--e2-linie); }
+.e2-s2-liste li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1rem; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--e2-linie); }
+.e2-s2-sym { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 12px; background: var(--e2-gelb); }
+.e2-s2-sym svg { width: 1.5rem; height: 1.5rem; }
+.e2-s2-liste b { display: block; font-family: var(--font-serif); font-size: 1.3rem; }
+.e2-s2-liste span { font-size: 1rem; color: var(--e2-ink-2); }
+.e2-s2-schluss { margin-top: 1.4rem !important; }
+.e2-s2-loesung .loesung-modell { margin: 0 !important; }
+.e2-s2-loesung .loesung-modell-card { max-width: none !important; width: 100% !important; }
+@media (max-width: 960px) { .e2-s2-split { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; } }
+.e2-seite--strategie-2 .loesung-modell-card, .e2-seite--strategie-2 .loesung-modell-card .media-box-thumb, .e2-seite--strategie-2 .loesung-modell-card .media-box-footer { background: var(--e2-ink) !important; }
+.e2-seite--strategie-2 .e2-kopf h1 { font-size: clamp(2.5rem, 4.6vw, 4rem) !important; }
+.e2-seite--strategie-2 .loesung-modell-card .btn { color: var(--e2-ink) !important; }
+/* Formate Variante B: komplett schwarz */
+.e2-sek--schwarz .e2-kopfzeile .e2-lead { color: #d8d3cc; }
+.e2v-formate { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto 1fr auto; column-gap: 1.2rem; margin-top: 3.2rem; }
+.e2v-format { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; padding: 2rem 1.8rem 1.8rem; border-radius: var(--e2-r); background: #252220; border-top: 4px solid var(--e2-akzent); }
+.e2v-format__sym { width: 2.6rem; height: 2.6rem; }
+.e2v-format__sym svg { width: 100%; height: 100%; fill: none; stroke: #1a1817; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.e2v-format h3 { margin-top: 1.2rem !important; font-size: 1.6rem; color: #fff; }
+.e2v-format > p { margin-top: .7rem !important; font-size: 1rem; line-height: 1.55; color: #cfcac3; }
+.e2v-format ul { list-style: none; margin: 1.2rem 0 0; padding: 0; align-self: start; }
+.e2v-format li a { display: grid; grid-template-columns: 1.6rem minmax(0, 1fr) auto; gap: .7rem; align-items: center; padding: .7rem 0; border-top: 1px solid rgba(255,255,255,.12); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; }
+.e2v-format li:last-child a { border-bottom: 1px solid rgba(255,255,255,.12); }
+.e2v-format li i svg { width: 1.3rem; height: 1.3rem; display: block; fill: none; stroke: #1a1817; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.e2v-format li .e2-pfeil { color: #8a847c; }
+.e2v-format__mehr { margin-top: 1.6rem; display: inline-flex; gap: .4rem; align-items: center; font-weight: 600; color: var(--e2-gelb); text-decoration: none; }
+@media (max-width: 960px) { .e2v-formate { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; row-gap: 1.2rem; } .e2v-format { grid-row: auto; grid-template-rows: auto; } }
+/* Strategie 2 (Runde 14): Rhythmus wie die Volksfest-Seite – nur EIN gelber Streifen (Problem mit schwarzem Kasten) */
+.e2-s2-problem .e2-s2-split { align-items: center; }
+.e2-s2-text { margin-top: 1.3rem !important; max-width: 34rem; font-size: 1.12rem; line-height: 1.6; color: var(--e2-ink); }
+.e2-s2-kasten { padding: 2.2rem; border-radius: var(--e2-r); background: var(--e2-ink); color: #fff; }
+.e2-s2-kasten__satz { font-family: var(--font-serif); font-size: 1.55rem; line-height: 1.3; color: #fff !important; }
+.e2-s2-kasten__label { margin-top: 1.4rem !important; padding-top: 1.2rem; border-top: 2px solid var(--e2-gelb); font-size: .95rem; color: #cfcac3 !important; }
+.e2-s2-kasten ul { list-style: none; margin: .7rem 0 0; padding: 0; }
+.e2-s2-kasten li { position: relative; padding: .4rem 0 .4rem 1.6rem; font-weight: 600; font-size: 1.05rem; color: #fff; }
+.e2-s2-kasten li::before { content: ""; position: absolute; left: 0; top: .85rem; width: .7rem; height: .7rem; border-radius: 50%; background: var(--e2-gelb); }
+.e2-seite--strategie-2 #perspektive { background: var(--e2-hell) !important; }
+.e2-seite--strategie-2 #zusammenarbeit { background: #fff !important; }
+.e2-seite--strategie-2 #zusammenarbeit .produkt-faq-item { background: var(--e2-hell) !important; }
+.e2-s2-problem .e2-s2-split { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
+.e2-s2-problem h2.h-serif { max-width: 24ch !important; }
+.e2-seite--strategie-2 .pdf-dl-section { background: var(--e2-hell) !important; }
+/* Startseite Lösung (Runde 14): eine Überschrift links, Text + Ergebnis + Knopf rechts – wie die Idee-Sektion der Volksfest-Seite */
+.e2v-loesung { align-items: end !important; }
+.e2v-loesung__text p { font-size: 1.15rem; line-height: 1.65; color: var(--e2-ink); }
+.e2v-loesung__text p + p { margin-top: 1rem !important; }
+.e2v-loesung__text .e2-knoepfe { margin-top: 1.8rem; }
+/* Formate B: ohne farbigen Rand, „Mehr erfahren“ in der Farbe des Formats */
+.e2v-format { border-top: 0 !important; }
+.e2v-format__mehr { color: #1a1817 !important; }
+/* Strategie 2 Problem: mobil einspaltig */
+@media (max-width: 960px) { .e2-s2-problem .e2-s2-split { grid-template-columns: minmax(0, 1fr) !important; } }
+/* Strategie 2 (Runde 15): Perspektivwechsel oben bündig; Zusammenarbeit als offene Spalten ohne Kästen */
+.e2-seite--strategie-2 .e2-pv--ruhig .e2-pv__oben { align-items: start !important; }
+.e2-seite--strategie-2 .e2-pv--ruhig .e2-pv__browser { padding-top: 0 !important; margin-top: 0 !important; }
+.e2-seite--strategie-2 #zusammenarbeit { background: #fff !important; }
+.e2-s2-split--kopf { align-items: end !important; }
+.e2-s2-split--kopf .lead { margin: 0 !important; max-width: 34rem; }
+.e2-s2-spalten { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem; margin-top: 3.2rem; }
+.e2-s2-za { padding-top: 1.6rem; border-top: 3px solid var(--e2-ink); }
+.e2-s2-za h3 { margin: 1.2rem 0 .7rem !important; font-family: var(--font-serif); font-size: 1.45rem; }
+.e2-s2-za p { font-size: 1rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2-s2-za p + p { margin-top: .7rem !important; }
+.e2-s2-mark { background: var(--e2-gelb); color: var(--e2-ink); font-weight: 600; padding: 0 .2em; border-radius: .2em; }
+@media (max-width: 960px) { .e2-s2-spalten { grid-template-columns: minmax(0, 1fr); } .e2-s2-split--kopf { grid-template-columns: minmax(0, 1fr) !important; gap: 1.2rem !important; } }
+.e2-seite--strategie-2 .e2-pv--ruhig .e2-pv__browser { margin-top: .55rem !important; }
+
+/* ================= Strategie 2 · Runde 16 ================= */
+/* Schwarzer Streifen: Gedankenexperiment + Ergebnis */
+.e2-s2-gedanke { padding: 6.5rem 0; background: var(--e2-ink); color: #fff; }
+.e2-s2-gedanke .e2-s2-split { align-items: center; }
+.e2-s2-gedanke__tag { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 1.1rem !important; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--e2-gelb) !important; }
+.e2-s2-gedanke__tag::before { content: ""; width: 1.4rem; height: 3px; border-radius: 2px; background: currentColor; }
+.e2-s2-gedanke__exp { font-size: 1.2rem; line-height: 1.6; color: #d8d3cc !important; max-width: 34rem; }
+.e2-s2-gedanke__frage { margin-top: 1.2rem !important; font-family: var(--font-serif); font-weight: 700; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.15; color: #fff !important; }
+.e2-s2-gedanke__erg { padding: 2.2rem; border-radius: var(--e2-r); background: var(--e2-gelb); }
+.e2-s2-gedanke__erg .e2-s2-gedanke__tag { color: var(--e2-ink) !important; }
+.e2-s2-gedanke__satz { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.5rem, 2.3vw, 1.9rem); line-height: 1.25; color: var(--e2-ink) !important; }
+/* Strategiemodell-Fenster: Text oben, darunter hervorgehoben das Ergebnis */
+.modal--strategiemodell .modal-structure-note-wrap { align-self: start !important; justify-content: flex-start !important; }
+.e2-s2-modal-erg { margin-top: 1.6rem; padding: 1.4rem 1.5rem; border-radius: 14px; background: var(--e2-gelb, #fff400); }
+.e2-s2-modal-erg__tag { margin: 0 0 .5rem !important; font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #1a1817 !important; }
+.e2-s2-modal-erg__satz { margin: 0 0 .6rem !important; font-family: var(--font-serif); font-weight: 700; font-size: 1.35rem; line-height: 1.25; color: #1a1817 !important; }
+.e2-s2-modal-erg .modal-structure-note { color: #3d3a37 !important; margin: 0 !important; }
+/* Zusammenarbeit: Schritte wie auf der Volksfest-Seite */
+.e2-seite--strategie-2 #zusammenarbeit { background: #fff !important; }
+.e2-s2-karten { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+.e2-s2-karte { position: relative; display: flex; flex-direction: column; padding: 1.8rem 1.5rem 1.6rem; border-radius: var(--e2-r); border: 1px solid var(--e2-linie); background: #fff; }
+.e2-s2-karte .e2-s2-sym { width: 3.4rem; height: 3.4rem; border-radius: 14px; }
+.e2-s2-karte .e2-s2-sym svg { width: 1.8rem; height: 1.8rem; }
+.e2-s2-karte__nr { position: absolute; right: 1.3rem; top: 1.4rem; font-family: var(--font-serif); font-weight: 700; font-size: 1.1rem; color: #cfcac3; }
+.e2-s2-karte h3 { margin: 1.3rem 0 .55rem !important; font-family: var(--font-serif); font-size: 1.4rem; }
+.e2-s2-karte p { font-size: 1rem; line-height: 1.55; color: var(--e2-ink-2); }
+.e2-s2-karte__mehr { margin-top: auto; padding: 1.1rem 0 0; align-self: flex-start; border: 0; background: none; font: 600 .95rem/1.2 var(--font-sans); color: var(--e2-ink); cursor: pointer; }
+@media (max-width: 960px) { .e2-s2-karten { grid-template-columns: minmax(0, 1fr); } }
+.modal--strategiemodell .modal-structure-layout { align-items: start !important; }
+.modal--strategiemodell .modal-structure-frame { width: min(90vw, calc(58vh * 0.849)) !important; }
+.modal--strategiemodell .modal-structure-note { font-size: .9rem !important; line-height: 1.5 !important; margin-bottom: .7rem !important; }
+.e2-s2-modal-erg { margin-top: 1rem; padding: 1rem 1.1rem; }
+.e2-s2-modal-erg__satz { font-size: 1.15rem; }
+.e2-s2-modal-erg .modal-structure-note { font-size: .86rem !important; }
+.modal--strategiemodell .modal-structure-note-wrap { padding-top: 1.6rem !important; }
+/* Startseite Runde 16: Lösung + Leistungen */
+.e2v-loesung2 { align-items: end !important; }
+.e2v-loesung2__satz { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.4rem, 2.2vw, 1.8rem); line-height: 1.3; color: #fff; }
+.e2v-loesung2__text { margin-top: 1rem !important; font-size: 1.05rem; line-height: 1.6; color: #cfcac3; }
+.e2v-gelb { color: var(--e2-gelb); }
+/* Strategie 2 Runde 17: Perspektivwechsel mit Gedankenexperiment und Ergebnis-Band */
+.e2-pv__band { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2rem; align-items: center; margin-top: 3.2rem; padding: 1.8rem 2.2rem; border-radius: var(--e2-r); background: var(--e2-ink); }
+.e2-pv__band-tag { display: inline-flex; align-items: center; gap: .55rem; font-size: .8rem !important; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--e2-gelb) !important; }
+.e2-pv__band-tag::before { content: ""; width: 1.4rem; height: 3px; border-radius: 2px; background: currentColor; }
+.e2-pv__band-satz { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.35rem, 2.2vw, 1.8rem); line-height: 1.25; color: #fff !important; }
+@media (max-width: 760px) { .e2-pv__band { grid-template-columns: minmax(0, 1fr); gap: .8rem; padding: 1.5rem 1.3rem; } }
+/* Startseite: Variationen A/B */
+.e2-var-band--gross { font-size: .9rem; padding: .6rem 1.1rem; margin-bottom: 2.4rem !important; }
+.e2-sek--gelb .e2-var-band { background: #1a1817; color: #fff; }
+.e2v-loesung2__satz--hell { color: var(--e2-ink) !important; }
+.e2v-loesung2__text--hell { color: var(--e2-ink-2) !important; }
+.e2v-marker { background: var(--e2-gelb); padding: 0 .15em; border-radius: .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+#loesung-b .e2-karten { margin-top: 3rem; }
+#loesung-b .e2-knoepfe { margin-top: 2.4rem; }
+.e2v-marker { white-space: nowrap; }
+/* Startseite Runde 18: Formate als zweite Ebene */
+#loesung .e2-karten { margin-top: 3rem; }
+#loesung .e2-knoepfe { margin-top: 2.4rem; align-items: center; }
+.e2v-textlink { display: inline-flex; gap: .45rem; align-items: center; padding: .85rem .4rem; border: 0; background: none; font: 600 .98rem/1.2 var(--font-sans); color: var(--e2-ink); cursor: pointer; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; text-decoration-color: var(--e2-gelb); }
+.e2v-formate-band { padding: 4.5rem 0; background: var(--e2-hell); }
+.e2v-formate-band .e2v-zwei { align-items: center; }
+.e2v-formate-band__h { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.6vw, 2.1rem) !important; line-height: 1.2; max-width: 20ch; }
+.e2v-formate-band__text { margin-top: 1rem !important; max-width: 32rem; font-size: 1.02rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2v-formate-band__links { border-top: 1px solid #d9d5ce; }
+.e2v-formate-band__links a { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 1rem; padding: 1rem 0; border-bottom: 1px solid #d9d5ce; color: var(--e2-ink); text-decoration: none; }
+.e2v-formate-band__links b { font-family: var(--font-serif); font-size: 1.2rem; }
+.e2v-formate-band__links span { grid-column: 1; font-size: .92rem; color: var(--e2-grau); }
+.e2v-formate-band__links .e2-pfeil { grid-column: 2; grid-row: 1 / span 2; align-self: center; transition: transform .15s; }
+.e2v-formate-band__links a:hover .e2-pfeil { transform: translateX(4px); }
+/* Startseite Runde 19: Lösung klar; Formate-Band mit Symbol in Formatfarbe */
+.e2v-loesung3__h { max-width: 22ch !important; }
+.e2v-loesung3__lead { max-width: 44rem !important; font-size: 1.2rem !important; color: var(--e2-ink) !important; }
+.e2v-loesung3__lead b { font-weight: 700; }
+#loesung .e2-karten { margin-top: 3rem; }
+.e2v-ergebnis2 { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2.4rem; align-items: center; margin-top: 3rem; padding-top: 2rem; border-top: 3px solid var(--e2-ink); }
+.e2v-ergebnis2__tag { margin-bottom: .5rem !important; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.e2v-ergebnis2__satz { max-width: 44rem; font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.3; }
+@media (max-width: 760px) { .e2v-ergebnis2 { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; } }
+.e2v-formate-band__links a { grid-template-columns: 2.6rem minmax(0, 1fr) auto !important; }
+.e2v-formate-band__links i { grid-column: 1; grid-row: 1 / span 2; align-self: center; width: 2rem; height: 2rem; }
+.e2v-formate-band__links i svg { width: 100%; height: 100%; fill: none; stroke: #1a1817; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.e2v-formate-band__links b, .e2v-formate-band__links span { grid-column: 2 !important; }
+.e2v-formate-band__links .e2-pfeil { grid-column: 3 !important; }
+.e2v-formate-band__links a:hover b { color: #1a1817; }
+/* Ergebnis ohne harten Strich: ruhige helle Fläche mit runden Ecken (Daniel, Runde 20) */
+.e2v-ergebnis2 { border-top: 0 !important; margin-top: 1.4rem !important; padding: 2rem 2.4rem !important; border-radius: var(--e2-r); background: var(--e2-hell); }
+@media (max-width: 760px) { .e2v-ergebnis2 { padding: 1.6rem 1.3rem !important; } }
+/* Workshops-Übersicht (Runde 21): gleich gebaute Karten – Fläche, Titel, Text, Knopf je auf gleicher Höhe; Kopfbilder statt Skizzen */
+.e2-seite--workshops .media-boxes-grid { display: grid !important; grid-template-rows: auto auto 1fr auto; column-gap: 1.4rem !important; row-gap: 0 !important; max-width: none !important; }
+.e2-seite--workshops .media-box { display: grid !important; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; padding: 0 !important; overflow: hidden; }
+.e2-seite--workshops .media-box-footer { display: contents !important; }
+.e2-seite--workshops .e2-wk-thumb { grid-row: 1; height: 15rem !important; aspect-ratio: auto !important; display: grid; place-items: center; padding: 1.4rem 2rem !important; background: #fff400 !important; }
+.e2-wk-bild { width: auto; height: 100%; max-width: 100%; display: block; }
+.e2-seite--workshops .media-box-title { grid-row: 2; padding: 1.6rem 1.6rem 0; margin: 0 !important; font-family: var(--font-serif); font-size: 1.45rem; line-height: 1.25; align-self: start; }
+.e2-seite--workshops .media-box-desc { grid-row: 3; padding: .8rem 1.6rem 0; margin: 0 !important; align-self: start; }
+.e2-seite--workshops .sprint-structure-cta { grid-row: 4; margin: 2rem 1.6rem 1.6rem !important; width: auto !important; }
+@media (max-width: 960px) { .e2-seite--workshops .media-boxes-grid { grid-template-columns: minmax(0, 1fr) !important; grid-template-rows: none; row-gap: 1.2rem !important; } .e2-seite--workshops .media-box { grid-row: auto; grid-template-rows: auto auto auto auto; } }
+
+/* ================= Workshop-Unterseiten (Runde 22): gemeinsames Farbsystem wie Strategie 2 =================
+   Weiß (Kopf) · Magenta (erste Inhaltssektion, Karten weiß) · Weiß · Hell · Download · Kontakt weiß */html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen.e2-seite--ki-zum-anfassen section.produkt-grid:not(.produkt-pricing),html body .e2-alt.e2-alt.e2-seite--workshop-moderation.e2-seite--workshop-moderation section.produkt-grid:not(.produkt-pricing),html body .e2-alt.e2-alt.e2-seite--sprint-landingpage .produkt-vorschau { background: #fff400 !important; }html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen.e2-seite--ki-zum-anfassen section.produkt-grid:not(.produkt-pricing) .produkt-section-head *,html body .e2-alt.e2-alt.e2-seite--workshop-moderation.e2-seite--workshop-moderation section.produkt-grid:not(.produkt-pricing) .produkt-section-head *,html body .e2-alt.e2-alt.e2-seite--sprint-landingpage .produkt-vorschau .vorschau-split-text,html body .e2-alt.e2-alt.e2-seite--sprint-landingpage .produkt-vorschau .vorschau-split-text * { color: #1a1817 !important; }html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen.e2-seite--ki-zum-anfassen section.produkt-grid:not(.produkt-pricing) .kicker::before,html body .e2-alt.e2-alt.e2-seite--workshop-moderation.e2-seite--workshop-moderation section.produkt-grid:not(.produkt-pricing) .kicker::before,html body .e2-alt.e2-alt.e2-seite--sprint-landingpage .produkt-vorschau .kicker::before { background: #1a1817 !important; }html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen.e2-seite--ki-zum-anfassen section.produkt-grid:not(.produkt-pricing) .produkt-glass,html body .e2-alt.e2-alt.e2-seite--workshop-moderation.e2-seite--workshop-moderation section.produkt-grid:not(.produkt-pricing) .produkt-glass { background: #fff !important; border: 0 !important; box-shadow: none !important; }
+/* KI: Tool-Logos weiß auf Magenta */html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen .tools-row-icon img { filter: brightness(0) invert(1) !important; }html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen .tools-row-label { color: #1a1817 !important; }
+/* KI: mittlerer Format-Kasten in Magenta */html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen .price-card--featured { background: #fff400 !important; border-color: #fff400 !important; }html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen .price-card--featured,html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen .price-card--featured * { color: #1a1817 !important; opacity: 1 !important; }html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen .price-card--featured .price-features li::before { background: #1a1817 !important; }html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen .price-card--featured [class*="badge"] { background: #fff !important; color: #1a1817 !important; }
+/* Sprint: Struktur-Vorschau bleibt – als schwarze Karte auf Magenta; Rhythmus ohne zwei Graus hintereinander */html body .e2-alt.e2-alt.e2-seite--sprint-landingpage .vorschau-facts-list li::before { background: #fff !important; }html body .e2-alt.e2-alt.e2-seite--sprint-landingpage .sprint-structure-card { background: #1a1817 !important; }html body .e2-alt.e2-alt.e2-seite--sprint-landingpage .sprint-structure-thumb { background: #1a1817 !important; }html body .e2-alt.e2-alt.e2-seite--sprint-landingpage .produkt-price-note { background: #fff !important; }html body .e2-alt.e2-alt.e2-seite--sprint-landingpage .produkt-faq { background: var(--e2-hell) !important; }
+html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen .price-card--featured .price-badge-slot { background: none !important; } html body .e2-alt.e2-alt.e2-seite--ki-zum-anfassen .price-card--featured .price-badge { display: inline-block !important; width: auto !important; border-radius: 999px !important; padding: .3rem .8rem !important; }
+
+/* ================= Runde 23: Komplexe Themen + Innovation im Layout von Strategie 2 ================= */
+html body .e2-alt.e2-alt.e2-seite--innovation #problem, html body .e2-alt.e2-alt.e2-seite--komplexe-themen #problem { background: var(--e2-gelb) !important; }
+html body .e2-alt.e2-alt.e2-seite--innovation #problem .watermark, html body .e2-alt.e2-alt.e2-seite--komplexe-themen #problem .watermark { display: none !important; }
+html body .e2-alt.e2-alt.e2-seite--innovation #problem .e2-s2-split { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: center; }
+html body .e2-alt.e2-alt.e2-seite--innovation #ergebnis, html body .e2-alt.e2-alt.e2-seite--komplexe-themen #ergebnis { background: var(--e2-hell) !important; }
+html body .e2-alt.e2-alt.e2-seite--innovation #ergebnis *, html body .e2-alt.e2-alt.e2-seite--komplexe-themen #ergebnis * { color: var(--e2-ink) !important; }
+html body .e2-alt.e2-alt.e2-seite--innovation #ergebnis .kicker::before, html body .e2-alt.e2-alt.e2-seite--komplexe-themen #ergebnis .kicker::before { background: var(--e2-ink) !important; }
+html body .e2-alt.e2-alt.e2-seite--innovation .pdf-dl-section, html body .e2-alt.e2-alt.e2-seite--komplexe-themen .pdf-dl-section { background: #fff !important; }
+/* Komplexe Themen: Zwischenergebnis als schwarzes Band wie das Ergebnis-Band in Strategie */
+html body .e2-alt.e2-alt.e2-seite--komplexe-themen .e2-zwischen { background: var(--e2-ink) !important; }
+html body .e2-alt.e2-alt.e2-seite--komplexe-themen .e2-zwischen * { color: #fff !important; }
+html body .e2-alt.e2-alt.e2-seite--komplexe-themen .e2-zwischen .e2-zwischen__tag { color: var(--e2-gelb) !important; }
+html body .e2-alt.e2-alt.e2-seite--komplexe-themen .e2-zwischen b { color: var(--e2-gelb) !important; }
+html body .e2-alt.e2-alt.e2-seite--komplexe-themen #problem .e2-kasten, html body .e2-alt.e2-alt.e2-seite--komplexe-themen #problem .e2-pkt2__kasten { background: var(--e2-ink) !important; }
+@media (max-width: 960px) { html body .e2-alt.e2-alt.e2-seite--innovation #problem .e2-s2-split { grid-template-columns: minmax(0, 1fr); } }
+/* Kopf der drei Strategiehandwerk-Seiten gleich groß wie Strategie */
+html body .e2-alt.e2-alt.e2-seite--komplexe-themen .e2-kopf h1, html body .e2-alt.e2-alt.e2-seite--innovation .e2-kopf h1 { font-size: clamp(2.5rem, 4.6vw, 4rem) !important; }
+html body .e2-alt.e2-alt.e2-seite--komplexe-themen #intro.e2-kopf h1, html body .e2-alt.e2-alt.e2-seite--innovation #intro.e2-kopf h1 { font-size: clamp(2.5rem, 4.6vw, 4rem) !important; }
+/* Komplexe Themen: Zielgruppen als dünne Pillen unter dem Kopftext */
+.e2-kopf__inhalt .e2-pillen { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.3rem; max-width: 36rem; }
+.e2-kopf__inhalt .e2-pillen .hero-anlass { padding: .22rem .7rem !important; border: 1px solid #d9d5ce !important; border-radius: 999px; background: transparent !important; font-size: .78rem !important; font-weight: 500; color: var(--e2-ink-2) !important; }
+
+/* ================= Runde 24: alle übrigen Seiten im durchgängigen Layout =================
+   Bereichsfarbe je Seite (--bf): Strategiehandwerk Gelb · Workshops Magenta · Marketing Cyan · Training & Sparring Violett.
+   Muster wie Strategie/Workshops: Kopf weiß · erste Inhaltssektion in Bereichsfarbe (Karten weiß) · danach Weiß/Hell · Download · Kontakt. */
+.e2-alt--magenta { --bf: #fff400; --bf-text: #1a1817; }
+.e2-alt--cyan { --bf: #fff400; --bf-text: #1a1817; --e2-akzent: #fff400; }
+.e2-alt--violett { --bf: #fff400; --bf-text: #1a1817; --e2-akzent: #fff400; }
+.e2-alt--gelb { --bf: #fff400; --bf-text: #1a1817; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) h1 .hl { --hl: var(--bf); color: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .e2-kopf .e2-kicker,
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .kicker { color: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .e2-kopf .e2-knopf,
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .produkt-cta .btn--dark { background: var(--bf) !important; border-color: var(--bf) !important; color: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .media-box-thumb--mock { background: var(--bf) !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .e2-dl-hl { --hl: var(--bf); color: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .pdf-dl .pdf-dl-kicker { color: var(--bf) !important; filter: brightness(1.35); }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .feature-icon, html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .feature-icon svg { color: #1a1817 !important; stroke: #1a1817 !important; }
+
+/* erste Inhaltssektion in Bereichsfarbe */
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--der-beste-workshop, .e2-seite--teams) > section:nth-of-type(2) { background: var(--bf) !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--der-beste-workshop) > section:nth-of-type(2) :is(.kicker, h2, .produkt-section-head p, .lead, .vorschau-split-text, .vorschau-split-text p, .vorschau-split-text li, .problem-head *, .leistung-simple > p, .leistung-simple h2) { color: var(--bf-text) !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--der-beste-workshop) > section:nth-of-type(2) .kicker::before { background: var(--bf-text) !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--der-beste-workshop) > section:nth-of-type(2) :is(.produkt-glass, .problem-card, .tools-row-item) { background: #fff !important; border: 0 !important; box-shadow: none !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--der-beste-workshop) > section:nth-of-type(2) .produkt-glass * { color: var(--e2-ink) !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--der-beste-workshop) > section:nth-of-type(2) .produkt-glass .feature-icon svg { stroke: #1a1817 !important; color: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--der-beste-workshop) > section:nth-of-type(2) .watermark { display: none !important; }
+/* danach keine zwei Grau hintereinander: Standard weiß, Fragen/Beispiele hell */
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--der-beste-workshop, .e2-seite--teams) > section:nth-of-type(n+3):not(.section--dark):not(.produkt-faq):not(.pa-faq):not(.e2-faelle):not(.e2-zeitstrahl) { background: #fff !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--der-beste-workshop, .e2-seite--teams) > section:is(.produkt-faq, .pa-faq) { background: var(--e2-hell) !important; }
+/* Fremdfarben auf die Bereichsfarbe ziehen */
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) :is(.usp-highlight, .sprint-structure-card, .vergleich-rocket, .pa-pc, .price-card--featured) { background: var(--bf) !important; border-color: var(--bf) !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) :is(.sprint-structure-cta, .price-badge) { color: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) :is(.vergleich-label--brand, .vergleich-label-logo, .step-num, .pa-check-result-kicker, .pa-check-info) { color: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) :is(.pa-check-progress-bar, .yellow-pill, .usp-turbo-icon) { background-color: var(--bf) !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .paid-ads .step-num, html body .e2-alt.e2-alt.e2-seite--paid-ads .step-num { color: #1a1817 !important; }
+html body .e2-alt.e2-alt.e2-seite--paid-ads .step-num { background-color: var(--bf) !important; }
+html body .e2-alt.e2-alt.e2-seite--sofort-sichtbar .vergleich-row svg, html body .e2-alt.e2-alt.e2-seite--sofort-sichtbar [style*="8613A1"] { color: #1a1817 !important; }
+html body .e2-alt.e2-alt.e2-seite--teams #problem { background: var(--e2-gelb) !important; }
+html body .e2-alt.e2-alt.e2-seite--teams #problem .watermark { display: none !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) > section#problem:nth-of-type(2) { background: var(--bf) !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) > section#problem:nth-of-type(2) .watermark { display: none !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) > section#problem:nth-of-type(2) :is(p, li, h2, .kicker) { color: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) > section#problem:nth-of-type(2) .kicker::before { background: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-seite--teams) .yellow-pill { display: none !important; }
+html body .e2-alt.e2-alt.e2-seite--paid-ads .pa-check-section * { border-left-color: var(--e2-linie); }
+html body .e2-alt.e2-alt.e2-seite--paid-ads .pa-check { border-left-color: var(--bf) !important; }
+html body .e2-alt.e2-alt.e2-seite--paid-ads .pa-check::before, html body .e2-alt.e2-alt.e2-seite--paid-ads .pa-check::after { background: #1a1817 !important; }
+
+/* ================= Mobil (Runde 24) ================= */
+@media (max-width: 600px) {
+  html body.e2 .e2-alt .section, html body.e2 .e2-alt .produkt-section, html body.e2 .e2-alt .produkt-grid, html body.e2 .e2-sek,
+  html body.e2 .e2-pv, html body.e2 .e2-s2-gedanke { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+  html body.e2 .e2-kopf { padding: 2.6rem 0 2.4rem !important; }
+  html body.e2 .e2-kopf__raster { gap: 1.8rem !important; }
+  html body.e2 .e2-kopfbild { width: min(100%, 15rem) !important; justify-self: start !important; }
+  html body.e2 .e2-kopf h1, html body.e2 .e2-alt .e2-kopf h1 { font-size: 2.3rem !important; }
+  html body.e2 h2.h-serif, html body.e2 .e2-h2 { font-size: 1.9rem !important; }
+  html body.e2 .produkt-team-cta .ansprechpartner-grid { gap: .6rem !important; }
+  html body.e2 .e2-s2-kasten, html body.e2 .e2v-zitat, html body.e2 .e2-kasten { padding: 1.6rem 1.3rem !important; }
+}
+@media (max-width: 960px) { html body.e2 .e2v-held__raster .e2v-held__pfeil { width: 7.5rem !important; justify-self: start !important; margin-bottom: 1rem; } }
+
+/* Innovation · Lösung (Runde 25): Volksfest-Aufbau – Text + Kasten, fünf gleiche Karten, Methoden + schwarzer Ansatz-Kasten ohne Bilder */
+.e2-in-loesung { background: #fff !important; }
+.e2-in-oben { align-items: center !important; }
+.e2-in-oben .lead + .lead, .e2-in-methode .lead + .lead { margin-top: .9rem !important; }
+.e2-in-loesung .inno-stein { margin: 0 !important; border-radius: var(--e2-r) !important; background: var(--e2-hell) !important; padding: 2.2rem !important; }
+.e2-in-label { display: inline-flex; align-items: center; gap: .55rem; margin: 0 0 .9rem !important; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.e2-in-label::before { content: ""; width: 1.4rem; height: 3px; border-radius: 2px; background: currentColor; }
+.e2-in-einsatz { margin-top: 5rem; }
+.e2-in-einsatz .lead { max-width: 44rem; }
+.e2-in-karten { list-style: none; margin: 2.2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; }
+.e2-in-karten li { display: flex; flex-direction: column; gap: 1.1rem; padding: 1.5rem 1.3rem; border-radius: var(--e2-r); border: 1px solid var(--e2-linie); background: #fff; }
+.e2-in-sym { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 12px; background: var(--e2-gelb); }
+.e2-in-sym svg { width: 1.5rem; height: 1.5rem; }
+.e2-in-karten b { font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.25; }
+.e2-in-scope { margin-top: 1.2rem !important; font-size: .95rem; color: var(--e2-grau); }
+.e2-in-methode { margin-top: 5rem; align-items: center !important; }
+.e2-in-ansatz { padding: 2.4rem; border-radius: var(--e2-r); background: var(--e2-ink); }
+.e2-in-ansatz__tag { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 1rem !important; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--e2-gelb) !important; }
+.e2-in-ansatz__tag::before { content: ""; width: 1.4rem; height: 3px; border-radius: 2px; background: currentColor; }
+.e2-in-ansatz__satz { font-family: var(--font-serif); font-weight: 700; font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.25; color: #fff !important; }
+.e2-gelb-text { color: var(--e2-gelb); }
+@media (max-width: 960px) { .e2-in-karten { grid-template-columns: repeat(2, minmax(0, 1fr)); } .e2-in-einsatz, .e2-in-methode { margin-top: 3.2rem; } }
+@media (max-width: 480px) { .e2-in-karten { grid-template-columns: minmax(0, 1fr); } }
+.e2-in-loesung .inno-stein-tag { margin-bottom: 1rem !important; } .e2-in-loesung .inno-stein li + li { margin-top: .5rem; }
+@media (max-width: 480px) { .e2-in-karten li { flex-direction: row; align-items: center; padding: 1rem 1.1rem; } .e2-in-karten { gap: .6rem; } }
+
+/* ================= Mobil-Kopf der Unterseiten (Runde 26) =================
+   Bild klein ÜBER die Überschrift (wie der Doppelpfeil der Startseite), bündig mit dem Text; Logos ruhiger. */
+@media (max-width: 960px) {
+  html body.e2 .e2-kopf__raster { display: flex !important; flex-direction: column; align-items: flex-start; gap: 0 !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild { order: -1; width: 11rem !important; max-width: 60%; margin: 0 0 1.4rem -6px !important; justify-self: auto !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild .e2-bild { width: 100%; height: auto; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild .hero-anlaesse { display: none !important; }
+}
+@media (max-width: 640px) {
+  html body.e2 .marquee { padding-block: 10px 40px !important; }
+  html body.e2 .marquee-track { gap: 18px 22px !important; }
+  html body.e2 .marquee-track img { max-height: 22px !important; }
+  html body.e2 .marquee-track img:nth-child(n+10) { display: none !important; }
+}
+.e2-bild--mobil { display: none !important; }
+@media (max-width: 960px) {
+  /* mobil: eng geschnittenes Motiv, bündig mit der Textkante, feste Höhe */
+  html body.e2 .e2-kopf__raster > .e2-kopfbild { width: auto !important; max-width: 100%; margin: 0 0 1.8rem 0 !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild .e2-bild--gross { display: none !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild .e2-bild--mobil { display: block !important; height: 4.2rem; width: auto; }
+}
+/* Strategiehandwerk: großes Themen-Zeichen rechts, unten bündig mit dem Text (wie Startseite) */
+html body.e2 .e2-kopf__raster:has(.e2-kopfbild--zeichen) { align-items: end !important; }
+html body.e2 .e2-kopfbild--zeichen { width: min(100%, 16rem) !important; justify-self: center !important; align-self: end !important; margin-bottom: calc(4.6rem + 12px); }
+html body.e2 .e2-kopfbild--zeichen .e2-bild--zeichen { display: block; width: 100%; height: auto; }
+@media (max-width: 960px) {
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen { width: auto !important; margin: 0 0 1.6rem !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen .e2-bild--zeichen { width: auto; height: 3.6rem; }
+}
+@media (max-width: 960px) { html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen { align-self: flex-start !important; justify-self: start !important; } }
+
+/* Runde 28: Karten-Regeln der Workshop-Übersicht für alle Übersichtsseiten */
+/* Workshops-Übersicht (Runde 21): gleich gebaute Karten – Fläche, Titel, Text, Knopf je auf gleicher Höhe; Kopfbilder statt Skizzen */
+html body .e2-alt.e2-alt .media-boxes-grid { display: grid !important; grid-template-rows: auto auto 1fr auto; column-gap: 1.4rem !important; row-gap: 0 !important; max-width: none !important; }
+html body .e2-alt.e2-alt .media-box { display: grid !important; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; padding: 0 !important; overflow: hidden; }
+html body .e2-alt.e2-alt .media-box-footer { display: contents !important; }
+html body .e2-alt.e2-alt .e2-wk-thumb { grid-row: 1; height: 15rem !important; aspect-ratio: auto !important; display: grid; place-items: center; padding: 1.4rem 2rem !important; background: var(--bf, #fff400) !important; }
+.e2-wk-bild { width: auto; height: 100%; max-width: 100%; display: block; }
+html body .e2-alt.e2-alt .media-box-title { grid-row: 2; padding: 1.6rem 1.6rem 0; margin: 0 !important; font-family: var(--font-serif); font-size: 1.45rem; line-height: 1.25; align-self: start; }
+html body .e2-alt.e2-alt .media-box-desc { grid-row: 3; padding: .8rem 1.6rem 0; margin: 0 !important; align-self: start; }
+html body .e2-alt.e2-alt .sprint-structure-cta { grid-row: 4; margin: 2rem 1.6rem 1.6rem !important; width: auto !important; }
+@media (max-width: 960px) { html body .e2-alt.e2-alt .media-boxes-grid { grid-template-columns: minmax(0, 1fr) !important; grid-template-rows: none; row-gap: 1.2rem !important; } html body .e2-alt.e2-alt .media-box { grid-row: auto; grid-template-rows: auto auto auto auto; } }
+
+html body .e2-alt.e2-alt .media-box-thumb--mock { grid-row: 1; height: 15rem !important; min-height: 0 !important; display: grid; place-items: center; padding: 1.2rem 1.6rem !important; background: var(--bf, #fff400) !important; overflow: hidden; }
+html body .e2-alt.e2-alt .media-box-thumb--mock .produkt-mock-sketch { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 1 !important; transform: none !important; }
+html body .e2-alt.e2-alt .media-box-thumb--mock svg { max-width: 100%; max-height: 100%; width: auto; height: 100%; }
+/* Karte: Rahmen grau, nicht farbig; Knopf schwarz mit weißer Schrift */
+html body .e2-alt.e2-alt .media-box { border: 1px solid var(--e2-linie) !important; background: #fff !important; box-shadow: none !important; }
+html body .e2-alt.e2-alt .media-box .sprint-structure-cta { background: #1a1817 !important; border-color: #1a1817 !important; color: #fff !important; }
+/* Kopf-Knopf auf allen Unterseiten schwarz (Kontakt unten bleibt farbig) */
+html body .e2-alt.e2-alt .e2-kopf .e2-knopf { background: #1a1817 !important; border-color: #1a1817 !important; color: #fff !important; }
+/* Korrektur: nur die Bildfläche farbig, Karte weiß mit grauem Rand; Zeilenraster auch bei 2×2 */
+html body .e2-alt.e2-alt .media-boxes-grid .media-box.sprint-structure-card { background: #fff !important; border: 1px solid var(--e2-linie) !important; }
+html body .e2-alt.e2-alt .media-boxes-grid { grid-template-rows: none !important; grid-auto-rows: auto auto 1fr auto; row-gap: 0 !important; }
+html body .e2-alt.e2-alt .media-boxes-grid > .media-box { margin-bottom: 1.4rem; }
+html body .e2-alt.e2-alt .media-box-title { color: var(--e2-ink) !important; }
+html body .e2-alt.e2-alt .media-box-desc { color: var(--e2-ink-2) !important; }
+/* Medien: Karten mit Bild-Knopf – Bildfläche farbig, gleiche Höhe */
+html body .e2-alt.e2-alt .media-box-thumb-btn { grid-row: 1; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
+html body .e2-alt.e2-alt .media-box-thumb-btn .media-box-thumb { height: 15rem !important; display: grid; place-items: center; padding: 1.2rem 1.6rem !important; background: var(--bf, #fff400) !important; border-radius: 0 !important; }
+html body .e2-alt.e2-alt .media-box-thumb-btn svg { max-width: 100%; max-height: 100%; width: auto; height: 100%; }
+html body .e2-alt.e2-alt .media-box-thumb--photo { grid-row: 1; height: 15rem !important; padding: 0 !important; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; background: var(--bf, #fff400) !important; }
+html body .e2-alt.e2-alt .media-box-thumb--photo img { height: 92%; width: auto; filter: grayscale(1); opacity: 1 !important; }
+/* Kopf-Knopf schwarz – höhere Gewichtung als die Bereichsfarb-Regel */
+html body .e2-alt.e2-alt.e2-alt.e2-alt .e2-kopf .e2-knopf.e2-knopf { background: #1a1817 !important; border-color: #1a1817 !important; color: #fff !important; }
+/* Kein farbiger Kasten auf gleichfarbiger Fläche: Hervorhebungs-Kästen in Bereichsfarb-Sektionen werden schwarz */
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-alt--magenta) > section:nth-of-type(2) :is(.usp-highlight, .vergleich-rocket) { background: #1a1817 !important; border-color: #1a1817 !important; }
+/* Punkte/Marker in Bereichsfarb-Sektionen nie gelb auf Violett/Cyan/Magenta – weiß */
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett, .e2-alt--magenta) > section:nth-of-type(2) :is([class*="dot"], [class*="punkt"], .problem-timeline-dot, li)::before { background: #1a1817 !important; border-color: #1a1817 !important; }
+html body .e2-alt.e2-alt:is(.e2-alt--cyan, .e2-alt--violett) .price-card--featured :is(.btn, a.btn) { background: #fff !important; color: #1a1817 !important; border-color: #fff !important; }
+/* Teams befähigen: Phasen als Zeile, Inhalte als drei Karten */
+.e2-teams-loesung { background: #fff !important; }
+.e2-phasen { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; counter-reset: none; }
+.e2-phasen li { position: relative; display: flex; flex-direction: column; gap: .2rem; padding: 1.2rem 1.3rem; border-radius: var(--e2-r); background: var(--e2-hell); }
+.e2-phasen li:not(:last-child)::after { content: ""; position: absolute; right: -.75rem; top: 50%; width: .5rem; height: .5rem; border-top: 2px solid #b9b3ab; border-right: 2px solid #b9b3ab; transform: translateY(-50%) rotate(45deg); }
+.e2-ph__nr { display: grid; place-items: center; width: 1.9rem; height: 1.9rem; margin-bottom: .5rem; border-radius: 50%; background: var(--bf, #1a1817); color: var(--bf-text, #1a1817); font-family: var(--font-serif); font-weight: 700; font-size: .9rem; }
+.e2-phasen b { font-family: var(--font-serif); font-size: 1.15rem; }
+.e2-phasen small { font-size: .88rem; color: var(--e2-grau); }
+.e2-phasen__knopf { margin-top: 1.4rem !important; }
+.e2-schritte--3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; margin-top: 0 !important; }
+html body .e2-alt.e2-alt .e2-schritte--3 .e2-schritt__sym { background: var(--bf, #1a1817); }
+html body .e2-alt.e2-alt.e2-alt--gelb .e2-schritte--3 .e2-schritt__sym svg { stroke: #1a1817 !important; }
+@media (max-width: 960px) { .e2-phasen { grid-template-columns: repeat(2, minmax(0, 1fr)); } .e2-phasen li:nth-child(2)::after { display: none; } .e2-schritte--3 { grid-template-columns: minmax(0, 1fr) !important; } }
+/* Paid Ads: Überschrift kleiner (drei Zeilen), rotierende Anzeigen rechts */
+html body .e2-alt.e2-alt.e2-seite--paid-ads .e2-kopf h1 { font-size: clamp(2.2rem, 3.7vw, 3.3rem) !important; }
+html body .e2-alt.e2-alt.e2-seite--paid-ads .e2-kopf-visual { justify-self: end; width: min(100%, 30rem); }
+html body .e2-alt.e2-alt.e2-seite--paid-ads .e2-kopf-visual .pa-ads { opacity: 1 !important; transform: none !important; }
+html body .e2-alt.e2-alt.e2-seite--paid-ads .pa-rot { color: inherit; }
+@media (max-width: 960px) { html body .e2-alt.e2-alt.e2-seite--paid-ads .e2-kopf-visual { order: 2; justify-self: stretch; width: 100%; } }
+/* 1:1 Sparring: Themen + Umsetzungsturbo */
+html body .e2-alt.e2-alt .e2-sp-themen { background: #fff !important; }
+.e2-sp-wann { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; margin-top: 0 !important; }
+html body .e2-alt.e2-alt .e2-sp-sym { background: var(--bf) !important; }
+.e2-sp-liste { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 3rem; }
+.e2-sp-liste li { break-inside: avoid; padding: .85rem 0; border-bottom: 1px solid var(--e2-linie); font-size: 1rem; color: var(--e2-ink); }
+.e2-sp-mehr { color: var(--e2-grau) !important; font-style: italic; }
+html body .e2-alt.e2-alt .e2-sp-turbo { background: var(--e2-hell) !important; }
+.e2-sp-turbo .e2-s2-split { align-items: center; }
+.e2-sp-turbo .e2-s2-kasten ul { margin-top: 0 !important; }
+html body .e2-alt.e2-alt .e2-sp-turbo .e2-s2-kasten li::before { background: #fff !important; }
+.e2-sp-turbo__satz { margin-top: .8rem !important; font-weight: 600; color: #fff !important; }
+@media (max-width: 960px) { .e2-sp-wann { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } .e2-sp-liste { columns: 1; } }
+@media (max-width: 600px) { .e2-sp-wann.e2-in-karten li { flex-direction: column !important; align-items: flex-start !important; padding: 1rem !important; } .e2-in-sym { flex-shrink: 0; } .e2-sp-wann b { font-size: 1.05rem !important; } }
+/* Startseite Lösung (Runde 31): Ergebnis oben neben dem Handwerk-Satz, unter den Kästen nur der Knopf */
+.e2v-loesung3__kopf { align-items: start !important; margin-top: 1.3rem; }
+.e2v-loesung3__kopf .e2v-loesung3__lead { margin-top: 0 !important; }
+.e2v-loesung3__ergebnis { padding-left: 1.4rem; border-left: 3px solid var(--e2-gelb); font-family: var(--font-serif); font-weight: 700; font-size: 1.2rem; line-height: 1.35; color: var(--e2-ink); }
+.e2v-loesung3__ergebnis span { display: block; margin-bottom: .35rem; font-family: var(--font-sans); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--e2-grau); }
+.e2v-loesung3__knopf { margin-top: 2.6rem !important; }
+@media (max-width: 960px) { .e2v-loesung3__kopf { gap: 1.4rem !important; } }
+/* Symbole in Karten immer in der Bereichsfarbe (wie Workshops) – überall gleich */
+html body .e2-alt.e2-alt.e2-alt .produkt-glass .feature-icon, html body .e2-alt.e2-alt.e2-alt .produkt-glass .feature-icon * { color: #1a1817 !important; }
+html body .e2-alt.e2-alt.e2-alt .produkt-glass .feature-icon svg :is(path, line, polyline, circle, rect, polygon) { stroke: currentColor; }
+html body .e2-alt.e2-alt.e2-alt.e2-alt--gelb .produkt-glass .feature-icon, html body .e2-alt.e2-alt.e2-alt.e2-alt--gelb .produkt-glass .feature-icon * { color: var(--e2-ink) !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section .produkt-glass.produkt-glass .feature-icon.feature-icon :is(svg, use) { color: #1a1817 !important; } html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt--gelb section .produkt-glass.produkt-glass .feature-icon.feature-icon :is(svg, use) { color: var(--e2-ink) !important; }
+/* Strategiemodell-Karte: bleibt schwarz und groß (nicht von den Format-Karten-Regeln betroffen) */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .loesung-modell-card.loesung-modell-card { display: block !important; background: #1a1817 !important; border: 0 !important; overflow: hidden; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .loesung-modell-card .media-box-thumb-btn { display: block; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .loesung-modell-card .media-box-thumb { height: auto !important; padding: 1.4rem !important; background: #1a1817 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .loesung-modell-card .media-box-thumb svg { width: 100% !important; height: auto !important; max-height: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .loesung-modell-card .media-box-footer { display: flex !important; flex-direction: column; gap: .8rem; padding: 0 1.4rem 1.4rem; background: #1a1817 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .loesung-modell-card .media-box-title { padding: 0 !important; color: #fff !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .loesung-modell-card .btn { margin: 0 !important; background: #fff !important; color: #1a1817 !important; border-color: #fff !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .loesung-modell-card .media-box-footer { border-top: 0 !important; padding-top: .4rem !important; }
+
+/* ================= Praxisfälle als Karten + Preis (Runde 32) ================= */
+html body .e2-alt.e2-alt .e2-faelle { background: var(--e2-hell) !important; }
+.e2-faelle__kopf { align-items: end !important; }
+.e2-faelle__kopf .lead { margin: 0 !important; }
+.e2-faelle__raster { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+.e2-fall { display: flex; flex-direction: column; padding: 1.8rem 1.6rem 1.6rem; border-radius: var(--e2-r); background: #fff; }
+.e2-fall__sym { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 12px; background: var(--bf, #fff400); }
+.e2-fall__sym svg { width: 1.5rem; height: 1.5rem; }
+.e2-fall h3 { margin: 1.2rem 0 .6rem !important; font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.25; }
+.e2-fall p { font-size: .97rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2-fall__mehr { margin-top: auto; padding: 1.1rem 0 0; align-self: flex-start; border: 0; background: none; font: 600 .95rem/1.2 var(--font-sans); color: var(--e2-ink); cursor: pointer; }
+.e2-fall-sonder { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2.4rem; align-items: center; margin-top: 1.2rem; padding: 2.2rem 2.4rem; border-radius: var(--e2-r); background: var(--e2-ink); }
+.e2-fall-sonder__tag { margin-bottom: .6rem !important; font-size: .78rem !important; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #1a1817 !important; filter: brightness(1.4); }
+.e2-fall-sonder h3 { font-family: var(--font-serif); font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.2; color: #fff; }
+.e2-fall-sonder p { font-size: 1rem; line-height: 1.6; color: #cfcac3 !important; }
+.e2-fall__mehr--hell { color: #fff; }
+html body .e2-alt.e2-alt .e2-preis { background: #fff !important; }
+.e2-preis .e2-s2-split { align-items: center; }
+.e2-preis__fuss { margin-top: 1.4rem !important; font-size: .85rem; color: var(--e2-grau); max-width: 30rem; }
+.e2-preis__box { padding: 2.4rem; border-radius: var(--e2-r); background: var(--e2-ink); color: #fff; }
+.e2-preis__label { font-size: .8rem !important; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #bdb7af !important; }
+.e2-preis__betrag { margin-top: .4rem !important; font-family: var(--font-serif); font-weight: 700; font-size: clamp(3rem, 5vw, 4.2rem); line-height: 1; color: #fff !important; }
+.e2-preis__box ul { list-style: none; margin: 1.6rem 0 0; padding: 1.4rem 0 0; border-top: 2px solid var(--bf, #fff400); }
+.e2-preis__box li { position: relative; padding: .45rem 0 .45rem 1.6rem; font-size: .98rem; line-height: 1.5; color: #fff; }
+.e2-preis__box li::before { content: ""; position: absolute; left: 0; top: .9rem; width: .6rem; height: .6rem; border-radius: 50%; background: #1a1817; }
+@media (max-width: 960px) { .e2-faelle__raster { grid-template-columns: minmax(0, 1fr); } .e2-fall-sonder { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; padding: 1.8rem 1.4rem; } .e2-faelle__kopf { gap: 1.2rem !important; } }
+/* Praxisfälle: gleich gebaute Karten – Symbol, Titel, Text, Link je auf gleicher Höhe */
+.e2-faelle__raster { grid-auto-rows: auto auto 1fr auto; row-gap: 0 !important; }
+.e2-fall { display: grid !important; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; margin-bottom: 1.2rem; }
+.e2-fall h3 { align-self: start; }
+.e2-fall > p { align-self: start; }
+.e2-fall__mehr { align-self: end; }
+.e2-fall:not(:has(.e2-fall__mehr)) { grid-row: span 3; }
+.e2-faelle__raster:not(:has(.e2-fall__mehr)) { grid-auto-rows: auto auto 1fr; }
+.e2-fall-sonder { margin-top: 0 !important; }
+html body .e2-alt.e2-alt .e2-fall-sonder__tag { color: #fff !important; filter: none; opacity: .7; }
+@media (max-width: 960px) { .e2-fall { grid-row: auto !important; grid-template-rows: none; } .e2-faelle__raster { grid-auto-rows: auto !important; } }
+.e2-fall__mehr { justify-self: start; }
+/* Marketing 2.0 · Lösungen (Runde 33): vier kompakte Karten in einer Reihe statt Riesenkästen */
+html body .e2-alt.e2-alt.e2-seite--marketing .media-boxes-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; column-gap: 1rem !important; }
+html body .e2-alt.e2-alt.e2-seite--marketing .e2-wk-thumb { height: 9.5rem !important; padding: 1.2rem !important; }
+html body .e2-alt.e2-alt.e2-seite--marketing .media-box-title { font-size: 1.2rem !important; padding: 1.2rem 1.2rem 0 !important; }
+html body .e2-alt.e2-alt.e2-seite--marketing .media-box-desc { font-size: .92rem !important; padding: .6rem 1.2rem 0 !important; }
+html body .e2-alt.e2-alt.e2-seite--marketing .media-box .sprint-structure-cta { margin: 1.4rem 1.2rem 1.2rem !important; background: transparent !important; color: var(--e2-ink) !important; border: 0 !important; padding: 0 !important; width: auto !important; justify-self: start; text-align: left; font-weight: 600; }
+html body .e2-alt.e2-alt.e2-seite--marketing .media-box .sprint-structure-cta::after { content: " →"; }
+@media (max-width: 1000px) { html body .e2-alt.e2-alt.e2-seite--marketing .media-boxes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+@media (max-width: 600px) { html body .e2-alt.e2-alt.e2-seite--marketing .media-boxes-grid { grid-template-columns: minmax(0, 1fr) !important; } }
+html body .e2-alt.e2-alt.e2-seite--marketing .e2-wk-thumb { height: 11rem !important; padding: .4rem .8rem !important; }
+
+/* Runde 34 · MES: Vorschau-Karten, Erklär-Knöpfe, Pakete, Download-Titel */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-text p + p { margin-top: 1.1rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .mes-explainer-buttons { gap: .5rem !important; margin-top: 1.6rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .mes-explainer-buttons .btn { font-size: .8rem !important; padding: .45rem .95rem !important; min-height: 0 !important; border-width: 1.5px !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box { background: var(--bf) !important; border: 0 !important; border-radius: 22px !important; overflow: hidden; display: flex !important; flex-direction: column; box-shadow: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-thumb-btn { background: transparent !important; border: 0 !important; padding: 0 !important; width: 100%; cursor: pointer; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-thumb { background: transparent !important; height: auto !important; aspect-ratio: 1.25; display: grid !important; place-items: center; padding: 1.6rem 1.6rem .4rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-thumb svg { width: 100% !important; height: 100% !important; max-width: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-thumb svg.e2-doku-ico { width: 9rem !important; height: 9rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-footer { background: transparent !important; border: 0 !important; padding: 0 1.75rem 1.75rem !important; display: flex !important; flex-direction: column; align-items: stretch; gap: 1rem; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-title { color: #1a1817 !important; font-family: var(--font-serif) !important; font-weight: 700 !important; font-size: 1.45rem !important; line-height: 1.2 !important; letter-spacing: -.01em; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .btn { background: #1a1817 !important; color: #fff !important; border-color: #1a1817 !important; width: 100%; justify-content: center; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-grid { align-items: center !important; }
+
+.e2-pakete__raster { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(7, auto); column-gap: 1.25rem; margin-top: 2.6rem; }
+.e2-paket { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 0; background: #fff; border: 1.5px solid #e4e0db; border-radius: 22px; padding: 1.9rem 1.75rem 1.75rem; }
+.e2-paket--top { background: #1a1817; border-color: #1a1817; color: #fff; }
+.e2-paket__badge { margin: 0 0 .9rem !important; font-size: .72rem !important; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--bf-text, #1a1817) !important; min-height: 1em; }
+.e2-paket--top .e2-paket__badge { color: #1a1817 !important; }
+.e2-paket h3 { margin: 0 !important; font-family: var(--font-serif); font-weight: 700; font-size: 1.55rem !important; line-height: 1.15; color: inherit !important; }
+.e2-paket__preis { margin: .55rem 0 0 !important; font-size: 1.15rem !important; font-weight: 600; color: inherit !important; }
+.e2-paket__preis small { font-size: .78rem; font-weight: 400; margin-left: .25rem; opacity: .7; }
+.e2-paket__desc { margin: 1.1rem 0 0 !important; font-size: .95rem !important; line-height: 1.6 !important; color: inherit !important; opacity: .85; }
+.e2-paket ul { list-style: none; margin: 1.2rem 0 0 !important; padding: 1.2rem 0 0 !important; border-top: 1px solid #e4e0db; display: grid; gap: .55rem; align-content: start; }
+.e2-paket--top ul { border-top-color: rgba(255,255,255,.18); }
+.e2-paket li { position: relative; padding-left: 1.6rem; font-size: .9rem; line-height: 1.5; color: inherit !important; }
+.e2-paket li::before { content: ""; position: absolute; left: 0; top: .2rem; width: 1rem; height: 1rem; background: #1a1817; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat; }
+.e2-paket__ideal { margin: 1.4rem 0 0 !important; font-size: .88rem !important; line-height: 1.5 !important; font-style: italic; opacity: .75; color: inherit !important; }
+.e2-paket__mehr { margin-top: 1.4rem; justify-self: stretch; font: 600 .92rem/1 var(--font-sans, Poppins, sans-serif); padding: .95rem 1.2rem; border-radius: 999px; border: 0; cursor: pointer; background: #1a1817; color: #fff; }
+.e2-paket--top .e2-paket__mehr { background: var(--bf); color: #1a1817; }
+.e2-pakete .e2-preis__fuss { margin-top: 1.4rem; font-size: .8rem; color: #8a847c; }
+@media (max-width: 900px) {
+  .e2-pakete__raster { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 1rem; }
+  .e2-paket { grid-row: auto; grid-template-rows: none; display: flex; flex-direction: column; }
+}
+html body .e2-alt.e2-alt.e2-seite--dashboard-digitales-marketing .pdf-dl-h { font-size: clamp(1.8rem, 3vw, 2.6rem) !important; max-width: none; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-footer > * { margin: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-footer { gap: 1.1rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-footer > * { padding-left: 0 !important; padding-right: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-split-card .media-box-footer > .btn { padding: .95rem 1.2rem !important; }
+@media (max-width: 900px) { .e2-paket:not(.e2-paket--top) .e2-paket__badge { display: none; } }
+/* Runde 34 · Sprint: Vorteile rechts neben dem Ablauf */
+.e2-ablauf { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 4rem; align-items: start; margin-top: 2.6rem; }
+.e2-ablauf .sprint-timeline { margin: 0 !important; max-width: none !important; }
+.e2-ablauf__vorteile { display: grid; gap: 1rem; }
+.e2-ablauf__vorteil { display: grid; grid-template-columns: 2.2rem 1fr; column-gap: 1rem; align-items: start; background: #f3f1ee; border-radius: 18px; padding: 1.4rem 1.5rem; }
+.e2-ablauf__vorteil .feature-icon { grid-row: span 2; width: 2.2rem !important; height: 2.2rem !important; margin: 0 !important; background: none !important; padding: 0 !important; }
+.e2-ablauf__vorteil .feature-icon svg { width: 1.6rem; height: 1.6rem; color: #1a1817; stroke: #1a1817; }
+.e2-ablauf__vorteil h3 { margin: 0 !important; font-family: var(--font-serif); font-size: 1.1rem !important; font-weight: 700; }
+.e2-ablauf__vorteil p { margin: .35rem 0 0 !important; font-size: .9rem !important; line-height: 1.55 !important; }
+@media (max-width: 900px) { .e2-ablauf { grid-template-columns: 1fr; gap: 2.4rem; } }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pricing-footnote.pricing-footnote { margin-top: 2rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .e2-fall-sonder { padding: 3.4rem 3rem !important; align-items: center; }
+
+/* Runde 35 · Kopf-Pills: gefüllt in der Bereichsfarbe (hell), in einer Reihe – statt dünner Rahmen untereinander */
+html body .e2-alt.e2-alt .e2-kopf__inhalt .produkt-pills, html body .e2-alt.e2-alt .e2-kopf__inhalt .hero-anlaesse, html body .e2-alt.e2-alt .e2-kopf__inhalt .e2-pillen { display: flex !important; flex-direction: row !important; flex-wrap: wrap; gap: .5rem !important; margin-top: 1.5rem !important; }
+html body .e2-alt.e2-alt .e2-kopf__inhalt :is(.produkt-pill, .hero-anlass) { display: inline-flex !important; width: auto !important; padding: .5rem 1rem !important; border: 0 !important; border-radius: 999px !important; background: color-mix(in srgb, var(--bf) 13%, #fff) !important; color: #1a1817 !important; font-size: .84rem !important; font-weight: 600 !important; letter-spacing: 0 !important; white-space: nowrap; }
+
+/* Runde 35 · 1:1 Sparring: „Ein Gegenüber“ ohne Kästen */
+.e2-gg__liste { list-style: none; margin: 3rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 3rem; row-gap: 2.8rem; }
+.e2-gg__liste li { border-top: 1.5px solid rgba(26,24,23,.35); padding-top: 1.6rem; }
+.e2-gg__sym { color: #1a1817; display: block; width: 2.4rem; height: 2.4rem; margin-bottom: 1.2rem; }
+.e2-gg__sym svg { width: 100%; height: 100%; }
+html body .e2-alt.e2-alt .e2-gg h3 { margin: 0 !important; color: #1a1817 !important; font-family: var(--font-serif); font-size: 1.35rem !important; font-weight: 700; line-height: 1.2; }
+html body .e2-alt.e2-alt .e2-gg li p { margin: .6rem 0 0 !important; color: rgba(26,24,23,.86) !important; font-size: .95rem !important; line-height: 1.6 !important; }
+@media (max-width: 960px) { .e2-gg__liste { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .e2-gg__liste { grid-template-columns: 1fr; row-gap: 2rem; } }
+
+/* Runde 35 · 1:1 Sparring: Wann (schwarzer Kasten) + Worüber (gefüllte Themen) */
+.e2-sp2-label { margin: 0 0 1.4rem !important; font-size: .74rem !important; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.e2-sp2-wann { margin-top: 3.2rem; background: #1a1817; border-radius: 22px; padding: 2.2rem 2.4rem 2.4rem; }
+.e2-sp2-wann .e2-sp2-label { color: #1a1817 !important; filter: brightness(1.6); }
+.e2-sp2-wann ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.e2-sp2-wann li { display: flex; flex-direction: column; gap: 1rem; padding: 0 1.6rem; border-left: 1px solid rgba(255,255,255,.18); }
+.e2-sp2-wann li:first-child { padding-left: 0; border-left: 0; }
+.e2-sp2-sym { width: 2.4rem; height: 2.4rem; color: #fff; }
+.e2-sp2-sym svg { width: 100%; height: 100%; }
+html body .e2-alt.e2-alt .e2-sp2-wann b { color: #fff !important; font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+.e2-sp2-worueber { margin-top: 3.4rem; }
+.e2-sp2-worueber .e2-sp2-label { color: #1a1817; }
+.e2-sp2-worueber ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .65rem; }
+.e2-sp2-worueber li { padding: .8rem 1.25rem; border-radius: 999px; background: color-mix(in srgb, var(--bf) 11%, #fff); font-size: 1rem; font-weight: 500; color: #1a1817; line-height: 1.3; }
+.e2-sp2-worueber li.e2-sp2-mehr { background: transparent; font-style: italic; color: #8a847c; padding-left: .4rem; }
+@media (max-width: 960px) { .e2-sp2-wann ul { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.8rem; } .e2-sp2-wann li:nth-child(3) { padding-left: 0; border-left: 0; } }
+@media (max-width: 600px) { .e2-sp2-wann { padding: 1.8rem 1.5rem; } .e2-sp2-wann li { padding: 0 1rem; } .e2-sp2-wann li:nth-child(odd) { padding-left: 0; border-left: 0; } html body .e2-alt.e2-alt .e2-sp2-wann b { font-size: 1.1rem; } .e2-sp2-worueber li { font-size: .92rem; padding: .7rem 1.05rem; } }
+
+/* Runde 35 · Umsetzungsturbo: Linie in der Bereichsfarbe statt Gelb */
+html body .e2-alt.e2-alt.e2-seite--sparring .e2-sp-turbo .e2-s2-kasten__label { border-top-color: var(--bf) !important; }
+html body .e2-alt.e2-alt .e2-kopf__inhalt :is(.produkt-pill, .hero-anlass) { padding: .45rem .9rem !important; font-size: .8rem !important; }
+html body .e2-alt.e2-alt .e2-kopf__inhalt :is(.produkt-pills, .hero-anlaesse, .e2-pillen) { gap: .4rem !important; }
+.e2-sp2-wann .e2-sp2-label { color: rgba(255,255,255,.6) !important; filter: none; }
+html body .e2-alt.e2-alt .e2-sp2-wann b { font-size: 1.2rem; }
+.e2-sp2-worueber ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+.e2-sp2-worueber li { display: flex; align-items: center; min-height: 4.6rem; border-radius: 16px; padding: 1rem 1.3rem; }
+.e2-sp2-worueber li.e2-sp2-mehr { background: var(--bf); color: #1a1817; font-style: normal; font-weight: 600; padding-left: 1.3rem; }
+@media (max-width: 960px) { .e2-sp2-worueber ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .e2-sp2-worueber ul { grid-template-columns: 1fr; } .e2-sp2-worueber li { min-height: 0; } }
+html body .e2-alt.e2-alt .e2-kopf__inhalt :is(.produkt-pills, .hero-anlaesse, .e2-pillen) { max-width: none !important; width: auto !important; }
+
+.e2-wk-thumb .e2-wk-bild--eng { width: auto !important; height: 58% !important; max-width: 80%; margin: auto; display: block; }
+/* Runde 37 · Kopf-Pills wieder ohne Farbe, nur leichte Umrandung (Daniel) – bleiben in einer Reihe */
+html body .e2-alt.e2-alt .e2-kopf__inhalt :is(.produkt-pill, .hero-anlass) { background: transparent !important; border: 1px solid #d9d5ce !important; font-weight: 500 !important; padding: .4rem .85rem !important; }
+.e2-gg__sym { color: #1a1817; }
+
+/* Runde 38 · Teams: Download als Text + schwarzer Kasten */
+html body .e2-alt.e2-alt .e2-teams-dl { background: #fff !important; }
+.e2-teams-dl .e2-s2-split { align-items: center; }
+.e2-teams-dl__kasten { display: flex; flex-direction: column; align-items: flex-start; gap: 1.1rem; }
+.e2-teams-dl__ico { width: 2.6rem; height: 2.6rem; }
+.e2-teams-dl__ico svg { width: 100%; height: 100%; }
+html body .e2-alt .e2-teams-dl__titel { margin: 0 !important; color: #fff !important; font-family: var(--font-serif); font-size: 1.35rem !important; font-weight: 700; line-height: 1.25; }
+.e2-teams-dl__knopf { display: inline-flex; padding: .95rem 1.5rem; border-radius: 999px; background: #fff400; color: #1a1817 !important; font-weight: 600; font-size: .92rem; text-decoration: none; }
+html body .e2-alt .e2-teams-dl__tag { margin: 0 !important; font-size: .78rem !important; color: rgba(255,255,255,.55) !important; }
+
+/* Runde 38 · Download-Bereich überall auf Weiß (gleich auf allen Seiten) */
+html body .e2-alt.e2-alt section.pdf-dl-section { background: #fff !important; }
+.e2-faelle__raster--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1100px) { .e2-faelle__raster--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 960px) { .e2-faelle__raster--4 { grid-template-columns: minmax(0, 1fr); } }
+html body main .e2-alt.e2-alt.e2-alt .e2-fall-sonder__tag { color: #fff400 !important; opacity: 1; }   /* Label auf Schwarz gelb, wie „Zwischenergebnis“ */
+
+/* Runde 38 · FAQ/Akkordeon schlank (Daniel): keine Kästen, ruhige Zeilen mit Linie, kleiner Plus-Kreis – halbe Höhe */
+html body main .e2-alt.e2-alt .produkt-faq-list { gap: 0 !important; border-top: 1px solid #d9d5ce; }
+html body main .e2-alt.e2-alt .produkt-faq-item.produkt-faq-item { background: transparent !important; border: 0 !important; border-bottom: 1px solid #d9d5ce !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 !important; }
+html body main .e2-alt.e2-alt .produkt-faq-item summary { padding: 1.05rem 0 !important; font-size: .98rem !important; font-weight: 600; color: #1a1817 !important; }
+html body main .e2-alt.e2-alt .produkt-faq-item summary::after { width: 26px !important; height: 26px !important; background:
+    linear-gradient(#1a1817, #1a1817) center / 11px 1.6px no-repeat, linear-gradient(#1a1817, #1a1817) center / 1.6px 11px no-repeat, #fff400 !important; }
+html body main .e2-alt.e2-alt .produkt-faq-item :is(p, ul, .formate-acc-body) { padding: 0 2.6rem 1.2rem 0 !important; margin: 0 !important; font-size: .93rem !important; line-height: 1.65 !important; color: #3d3a37 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.e2-faelle { background: var(--e2-hell, #f3f1ee) !important; }   /* Beispiele überall auf Hellgrau, weiße Karten */
+
+/* Runde 38 · Vorschau (PowerPoint, Landingpage, Roll-up): Text links, Karte rechts – wie „Alles greift ineinander“; Karte weiß auf der Farbfläche */
+html body main .e2-alt.e2-alt.e2-alt .produkt-vorschau:not(.produkt-vorschau--split) > .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
+html body main .e2-alt.e2-alt.e2-alt .produkt-vorschau:not(.produkt-vorschau--split) .produkt-section-head { margin: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt .produkt-vorschau:not(.produkt-vorschau--split) .produkt-vorschau-card { margin: 0 !important; max-width: none !important; width: 100%; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-vorschau-card .media-box,
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-vorschau-card :is(.media-box-thumb, .media-box-footer) { background: #fff !important; border: 0 !important; box-shadow: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-vorschau-card .media-box { border-radius: 22px !important; overflow: hidden; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-vorschau-card .media-box-thumb { aspect-ratio: 1.5; height: auto !important; display: grid !important; place-items: center; padding: 1.8rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-vorschau-card .media-box-thumb svg { width: 100% !important; height: 100% !important; max-height: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-vorschau-card .media-box-footer { display: flex !important; flex-direction: column; align-items: stretch; gap: 1rem; padding: 0 1.75rem 1.75rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-vorschau-card .media-box-title { color: #1a1817 !important; font-family: var(--font-serif) !important; font-weight: 700 !important; font-size: 1.45rem !important; }
+@media (max-width: 900px) { html body main .e2-alt.e2-alt.e2-alt .produkt-vorschau:not(.produkt-vorschau--split) > .container { grid-template-columns: 1fr; gap: 2.2rem; } }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-vorschau-card .media-box-footer > * { margin: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-vorschau-card .media-box-footer > .btn { padding: .95rem 1.2rem !important; width: 100%; justify-content: center; }
+html body .e2-alt .e2-teams-dl__text { margin: -.4rem 0 .2rem !important; font-size: .92rem !important; line-height: 1.6 !important; color: rgba(255,255,255,.75) !important; }
+button.e2-teams-dl__knopf { border: 0; cursor: pointer; font-family: inherit; }
+/* MES „Alles greift ineinander“: Karte kleiner (Daniel) – sie zeigt nur, dass es etwas zum Ansehen gibt */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--dashboard-digitales-marketing .vorschau-split-card { max-width: 25rem; justify-self: end; width: 100%; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--dashboard-digitales-marketing .vorschau-split-card .media-box-title { font-size: 1.2rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--dashboard-digitales-marketing .vorschau-split-grid:has(.e2-teams-dl__kasten) .vorschau-split-card { max-width: none; }
+/* Runde 38 · schwarze Hinweis-Kästen (MES, sofort sichtbar): Label gelb, Symbol gelb ohne Kachel – wie alle Labels auf Schwarz */
+html body main .e2-alt.e2-alt.e2-alt .usp-highlight .usp-highlight-kicker { color: #fff400 !important; opacity: 1 !important; }
+html body main .e2-alt.e2-alt.e2-alt .usp-highlight .usp-highlight-icon { background: transparent !important; border: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt .usp-highlight .usp-highlight-icon :is(svg, use) { color: #fff400 !important; stroke: #fff400 !important; width: 2.2rem; height: 2.2rem; }
+/* Runde 38 · sofort sichtbar: Logo als Kicker (größer, ohne Strich), Original-Mockup im Kopf */
+html body .e2-alt .e2-kicker.e2-kicker--logo::before { display: none !important; }
+html body .e2-alt .e2-kicker.e2-kicker--logo { padding-left: 0 !important; }
+html body .e2-alt .e2-kicker--logo img { height: 1.05rem; width: auto; display: block; }
+.e2-kopfbild--foto img { width: 100%; height: auto; display: block; }
+@media (max-width: 900px) { .e2-kopfbild--foto { max-width: 26rem; } }
+/* Runde 38 · MES-Pakete wie alle Preiskarten: Hellgrau, die empfohlene in Gelb (wie KI-Formate, sofort sichtbar) */
+html body .e2-alt .e2-paket { background: #f3f1ee; border: 0; }
+html body .e2-alt .e2-paket--top { background: #fff400; color: #1a1817; }
+html body .e2-alt .e2-paket--top .e2-paket__badge { color: #1a1817 !important; }
+html body .e2-alt .e2-paket--top ul { border-top-color: rgba(26,24,23,.18); }
+html body .e2-alt .e2-paket ul { border-top-color: #dcd8d1; }
+html body .e2-alt .e2-paket--top .e2-paket__mehr { background: #1a1817; color: #fff; }
+html body main .e2-alt.e2-alt.e2-alt .e2-paket--top li::before { background: #1a1817 !important; }
+
+/* Runde 38 · Vorteils-Reihen ohne Überschrift (Video, Der beste Workshop, PowerPoint …): kein Kastenfeld, sondern ein ruhiges Band –
+   drei Punkte nebeneinander mit Linie oben, wie die Fakten-Zeilen der Volksfest-Seite */
+html body main .e2-alt.e2-alt.e2-alt section.produkt-grid:not(:has(.produkt-section-head)):not(.produkt-pricing) { padding-top: 4.5rem !important; padding-bottom: 4.5rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(:has(.produkt-section-head)):not(.produkt-pricing) .produkt-glass { background: transparent !important; border: 0 !important; border-top: 1.5px solid #1a1817 !important; border-radius: 0 !important; box-shadow: none !important; padding: 1.4rem 0 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(:has(.produkt-section-head)):not(.produkt-pricing) .produkt-grid-cards { column-gap: 3rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(:has(.produkt-section-head)):not(.produkt-pricing) .feature-icon { display: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(:has(.produkt-section-head)):not(.produkt-pricing) h3 { font-size: 1.5rem !important; margin: 0 0 .5rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(:has(.produkt-section-head)):not(.produkt-pricing) p { font-size: .98rem !important; color: #1a1817 !important; opacity: .85; }
+/* … und genauso in allen gelben Ansatz-Streifen mit Überschrift: Punkte mit Linie statt weißer Kästen (wie 1:1 Sparring „Ein Gegenüber“) */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(.produkt-pricing):not(.e2-pakete) .produkt-grid-cards > .produkt-glass { background: transparent !important; border: 0 !important; border-top: 1.5px solid #1a1817 !important; border-radius: 0 !important; box-shadow: none !important; padding: 1.4rem 0 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(.produkt-pricing):not(.e2-pakete) .produkt-grid-cards { column-gap: 3rem !important; row-gap: 2.6rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(.produkt-pricing):not(.e2-pakete) .produkt-grid-cards .feature-icon { width: 2rem !important; height: 2rem !important; margin: 0 0 1rem !important; background: none !important; padding: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(.produkt-pricing):not(.e2-pakete) .produkt-grid-cards .feature-icon :is(svg, use) { width: 2rem !important; height: 2rem !important; color: #1a1817 !important; stroke: #1a1817 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(.produkt-pricing):not(.e2-pakete) .produkt-grid-cards h3 { font-size: 1.3rem !important; margin: 0 0 .5rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid:not(.produkt-pricing):not(.e2-pakete) .produkt-grid-cards p { font-size: .95rem !important; line-height: 1.6 !important; color: #1a1817 !important; opacity: .85; }
+@media (max-width: 600px) { .e2-phasen { grid-template-columns: minmax(0, 1fr) !important; gap: .6rem; } .e2-phasen li { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: .9rem; padding: 1rem 1.1rem; } .e2-phasen li::after { display: none !important; } .e2-phasen small { flex-basis: 100%; padding-left: 2.9rem; } }
+
+/* Runde 39 · Preise als Post-Karten (wie Social Media auf der Volksfest-Seite): weiß – Farbfläche – weiß */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.e2-posts-sek { background: #fff !important; }
+.e2-posts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto; column-gap: 1.4rem; margin-top: 3rem; }
+.e2-post { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; background: #fff; border: 1px solid #e4e0db; border-radius: 18px; overflow: hidden; }
+.e2-post__kopf { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .95rem 1.2rem; }
+.e2-post__kopf span { font-size: .84rem; font-weight: 600; color: #1a1817; }
+.e2-post__kopf em { font-style: normal; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: #1a1817; color: #fff; padding: .35rem .7rem; border-radius: 999px; white-space: nowrap; }
+.e2-post__bild { display: flex; flex-direction: column; justify-content: space-between; min-height: 20rem; padding: 1.5rem 1.5rem 1.6rem; background: #f3f1ee; color: #1a1817; }
+.e2-post--top .e2-post__bild { background: #fff400; }
+.e2-post__bild small { font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.e2-post__unten { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
+.e2-post__unten b { display: block; font-family: var(--font-serif); font-size: 2rem; font-weight: 700; line-height: 1.1; letter-spacing: -.01em; }
+.e2-post__preis { display: block; margin-top: .55rem; font-family: var(--font-serif); font-size: 1.45rem; font-weight: 700; }
+.e2-post__ico { flex: 0 0 auto; width: 3.6rem; height: 3.6rem; color: #1a1817; }
+.e2-post__text { padding: 1.1rem 1.2rem 1.3rem; }
+html body .e2-alt .e2-post__text p { margin: 0 !important; font-size: .9rem !important; line-height: 1.55 !important; color: #3d3a37 !important; }
+.e2-post__text ul { list-style: none; margin: .8rem 0 0; padding: .8rem 0 0; border-top: 1px solid #ece9e5; display: grid; gap: .35rem; }
+.e2-post__text li { position: relative; padding-left: 1.2rem; font-size: .84rem; line-height: 1.45; color: #1a1817; }
+.e2-post__text li::before { content: ""; position: absolute; left: 0; top: .5rem; width: .4rem; height: .4rem; border-radius: 50%; background: #1a1817; }
+.e2-posts__fuss { margin-top: 1.6rem !important; }
+@media (max-width: 960px) { .e2-posts { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; row-gap: 1.2rem; max-width: 30rem; } .e2-post { grid-row: auto; grid-template-rows: none; display: flex; flex-direction: column; } .e2-post__bild { min-height: 15rem; } }
+.e2-post__kopf span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: .8rem; }
+.e2-post__bild { min-height: 16.5rem; }
+.e2-post__preis { font-size: 1.7rem; }
+
+/* Runde 41 · Post-Karten Variante B: Farbe trägt alles, oben und unten nur ein dünner weißer Streifen */
+.e2-post--b .e2-post__kopf { padding: .7rem 1.1rem; }
+.e2-post--b .e2-post__bild { min-height: 0; justify-content: flex-start; gap: 2.4rem; padding: 1.4rem 1.5rem 1.6rem; }
+.e2-post__oben { display: flex; justify-content: space-between; align-items: flex-start; }
+.e2-post--b .e2-post__ico { width: 3rem; height: 3rem; }
+.e2-post__name { display: block; font-family: var(--font-serif); font-size: 2rem; font-weight: 700; line-height: 1.1; }
+html body .e2-alt .e2-post__desc { margin: 1.1rem 0 0 !important; font-size: .92rem !important; line-height: 1.55 !important; color: #1a1817 !important; }
+.e2-post--b ul { list-style: none; margin: 1rem 0 0; padding: 1rem 0 0; border-top: 1px solid rgba(26,24,23,.18); display: grid; gap: .4rem; }
+.e2-post--b li { position: relative; padding-left: 1.2rem; font-size: .86rem; line-height: 1.45; color: #1a1817; }
+.e2-post--b li::before { content: ""; position: absolute; left: 0; top: .5rem; width: .4rem; height: .4rem; border-radius: 50%; background: #1a1817; }
+.e2-post__fuss { display: block; padding: .8rem 1.1rem; font-size: .84rem; font-weight: 600; color: #1a1817 !important; text-decoration: none; }
+.e2-post__fuss:hover { text-decoration: underline; }
+@media (max-width: 600px) { .e2-post__kopf span { white-space: normal; overflow: visible; } }
+/* Runde 42 · Post-Karten: Einheit, Hinweis, Knopf im Fuß */
+.e2-post__preis small { font-family: var(--font-sans, Poppins, sans-serif); font-size: .8rem; font-weight: 500; margin-left: .2rem; }
+html body .e2-alt .e2-post__text .e2-post__hinweis { margin-top: .8rem !important; font-size: .78rem !important; line-height: 1.45 !important; color: #8a847c !important; }
+.e2-post__text { display: flex; flex-direction: column; }
+.e2-post__mehr { margin-top: auto; align-self: flex-start; padding: 1rem 0 0; border: 0; background: none; cursor: pointer; font: 600 .86rem/1 var(--font-sans, Poppins, sans-serif); color: #1a1817; }
+.e2-post__mehr:hover { text-decoration: underline; }
+.e2-post, .e2-post__unten > div, .e2-post__text { min-width: 0; }
+.e2-post__unten b { font-size: clamp(1.5rem, 2.2vw, 2rem); overflow-wrap: anywhere; hyphens: auto; }
+.e2-post__unten b { font-size: 1.7rem !important; hyphens: manual !important; overflow-wrap: normal !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .e2-medien-ico svg { width: 5.5rem !important; height: 5.5rem !important; filter: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .e2-medien-ico { display: grid !important; place-items: center; }
+.e2-fall { min-width: 0; } .e2-fall h3 { overflow-wrap: break-word; hyphens: auto; }
+
+/* Feedback 10.10. · Teams befähigen: Inhalte als Post-Karten, Ablauf als gelbes Band mit Zeitstrahl */
+.e2-posts--bausteine { margin-top: 3.4rem; }
+.e2-post--baustein .e2-post__bild { min-height: 14rem; }
+.e2-post--baustein .e2-post__unten b { font-size: 1.55rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.e2-zeitstrahl { background: #fff400 !important; }
+.e2-zs { list-style: none; margin: 3.4rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); position: relative; }
+.e2-zs::before { content: ""; position: absolute; left: 0; right: 0; top: .55rem; height: 2px; background: #1a1817; }
+.e2-zs li { position: relative; display: flex; flex-direction: column; gap: .35rem; padding-right: 1.5rem; }
+.e2-zs__punkt { width: 1.1rem; height: 1.1rem; border-radius: 50%; background: #1a1817; border: 3px solid #fff400; box-shadow: 0 0 0 2px #1a1817; margin-bottom: 1.4rem; position: relative; z-index: 1; }
+.e2-zs li:last-child .e2-zs__punkt { width: 1.4rem; height: 1.4rem; margin-top: -.15rem; }
+.e2-zs__nr { font-size: .74rem; font-weight: 700; letter-spacing: .16em; color: #1a1817; }
+.e2-zs b { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; line-height: 1.15; color: #1a1817; }
+.e2-zs small { font-size: .95rem; color: #1a1817; opacity: .8; }
+.e2-zs__fuss { margin-top: 2.8rem !important; }
+.e2-zs__knopf { display: inline-flex; padding: .95rem 1.5rem; border-radius: 999px; border: 0; background: #1a1817; color: #fff; font: 600 .95rem/1 var(--font-sans, Poppins, sans-serif); cursor: pointer; }
+html body .e2-alt .e2-zeitstrahl .lead { color: #1a1817 !important; }
+@media (max-width: 900px) {
+  .e2-zs { grid-template-columns: 1fr; row-gap: 1.6rem; padding-left: 2rem; }
+  .e2-zs::before { left: .5rem; right: auto; top: .3rem; bottom: .3rem; width: 2px; height: auto; }
+  .e2-zs li { padding: 0; }
+  .e2-zs__punkt { position: absolute; left: -2rem; top: .1rem; margin: 0; }
+}
+.e2-zs li:last-child .e2-zs__punkt { width: 1.1rem; height: 1.1rem; margin-top: 0; }
+.e2-post--baustein .e2-post__unten b { font-size: 1.4rem !important; hyphens: auto !important; overflow-wrap: break-word !important; }
+.e2-post--baustein .e2-post__ico { width: 3rem; height: 3rem; }
+.e2-post--baustein .e2-post__unten b { hyphens: manual !important; }
+@media (max-width: 600px) { .e2-post--baustein .e2-post__unten b { font-size: 1.25rem !important; } .e2-post__unten b { font-size: 1.5rem !important; } }
+
+/* Runde 43 (Daniel): mobil das Kopfbild klein rechts neben der Unterzeile (Kicker) – statt groß oben links */
+@media (max-width: 960px) {
+  html body.e2 .e2-kopf__raster:has(> .e2-kopfbild) { position: relative; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild:not(.e2-kopfbild--foto) { position: absolute !important; top: -.85rem; right: var(--pad-x, 20px); margin: 0 !important; max-width: 5.5rem; width: auto !important; z-index: 1; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild .e2-bild--mobil { height: 2.6rem !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen .e2-bild--zeichen { height: 2.4rem !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild .hero-anlaesse { display: none !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--foto { display: none !important; }
+  html body.e2 .e2-kopf__text > .e2-kicker { padding-right: 6rem; min-height: 2.6rem; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild .e2-bild--mobil, html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen .e2-bild--zeichen { max-width: 5.5rem; width: auto; }
+}
+/* Startseite mobil: Doppelpfeil klein rechts oben, auf Höhe der ersten Überschriftenzeile */
+@media (max-width: 960px) {
+  html body.e2 .e2v-held__raster { position: relative; }
+  html body.e2 .e2v-held__raster .e2v-held__pfeil.e2v-held__pfeil { position: absolute; top: .5rem; right: var(--pad-x, 20px); width: 3.4rem !important; margin: 0 !important; }
+  html body.e2 .e2v-held__text-oben h1 { padding-right: 4rem; }
+}
+
+/* Runde 44 (Daniel): mobil kleine Kopfbilder nur auf Strategiehandwerk-Seiten und der Startseite */
+@media (max-width: 960px) {
+  html body.e2 .e2-alt:not(:is(.e2-seite--strategie, .e2-seite--strategie-2, .e2-seite--komplexe-themen, .e2-seite--innovation, .e2-seite--teams)) .e2-kopf__raster > .e2-kopfbild { display: none !important; }
+  html body.e2 .e2-alt:not(:is(.e2-seite--strategie, .e2-seite--strategie-2, .e2-seite--komplexe-themen, .e2-seite--innovation, .e2-seite--teams)) .e2-kopf__text > .e2-kicker { padding-right: 0; min-height: 0; }
+}
+/* Startseite mobil: früher anfangen, ein Absatz, Knöpfe nebeneinander, Logos dichter – damit der gelbe Streifen schon im ersten Bild auftaucht */
+@media (max-width: 600px) {
+  html body.e2 section.e2v-held { padding-top: 40px !important; padding-bottom: 36px !important; }
+  html body.e2 .e2v-held__text p + p { display: none !important; }
+  html body.e2 .e2v-held__text p { font-size: 1.05rem !important; line-height: 1.6 !important; }
+  html body.e2 .e2v-held__knoepfe { display: grid !important; grid-template-columns: 1fr 1fr; gap: .6rem !important; margin-top: 1.6rem !important; }
+  html body.e2 .e2v-held__knoepfe .e2-knopf { width: auto !important; padding-left: .8rem !important; padding-right: .8rem !important; font-size: .9rem !important; min-height: 3rem; justify-content: center; }
+  html body.e2 .e2v-held__knoepfe .e2-knopf .e2-pfeil { display: none; }
+  html body.e2 section.e2v-held .e2-logos { margin-top: 2.2rem !important; padding-top: 0 !important; border-top: 0 !important; }
+}
+@media (max-width: 600px) { html body.e2 .e2v-held__knoepfe .e2-knopf { white-space: nowrap; font-size: .86rem !important; padding-left: .5rem !important; padding-right: .5rem !important; } }
+/* iPad hochkant & mobil (Daniel 10.10.): Kopftext bündig links an der Satzkante, Themen-Zeichen größer */
+@media (max-width: 960px) {
+  html body.e2 .e2-kopf__raster:has(.e2-kopfbild--zeichen) { align-items: stretch !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen { max-width: none !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen .e2-bild--zeichen { height: 3.4rem !important; max-width: none !important; width: auto !important; }
+  html body.e2 .e2-kopf__text > .e2-kicker { padding-right: 7rem; }
+}
+@media (min-width: 601px) and (max-width: 960px) {
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen .e2-bild--zeichen { height: 4.6rem !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen { top: -1.4rem !important; }
+  html body.e2 .e2v-held__raster .e2v-held__pfeil.e2v-held__pfeil { width: 5.6rem !important; }
+}
+@media (max-width: 600px) {
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen .e2-bild--zeichen { height: 2.7rem !important; }
+  html body.e2 .e2-kopf__raster > .e2-kopfbild--zeichen { right: 20px !important; }
+}
+/* Daniel 10.10.: Doppelpfeil der Startseite kleiner – er soll nicht alles erschlagen */
+@media (min-width: 961px) { html body.e2 .e2v-held__raster .e2v-held__pfeil.e2v-held__pfeil { width: min(100%, 14rem) !important; justify-self: center; } }
+/* Daniel 10.10.: Doppelpfeil der Startseite exakt so groß wie das Zeichen auf „Strategie in den Alltag überführen“ (gleiche Höhe je Breite) */
+html body.e2 .e2v-held__raster .e2v-held__pfeil.e2v-held__pfeil { width: auto !important; }
+html body.e2 .e2v-held__raster .e2v-held__pfeil svg { width: auto !important; height: 12rem !important; }
+@media (max-width: 960px) { html body.e2 .e2v-held__raster .e2v-held__pfeil svg { height: 4.6rem !important; } }
+@media (max-width: 600px) { html body.e2 .e2v-held__raster .e2v-held__pfeil svg { height: 2.7rem !important; } }
+
+/* Daniel 10.10. · Kundenlogos mobil: eine Reihe, die ausläuft + „Alle Referenzen ansehen“ (schwarzes Fenster) – Desktop unverändert */
+.e2-ref-knopf { display: none; }
+@media (max-width: 640px) {
+  html body.e2 main .marquee.e2-ref-reihe { padding-block: 6px 0 !important; overflow: hidden !important;
+    -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent); mask-image: linear-gradient(90deg, #000 70%, transparent); }
+  html body.e2 main .e2-ref-reihe .marquee-viewport { overflow: hidden !important; }
+  html body.e2 main .e2-ref-reihe .marquee-track { display: flex !important; flex-wrap: nowrap !important; grid-template-columns: none !important; gap: 0 26px !important; align-items: center; width: max-content !important; transform: none !important; }
+  html body.e2 main .e2-ref-reihe .marquee-track img { display: block !important; max-height: 20px !important; width: auto !important; flex: 0 0 auto; order: 0 !important; }
+  html body.e2 main .e2-ref-reihe .marquee-track img:nth-child(n+9) { display: none !important; }
+  .e2-ref-knopf { display: inline-flex; gap: .35rem; margin: 1.1rem 0 1.8rem; padding: 0; border: 0; background: none; cursor: pointer;
+    font: 600 .9rem/1 var(--font-sans, Poppins, sans-serif); color: #1a1817; text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1.5px; }
+}
+.e2-ref-dialog { border: 0; padding: 2.2rem 1.6rem 1.8rem; width: min(92vw, 34rem); max-height: 86vh; border-radius: 22px; background: #1a1817; color: #fff; }
+.e2-ref-dialog::backdrop { background: rgba(26,24,23,.55); }
+.e2-ref-dialog__zu { position: absolute; top: .8rem; right: 1rem; border: 0; background: none; color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.e2-ref-dialog__kicker { display: flex; align-items: center; gap: .6rem; margin: 0; font: 700 .72rem/1 var(--font-sans, Poppins, sans-serif); letter-spacing: .16em; text-transform: uppercase; color: #fff400; }
+.e2-ref-dialog__kicker::before { content: ""; width: 1.4rem; height: 2px; background: #fff400; }
+.e2-ref-dialog h3 { margin: .7rem 0 1.4rem; font-family: var(--font-serif, Lora, serif); font-size: 1.45rem; line-height: 1.2; color: #fff; }
+.e2-ref-dialog__raster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
+.e2-ref-dialog__raster span { display: grid; place-items: center; height: 4.4rem; padding: .8rem; border-radius: 12px; background: #fff; }
+.e2-ref-dialog__raster img { max-width: 100%; max-height: 2.2rem; width: auto; height: auto; }
+.e2-ref-knopf { text-decoration: none !important; } .e2-ref-knopf { border-bottom: 1.5px solid #1a1817 !important; padding-bottom: .2rem !important; } .e2-ref-knopf span { margin-left: .1rem; }
+/* Daniel 10.10.: Hinweis dezenter – klein, grau, ohne Linie; Schließen-Kreuz ohne blauen Fokusrahmen */
+@media (max-width: 640px) {
+  html body.e2 .e2-ref-knopf.e2-ref-knopf { font-size: .74rem !important; font-weight: 500 !important; color: #8a847c !important; border: 0 !important; padding: 0 !important; margin-top: .7rem !important; letter-spacing: .01em; text-decoration: none !important; }
+}
+.e2-ref-dialog__zu:focus, .e2-ref-dialog__zu:focus-visible, .e2-ref-dialog:focus, .e2-ref-dialog:focus-visible { outline: none !important; box-shadow: none !important; }

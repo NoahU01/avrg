@@ -1,0 +1,42 @@
+/* empiria 2.0 · Kontakt (Startseite unten + Kontaktseite) in der durchgängigen Designsprache (Daniel 10.10.2026).
+   Aufbau und Positionen bleiben; angeglichen werden Schrift, Highlight, Kicker und Knöpfe an den Kopf der Startseite. */
+.kontakt-standalone .kicker, .kontakt-standalone .e2-kicker {
+  display: flex !important; align-items: center; gap: .75rem; margin: 0 0 1.1rem !important;
+  font-family: 'Poppins', system-ui, sans-serif !important; font-size: .8rem !important; font-weight: 700 !important;
+  letter-spacing: .14em !important; text-transform: uppercase; color: #1a1817 !important; }
+.kontakt-standalone .kicker > span[style] { display: none !important; }
+.kontakt-standalone .kicker::before, .kontakt-standalone .e2-kicker::before { content: ""; width: 1.6rem; height: 2px; background: #1a1817; flex: 0 0 auto; }
+.kontakt-standalone :is(h1, h2).h-serif {
+  font-family: 'Lora', Georgia, serif !important; font-weight: 700 !important; letter-spacing: -.02em !important;
+  line-height: 1.2 !important; color: #1a1817 !important; }
+.kontakt-standalone :is(h1, h2) .hl {
+  font-weight: 700 !important; background: #fff400 !important; background-image: none !important; color: #1a1817 !important;
+  padding: 0 .12em .07em !important; margin-left: 0 !important; border-radius: .14em !important; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.kontakt-standalone .lead { font-weight: 300 !important; color: #3d3a37 !important; font-size: 1.2rem !important; line-height: 1.6 !important; margin-top: 1.8rem !important; }
+.kontakt-standalone .kontakt-standalone-note { font-weight: 600 !important; color: #1a1817 !important; }
+.kontakt-standalone .ks-pill { background: #1a1817 !important; border-color: #1a1817 !important; color: #fff !important; font-size: .98rem !important; font-weight: 600 !important; }
+.kontakt-standalone .ks-pill--ghost { background: transparent !important; color: #1a1817 !important; border: 1.5px solid #1a1817 !important; }
+.kontakt-standalone .ks-pill-icon :is(svg, use) { color: currentColor !important; }
+
+/* Kundenlogos mobil im Kontaktbereich wie im Kopf: eine auslaufende Reihe + „Alle Referenzen ansehen“ (referenzen.js) */
+.e2-ref-knopf { display: none; }
+@media (max-width: 640px) {
+  .ks-marquee.e2-ref-reihe { padding: 6px 0 0 !important; overflow: hidden !important; margin-top: 1.8rem !important;
+    -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent); mask-image: linear-gradient(90deg, #000 70%, transparent); }
+  .ks-marquee.e2-ref-reihe .marquee-viewport { overflow: hidden !important; }
+  .ks-marquee.e2-ref-reihe .marquee-track { display: flex !important; flex-wrap: nowrap !important; grid-template-columns: none !important; gap: 0 26px !important; align-items: center; width: max-content !important; transform: none !important; }
+  .ks-marquee.e2-ref-reihe .marquee-track img { display: block !important; max-height: 20px !important; width: auto !important; flex: 0 0 auto; order: 0 !important; }
+  .ks-marquee.e2-ref-reihe .marquee-track img:nth-child(n+9) { display: none !important; }
+  .kontakt-standalone .e2-ref-knopf { display: inline-flex; gap: .35rem; margin: .7rem 0 1.4rem; padding: 0; border: 0; background: none; cursor: pointer;
+    font: 500 .74rem/1 'Poppins', system-ui, sans-serif; color: #8a847c; letter-spacing: .01em; }
+}
+.e2-ref-dialog { border: 0; padding: 2.2rem 1.6rem 1.8rem; width: min(92vw, 34rem); max-height: 86vh; border-radius: 22px; background: #1a1817; color: #fff; }
+.e2-ref-dialog::backdrop { background: rgba(26,24,23,.55); }
+.e2-ref-dialog__zu { position: absolute; top: .8rem; right: 1rem; border: 0; background: none; color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.e2-ref-dialog__zu:focus, .e2-ref-dialog__zu:focus-visible, .e2-ref-dialog:focus, .e2-ref-dialog:focus-visible { outline: none !important; box-shadow: none !important; }
+.e2-ref-dialog__kicker { display: flex; align-items: center; gap: .6rem; margin: 0; font: 700 .72rem/1 'Poppins', system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: #fff400; }
+.e2-ref-dialog__kicker::before { content: ""; width: 1.4rem; height: 2px; background: #fff400; }
+.e2-ref-dialog h3 { margin: .7rem 0 1.4rem; font-family: 'Lora', Georgia, serif; font-weight: 700; font-size: 1.45rem; line-height: 1.2; color: #fff; }
+.e2-ref-dialog__raster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
+.e2-ref-dialog__raster span { display: grid; place-items: center; height: 4.4rem; padding: .8rem; border-radius: 12px; background: #fff; }
+.e2-ref-dialog__raster img { max-width: 100%; max-height: 2.2rem; width: auto; height: auto; }

@@ -1,0 +1,48 @@
+/* Landingpage AVRG · Variante 1 – Kopfzeile und Aufmacher 1:1 im Aufbau der
+   bestehenden Landingpages von Sandra Hild (sv-owen.sofortsichtbar.de/bauherren):
+   Kopf 74 px, Inhalt 960 px breit, Foto über die volle Breite, Text mittig oben,
+   Ubuntu Regular, ein roter Knopf. Gemessen am Original (1440 und 390 px). */
+
+.lp1-kopf{position:sticky;top:0;z-index:20;background:#fff;height:74px}
+.lp1-kopf .lp1-wrap{display:flex;align-items:center;height:74px}
+.lp1-wrap{max-width:960px;margin:0 auto;padding:0 20px;box-sizing:content-box}
+.lp1-logo{display:block;margin-right:auto}
+.lp1-logo img{width:120px;height:30px;display:block}
+.lp1-nav{display:flex;align-items:center}
+.lp1-nav a{display:block;width:90px;text-align:center;font:400 14px/36px 'Ubuntu',sans-serif;color:#171717;text-decoration:none;border-radius:4px}
+.lp1-nav a:hover{color:#ed1c1c}
+.lp1-nav .lp1-cta{width:auto;margin-left:19px;padding:0 24px;height:44px;line-height:44px;font-size:13px;color:#fff;background:#ed1c1c;border-radius:99px}
+.lp1-nav .lp1-cta:hover{color:#fff;background:#c8141b}
+.lp1-burger{display:none;appearance:none;border:0;background:none;padding:0;width:24px;height:24px;cursor:pointer;color:#000}
+.lp1-burger svg{width:24px;height:24px;display:block}
+
+.lp1-held{position:relative;height:max(600px,44vw);overflow:hidden;background:#8a8a6a}
+/* Wie im Original: Foto beginnt direkt unter der weißen Kopfzeile und füllt den ganzen Aufmacher.
+   Nur ein leichter heller Schleier hinter dem Text, damit die schwarze Schrift auf dem Laub lesbar bleibt. */
+.lp1-held__bild{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.lp1-held::before{content:"";position:absolute;inset:0 0 auto;height:58%;z-index:1;background:linear-gradient(180deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.5) 55%,rgba(255,255,255,0) 100%)}
+.lp1-held__text{position:relative;z-index:2;max-width:836px;margin:0 auto;padding:62px 20px 0;text-align:center}
+.lp1-held h1{font:400 56px/73px 'Ubuntu',sans-serif;color:#000;letter-spacing:0;margin:0}
+.lp1-held p{font:400 17px/29px 'Ubuntu',sans-serif;color:#000;max-width:774px;margin:4px auto 0}
+.lp1-held .lp1-knopf{display:inline-flex;align-items:center;justify-content:center;width:218px;height:54px;margin-top:28px;border-radius:999px;background:#ed1c1c;color:#fff;font:400 13px 'Ubuntu',sans-serif;text-decoration:none}
+.lp1-held .lp1-knopf:hover{background:#c8141b}
+
+@media (max-width:1000px){
+  .lp1-held h1{font-size:44px;line-height:58px}
+}
+@media (max-width:760px){
+  .lp1-kopf,.lp1-kopf .lp1-wrap{height:66px}
+  .lp1-wrap{padding:0 35px}
+  .lp1-logo img{width:85px;height:21px}
+  .lp1-burger{display:block}
+  .lp1-nav{display:none;position:absolute;left:0;right:0;top:66px;background:#fff;flex-direction:column;align-items:stretch;padding:8px 35px 24px;box-shadow:0 12px 20px -12px rgba(0,0,0,.2)}
+  .lp1-kopf.ist-offen .lp1-nav{display:flex}
+  .lp1-nav a{width:auto;text-align:left;line-height:44px;font-size:16px}
+  .lp1-nav .lp1-cta{margin:10px 0 0;text-align:center;font-size:14px}
+  .lp1-held{height:620px}
+  .lp1-held__bild{object-position:50% 100%}
+  .lp1-held__text{padding:41px 42px 0}
+  .lp1-held h1{font-size:24px;line-height:29px}
+  .lp1-held p{font-size:14px;line-height:19.5px;font-weight:300;margin-top:11px}
+  .lp1-held .lp1-knopf{width:208px;height:51px;font-size:14px;margin-top:22px}
+}

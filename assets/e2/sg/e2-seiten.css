@@ -1,0 +1,393 @@
+/* ==========================================================================
+   empiria 2.0 – Unterseiten (Strategiehandwerk, Workshops)
+   Der Originalinhalt bleibt vollständig erhalten; hier wird er in die Wagenpaten-Klarheit übersetzt:
+   gleiche Satzbreite, klare Abschnittsfolge Weiß · Grau · Gelb · Schwarz, Kästen mit 18px Radius,
+   Überschriften ohne Hervorhebung (nur im Kopf), Kicker mit Strich. Alles unter .e2-alt.
+   ========================================================================== */
+.e2-alt { --e2-gelb: #fff400; --e2-ink: #1a1817; --e2-ink-2: #3d3a37; --e2-grau: #6f6a64; --e2-hell: #f4f3f0; --e2-linie: #e7e4df; --e2-r: 18px; }
+.e2-alt .container { max-width: 76rem; padding-left: 2rem; padding-right: 2rem; }
+.e2-alt .reveal { opacity: 1 !important; transform: none !important; }
+.e2-alt .watermark { display: none; }
+
+/* Typografie */
+.e2-alt .kicker, .e2-alt .pdf-dl-kicker { display: inline-flex !important; align-items: center; gap: .55rem; margin: 0 0 1.1rem; font-size: .8rem !important; font-weight: 700 !important; letter-spacing: .14em; text-transform: uppercase; color: var(--e2-ink); text-align: left !important; }
+.e2-alt .kicker::before, .e2-alt .pdf-dl-kicker::before { content: ""; width: 1.4rem; height: 3px; border-radius: 2px; background: currentColor; }
+.e2-alt h2.h-serif, .e2-alt .pdf-dl-h { font-family: var(--font-serif); font-weight: 700; font-size: clamp(2.1rem, 4.2vw, 3.3rem) !important; line-height: 1.06 !important; letter-spacing: -.02em; max-width: 22ch; }
+.e2-alt .lead { font-size: 1.12rem; line-height: 1.62; color: var(--e2-ink-2); }
+.e2-alt .section--dark .lead, .e2-alt .section--dark p { color: #d8d3cc; }
+.e2-alt .section--dark .kicker { color: var(--e2-gelb); }
+.e2-alt .btn { border-radius: 999px; padding: .85rem 1.35rem; font-weight: 600; }
+
+/* Abschnitte */
+.e2-alt .section, .e2-alt .produkt-section, .e2-alt .produkt-grid { padding-top: 6.5rem; padding-bottom: 6.5rem; }
+.e2-alt .section--grey { background: var(--e2-hell); }
+.e2-alt .section--dark { background: var(--e2-ink); }
+.e2-alt .leistung-simple-section--center .leistung-simple { text-align: left; margin-left: 0; max-width: 46rem; }
+.e2-alt .leistung-simple-section--center .leistung-simple .kicker { justify-content: flex-start; }
+
+/* Kopfbereich wie auf der Startseite: Überschrift links, Text rechts */
+.e2-alt .leistung-hero .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 3.5rem; align-items: end; }
+.e2-alt .leistung-hero .hero-head { text-align: left !important; justify-self: start; align-items: flex-start !important; }
+.e2-alt .leistung-hero .hero-head h1 { text-align: left !important; }
+.e2-alt .leistung-hero .hero-arrow { margin: 1.6rem 0 0 !important; width: clamp(3.4rem, 6vw, 5.2rem); justify-self: start; align-self: flex-start; }
+.e2-alt .leistung-hero .hero-copy p { font-size: 1.15rem; line-height: 1.62; color: var(--e2-ink-2); }
+.e2-alt .leistung-hero .hero-cta { display: flex; justify-content: flex-start; margin-top: 2.2rem; }
+.e2-alt .problem-head { text-align: left !important; }
+.e2-alt .problem-head .kicker { justify-content: flex-start; }
+.e2-alt h2.h-serif + .lead, .e2-alt h2.h-serif + p, .e2-alt .pdf-dl-h + .pdf-dl-lead { margin-top: 1.3rem !important; }
+.e2-alt .lead + .lead { margin-top: .9rem; }
+.e2-alt .hero.leistung-hero { padding: 5.5rem 0 3.5rem; background: #fff; }
+.e2-alt .leistung-hero h1, .e2-alt .produkt-hero h1 { font-size: clamp(2.8rem, 6vw, 5rem) !important; line-height: .97 !important; letter-spacing: -.02em; }
+.e2-alt h1 .hl { background: linear-gradient(transparent 58%, var(--e2-gelb) 58%, var(--e2-gelb) 92%, transparent 92%) !important; padding: 0 .06em !important; border-radius: 0 !important; color: inherit !important; box-shadow: none !important; }
+.e2-alt .hero-cta .btn { margin-top: .4rem; }
+.e2-alt .marquee { border-top: 1px solid var(--e2-linie); margin: 0 auto; max-width: 76rem; }
+
+/* Problem: Aussage links, schwarzer Kasten rechts */
+.e2-alt .problem-grid { align-items: center; gap: 4rem; }
+.e2-alt .problem-card { padding: 2.4rem !important; border-radius: var(--e2-r) !important; background: var(--e2-ink) !important; color: #fff !important; box-shadow: none !important; }
+.e2-alt .problem-card p { font-size: 1.08rem; line-height: 1.6; color: #e9e5df !important; }
+.e2-alt .problem-card p + p { margin-top: 1rem; }
+.e2-alt .problem-card li { color: #fff; }
+
+/* Listen in der Lösung als klare Zeilen */
+.e2-alt .leistung-lead-list { list-style: none; margin: 1.4rem 0; padding: 0; border-top: 1px solid var(--e2-linie); }
+.e2-alt .leistung-lead-list li { position: relative; padding: .8rem 0 .8rem 2rem; border-bottom: 1px solid var(--e2-linie); font-family: var(--font-serif); font-size: 1.25rem; color: var(--e2-ink); }
+.e2-alt .leistung-lead-list li::before { content: ""; position: absolute; left: 0; top: 1.15rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--e2-gelb); border: 2px solid var(--e2-ink); box-sizing: border-box; }
+.e2-alt .loesung-modell-card, .e2-alt .media-box { border-radius: var(--e2-r) !important; }
+
+/* Perspektivwechsel: gelbe Fläche */
+.e2-alt .perspektive { background: var(--e2-gelb); }
+.e2-alt .perspektive .pv-head { text-align: left; margin-left: 0; }
+.e2-alt .perspektive .pv-head .kicker { justify-content: flex-start; }
+.e2-alt .perspektive .pv-head h2, .e2-alt .perspektive .pv-head .lead { margin-left: 0; text-align: left; }
+.e2-alt .perspektive-browser { border-radius: var(--e2-r); box-shadow: 0 20px 50px rgba(26,24,23,.14); }
+.e2-alt .pb-mark { background: var(--e2-ink) !important; color: var(--e2-gelb) !important; }
+.e2-alt .pv-tag::before { background: var(--e2-ink) !important; }
+.e2-alt .pv-end { text-align: left; margin-left: 0; max-width: 46rem; }
+.e2-alt .pv-punch { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+
+/* Zusammenarbeit: offene Karten statt Akkordeon */
+.e2-alt .formate-grid { display: block; }
+.e2-alt .formate-head { max-width: 46rem; }
+.e2-alt .formate-accordion { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; margin-top: 3rem; }
+.e2-alt .formate-acc-item { margin: 0 !important; border: 0 !important; border-top: 5px solid var(--e2-ink) !important; border-radius: var(--e2-r) !important; background: #fff !important; padding: 1.9rem 1.7rem 1.7rem !important; box-shadow: none !important; }
+.e2-alt .formate-acc-item:nth-child(2) { border-top-color: var(--e2-gelb) !important; }
+.e2-alt .formate-acc-item:nth-child(3) { border-top-color: var(--e2-grau) !important; }
+.e2-alt .formate-acc-item summary { pointer-events: none; padding: 0 !important; background: none !important; list-style: none; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; line-height: 1.15; color: var(--e2-ink); }
+.e2-alt .formate-acc-item summary::-webkit-details-marker { display: none; }
+.e2-alt .formate-acc-item summary::after, .e2-alt .formate-acc-item summary::before { display: none !important; }
+.e2-alt .formate-acc-body { padding: 0 !important; margin-top: 1rem; }
+.e2-alt .formate-acc-body p { font-size: .97rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2-alt .formate-acc-body p + p { margin-top: .8rem; }
+.e2-alt section.formate:not(.section--grey) { background: var(--e2-hell); }
+
+/* Download: gelbe Karte */
+.e2-alt .pdf-dl-section { background: #fff; }
+.e2-alt .pdf-dl { border-radius: var(--e2-r) !important; background: var(--e2-ink) !important; box-shadow: none !important; }
+.e2-alt .pdf-dl::before, .e2-alt .pdf-dl::after { display: none !important; }
+.e2-alt .pdf-dl-btn { border-radius: 999px !important; background: var(--e2-gelb) !important; color: var(--e2-ink) !important; }
+.e2-alt .pdf-dl .pdf-dl-kicker { color: var(--e2-gelb); }
+.e2-alt .pdf-dl-h { color: #fff !important; }
+.e2-alt .pdf-dl-lead { color: #d8d3cc !important; }
+.e2-alt .pdf-dl-meta span { border-color: rgba(255,255,255,.3) !important; color: #fff !important; }
+
+/* Karten-Symbole (Weitere Leistungen) */
+.e2-karte__ico--einfach svg { position: static !important; width: 100% !important; height: 100% !important; }
+.e2-karte__bild--schwarz .e2-karte__ico--einfach { color: var(--e2-gelb); }
+
+/* Responsiv */
+@media (max-width: 960px) {
+  .e2-alt .leistung-hero .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .e2-alt .formate-accordion { grid-template-columns: minmax(0, 1fr); }
+  .e2-alt .section, .e2-alt .produkt-section, .e2-alt .produkt-grid { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+}
+@media (max-width: 600px) {
+  .e2-alt .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .e2-alt .hero.leistung-hero { padding: 3rem 0 2.5rem; }
+  .e2-alt .problem-card { padding: 1.8rem 1.4rem !important; }
+}
+
+/* Komplexe Themen: Stufen linksbündig, Nummern wie die Wagenpaten-Schritte, Zwischenergebnis als gelbes Band */
+.e2-alt .leistung-stufen-section .leistung-stufen-head { text-align: left; max-width: 46rem; margin: 0 0 4rem; }
+.e2-alt .leistung-stufen-section .leistung-stufen-head .kicker { justify-content: flex-start; }
+.e2-alt .stufen-timeline { max-width: 56rem; margin: 0; }
+.e2-alt .stl-icon { width: 3.4rem; height: 3.4rem; border: 0; border-radius: 14px; background: var(--e2-gelb); color: var(--e2-ink); font-size: 1.05rem; }
+.e2-alt .stl-icon:hover { background: var(--e2-ink); color: var(--e2-gelb); }
+.e2-alt .stl-marker::after { background: var(--e2-linie); top: 3.4rem; }
+.e2-alt .stufe-content h3 { margin-bottom: .9rem; }
+.e2-alt .stufe-content p + p { margin-top: .8rem; }
+.e2-alt .stufe-break--band { background: var(--e2-gelb); box-shadow: 0 0 0 100vmax var(--e2-gelb); text-align: left; max-width: none; margin-left: 0; }
+.e2-alt .stufe-break--band h3, .e2-alt .stufe-break--band p { margin-left: 0; max-width: 46rem; }
+.e2-alt .stufe-interim-tag { display: inline-flex; align-items: center; gap: .55rem; font-size: .8rem; letter-spacing: .14em; color: var(--e2-ink); }
+.e2-alt .stufe-interim-tag::before { content: ""; width: 1.4rem; height: 3px; border-radius: 2px; background: currentColor; }
+.e2-alt .stufe-pdf-card, .e2-alt .medien-sketch { border-radius: 14px !important; }
+.e2-alt .story-acc-item { border-color: var(--e2-linie) !important; }
+
+/* Innovation: linksbündig, Abschluss ohne gelbe Hervorhebung */
+.e2-alt .inno-einsatz-head, .e2-alt .inno-methode-text { text-align: left; margin-left: 0; max-width: 46rem; }
+.e2-alt .inno-einsatz-head .kicker, .e2-alt .inno-methode-text .kicker, .e2-alt .inno-label { justify-content: flex-start; }
+.e2-alt .inno-stein-foot::before { display: none; }
+.e2-alt .inno-stein-foot { padding-top: .9rem; border-top: 3px solid var(--e2-gelb); }
+.e2-alt .inno-stein { border-radius: var(--e2-r) !important; }
+.e2-alt .inno-greenfield { border-radius: var(--e2-r) !important; }
+.e2-alt .stufe-break--band h3 { margin: .2rem 0 1rem !important; }
+.e2-alt .stufe-break--band p + p { margin-top: .8rem !important; }
+
+/* ================= Workshop-Seiten (Produktseiten) =================
+   Seitenfarbe (Magenta der Workshops) bleibt als Akzent; Abschnittsfolge Weiß · Grau · Weiß · Grau · Schwarz. */
+.e2-alt .produkt-hero { padding: 5.5rem 0 3.5rem; background: #fff; }
+.e2-alt .produkt-hero-grid { align-items: center; gap: 3.5rem; }
+.e2-alt .produkt-hero .lead { margin-top: 1.3rem; font-size: 1.12rem; }
+.e2-alt .produkt-hero-actions, .e2-alt .produkt-hero-actions--center { justify-content: flex-start !important; text-align: left !important; margin-top: 2.2rem; }
+.e2-alt .produkt-hero-lead-cols { gap: 2rem; }
+.e2-alt .produkt-pills { margin-top: 1.4rem; }
+.e2-alt .produkt-section-head, .e2-alt .produkt-section-head--center { text-align: left !important; margin-left: 0 !important; max-width: 46rem; }
+.e2-alt .produkt-section-head--center p { margin-left: 0 !important; }
+.e2-alt .produkt-section-head .kicker { justify-content: flex-start; }
+.e2-alt .produkt-section-head h2 + p, .e2-alt .produkt-section-head h2 + .lead { margin-top: 1.3rem !important; }
+.e2-alt .produkt-grid:not(.produkt-pricing) { background: var(--e2-hell); }
+.e2-alt .produkt-faq, .e2-alt .produkt-vorschau { background: var(--e2-hell); }
+.e2-alt .produkt-grid-cards > *, .e2-alt .price-card, .e2-alt .produkt-faq-item, .e2-alt .vorschau-split-card, .e2-alt .media-box, .e2-alt .price-note-card { border-radius: var(--e2-r) !important; box-shadow: none !important; }
+.e2-alt .produkt-grid-cards > * { border: 1px solid var(--e2-linie) !important; background: #fff !important; }
+.e2-alt .price-card:not(.price-card--featured) { border: 1px solid var(--e2-linie) !important; }
+.e2-alt .pricing-footnote { text-align: left !important; margin-left: 0 !important; }
+.e2-alt .produkt-faq-item { border: 1px solid var(--e2-linie) !important; background: #fff !important; }
+
+/* „Jetzt loslegen“: schwarzes Band, links ausgerichtet, Team als Reihe */
+.e2-alt .produkt-team-cta { background: var(--e2-ink); color: #fff; text-align: left; padding: 6.5rem 0; }
+.e2-alt .produkt-team-cta .container { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 4rem; row-gap: 0; align-items: end; }
+.e2-alt .produkt-team-cta .kicker { color: var(--e2-gelb); grid-column: 1; }
+.e2-alt .produkt-team-cta h2 { grid-column: 1; margin: 0 !important; text-align: left !important; color: #fff; font-family: var(--font-serif); font-size: clamp(2.1rem, 4.2vw, 3.3rem) !important; line-height: 1.06 !important; max-width: 20ch; }
+.e2-alt .produkt-team-cta-sub { grid-column: 1; margin: 1.3rem 0 0 !important; text-align: left !important; max-width: 36rem; color: #d8d3cc !important; font-size: 1.12rem; }
+.e2-alt .produkt-team-cta .ansprechpartner-grid { grid-column: 2; grid-row: 1 / span 3; justify-content: flex-end; margin: 0 !important; }
+.e2-alt .ansprechpartner-name { color: #fff !important; }
+.e2-alt .ansprechpartner-role { color: #bdb7af !important; }
+.e2-alt .ansprechpartner-photo { box-shadow: none !important; border: 3px solid var(--e2-gelb); }
+.e2-alt .produkt-team-cta .produkt-cta-actions { grid-column: 1; justify-content: flex-start !important; margin-top: 2.2rem; }
+.e2-alt .produkt-team-cta .btn--dark { background: var(--e2-gelb) !important; color: var(--e2-ink) !important; }
+@media (max-width: 960px) {
+  .e2-alt .produkt-team-cta .container { grid-template-columns: minmax(0, 1fr); }
+  .e2-alt .produkt-team-cta .ansprechpartner-grid { grid-column: 1; grid-row: auto; justify-content: flex-start; margin-top: 2rem !important; }
+}
+@media (max-width: 600px) {
+  .e2-alt .produkt-hero { padding: 3rem 0 2.5rem; }
+}
+.e2-alt .produkt-team-cta .ansprechpartner-grid { align-self: center; }
+.e2-alt .sprint-timeline { margin-left: 0 !important; max-width: 46rem; }
+.e2-alt .produkt-pricing-grid { justify-content: flex-start !important; margin-left: 0 !important; }
+.e2-alt .produkt-price-note .price-note-card, .e2-alt .produkt-pricing-grid--single { margin-left: 0 !important; }
+.e2-alt .sprint-timeline { margin: 0 !important; }
+.e2-alt .price-note-card { margin: 0 !important; }
+.e2-alt .produkt-price-note { padding-top: 6.5rem !important; }
+/* Original macht das Band mobil weiß – im Entwurf bleibt es auf allen Breiten schwarz */
+.e2-alt .produkt-team-cta, .e2-alt section.produkt-cta.produkt-team-cta { background: var(--e2-ink) !important; }
+@media (max-width: 600px) {
+  .e2-alt .ansprechpartner-grid { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem !important; }
+  .e2-alt .ansprechpartner-grid:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 16rem; }
+  .e2-alt .ansprechpartner-card { width: auto !important; }
+  .e2-alt .ansprechpartner-photo { width: 84px !important; height: 84px !important; }
+  .e2-alt .ansprechpartner-name { font-size: .95rem !important; }
+  .e2-alt .ansprechpartner-role { font-size: .75rem !important; }
+}
+
+/* ================= Runde 2 ================= */
+/* Download: kein Gelb mehr – dunkle Karte, weißer Knopf */
+.e2-alt .pdf-dl .pdf-dl-kicker { color: #cfcac3 !important; }
+.e2-alt .pdf-dl-btn { background: #fff !important; color: var(--e2-ink) !important; }
+
+/* Medien-Symbole und Workshop-Kacheln: einfache Symbole */
+.e2-medien-sym { width: 46%; height: auto; fill: none; stroke: var(--e2-ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.e2-alt .medien-sketch-thumb { display: grid; place-items: center; background: var(--e2-hell) !important; }
+.e2-alt .media-box-thumb--mock { display: grid; place-items: center; background: var(--e2-magenta) !important; min-height: 13rem; }
+.e2-kachel-sym { width: 34%; height: auto; fill: none; stroke: #fff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.e2-alt .media-box--icon { background: #fff !important; border: 1px solid var(--e2-linie) !important; overflow: hidden; }
+.e2-alt .media-box--icon .media-box-footer { background: #fff !important; color: var(--e2-ink) !important; }
+.e2-alt .media-box--icon .media-box-title { color: var(--e2-ink) !important; font-family: var(--font-serif); font-size: 1.35rem; }
+.e2-alt .media-box--icon .media-box-desc { color: var(--e2-ink-2) !important; }
+.e2-alt .media-box--icon .sprint-structure-cta { background: var(--e2-ink) !important; color: #fff !important; border-color: var(--e2-ink) !important; }
+
+/* Workshop-Seiten: Magenta als durchgehende Akzentfarbe – auch die Markierung in der Überschrift */
+.e2-alt--magenta { --e2-akzent: var(--e2-magenta, #fff400); }
+.e2-alt--magenta .e2-kopf h1 .hl { background: linear-gradient(transparent 58%, rgba(255,244,0,.28) 58%, rgba(255,244,0,.28) 92%, transparent 92%); }
+.e2-alt--magenta .e2-kopf .e2-kicker, .e2-alt--magenta .kicker { color: #1a1817 !important; }
+.e2-alt--magenta .e2-kopf .e2-knopf { background: #fff400; border-color: #fff400; }
+.e2-alt--gelb .e2-kopf .e2-knopf { background: var(--e2-ink); }
+
+/* Preise: mittlere Karte lesbar (eigene Farbe), Karten mit mehr Struktur */
+.e2-alt .produkt-grid-cards > .price-card--featured { background: #fff400 !important; border: 0 !important; color: #1a1817 !important; }
+.e2-alt .price-card--featured * { color: #1a1817 !important; }
+.e2-alt .price-card--featured .price-badge { background: #fff !important; color: #1a1817 !important; }
+.e2-alt .price-card--featured .price-features li::before { background: #1a1817 !important; }
+.e2-alt .price-card { padding: 2rem 1.8rem !important; border-top: 6px solid var(--e2-ink) !important; }
+.e2-alt .price-card--featured { border-top-color: #fff400 !important; }
+.e2-alt .price-card .price-value { margin: 1.2rem 0 .3rem; padding: 1rem 0; border-top: 1px solid var(--e2-linie); border-bottom: 1px solid var(--e2-linie); }
+.e2-alt .price-card--featured .price-value { border-color: rgba(26,24,23,.3); }
+.e2-alt .price-card .price-amount { font-family: var(--font-serif); font-size: 2.4rem !important; }
+.e2-alt .price-card h3 { font-family: var(--font-serif); font-size: 1.55rem !important; }
+
+/* „Jetzt loslegen“: hell, klar, lesbar – Text links, Team rechts */
+.e2-alt .produkt-team-cta, .e2-alt section.produkt-cta.produkt-team-cta { background: var(--e2-hell) !important; color: var(--e2-ink) !important; }
+.e2-alt .produkt-team-cta .kicker { color: #1a1817 !important; }
+.e2-alt .produkt-team-cta h2 { color: var(--e2-ink) !important; }
+.e2-alt .produkt-team-cta-sub { color: var(--e2-ink-2) !important; }
+.e2-alt .ansprechpartner-name { color: var(--e2-ink) !important; }
+.e2-alt .ansprechpartner-role { color: var(--e2-grau) !important; }
+.e2-alt .ansprechpartner-photo { border: 0 !important; background: #fff; }
+.e2-alt .produkt-team-cta .btn--dark { background: var(--e2-akzent, var(--e2-ink)) !important; color: #1a1817 !important; border-color: transparent !important; }
+.e2-alt--magenta h1 .hl { background: linear-gradient(transparent 58%, rgba(255,244,0,.28) 58%, rgba(255,244,0,.28) 92%, transparent 92%) !important; }
+.e2-alt .media-box-thumb--mock { aspect-ratio: 16 / 10; min-height: 0 !important; height: auto !important; padding: 0 !important; }
+.e2-kachel-sym { width: auto !important; height: 42% !important; }
+.e2-alt .medien-sketch-thumb svg.e2-medien-sym, .e2-alt .medien-sketch-thumb svg.e2-medien-sym * { stroke: #1a1817 !important; fill: none !important; opacity: 1 !important; }
+.e2-alt .medien-sketch-thumb > * { background: none !important; box-shadow: none !important; border: 0 !important; }
+.e2-alt .medien-sketch { background: var(--e2-hell) !important; border: 0 !important; }
+.e2-alt .medien-sketch-thumb svg.e2-medien-sym { filter: none !important; position: static !important; width: 46% !important; height: auto !important; }
+
+/* ================= Runde 3 ================= */
+/* Kein Strich zwischen Kopf und Logo-Band */
+.e2-alt .marquee { border-top: 0 !important; }
+
+/* Abschnittsfolge je Seite – Abwechslung wie auf der Startseite */
+.e2-alt .section, .e2-alt .produkt-section, .e2-alt .produkt-grid, .e2-alt .produkt-cta { background: #fff !important; }
+.e2-alt #problem, .e2-alt #weitere-leistungen, .e2-alt .produkt-faq, .e2-alt .produkt-vorschau, .e2-seite--strategie #zusammenarbeit { background: var(--e2-hell) !important; }
+.e2-alt .perspektive { background: var(--e2-gelb) !important; }
+.e2-alt #ergebnis { background: var(--e2-ink) !important; }
+.e2-seite--workshops .produkt-grid, .e2-seite--ki-zum-anfassen .produkt-grid:not(.produkt-pricing), .e2-seite--workshop-moderation .produkt-grid { background: #fff400 !important; }
+.e2-seite--sprint-landingpage .produkt-price-note { background: var(--e2-ink) !important; }
+
+/* Magenta-Abschnitte: Schrift weiß, Karten weiß */
+.e2-alt--magenta .produkt-grid:not(.produkt-pricing) .produkt-section-head :is(h2, p) { color: #1a1817 !important; }
+.e2-alt--magenta .produkt-grid:not(.produkt-pricing) .kicker { color: #1a1817 !important; }
+.e2-alt--magenta .produkt-grid:not(.produkt-pricing) .produkt-glass { background: #fff !important; border: 0 !important; }
+.e2-alt--magenta .tools-row-label { color: #1a1817 !important; }
+.e2-alt--magenta .tools-row-icon, .e2-alt--magenta .tools-row-icon svg { color: #1a1817 !important; stroke: #1a1817 !important; }
+
+/* Problem: hell, Wasserzeichen der Seite, weißer Kasten mit gelbem Balken */
+.e2-alt #problem .watermark { display: block !important; color: #e4e1db; opacity: 1; }
+.e2-alt #problem { position: relative; overflow: hidden; }
+.e2-alt .problem-card { background: #fff !important; color: var(--e2-ink) !important; border-left: 6px solid var(--e2-gelb) !important; }
+.e2-alt .problem-card p { color: var(--e2-ink-2) !important; }
+.e2-alt .problem-card li { color: var(--e2-ink) !important; }
+.e2-alt .problem-card li::marker { color: var(--e2-ink); }
+
+/* Zusammenarbeit & Co.: Karten mit Form und Titel, Text klappt auf */
+.e2-alt .formate-acc-item { padding: 0 !important; border: 0 !important; overflow: hidden; background: #fff !important; align-self: start; }
+.e2-alt .formate-acc-item summary { pointer-events: auto !important; cursor: pointer; display: flex; flex-direction: column; gap: 1.1rem; min-height: 11rem; padding: 1.6rem 1.6rem 1.4rem !important; background: var(--e2-gelb) !important; font-size: 1.45rem !important; }
+.e2-alt .formate-acc-item:nth-child(2) summary { background: var(--e2-ink) !important; color: #fff !important; }
+.e2-alt .formate-acc-item:nth-child(3) summary { background: #e9e7e2 !important; }
+.e2-alt .formate-acc-item summary span { margin-top: auto; }
+.e2-alt .formate-acc-item summary::after { content: "Mehr lesen +" !important; display: block !important; font-family: var(--font-sans); font-size: .85rem; font-weight: 600; opacity: .7; position: static !important; transform: none !important; background: none !important; width: auto !important; height: auto !important; }
+.e2-alt .formate-acc-item[open] summary::after { content: "Weniger –" !important; }
+.e2-acc-form { width: 2.6rem; height: 2.6rem; color: var(--e2-ink); }
+.e2-alt .formate-acc-item:nth-child(2) .e2-acc-form { color: var(--e2-gelb); }
+.e2-alt .formate-acc-body { padding: 1.3rem 1.6rem 1.5rem !important; margin: 0 !important; }
+
+/* Komplexe Themen: Zwischenergebnis zentriert */
+.e2-alt .stufe-break--band { text-align: center !important; }
+.e2-alt .stufe-break--band h3, .e2-alt .stufe-break--band p { margin-left: auto !important; margin-right: auto !important; }
+.e2-alt .stufe-interim-tag { justify-content: center; }
+
+/* Workshop-Kacheln: Formen statt Linien */
+.e2-alt .media-box-thumb--mock { position: relative; overflow: hidden; }
+.e2-kachel-form { position: absolute; right: 12%; top: 14%; width: 46%; height: auto; color: #fff; }
+.e2-kachel-klein { position: absolute; left: 12%; bottom: 14%; width: 20%; height: auto; color: var(--e2-ink); }
+
+/* Sprint: Preis als breiter Kasten auf Schwarz */
+.e2-seite--sprint-landingpage .produkt-price-note .produkt-section-head :is(h2, p) { color: #fff !important; }
+.e2-seite--sprint-landingpage .produkt-price-note .kicker { color: #fff !important; }
+.e2-alt .price-note-card { max-width: none !important; display: grid !important; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2.5rem; align-items: center; padding: 2.6rem !important; border-radius: var(--e2-r) !important; background: #fff400 !important; border: 0 !important; margin-top: 2.5rem !important; }
+.e2-alt .price-note-card > :not(.price-note-list) { grid-column: 1; }
+.e2-alt .price-note-card .price-note-list { grid-column: 2; grid-row: 1 / span 4; margin: 0 !important; padding: 0 0 0 2.5rem !important; border-left: 1px solid rgba(255,255,255,.3); }
+.e2-alt .price-note-card * { color: #fff !important; }
+.e2-alt .price-note-amount { font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 4.6rem) !important; }
+@media (max-width: 760px) { .e2-alt .price-note-card { grid-template-columns: minmax(0, 1fr); } .e2-alt .price-note-card .price-note-list { grid-column: 1; grid-row: auto; padding: 1.4rem 0 0 !important; border-left: 0; border-top: 1px solid rgba(255,255,255,.3); } }
+
+/* „Jetzt loslegen“: aufgeräumt wie früher – mittig, weiß, Team mit Fotos */
+.e2-alt .produkt-team-cta, .e2-alt section.produkt-cta.produkt-team-cta { background: #fff !important; text-align: center !important; }
+.e2-alt .produkt-team-cta .container { display: block !important; }
+.e2-alt .produkt-team-cta h2 { margin: 0 auto !important; text-align: center !important; max-width: 18ch; }
+.e2-alt .produkt-team-cta .kicker { justify-content: center; }
+.e2-alt .produkt-team-cta-sub { margin: 1.2rem auto 0 !important; text-align: center !important; }
+.e2-alt .produkt-team-cta .ansprechpartner-grid { justify-content: center !important; margin: 2.8rem 0 0 !important; }
+.e2-alt .ansprechpartner-photo { box-shadow: 0 12px 28px rgba(26,24,23,.14) !important; }
+.e2-alt .produkt-team-cta .produkt-cta-actions { justify-content: center !important; margin-top: 2.6rem; }
+/* Hervorhebung im Kopf: voller Kasten (überschreibt die Unterstreichung von Runde 1/2) */
+.e2-alt h1 .hl, .e2-alt--magenta h1 .hl { background: var(--e2-gelb) !important; color: var(--e2-ink) !important; padding: 0 .14em !important; border-radius: .12em !important; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.e2-alt--magenta h1 .hl { background: #fff400 !important; color: #1a1817 !important; }
+.e2-alt .formate-acc-item summary { align-items: flex-start; text-align: left; }
+.e2-alt .formate-acc-item summary::after { opacity: .85 !important; }
+
+/* ================= Runde 4 ================= */
+/* Problem: zwei Schritte statt Kasten – gelbe Nummern, keine Box */
+.e2-problem { list-style: none; margin: 0; padding: 0; counter-reset: pr; }
+.e2-problem > li { counter-increment: pr; position: relative; padding: 0 0 2rem 4rem; }
+.e2-problem > li:last-child { padding-bottom: 0; }
+.e2-problem > li::before { content: counter(pr, decimal-leading-zero); position: absolute; left: 0; top: -.2rem; display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border-radius: 50%; background: var(--e2-gelb); font-family: var(--font-serif); font-weight: 700; color: var(--e2-ink); }
+.e2-problem > li:not(:last-child)::after { content: ""; position: absolute; left: 1.4rem; top: 2.9rem; bottom: .4rem; width: 2px; background: #dcd8d1; }
+.e2-problem p { font-size: 1.1rem; line-height: 1.65; color: var(--e2-ink); }
+.e2-problem ul { margin: .6rem 0 0; padding-left: 1.1rem; }
+.e2-problem li li { margin-top: .3rem; font-size: 1.05rem; }
+.e2-alt .problem-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+
+/* Zusammenarbeit: gleich hohe Karten, Text im Fenster */
+.e2-zk-raster { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; margin-top: 3rem; }
+.e2-zk { display: flex; flex-direction: column; min-height: 15rem; padding: 1.8rem; border-radius: var(--e2-r); background: #fff; }
+.e2-zk:nth-child(1) { background: var(--e2-gelb); } .e2-zk:nth-child(2) { background: var(--e2-ink); color: #fff; }
+.e2-zk__nr { font-family: var(--font-serif); font-weight: 700; font-size: 2.4rem; line-height: 1; opacity: .35; }
+.e2-zk h3 { margin-top: 1rem !important; font-family: var(--font-serif); font-size: 1.55rem; line-height: 1.2; }
+.e2-zk__mehr { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: .45rem; padding: .6rem 1rem; border-radius: 999px; border: 1.5px solid currentColor; background: none; font: 600 .9rem var(--font-sans); color: inherit; cursor: pointer; }
+.e2-zk__mehr svg { width: 1rem; height: 1rem; }
+.e2-dialog { width: min(40rem, calc(100vw - 2rem)); padding: 2.4rem 2.4rem 2rem; border: 0; border-radius: var(--e2-r); color: var(--e2-ink); }
+.e2-dialog::backdrop { background: rgba(26,24,23,.55); }
+.e2-dialog h3 { margin: 0 2rem 1rem 0 !important; font-family: var(--font-serif); font-size: 1.7rem; }
+.e2-dialog p { font-size: 1.02rem; line-height: 1.65; color: var(--e2-ink-2); }
+.e2-dialog p + p { margin-top: .8rem; }
+.e2-dialog__zu { position: absolute; right: 1rem; top: 1rem; width: 2.4rem; height: 2.4rem; border: 0; border-radius: 50%; background: var(--e2-hell); font-size: 1.4rem; line-height: 1; cursor: pointer; }
+@media (max-width: 960px) { .e2-zk-raster { grid-template-columns: minmax(0, 1fr); } .e2-zk { min-height: 0; } .e2-zk__mehr { margin-top: 1.4rem; } }
+
+/* Workshops: Kacheln mit den Originalskizzen, Linien etwas kräftiger */
+.e2-alt .media-box-thumb--mock { background: linear-gradient(160deg, #fff400, #fff400) !important; aspect-ratio: auto !important; }
+.e2-alt .media-box-thumb--mock svg [stroke] { stroke-width: 2.2; }
+.e2-alt .media-box-thumb--mock .produkt-mock-sketch { opacity: 1 !important; transform: none !important; }
+
+/* Abschnittsfolge Workshops: KI-Werkzeuge wieder hell, Moderation weiß mit klaren Karten */
+.e2-seite--ki-zum-anfassen .produkt-grid:not(.produkt-pricing), .e2-seite--workshop-moderation .produkt-grid, .e2-seite--sprint-landingpage .produkt-grid { background: #fff !important; }
+.e2-seite--ki-zum-anfassen .produkt-grid:not(.produkt-pricing) :is(h2, p, .kicker), .e2-seite--workshop-moderation .produkt-grid :is(h2, p) { color: inherit !important; }
+.e2-seite--ki-zum-anfassen .produkt-grid:not(.produkt-pricing) .kicker, .e2-seite--workshop-moderation .produkt-grid .kicker { color: #1a1817 !important; }
+.e2-seite--ki-zum-anfassen .produkt-grid:not(.produkt-pricing) h2, .e2-seite--workshop-moderation .produkt-grid h2 { color: var(--e2-ink) !important; }
+.e2-seite--ki-zum-anfassen .tools-row-label { color: var(--e2-ink) !important; }
+.e2-seite--ki-zum-anfassen .tools-row-icon, .e2-seite--ki-zum-anfassen .tools-row-icon svg { color: #1a1817 !important; stroke: currentColor !important; }
+.e2-seite--ki-zum-anfassen .produkt-grid .produkt-glass, .e2-seite--workshop-moderation .produkt-grid .produkt-glass, .e2-seite--sprint-landingpage .produkt-grid .produkt-glass { background: var(--e2-hell) !important; border: 0 !important; }
+
+/* Sprint: Preis neu – ein Kasten, links Preis auf Magenta, rechts die Leistungen */
+.e2-seite--sprint-landingpage .produkt-price-note { background: var(--e2-hell) !important; }
+.e2-seite--sprint-landingpage .produkt-price-note .produkt-section-head :is(h2, p) { color: inherit !important; }
+.e2-seite--sprint-landingpage .produkt-price-note .produkt-section-head h2 { color: var(--e2-ink) !important; }
+.e2-seite--sprint-landingpage .produkt-price-note .kicker { color: #1a1817 !important; }
+.e2-alt .price-note-card { display: grid !important; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 0 !important; padding: 0 !important; overflow: hidden; background: #fff !important; box-shadow: none !important; }
+.e2-alt .price-note-card * { color: var(--e2-ink) !important; }
+.e2-alt .price-note-card > .price-note-badge-wrap { display: none !important; }
+.e2-alt .price-note-value { grid-column: 1; display: flex; flex-direction: column; justify-content: center; gap: .6rem; padding: 2.8rem 2.6rem; background: #fff400; }
+.e2-alt .price-note-value * { color: #fff !important; }
+.e2-alt .price-note-amount { font-family: var(--font-serif); font-weight: 700; font-size: clamp(3rem, 5.4vw, 4.4rem) !important; line-height: 1; }
+.e2-alt .price-note-unit { font-size: 1rem; opacity: .9; }
+.e2-alt .price-note-card .price-note-list { grid-column: 2; grid-row: 1; list-style: none; margin: 0 !important; padding: 2.2rem 2.6rem !important; border: 0 !important; }
+.e2-alt .price-note-list li { position: relative; padding: .7rem 0 .7rem 2rem; border-bottom: 1px solid var(--e2-linie); font-size: 1rem; }
+.e2-alt .price-note-list li:last-child { border-bottom: 0; }
+.e2-alt .price-note-list li::before { content: ""; position: absolute; left: 0; top: 1.05rem; width: .9rem; height: .5rem; border-left: 2.5px solid #fff400; border-bottom: 2.5px solid #fff400; transform: rotate(-45deg); background: none !important; }
+@media (max-width: 760px) { .e2-alt .price-note-card { grid-template-columns: minmax(0, 1fr); } .e2-alt .price-note-card .price-note-list { grid-column: 1; grid-row: auto; } }
+.e2-alt #problem .watermark { left: auto !important; right: -6% !important; top: 50% !important; transform: translateY(-50%) !important; opacity: .7; }
+/* Helle Abschnitte auf Workshop-Seiten: Schrift dunkel, Karten auf Hellgrau (stärker als die Magenta-Regeln) */
+.e2-alt.e2-alt--magenta:is(.e2-seite--ki-zum-anfassen, .e2-seite--workshop-moderation, .e2-seite--sprint-landingpage) .produkt-grid:not(.produkt-pricing) .produkt-section-head :is(h2, p) { color: var(--e2-ink) !important; }
+.e2-alt.e2-alt--magenta:is(.e2-seite--ki-zum-anfassen, .e2-seite--workshop-moderation, .e2-seite--sprint-landingpage) .produkt-grid:not(.produkt-pricing) .produkt-section-head p { color: var(--e2-ink-2) !important; }
+.e2-alt.e2-alt--magenta:is(.e2-seite--ki-zum-anfassen, .e2-seite--workshop-moderation, .e2-seite--sprint-landingpage) .produkt-grid:not(.produkt-pricing) .kicker { color: #1a1817 !important; }
+.e2-alt.e2-alt--magenta:is(.e2-seite--ki-zum-anfassen, .e2-seite--workshop-moderation, .e2-seite--sprint-landingpage) .produkt-grid:not(.produkt-pricing) .produkt-glass { background: var(--e2-hell) !important; border: 0 !important; padding: 2rem 1.8rem !important; }
+.e2-alt .produkt-glass h3 { margin-top: .9rem; margin-bottom: .5rem; line-height: 1.25; }
+/* Preis: Magenta-Feld füllt die ganze Höhe */
+.e2-alt .price-note-card { align-items: stretch !important; border-radius: var(--e2-r) !important; }
+.e2-alt .price-note-value { align-self: stretch; text-align: left !important; align-items: flex-start; }
+.e2-alt .price-note-card { overflow: hidden !important; }
+.e2-alt .price-note-list li::before { border-radius: 0 !important; width: .85rem !important; height: .45rem !important; top: 1.1rem !important; }
+.e2-alt .price-note-card::before, .e2-alt .price-note-card::after { display: none !important; content: none !important; }
+.e2-alt .price-note-value, .e2-alt .price-note-value * { text-align: left !important; }
+.e2-alt .price-note-value { grid-row: 1 / -1; }
+.e2-alt .price-note-card > .price-note-value { margin: 0 !important; height: auto !important; min-height: 100%; }

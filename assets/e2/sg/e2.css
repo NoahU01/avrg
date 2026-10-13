@@ -1,0 +1,265 @@
+/* ==========================================================================
+   empiria 2.0 – Gestaltung der Website
+   Die bestehenden Seiten, grafisch übersetzt in die Klarheit der Wagenpaten-Seite:
+   klare Kästen, saubere Ausrichtung, reduzierte Zahlen, Flächenwechsel Weiß · Gelb · Grau · Schwarz,
+   Karten mit weißem Kopf, farbiger Mitte und weißem Fuß. Texte und Abschnitte unverändert.
+   Kopf, Menü, Fuß und Detailfenster kommen unverändert aus styles.css.
+   ========================================================================== */
+.e2 { --e2-gelb: #fff400; --e2-ink: #1a1817; --e2-ink-2: #3d3a37; --e2-grau: #6f6a64; --e2-hell: #f4f3f0; --e2-linie: #e7e4df; --e2-r: 18px; --e2-wrap: 76rem; }
+.e2 main { font-family: var(--font-sans); color: var(--e2-ink); }
+.e2-wrap { width: 100%; max-width: var(--e2-wrap); margin: 0 auto; padding: 0 2rem; }
+.e2-sek { padding: 6.5rem 0; }
+.e2-sek--gelb { background: var(--e2-gelb); }
+.e2-sek--hell { background: var(--e2-hell); }
+.e2-sek--schwarz { background: var(--e2-ink); color: #fff; }
+.e2 h1, .e2 h2, .e2 h3 { margin: 0; font-family: var(--font-serif); font-weight: 700; letter-spacing: -.02em; line-height: 1.04; }
+.e2 main p { margin: 0; }
+.e2-kicker { display: inline-flex; align-items: center; gap: .55rem; margin: 0 0 1.1rem !important; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--e2-ink); }
+.e2-kicker::before { content: ""; width: 1.4rem; height: 3px; border-radius: 2px; background: currentColor; }
+.e2-sek--schwarz .e2-kicker { color: var(--e2-gelb); }
+.e2-h2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); max-width: 20ch; }
+.e2-lead { margin-top: 1.3rem !important; max-width: 40rem; font-size: 1.15rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2-lead + .e2-lead { margin-top: .9rem !important; }
+.e2-sek--schwarz .e2-lead { color: #d8d3cc; }
+.e2-knoepfe { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 2.2rem; }
+.e2-knopf { display: inline-flex; align-items: center; gap: .55rem; padding: .85rem 1.35rem; border-radius: 999px; border: 2px solid var(--e2-ink); background: var(--e2-ink); color: #fff; font: 600 .98rem/1.2 var(--font-sans); text-decoration: none; cursor: pointer; transition: transform .15s ease; }
+.e2-knopf:hover { transform: translateY(-1px); }
+.e2-knopf--rand { background: transparent; color: var(--e2-ink); }
+.e2-knopf--gelb { background: var(--e2-gelb); border-color: var(--e2-gelb); color: var(--e2-ink); }
+.e2-knopf--hell { background: transparent; border-color: rgba(255,255,255,.45); color: #fff; }
+.e2-pfeil { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Kopfbereich ---------- */
+.e2-held { padding: 5.5rem 0 3.5rem; }
+.e2-held__raster { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 3.5rem; align-items: end; }
+.e2-held h1 { font-size: clamp(3.2rem, 8vw, 6.6rem); line-height: .95; }
+.e2-held h1 .hl { background: none; padding: 0; }
+.e2-held h1 .hl, .e2-held h1 em { font-style: normal; background: linear-gradient(transparent 58%, var(--e2-gelb) 58%, var(--e2-gelb) 92%, transparent 92%); padding: 0 .06em; }
+.e2-held__pfeil { margin-top: 1.6rem; width: clamp(3.4rem, 6vw, 5.2rem); color: var(--e2-ink); }
+.e2-held__pfeil svg { width: 100%; height: auto; display: block; }
+.e2-held__text p { font-size: 1.15rem; line-height: 1.62; color: var(--e2-ink-2); }
+.e2-held__text p + p { margin-top: 1rem; }
+.e2-held .e2-knoepfe { margin-top: 1.8rem; }
+.e2-logos { margin-top: 3.5rem; padding-top: 1.8rem; border-top: 1px solid var(--e2-linie); }
+.e2-logos .marquee { margin: 0; padding: 0; }
+
+/* ---------- Problem: links Aussage, rechts schwarzer Kasten ---------- */
+.e2-zwei { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: center; }
+.e2-kasten { padding: 2.4rem 2.4rem 2.2rem; border-radius: var(--e2-r); background: var(--e2-ink); color: #fff; }
+.e2-kasten p { font-size: 1.08rem; line-height: 1.6; color: #e9e5df; }
+.e2-kasten ul { list-style: none; margin: 1.3rem 0; padding: 0; }
+.e2-kasten li { position: relative; padding: .75rem 0 .75rem 2.1rem; border-top: 1px solid rgba(255,255,255,.14); font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.3; color: #fff; }
+.e2-kasten li:last-child { border-bottom: 1px solid rgba(255,255,255,.14); }
+.e2-kasten li::before { content: ""; position: absolute; left: 0; top: 1.05rem; width: 1.05rem; height: 1.05rem; border-radius: 50%; background: var(--e2-gelb); }
+
+/* ---------- Lösung (gelb) ---------- */
+.e2-mitte { text-align: center; }
+.e2-mitte .e2-h2, .e2-mitte .e2-lead { margin-left: auto; margin-right: auto; }
+.e2-mitte .e2-knoepfe { justify-content: center; }
+.e2-knopf.link-more { font-style: normal; }
+
+/* ---------- Karten: weißer Kopf, farbige Mitte, weißer Fuß ---------- */
+.e2-karten { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; margin-top: 3.2rem; }
+.e2-karte { display: flex; flex-direction: column; border-radius: var(--e2-r); background: #fff; border: 1px solid var(--e2-linie); overflow: hidden; text-decoration: none; color: inherit; transition: transform .2s ease, box-shadow .2s ease; }
+a.e2-karte:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(26,24,23,.1); }
+.e2-karte__kopf { display: flex; align-items: center; height: 3.1rem; padding: 0 1.2rem; }
+.e2-karte__kopf img { height: 15px; width: auto; display: block; }
+.e2-karte__kopf span { font-family: var(--font-serif); font-weight: 700; color: #b9b3ab; }
+.e2-karte__bild { position: relative; overflow: hidden; min-height: 15rem; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.6rem; }
+.e2-karte__bild--gelb { background: var(--e2-gelb); }
+.e2-karte__bild--schwarz { background: var(--e2-ink); color: #fff; }
+.e2-karte__bild--hell { background: var(--e2-hell); }
+.e2-karte__bild h3 { max-width: 13ch; font-size: clamp(1.55rem, 2.3vw, 2rem); line-height: 1.05; }
+.e2-karte__ico { position: absolute; right: 1.3rem; top: 1.3rem; width: 3.6rem; height: 3.6rem; }
+.e2-karte__ico .lcard-icon { position: relative !important; inset: auto !important; width: 100% !important; height: 100% !important; margin: 0 !important; transform: none !important; }
+.e2-karte__ico svg { position: absolute; inset: 0; width: 100% !important; height: 100% !important; }
+.e2-karte__text { flex: 1; display: flex; flex-direction: column; gap: 1rem; padding: 1.1rem 1.2rem 1.3rem; font-size: .97rem; line-height: 1.55; color: var(--e2-ink-2); }
+.e2-karte__mehr { margin-top: auto; display: inline-flex; align-items: center; gap: .4rem; font-weight: 600; color: var(--e2-ink); text-decoration: none; }
+.e2-unten { margin-top: 2.6rem; }
+
+/* ---------- Formate: drei Spalten wie die Wagenliste ---------- */
+.e2-kopfzeile { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: end; }
+.e2-kopfzeile .e2-lead { margin-top: 0 !important; }
+.e2-kopfzeile .e2-lead + .e2-lead { margin-top: .9rem !important; }
+.e2-formate { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; margin-top: 3.2rem; }
+.e2-format { display: flex; flex-direction: column; padding: 2rem 1.8rem 1.8rem; border-radius: var(--e2-r); background: #fff; border-top: 5px solid var(--e2-akzent, var(--e2-ink)); }
+.e2-format h3 { font-size: 1.75rem; }
+.e2-format > p { margin-top: .9rem !important; font-size: .95rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2-liste { list-style: none; margin: 1.5rem 0 1.6rem; padding: 0; border-top: 1px solid var(--e2-linie); }
+.e2-liste li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .8rem; align-items: center; padding: .85rem 0; border-bottom: 1px solid var(--e2-linie); }
+.e2-liste b { display: block; font-size: .98rem; }
+.e2-liste small { display: block; margin-top: .15rem; font-size: .86rem; line-height: 1.4; color: var(--e2-grau); }
+.e2-liste .e2-pfeil { color: var(--e2-grau); }
+.e2-format .e2-knopf { margin-top: auto; align-self: flex-start; padding: .7rem 1.15rem; font-size: .92rem; }
+
+/* ---------- Zahlen (schwarz) ---------- */
+.e2-zahlen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; margin-top: 3rem; }
+.e2-zahlen > div { padding-top: 1.3rem; border-top: 3px solid var(--e2-gelb); }
+.e2-zahlen b { display: block; font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 4.6rem); line-height: 1; color: #fff; }
+.e2-zahlen span { display: block; margin-top: .7rem; font-size: 1rem; line-height: 1.45; color: #cfcac3; }
+
+/* ---------- Kontakt ---------- */
+.e2-kontakt { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; align-items: start; }
+.e2-kontakt__notiz { margin-top: 1.4rem !important; padding-left: 1rem; border-left: 4px solid var(--e2-gelb); font-weight: 600; }
+.e2-wege { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--e2-linie); }
+.e2-wege a { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr) auto; gap: 1rem; align-items: center; padding: 1.05rem 0; border-bottom: 1px solid var(--e2-linie); color: var(--e2-ink); text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+.e2-wege a:hover { background: linear-gradient(90deg, var(--e2-hell), transparent); }
+.e2-wege i { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; background: var(--e2-gelb); }
+.e2-wege i svg { width: 1.15rem; height: 1.15rem; }
+.e2-foto { display: flex; justify-content: center; margin-top: 3.2rem; padding-top: 2.6rem; border-radius: var(--e2-r); overflow: hidden; background: var(--e2-gelb); }
+.e2-foto img { display: block; width: min(100%, 720px) !important; min-width: 0 !important; height: auto; opacity: 1 !important; transform: none !important; }
+.e2-ks-logos { margin-top: 1.6rem; }
+.e2-ks-logos .ks-marquee { margin: 0; }
+
+/* ---------- Responsiv ---------- */
+@media (max-width: 960px) {
+  .e2-held__raster, .e2-zwei, .e2-kopfzeile, .e2-kontakt { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; }
+  .e2-karten, .e2-formate { grid-template-columns: minmax(0, 1fr); }
+  .e2-karten { max-width: 34rem; }
+  .e2-sek { padding: 4.5rem 0; }
+}
+@media (max-width: 600px) {
+  .e2-wrap { padding: 0 1.25rem; }
+  .e2-held { padding: 3rem 0 2.5rem; }
+  .e2-zahlen { grid-template-columns: minmax(0, 1fr); }
+  .e2-kasten { padding: 1.8rem 1.4rem; }
+  .e2-knopf { width: 100%; justify-content: center; }
+  .e2-format .e2-knopf { width: auto; }
+}
+.e2-karte__bild--schwarz .lcard-icon .ico-main { color: #fff; }
+.e2-karte__bild--gelb .lcard-icon .ico-shadow { color: #fff; }
+
+/* ================= Runde 2 (Daniel, 09.10.2026) ================= */
+.e2 { --e2-magenta: #fff400; }
+/* Startseite: Text oben bündig mit der Überschrift */
+.e2-held__raster { align-items: start; }
+.e2-held__text { padding-top: .9rem; }
+
+/* Leistungen: Symbole einfarbig, kein doppelter Schatten */
+.e2-karte__ico .ico-shadow { display: none !important; }
+.e2-karte__bild--gelb .lcard-icon .ico-main, .e2-karte__bild--hell .lcard-icon .ico-main { color: var(--e2-ink) !important; }
+.e2-karte__bild--schwarz .lcard-icon .ico-main, .e2-karte__bild--schwarz .e2-karte__ico--einfach { color: var(--e2-gelb) !important; }
+
+/* Formate: Querkästen – links Titel und Text, rechts die Formate als Liste */
+.e2-formate { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+.e2-format { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 3rem; padding: 2.4rem 2.6rem; border-top: 0; border-left: 6px solid var(--e2-akzent, var(--e2-ink)); }
+.e2-format__text h3 { font-size: 2rem; }
+.e2-format__text p { margin-top: .9rem !important; font-size: .97rem; line-height: 1.62; color: var(--e2-ink-2); }
+.e2-format__liste { display: flex; flex-direction: column; }
+.e2-format__liste .e2-liste { margin-top: 0; }
+.e2-format .e2-knopf { margin-top: 1.4rem; }
+
+/* Kontakt: Personen freigestellt rechts, stehen auf der Unterkante */
+.e2-kontakt-sek { padding-bottom: 0; background: var(--e2-hell); }
+.e2-kontakt { align-items: end; }
+.e2-kontakt__text { padding-bottom: 5rem; }
+.e2-kontakt .e2-wege { margin-top: 2rem; background: transparent; }
+.e2-kontakt__notiz { margin-top: 1.4rem !important; }
+.e2-kontakt__foto { align-self: end; display: flex; justify-content: center; }
+.e2-kontakt__foto img { display: block; width: 100% !important; max-width: 560px !important; min-width: 0 !important; height: auto; opacity: 1 !important; transform: none !important; }
+.e2-foto { display: none; }
+@media (max-width: 960px) { .e2-kontakt__text { padding-bottom: 1rem; } }
+
+/* Kopfbild (Unterseiten): immer gleiche Bildsprache */
+.e2-kopf { padding: 5rem 0 4.5rem; }
+.e2-kopf__raster { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: 4rem; align-items: center; }
+.e2-kopf h1 { font-family: var(--font-serif); font-size: clamp(2.8rem, 5.6vw, 4.8rem); line-height: .98; letter-spacing: -.02em; }
+.e2-kopf h1 .hl { background: linear-gradient(transparent 58%, var(--e2-gelb) 58%, var(--e2-gelb) 92%, transparent 92%); padding: 0 .06em; color: inherit; }
+.e2-kopf__inhalt { margin-top: 1.4rem; }
+.e2-kopf__inhalt p { font-size: 1.12rem; line-height: 1.62; color: var(--e2-ink-2); max-width: 36rem; }
+.e2-kopf__inhalt p + p { margin-top: .9rem; }
+.e2-kopf__inhalt .produkt-hero-lead-cols { display: block; }
+.e2-kopf__inhalt .hero-anlaesse, .e2-kopf__inhalt .produkt-pills { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.4rem; }
+.e2-kopf__inhalt .hero-anlass, .e2-kopf__inhalt .produkt-pill { padding: .35rem .8rem; border: 1px solid var(--e2-linie); border-radius: 999px; background: #fff; font-size: .82rem; font-weight: 500; color: var(--e2-ink); opacity: 1 !important; transform: none !important; }
+.e2-kopfbild { position: relative; aspect-ratio: 1; width: min(100%, 27rem); justify-self: end; border-radius: 28px; overflow: hidden; display: grid; place-items: center; }
+.e2-kopfbild--gelb { background: var(--e2-gelb); color: var(--e2-ink); }
+.e2-kopfbild--magenta { background: var(--e2-magenta); color: #1a1817; }
+.e2-kopfbild__raster { position: absolute; inset: 0; background-image: radial-gradient(currentColor 1.2px, transparent 1.3px); background-size: 22px 22px; opacity: .14; }
+.e2-kopfbild__sym { position: relative; width: 52%; height: 52%; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.e2-kopfbild__logo { position: absolute; left: 1.6rem; bottom: 1.4rem; height: 16px; width: auto; }
+@media (max-width: 960px) {
+  .e2-kopf__raster { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; }
+  .e2-kopfbild { justify-self: start; width: min(100%, 22rem); }
+}
+@media (max-width: 600px) { .e2-kopf { padding: 3rem 0 3rem; } .e2-format { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; padding: 1.8rem 1.4rem; } }
+@media (max-width: 600px) { .e2-kopfbild { width: 62%; border-radius: 22px; } .e2-kopfbild__logo { left: 1rem; bottom: .9rem; height: 12px; } }
+
+/* ================= Runde 3 (Daniel, 09.10.2026) ================= */
+/* Hervorhebung: wie bisher bei empiria – voller Kasten mit runden Ecken, nur in der Hauptüberschrift */
+.e2 h1 .hl, .e2-held h1 .hl, .e2-kopf h1 .hl { background: var(--e2-gelb, #fff400) !important; color: var(--e2-ink, #1a1817) !important; padding: 0 .14em !important; border-radius: .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.e2-logos { border-top: 0; padding-top: .6rem; }
+
+/* Leistungen-Karten: Kopf nur mit Nummer */
+.e2-karte__nr { font-family: var(--font-serif); font-weight: 700; font-size: .95rem; color: #b9b3ab; }
+
+/* Formate: drei Karten – Formate sichtbar, Text aufklappbar */
+.e2-formate { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; }
+.e2-format2 { display: flex; flex-direction: column; border-radius: var(--e2-r); background: #fff; overflow: hidden; }
+.e2-format2__kopf { position: relative; display: flex; align-items: flex-end; min-height: 9.5rem; padding: 1.5rem 1.6rem; background: var(--e2-akzent); color: #1a1817; overflow: hidden; }
+.e2-format2__kopf h3 { position: relative; z-index: 1; font-size: 1.8rem; color: #fff; }
+.e2-format2__form { position: absolute; right: -1.2rem; top: -1.2rem; width: 7.5rem; height: 7.5rem; color: rgba(255,255,255,.28); }
+.e2-format2 .e2-liste { margin: .4rem 1.6rem 0; border-top: 0; }
+.e2-format2 .e2-liste li { grid-template-columns: minmax(0, 1fr); }
+.e2-mehr { margin: 1rem 1.6rem 0; border-top: 1px solid var(--e2-linie); }
+.e2-mehr summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; padding: .9rem 0; font-weight: 600; font-size: .92rem; }
+.e2-mehr summary::-webkit-details-marker { display: none; }
+.e2-mehr summary::after { content: "+"; display: grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 50%; background: var(--e2-hell); font-weight: 600; }
+.e2-mehr[open] summary::after { content: "–"; }
+.e2-mehr p { padding-bottom: .8rem; font-size: .94rem; line-height: 1.6; color: var(--e2-ink-2); }
+.e2-format2 > .e2-knopf { margin: auto 1.6rem 1.6rem; margin-top: 1.4rem; align-self: flex-start; padding: .7rem 1.15rem; font-size: .92rem; }
+@media (max-width: 960px) { .e2-formate { grid-template-columns: minmax(0, 1fr); } }
+
+/* Kopfbild: zwei Formen aus der Formensprache der Startseite */
+.e2-kopfbild { position: relative; aspect-ratio: 1; width: min(100%, 26rem); justify-self: end; border-radius: 0; background: none !important; overflow: visible; display: block; }
+.e2-kopfbild__gross { position: absolute; right: 0; top: 0; width: 84%; height: 84%; }
+.e2-kopfbild__klein { position: absolute; left: 2%; bottom: 2%; width: 34%; height: 34%; color: var(--e2-ink); }
+.e2-kopfbild--gelb .e2-kopfbild__gross { color: var(--e2-gelb); }
+.e2-kopfbild--magenta .e2-kopfbild__gross { color: #1a1817; }
+@media (max-width: 960px) { .e2-kopfbild { width: min(70%, 18rem); justify-self: start; } }
+
+/* Kontakt: weiß, große Überschrift, Kontaktwege als Pillen, Team mit dem Doppelpfeil */
+.e2-kontakt-neu { padding: 6.5rem 0 0; background: #fff; overflow: hidden; }
+.e2-kontakt-neu__oben { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 4rem; align-items: center; }
+.e2-kontakt-neu__h { font-size: clamp(2.6rem, 5.4vw, 4.6rem) !important; max-width: 12ch; }
+.e2-kontakt-neu__notiz { margin-top: 1.4rem !important; font-weight: 600; }
+.e2-kontakt-neu__wege { display: flex; flex-direction: column; gap: .75rem; }
+.e2-pille { display: flex; align-items: center; gap: .9rem; padding: .95rem 1.4rem; border-radius: 999px; background: var(--e2-ink); color: #fff; font-weight: 600; font-size: 1.02rem; text-decoration: none; transition: transform .15s ease; }
+.e2-pille:hover { transform: translateX(3px); }
+.e2-pille i { display: grid; place-items: center; width: 1.4rem; height: 1.4rem; }
+.e2-pille i svg { width: 1.2rem; height: 1.2rem; }
+.e2-pille--rand { background: #fff; color: var(--e2-ink); border: 1.5px solid var(--e2-linie); }
+.e2-kontakt-neu .e2-ks-logos { margin-top: 1.2rem; }
+.e2-kontakt-neu__team { position: relative; display: flex; justify-content: center; margin-top: 3.5rem; }
+.e2-kontakt-neu__form { position: absolute; left: 50%; bottom: -8%; width: min(30rem, 70vw); height: auto; transform: translateX(-50%); color: var(--e2-gelb); }
+.e2-kontakt-neu__team img { position: relative; display: block; width: min(100%, 560px) !important; min-width: 0 !important; height: auto; opacity: 1 !important; transform: none !important; }
+@media (max-width: 960px) { .e2-kontakt-neu__oben { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; } .e2-kontakt-neu { padding-top: 4.5rem; } }
+.e2-kontakt-neu__team { margin-top: 5rem; }
+.e2-kontakt-neu__form { bottom: -4%; width: min(26rem, 64vw); }
+@media (max-width: 600px) { .e2-format2 > .e2-knopf { width: auto; } }
+
+/* ================= Runde 4 (Daniel, 10.10.2026) ================= */
+/* Kopfbereich überall gleich: Überschrift und Text links, Illustration rechts */
+.e2-held.e2-kopf { padding: 5rem 0 3rem; }
+.e2-kopf h1 { line-height: 1.16 !important; }
+.e2 h1 .hl, .e2-kopf h1 .hl { padding: .02em .12em !important; border-radius: .14em !important; }
+.e2-kopfbild { position: static; display: flex; flex-direction: column; gap: 1.2rem; width: min(100%, 27rem); aspect-ratio: auto; justify-self: end; }
+.e2-bild { display: block; width: 100%; height: auto; }
+.e2-kopfbild .hero-anlaesse { display: flex; flex-wrap: wrap; gap: .45rem; justify-content: center; }
+.e2-kopfbild .hero-anlass { padding: .35rem .8rem; border: 1px solid var(--e2-linie); border-radius: 999px; background: #fff; font-size: .82rem; font-weight: 500; color: var(--e2-ink); }
+@media (max-width: 960px) { .e2-kopfbild { width: min(100%, 22rem); justify-self: start; } }
+
+/* Formate-Karten: ohne Formen */
+.e2-format2__kopf { min-height: 7.5rem; }
+
+/* Kontakt: zentriert, weiß, Team vor einem hellgrauen Doppelpfeil */
+.e2-kontakt3 { padding: 6.5rem 0 0; background: #fff; text-align: center; overflow: hidden; }
+.e2-kontakt3__text .e2-kicker { justify-content: center; }
+.e2-kontakt3__text .e2-h2 { margin: 0 auto; font-size: clamp(2.6rem, 5.4vw, 4.4rem); max-width: 14ch; }
+.e2-kontakt3__text .e2-lead { margin-left: auto; margin-right: auto; }
+.e2-kontakt3__wege { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; margin-top: 2.4rem; }
+.e2-kontakt3__notiz { margin-top: 1.4rem !important; font-weight: 600; }
+.e2-kontakt3__team { position: relative; display: flex; justify-content: center; margin-top: 3rem; }
+.e2-kontakt3__form { position: absolute; left: 50%; top: 0; width: min(30rem, 76vw); height: auto; transform: translateX(-50%); color: #ecebe8; }
+.e2-kontakt3__team img { position: relative; display: block; width: min(100%, 600px) !important; min-width: 0 !important; height: auto; opacity: 1 !important; transform: none !important; }
+.e2-kontakt3__logos { padding: 1.4rem 0; border-top: 1px solid var(--e2-linie); }
+.e2-kontakt3__logos .ks-marquee { margin: 0 auto; max-width: 76rem; }

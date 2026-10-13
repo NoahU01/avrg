@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVRG · Projekte – empiria</title>
+<meta name="description" content="AVRG – die neue Altersvorsorge 2027: Landingpage und Medienkonzept.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/assets/e2/sg/styles.css">
+<link rel="stylesheet" href="/assets/e2/sg/e2.css">
+<link rel="stylesheet" href="/assets/e2/sg/e2-seiten.css">
+<link rel="stylesheet" href="/assets/e2/sg/e2-runde5.css">
+<link rel="stylesheet" href="/assets/e2/schwarzgelb-ergaenzung.css">
+<link rel="stylesheet" href="/assets/e2/kontakt.css">
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg-konzept.css?v=4">
+</head>
+<body class="e2">
+
+<!-- ===== SVG icon symbols ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-forward" viewBox="0 0 232.44 232.44">
+      <path fill="currentColor" d="M124.63,201.36c-7.96-.02-14.41-6.49-14.39-14.43,0-2.73.78-5.38,2.24-7.69l40.09-63.07-40.08-63c-4.25-6.77-2.2-15.67,4.52-19.89,2.28-1.43,4.91-2.19,7.59-2.2h43.03c7.41.02,14.18,3.76,18.12,10.02l40.52,63.6c4.45,7.01,4.45,16.05,0,23.04l-40.54,63.64c-3.92,6.22-10.69,9.97-18.08,9.99h-43.01ZM125.11,45.72l42.32,66.52c1.52,2.4,1.53,5.46,0,7.86l-42.34,66.62h42.54c2.33,0,4.48-1.2,5.73-3.18l40.55-63.66c1.41-2.22,1.41-5.09,0-7.31l-40.53-63.62c-1.27-2.02-3.42-3.21-5.77-3.21h-42.51Z"/>
+      <path fill="currentColor" d="M60.23,201.36H17.22c-7.96-.02-14.41-6.49-14.39-14.43,0-2.72.78-5.38,2.24-7.68l40.09-63.08L5.08,53.2c-4.26-6.72-2.26-15.63,4.45-19.88,2.31-1.46,4.97-2.23,7.69-2.24h43c7.41.01,14.18,3.76,18.13,10.02l40.52,63.6c4.45,7.01,4.45,16.05,0,23.04l-40.54,63.64c-3.93,6.23-10.7,9.97-18.1,9.99ZM17.68,45.72l42.34,66.52c1.52,2.4,1.53,5.46,0,7.86l-42.34,66.62h42.53c2.34,0,4.49-1.2,5.74-3.18l40.55-63.66c1.41-2.22,1.41-5.09,0-7.31l-40.53-63.62c-1.27-2.02-3.42-3.21-5.77-3.21H17.68Z"/>
+    </symbol>
+    <symbol id="ic-kreis" viewBox="0 0 232.44 232.44">
+      <path fill="currentColor" d="M116.22,22.83c51.49,0,93.39,41.89,93.39,93.39s-41.89,93.39-93.39,93.39S22.83,167.71,22.83,116.22,64.73,22.83,116.22,22.83M116.22,2.83C53.6,2.83,2.83,53.6,2.83,116.22s50.76,113.39,113.39,113.39,113.39-50.76,113.39-113.39S178.84,2.83,116.22,2.83h0Z"/>
+    </symbol>
+    <symbol id="ic-kreuz" viewBox="0 0 232.44 232.44">
+      <path fill="currentColor" d="M162.06,27.36l43.02,43.02-31.7,31.7-14.14,14.14,14.14,14.14,31.7,31.7-43.02,43.02-31.7-31.7-14.14-14.14-14.14,14.14-31.7,31.7-43.02-43.02,31.7-31.7,14.14-14.14-14.14-14.14-31.7-31.7,43.02-43.02,31.7,31.7,14.14,14.14,14.14-14.14,31.7-31.7M162.06,2.83c-2.32,0-4.64.89-6.41,2.66l-39.43,39.43L76.79,5.49c-1.77-1.77-4.09-2.66-6.41-2.66-2.32,0-4.64.88-6.41,2.66L5.49,63.97c-3.54,3.54-3.54,9.28,0,12.82l39.43,39.43L5.49,155.65c-3.54,3.54-3.54,9.28,0,12.82l58.48,58.48c1.77,1.77,4.09,2.66,6.41,2.66s4.64-.89,6.41-2.66l39.43-39.43,39.43,39.43c1.77,1.77,4.09,2.66,6.41,2.66s4.64-.89,6.41-2.66l58.48-58.48c3.54-3.54,3.54-9.28,0-12.82l-39.43-39.43,39.43-39.43c3.54-3.54,3.54-9.28,0-12.82L168.47,5.49c-1.77-1.77-4.09-2.66-6.41-2.66h0Z"/>
+    </symbol>
+    <symbol id="ic-quadrat" viewBox="0 0 232.44 232.44">
+      <path fill="currentColor" d="M209.61,22.83v186.77H22.83V22.83h186.77M216.12,2.83H16.32c-7.45,0-13.49,6.04-13.49,13.49v199.8c0,7.45,6.04,13.49,13.49,13.49h199.8c7.45,0,13.49-6.04,13.49-13.49V16.32c0-7.45-6.04-13.49-13.49-13.49h0Z"/>
+    </symbol>
+    <symbol id="ic-raute" viewBox="0 0 232.44 232.44">
+      <path fill="currentColor" d="M116.22,27.03l89.19,89.19-89.19,89.19L27.03,116.22,116.22,27.03M116.22,2.83c-2.53,0-5.06.96-6.99,2.89L5.73,109.23c-3.86,3.86-3.86,10.11,0,13.97l103.51,103.51c1.93,1.93,4.46,2.89,6.99,2.89s5.06-.96,6.99-2.89l103.51-103.51c3.86-3.86,3.86-10.11,0-13.97L123.21,5.73c-1.93-1.93-4.46-2.89-6.99-2.89h0Z"/>
+    </symbol>
+    <symbol id="ic-phone" viewBox="0 0 80 80">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M34.67,62h10.67"/>
+        <path d="M22,18c0-4.42,3.58-8,8-8h20c4.42,0,8,3.58,8,8v44c0,4.42-3.58,8-8,8h-20c-4.42,0-8-3.58-8-8V18Z"/>
+      </g>
+    </symbol>
+    <symbol id="ic-in" viewBox="0 0 80 80">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="10" y="10" width="60" height="60" rx="12.3" ry="12.3"/>
+        <path d="M29.93,56.86h-7.71v-22.11h7.71v22.11ZM45.94,41.96c-1.88,0-3.4,1.52-3.4,3.4v11.51h-8.11v-22.11h8.11v2.52c1.9-1.61,4.3-2.51,6.79-2.54,5.03,0,8.52,3.73,8.52,10.81v11.32h-8.52v-11.51c0-1.88-1.5-3.4-3.38-3.41,0,0-.01,0-.02,0v.02ZM30.07,27.1c0,2.19-1.78,3.97-3.97,3.97s-3.97-1.78-3.97-3.97,1.78-3.97,3.97-3.97c2.18.02,3.94,1.79,3.94,3.97h.03Z"/>
+      </g>
+    </symbol>
+    <symbol id="ic-text" viewBox="0 0 80 80">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14,20h52"/>
+        <path d="M14,38h52"/>
+        <path d="M14,56h34"/>
+      </g>
+    </symbol>
+    <symbol id="ic-talk" viewBox="0 0 80 80">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="30" y="10" width="20" height="32" rx="10"/>
+        <path d="M20,36c0,11,9,20,20,20s20-9,20-20"/>
+        <path d="M40,56v14"/>
+        <path d="M28,70h24"/>
+      </g>
+    </symbol>
+    <symbol id="ic-visibility" viewBox="0 0 80 80">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6,40c6-14,20-22,34-22s28,8,34,22c-6,14-20,22-34,22S12,54,6,40Z"/>
+        <circle cx="40" cy="40" r="10"/>
+      </g>
+    </symbol>
+    <symbol id="ic-ads" viewBox="0 0 80 80">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="40" cy="40" r="28"/>
+        <circle cx="40" cy="40" r="16"/>
+        <circle cx="40" cy="40" r="4" fill="currentColor" stroke="none"/>
+      </g>
+    </symbol>
+    <symbol id="ic-mail" viewBox="0 0 80 80">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="10" y="18" width="60" height="44" rx="6"/>
+        <path d="M12,22l28,22,28-22"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== Header ===== -->
+<header class="site-header" id="top">
+  <div class="container nav">
+    <a class="brand" href="/index.html" aria-label="empiria Startseite">
+      <img src="/assets/empiria-logo.svg" alt="empiria">
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#problem">Problem</a>
+      <a href="#loesung">Lösung</a>
+      <div class="nav-item nav-item--dropdown">
+        <a href="#leistungen">Leistungen</a>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-panel">
+            <div class="nav-item--subdropdown">
+              <a href="#leistungen" class="nav-dropdown-sub-trigger nav-dropdown-sub-trigger--link">Strategiehandwerk</a>
+              <div class="nav-dropdown-sub">
+                <div class="nav-dropdown-panel">
+                  <a href="/leistungen/strategie">Strategie in den Alltag überführen</a>
+                  <a href="/leistungen/komplexe-themen">Komplexe Themen strukturieren &amp; kommunizieren</a>
+                  <a href="/leistungen/innovation">Innovation &amp; Geschäftsmodell neu denken</a>
+                </div>
+              </div>
+            </div>
+            <div class="nav-dropdown-divider"></div>
+            <div class="nav-item--subdropdown">
+              <a href="/workshops" class="nav-dropdown-sub-trigger nav-dropdown-sub-trigger--link">Workshops</a>
+              <div class="nav-dropdown-sub">
+                <div class="nav-dropdown-panel">
+                  <a href="/ki-zum-anfassen">KI zum Anfassen</a>
+                  <a href="/sprint-landingpage">Sprint Landingpage</a>
+                  <a href="/workshop-moderation">Moderation deines Workshops</a>
+                </div>
+              </div>
+            </div>
+            <div class="nav-dropdown-divider"></div>
+            <div class="nav-item--subdropdown">
+              <a href="/marketing" class="nav-dropdown-sub-trigger nav-dropdown-sub-trigger--link">Marketing 2.0</a>
+              <div class="nav-dropdown-sub">
+                <div class="nav-dropdown-panel">
+                  <a href="/dashboard-digitales-marketing">MarketingEcoSystem (MES)</a>
+                  <a href="/sofort-sichtbar"><img src="/assets/sofort-sichtbar-logo-ink.svg" alt="sofort sichtbar" class="nav-sofort-logo"></a>
+                  <a href="/paid-ads">Paid Ads</a>
+                  <a href="/medien">Medien, die Ergebnisse liefern</a>
+                </div>
+              </div>
+            </div>
+            <div class="nav-dropdown-divider"></div>
+            <div class="nav-item--subdropdown">
+              <a href="/training-sparring" class="nav-dropdown-sub-trigger nav-dropdown-sub-trigger--link">Training & Sparring</a>
+              <div class="nav-dropdown-sub">
+                <div class="nav-dropdown-panel">
+                  <a href="/praesentationsseminar">Teams befähigen, professionell zu kommunizieren</a>
+                  <a href="/sparring">1:1 Sparring</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+<!-- ENTWICKLUNG:START (nur Sandbox – wird beim Push automatisch entfernt) -->
+<div class="dev-dd dev-dd--desktop" data-dev-dd>
+<button class="dev-dd-toggle" type="button" aria-expanded="false"><span class="dev-dd-long">/ Entwicklung /</span><span class="dev-dd-short" aria-hidden="true">/ Entw. /</span><svg class="dev-dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<div class="dev-dd-panel">
+<p class="dev-dd-note"><b>Nur in der Entwicklungsumgebung sichtbar</b>Dieser Menüpunkt ist in der Live-Version nicht enthalten.</p>
+<p class="dev-dd-group">Unterseiten</p>
+<div class="dev-dd-sub">
+<a href="../impulsvortraege.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">IV</span><span class="dev-dd-txt"><b>Impulsvorträge</b><small>Übersicht aller Vorträge</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Vorträge</p>
+<a href="../vortrag-1.html" class="dev-dd-link"><span class="dev-dd-tag">1</span><span class="dev-dd-txt"><b>Warum sich niemand für Dein Produkt interessiert.</b><small>Relevanz</small></span></a>
+<a href="../vortrag-2.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Strategie, die endlich ankommt.</b><small>Strategie im Alltag</small></span></a>
+<a href="../vortrag-3.html" class="dev-dd-link"><span class="dev-dd-tag">3</span><span class="dev-dd-txt"><b>Gründe Deinen stärksten Konkurrenten!</b><small>Perspektivwechsel</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="../budget-retter.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">BR</span><span class="dev-dd-txt"><b>Budget-Retter</b><small>Landingpage · Varianten</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Varianten</p>
+<a href="../budget-retter-1.html" class="dev-dd-link"><span class="dev-dd-tag">B1</span><span class="dev-dd-txt"><b>Variante 1</b><small>Der gemeinsame Stand</small></span></a>
+<a href="../budget-retter-2.html" class="dev-dd-link"><span class="dev-dd-tag">B2</span><span class="dev-dd-txt"><b>Variante 2</b><small>Nach der Kritik umgebaut</small></span></a>
+<a href="../budget-retter-3.html" class="dev-dd-link"><span class="dev-dd-tag">B3</span><span class="dev-dd-txt"><b>Variante 3</b><small>Mit dem Zeichen im Aufmacher</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="../visitenkarte.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">VK</span><span class="dev-dd-txt"><b>Visitenkarten</b><small>Digitale Visitenkarte · Varianten</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Varianten</p>
+<a href="../visitenkarte-1.html" class="dev-dd-link"><span class="dev-dd-tag">V1</span><span class="dev-dd-txt"><b>Die Bühne</b><small>Wie die Startseite · auch Breitbild</small></span></a>
+<a href="../visitenkarte-4.html" class="dev-dd-link"><span class="dev-dd-tag">V4</span><span class="dev-dd-txt"><b>Gesprächsstart</b><small>Speichern, vernetzen, Termin</small></span></a>
+<a href="../visitenkarte-5.html" class="dev-dd-link"><span class="dev-dd-tag">V5</span><span class="dev-dd-txt"><b>Zeigen &amp; Teilen</b><small>App · Sperrbildschirm · QR-Code</small></span></a>
+</div></div>
+</div>
+<a href="../strategie-aufsichtsrat.html" class="dev-dd-link"><span class="dev-dd-tag">AR</span><span class="dev-dd-txt"><b>Strategie für Aufsichtsräte</b><small>Impulsvortrag &amp; Schulung</small></span></a>
+<div class="dev-dd-sub">
+<a href="../xmas.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">XM</span><span class="dev-dd-txt"><b>X-Mas</b><small>Weihnachtsseite · Varianten</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Varianten</p>
+<a href="../xmas-1.html" class="dev-dd-link"><span class="dev-dd-tag">X1</span><span class="dev-dd-txt"><b>Die Bescherung</b><small>Landschaft &amp; Geschenke</small></span></a>
+<a href="../xmas-2.html" class="dev-dd-link"><span class="dev-dd-tag">X2</span><span class="dev-dd-txt"><b>Der Adventskalender</b><small>Zwölf Türchen</small></span></a>
+<a href="../xmas-4.html" class="dev-dd-link"><span class="dev-dd-tag">X4</span><span class="dev-dd-txt"><b>Die Lichterkette</b><small>Sekundärfarben</small></span></a>
+<a href="../xmas-5.html" class="dev-dd-link"><span class="dev-dd-tag">X5</span><span class="dev-dd-txt"><b>Das Fenster</b><small>Scheiben freiwischen</small></span></a>
+<a href="../xmas-6.html" class="dev-dd-link"><span class="dev-dd-tag">X6</span><span class="dev-dd-txt"><b>Der Wunschzettel</b><small>Zum Abhaken</small></span></a>
+<a href="../xmas-8.html" class="dev-dd-link"><span class="dev-dd-tag">X8</span><span class="dev-dd-txt"><b>Der Schneesturm</b><small>Legt sich beim Öffnen</small></span></a>
+<a href="../xmas-9.html" class="dev-dd-link"><span class="dev-dd-tag">X9</span><span class="dev-dd-txt"><b>Der Baum aus Worten</b><small>Typografie statt Grafik</small></span></a>
+<a href="../xmas-10.html" class="dev-dd-link"><span class="dev-dd-tag">X10</span><span class="dev-dd-txt"><b>Das Geschenkpapier</b><small>Zum Aufreißen</small></span></a>
+<a href="../xmas-11.html" class="dev-dd-link"><span class="dev-dd-tag">X11</span><span class="dev-dd-txt"><b>Vorsätze · Der Zettel</b><small>2025/26 gestrichen · PDF</small></span></a>
+<a href="../xmas-12.html" class="dev-dd-link"><span class="dev-dd-tag">X12</span><span class="dev-dd-txt"><b>Vorsätze · Der Stapel</b><small>Drei Jahre übereinander</small></span></a>
+<a href="../xmas-13.html" class="dev-dd-link"><span class="dev-dd-tag">X13</span><span class="dev-dd-txt"><b>Vorsätze · Die Jahreszahlen</b><small>Strich wird gezogen</small></span></a>
+</div></div>
+</div>
+<a href="../capiamo.html" class="dev-dd-link"><span class="dev-dd-tag">ca</span><span class="dev-dd-txt"><b>capiamo</b><small>Fachbereich trifft IT</small></span></a>
+<p class="dev-dd-group dev-dd-group--sub">Projekte</p>
+<div class="dev-dd-sub">
+<a href="sv-akademie.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">SV</span><span class="dev-dd-txt"><b>SV Akademie</b><small>Steuerungsseite &middot; drei Module</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Module</p>
+<a href="sv-selbstverstaendnis.html" class="dev-dd-link"><span class="dev-dd-tag">1</span><span class="dev-dd-txt"><b>Selbstverständnis</b><small>Wofür stehen wir?</small></span></a>
+<a href="sv-vision.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Vision</b><small>Wie wollen wir wahrgenommen werden?</small></span></a>
+<div class="dev-dd-sub">
+<a href="sv-strategie.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">3</span><span class="dev-dd-txt"><b>Strategie</b><small>Wie kommen wir dorthin?</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Darunter</p>
+<a href="sv-strategie-ist.html" class="dev-dd-link"><span class="dev-dd-tag">IS</span><span class="dev-dd-txt"><b>Ist-Situation</b><small>SWOT-Logik und was einflie&szlig;t</small></span></a>
+<a href="sv-strategie-stossrichtungen.html" class="dev-dd-link"><span class="dev-dd-tag">ST</span><span class="dev-dd-txt"><b>Sto&szlig;richtungen</b><small>Herkunft, Auswahl, Nachweis</small></span></a>
+<a href="sv-meilensteine.html" class="dev-dd-link"><span class="dev-dd-tag">MS</span><span class="dev-dd-txt"><b>Meilensteinplan</b><small>Drei Str&auml;nge &middot; fein, hell, dunkel</small></span></a>
+<a href="sv-abstimmung-hal.html" class="dev-dd-link"><span class="dev-dd-tag">AG</span><span class="dev-dd-txt"><b>Agenda Vision &amp; Strategie</b><small>Workshop mit dem Hauptabteilungsleiter</small></span></a>
+</div></div>
+</div>
+<a href="sv-projektplanung.html" class="dev-dd-link"><span class="dev-dd-tag">PP</span><span class="dev-dd-txt"><b>Projektplanung</b><small>Termine, Agenden und der Meilensteinplan</small></span></a>
+</div></div>
+</div>
+<a href="sitemap.html" class="dev-dd-link"><span class="dev-dd-tag">&#9638;</span><span class="dev-dd-txt"><b>Sitemap</b><small>Alle Seiten der SV Akademie &middot; mit Vorschau</small></span></a>
+<div class="dev-dd-sub">
+<a href="vofe-umzug-schulen.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">VF</span><span class="dev-dd-txt"><b>Homepage VoFe Umzug</b><small>Patenwagen &middot; Entwurf Startseite</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Unterseiten</p>
+<a href="vofe-festzug.html" class="dev-dd-link"><span class="dev-dd-tag">1</span><span class="dev-dd-txt"><b>Der Festzug</b><small>Alle Wagen der Schulen &middot; Patenschaft übernehmen</small></span></a>
+<a href="vofe-ueber-uns.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Über uns</b><small>Motivation &middot; wer dahintersteckt</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="avrg.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">AV</span><span class="dev-dd-txt"><b>AVRG</b><small>Neue Altersvorsorge 2027 &middot; sofortsichtbar</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Unterseiten</p>
+<div class="dev-dd-sub">
+<a href="avrg-landingpage-1.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">1</span><span class="dev-dd-txt"><b>Landingpage AVRG</b><small>Drei Varianten &middot; mit Rechner</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Varianten</p>
+<a href="avrg-landingpage-1.html" class="dev-dd-link"><span class="dev-dd-tag">L1</span><span class="dev-dd-txt"><b>Variante 1</b><small>Nah an der Vorlage SV Owen</small></span></a>
+<a href="avrg-landingpage-2.html" class="dev-dd-link"><span class="dev-dd-tag">L2</span><span class="dev-dd-txt"><b>Variante 2</b><small>Einstieg &bdquo;Was trifft auf dich zu?&ldquo;</small></span></a>
+<a href="avrg-landingpage-3.html" class="dev-dd-link"><span class="dev-dd-tag">L3</span><span class="dev-dd-txt"><b>Variante 3</b><small>Das Klarheits-Ticket &middot; Ma&szlig;stab Volksfest</small></span></a>
+</div></div>
+</div>
+<a href="avrg-medienkonzept.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Medienkonzept</b><small>Claim, Mailings, Postings, Webinar, Print</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="darstellungsideen.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">3.0</span><span class="dev-dd-txt"><b>empiria 3.0</b><small>Konzipiert, noch nicht umgesetzt</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Ideen &amp; Konzepte</p>
+<a href="darstellungsideen.html" class="dev-dd-link"><span class="dev-dd-tag">DI</span><span class="dev-dd-txt"><b>Darstellungsideen</b><small>Gute Darstellungen f&uuml;r einzelne Stellen</small></span></a>
+<a href="header.html" class="dev-dd-link"><span class="dev-dd-tag">HV</span><span class="dev-dd-txt"><b>Header</b><small>Darstellungsarten f&uuml;r die Kopfbilder</small></span></a>
+<p class="dev-dd-group">Frühere Fassungen von 2.0</p>
+<a href="empiria-2/startseite-alt.html" class="dev-dd-link"><span class="dev-dd-tag">S1</span><span class="dev-dd-txt"><b>Startseite alt</b><small>Fassung vor dem Volksfest-Aufbau</small></span></a>
+<a href="empiria-2/startseite-alt-2.html" class="dev-dd-link"><span class="dev-dd-tag">S2</span><span class="dev-dd-txt"><b>Startseite alt 2</b><small>Variationen A und B</small></span></a>
+<a href="empiria-2/strategie-alt.html" class="dev-dd-link"><span class="dev-dd-tag">1a</span><span class="dev-dd-txt"><b>Strategie alt</b><small>frühere Fassung</small></span></a>
+</div></div>
+</div>
+<p class="dev-dd-group dev-dd-group--sub">Marketing</p>
+<div class="dev-dd-sub">
+<a href="corporate-design.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">CD</span><span class="dev-dd-txt"><b>Corporate Design</b><small>PDF-Varianten &middot; Designideen</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Vorlagen</p>
+<a href="geschaeftsausstattung.html" class="dev-dd-link"><span class="dev-dd-tag">GA</span><span class="dev-dd-txt"><b>Geschäftsausstattung</b><small>Präsentation, Dokumente, Print, LinkedIn, Hintergründe</small></span></a>
+<a href="powerpoint-master.html" class="dev-dd-link"><span class="dev-dd-tag">PPT</span><span class="dev-dd-txt"><b>PowerPoint-Master</b><small>Stufe 2 · Folientypen</small></span></a>
+<a href="ga-visitenkarten.html" class="dev-dd-link"><span class="dev-dd-tag">VK</span><span class="dev-dd-txt"><b>Visitenkarten</b><small>Entwurf</small></span></a>
+<a href="ga-rollup.html" class="dev-dd-link"><span class="dev-dd-tag">RU</span><span class="dev-dd-txt"><b>Roll-up</b><small>Entwurf</small></span></a>
+<a href="ga-word.html" class="dev-dd-link"><span class="dev-dd-tag">DOC</span><span class="dev-dd-txt"><b>Word-Vorlagen</b><small>Entwurf</small></span></a>
+<a href="ga-onepager.html" class="dev-dd-link"><span class="dev-dd-tag">A3</span><span class="dev-dd-txt"><b>One-Pager</b><small>Entwurf</small></span></a>
+<a href="ga-linkedin.html" class="dev-dd-link"><span class="dev-dd-tag">IN</span><span class="dev-dd-txt"><b>LinkedIn-Banner</b><small>Entwurf</small></span></a>
+<a href="ga-linkedin-fokus.html" class="dev-dd-link"><span class="dev-dd-tag">IF</span><span class="dev-dd-txt"><b>LinkedIn im Fokus</b><small>Sechs Themen als quadratische PDFs</small></span></a>
+<a href="ga-hintergruende.html" class="dev-dd-link"><span class="dev-dd-tag">HG</span><span class="dev-dd-txt"><b>Hintergrundbilder</b><small>Entwurf</small></span></a>
+<a href="merch.html" class="dev-dd-link"><span class="dev-dd-tag">ME</span><span class="dev-dd-txt"><b>Merch</b><small>Die Marke zum Anfassen</small></span></a>
+<a href="pdf-varianten.html" class="dev-dd-link"><span class="dev-dd-tag">PDF</span><span class="dev-dd-txt"><b>PDF-Varianten</b><small>Muster KI zum Anfassen &middot; A/B im Vergleich</small></span></a>
+<p class="dev-dd-group">Designideen</p>
+<a href="../designideen.html" class="dev-dd-link"><span class="dev-dd-tag">DI</span><span class="dev-dd-txt"><b>Designideen</b><small>Gestaltungen f&uuml;r Seiten, die wirken m&uuml;ssen</small></span></a>
+<a href="../designideen/spektrum.html" class="dev-dd-link"><span class="dev-dd-tag">SP</span><span class="dev-dd-txt"><b>Spektrum</b><small>Vollfl&auml;chige Farbb&auml;nder</small></span></a>
+<a href="../designideen/buehne.html" class="dev-dd-link"><span class="dev-dd-tag">B&Uuml;</span><span class="dev-dd-txt"><b>B&uuml;hne</b><small>Vollbildstufen mit Kapitelmarken</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="business-story.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">BS</span><span class="dev-dd-txt"><b>Business Story</b><small>Storyboard &middot; Elevator Pitch</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Unterseiten</p>
+<a href="methoden-storyboard.html" class="dev-dd-link"><span class="dev-dd-tag">SB</span><span class="dev-dd-txt"><b>Storyboard Landing Page</b><small>Antworten &middot; Fragen &middot; Skizze &middot; Final</small></span></a>
+<a href="methoden-elevator-pitch.html" class="dev-dd-link"><span class="dev-dd-tag">EP</span><span class="dev-dd-txt"><b>Elevator Pitch</b><small>Unsere Story in 30/10 Sekunden</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="medienkonzept.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">MK</span><span class="dev-dd-txt"><b>Medienkonzept</b><small>empiria &middot; Beiträge, Kontakt, Wirkung</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Unterseiten</p>
+<a href="medienkonzept-postingformate.html" class="dev-dd-link"><span class="dev-dd-tag">PF</span><span class="dev-dd-txt"><b>Postingformate</b><small>Themen × Postingtypen · zur Entscheidung</small></span></a>
+<a href="medienkonzept-zuordnung.html" class="dev-dd-link"><span class="dev-dd-tag">LO</span><span class="dev-dd-txt"><b>Logik</b><small>Drei Töpfe → Positionierung → Themen → Postings</small></span></a>
+<a href="medienkonzept-entwuerfe.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Entwürfe</b><small>Die ersten Postings zur Freigabe</small></span></a>
+<a href="medienkonzept-formate.html" class="dev-dd-link"><span class="dev-dd-tag">3</span><span class="dev-dd-txt"><b>Formate</b><small>Inhalte × Darstellungen · zwei Kanäle</small></span></a>
+</div></div>
+</div>
+<p class="dev-dd-group dev-dd-group--sub">Archiv</p>
+<div class="dev-dd-sub">
+<a class="dev-dd-link dev-dd-link--muted dev-dd-link--parent" tabindex="0" role="button" aria-label="Archiv aufklappen"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Frühere Stände</b><small>Acht Einträge</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Seiten</p>
+<a href="../leistungen/teams.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Teams befähigen, professionell zu kommunizieren</b><small>Früherer Stand der Seite</small></span></a>
+<a href="../der-beste-workshop.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Der beste Workshop</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/startseite-v1.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Startseite Version 1.0</b><small>Früherer Stand der Startseite</small></span></a>
+<a href="../archiv/sofort-sichtbar-problem.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>sofort sichtbar + Problem</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/digitale-tools-1-0.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Digitale Tools 1.0</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/marketing-1-0.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Marketing 1.0</b><small>Früherer Stand</small></span></a>
+<div class="dev-dd-sub">
+<a href="../archiv/medien.html" class="dev-dd-link dev-dd-link--muted dev-dd-link--parent"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Medien, die Ergebnisse liefern</b><small>Früherer Stand</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Medien</p>
+<a href="../archiv/powerpoint.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>PowerPoint</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/landingpage.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Landingpage</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/rollup.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Roll-up</b><small>Früherer Stand</small></span></a>
+</div></div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<style>
+.dev-dd{position:relative;display:inline-flex;align-items:center;margin-left:auto}
+.dev-dd-toggle{display:inline-flex;align-items:center;gap:.35rem;font-family:inherit;font-size:.95rem;font-weight:400;line-height:1.4;color:var(--grey-50);background:none;border:0;padding:0;cursor:pointer;white-space:nowrap;transition:color .18s ease}
+.dev-dd-toggle:hover,.dev-dd.is-open .dev-dd-toggle{color:var(--ink)}
+.dev-dd-chev{width:12px;height:12px;transition:transform .2s ease}
+.dev-dd.is-open .dev-dd-chev{transform:rotate(180deg)}
+.dev-dd-panel{position:absolute;top:calc(100% + 18px);right:-14px;width:390px;max-height:calc(100vh - 120px);overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;padding:12px;background:#fff;border:1px solid var(--grey-bg);border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.14);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .16s ease,transform .16s ease,visibility .16s ease;z-index:80;text-align:left}
+.dev-dd-panel::before{content:"";position:absolute;left:0;right:0;top:-20px;height:20px}
+.dev-dd.is-open .dev-dd-panel{opacity:1;visibility:visible;transform:none}
+.dev-dd-note{margin:0 0 14px;padding:11px 13px;background:#fff400;color:#1a1817;border-radius:10px;font-size:12px;line-height:1.45}
+.dev-dd-note b{display:block;font-size:13px;font-weight:600;margin-bottom:2px}
+.dev-dd-group{margin:4px 8px 8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey-50);font-weight:600}
+.dev-dd-group--sub{margin-top:14px;padding-top:12px;border-top:1px solid var(--grey-bg)}
+a.dev-dd-link{display:flex;align-items:center;gap:12px;padding:9px 8px;border-radius:10px;color:var(--ink);text-decoration:none;border-bottom:0;font-size:inherit;min-height:0;white-space:normal}
+a.dev-dd-link:hover,a.dev-dd-link.is-current{background:var(--grey-bg);color:var(--ink)}
+a.dev-dd-link--indent{padding-left:30px}
+.dev-dd-tag{flex:0 0 32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:var(--ink);color:#fff;font-weight:600;font-size:12px}
+.dev-dd-link--muted .dev-dd-tag{background:var(--grey-bg);color:var(--grey-70)}
+.dev-dd-txt{display:flex;flex-direction:column;line-height:1.3;min-width:0}
+.dev-dd-txt b{font-weight:500;font-size:14px}
+.dev-dd-txt small{font-size:12px;color:var(--grey-50);margin-top:1px}
+/* ---- Zweite Ebene: oeffnet nach rechts, wie im Leistungen-Menue -----------
+   Das Panel sitzt am rechten Rand; gemessen bleiben dort auch bei 1280 px
+   Fensterbreite noch 277 px frei, das reicht fuer das Flyout. */
+.dev-dd-sub{position:relative}
+a.dev-dd-link--parent::after{content:"";width:6px;height:6px;margin-left:auto;flex:0 0 auto;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);opacity:.45}
+.dev-dd-sub:hover>a.dev-dd-link--parent,.dev-dd-sub:focus-within>a.dev-dd-link--parent{background:var(--grey-bg)}
+.dev-dd-flyout{position:absolute;left:100%;top:-10px;padding-left:10px;opacity:0;visibility:hidden;transition:opacity .16s ease,visibility .16s ease;z-index:81}
+.dev-dd-sub:hover>.dev-dd-flyout,.dev-dd-sub:focus-within>.dev-dd-flyout,.dev-dd-flyout.is-auf{opacity:1;visibility:visible}
+.dev-dd-sub.is-auf>a.dev-dd-link--parent{background:var(--grey-bg)}
+.dev-dd-flyout-panel{width:262px;padding:10px;background:#fff;border:1px solid var(--grey-bg);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.14)}
+.dev-dd-flyout-panel .dev-dd-group{margin:2px 8px 6px}
+.dev-dd--mobile{display:none}
+.dev-dd-short{display:none}
+@media (min-width:901px) and (max-width:1140px){
+.dev-dd--desktop .dev-dd-long{display:none}
+.dev-dd--desktop .dev-dd-short{display:inline}
+.dev-dd--desktop ~ .nav-cta{margin-left:1.1rem;padding-left:1.6rem;padding-right:1.6rem}
+}
+@media (max-width:900px){
+.nav .dev-dd--desktop{display:none}
+.mobile-menu .dev-dd--mobile{display:block;margin:0}
+.mobile-menu .dev-dd-toggle{display:flex;width:100%;justify-content:space-between;padding:14px 0;font-size:1.15rem;border-bottom:1px solid #f2f2f2}
+.mobile-menu .dev-dd-panel{position:static;width:auto;max-height:none;overflow:visible;display:none;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;border-left:2px solid var(--grey-bg);border-radius:0;margin:10px 0 6px;padding:0 0 0 12px}
+.mobile-menu .dev-dd-panel::before{display:none}
+.mobile-menu .dev-dd.is-open .dev-dd-panel{display:block}
+.mobile-menu a.dev-dd-link{padding:9px 8px;font-size:inherit;border-bottom:0}
+.mobile-menu a.dev-dd-link--indent{padding-left:30px}
+.mobile-menu .dev-dd-panel{overflow:auto}
+.mobile-menu .dev-dd-flyout{position:static;opacity:1;visibility:visible;padding-left:0}
+.mobile-menu .dev-dd-flyout-panel{width:auto;padding:0 0 0 12px;margin:2px 0 6px 20px;background:none;border:0;border-left:2px solid var(--grey-bg);border-radius:0;box-shadow:none}
+.mobile-menu a.dev-dd-link--parent::after{display:none}
+}
+</style>
+<script>
+(function(){
+function init(){
+var here=location.href.split('#')[0].split('?')[0];
+document.querySelectorAll('[data-dev-dd]').forEach(function(d){
+var b=d.querySelector('.dev-dd-toggle'),t;
+function desk(){return window.innerWidth>900;}
+function set(o){d.classList.toggle('is-open',o);b.setAttribute('aria-expanded',String(o));}
+b.addEventListener('click',function(e){e.stopPropagation();set(desk()&&d.matches(':hover')?true:!d.classList.contains('is-open'));});
+d.addEventListener('mouseenter',function(){if(desk()){clearTimeout(t);set(true);}});
+d.addEventListener('mouseleave',function(){if(desk()){t=setTimeout(function(){set(false);},180);}});
+document.addEventListener('click',function(e){if(!d.contains(e.target))set(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+d.querySelectorAll('.dev-dd-link').forEach(function(a){if(a.href&&a.href.split('#')[0]===here)a.classList.add('is-current');});
+
+var panel=d.querySelector('.dev-dd-panel');
+
+// ---- Zweite Ebene -------------------------------------------------------
+// Das Panel muss scrollen, seit es vier Kategorien hat (gemessen: 834px
+// Inhalt bei 680px Platz auf einem 900er Bildschirm). Ein Flyout darin wuerde
+// mitgeschnitten. position:fixed hilft nicht - die Kopfzeile hat einen
+// backdrop-filter und wird dadurch zum Bezugsrahmen fuer fixed. Das Flyout
+// haengt sich beim Oeffnen deshalb unter .dev-dd um: dort ist es absolut
+// positioniert, aber ausserhalb des scrollenden Panels.
+// Weil :hover dort nicht mehr traegt, steuert eine Klasse die Sichtbarkeit.
+panel&&panel.querySelectorAll(':scope>.dev-dd-sub').forEach(function(s){
+var f=s.querySelector(':scope>.dev-dd-flyout');if(!f)return;
+var heim=f.parentNode,nachbar=f.nextSibling,t2;
+function heimholen(){
+clearTimeout(t2);f.classList.remove('is-auf');s.classList.remove('is-auf');
+if(f.parentNode!==heim){heim.insertBefore(f,nachbar);f.removeAttribute('style');}
+}
+function auf(){
+if(!desk()){heimholen();return;}
+clearTimeout(t2);
+if(f.parentNode!==d)d.appendChild(f);
+var z=s.getBoundingClientRect(),dr=d.getBoundingClientRect(),
+    k=f.firstElementChild.getBoundingClientRect();
+// Rechts daneben, wenn Platz ist - sonst nach links gekippt.
+if(z.right+10+k.width>window.innerWidth-12){
+f.style.left=(z.left-dr.left-10-k.width)+'px';
+f.style.paddingLeft='0';f.style.paddingRight='10px';
+}else{
+f.style.left=(z.right-dr.left)+'px';
+f.style.paddingLeft='';f.style.paddingRight='';
+}
+// Senkrecht an der Zeile, aber nie unter den Fensterrand.
+var oben=z.top-dr.top-10,grenze=window.innerHeight-12-k.height-dr.top;
+f.style.top=Math.max(-dr.top+12,Math.min(oben,grenze))+'px';
+f.classList.add('is-auf');s.classList.add('is-auf');
+}
+function zu(){t2=setTimeout(function(){f.classList.remove('is-auf');s.classList.remove('is-auf');},180);}
+s.addEventListener('mouseenter',auf);
+s.addEventListener('focusin',auf);
+s.addEventListener('mouseleave',zu);
+f.addEventListener('mouseenter',function(){clearTimeout(t2);});
+f.addEventListener('mouseleave',zu);
+panel.addEventListener('scroll',function(){if(f.classList.contains('is-auf'))auf();});
+window.addEventListener('resize',heimholen);
+});
+
+// ---- Dritte Ebene -------------------------------------------------------
+// Die bleibt, wo sie ist: ihr Elternteil ist bereits aus dem Panel heraus,
+// dort wird nichts mehr abgeschnitten. Sie braucht nur die Kippung nach
+// links, weil rechts neben der zweiten Ebene kein Platz mehr ist.
+d.querySelectorAll('.dev-dd-flyout .dev-dd-sub').forEach(function(s){
+var f=s.querySelector(':scope>.dev-dd-flyout');if(!f)return;
+function platzieren(){
+f.style.top='';f.style.left='';f.style.right='';f.style.paddingLeft='';f.style.paddingRight='';
+if(!desk())return;
+f.style.top='-10px';
+var r=f.firstElementChild.getBoundingClientRect(),z=s.getBoundingClientRect();
+if(z.right+10+r.width>window.innerWidth-12){
+f.style.left='auto';f.style.right='100%';
+f.style.paddingLeft='0';f.style.paddingRight='10px';
+}
+var u=f.getBoundingClientRect().bottom-(window.innerHeight-12);
+if(u>0)f.style.top=(-10-u)+'px';
+}
+s.addEventListener('mouseenter',platzieren);
+s.addEventListener('focusin',platzieren);
+window.addEventListener('resize',function(){f.removeAttribute('style');});
+});
+});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<!-- ENTWICKLUNG:END -->
+    <a class="btn btn--dark btn--sm nav-cta" href="/kontakt.html">Kontakt</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+    <a href="#problem">Problem</a>
+    <a href="#loesung">Lösung</a>
+    <a href="#leistungen">Leistungen</a>
+    <div class="mobile-submenu">
+      <div class="mobile-submenu-group">
+        <div class="mobile-submenu-row">
+          <a class="mobile-submenu-label mobile-submenu-label--link" href="#leistungen">Strategiehandwerk</a>
+          <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-label="Unterpunkte zu Strategiehandwerk anzeigen">
+            <svg class="mobile-submenu-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="mobile-submenu-panel">
+      <a href="/leistungen/strategie" class="mobile-submenu-link">Strategie in den Alltag überführen</a>
+      <a href="/leistungen/komplexe-themen" class="mobile-submenu-link">Komplexe Themen strukturieren &amp; kommunizieren</a>
+      <a href="/leistungen/innovation" class="mobile-submenu-link">Innovation &amp; Geschäftsmodell neu denken</a>
+        </div>
+      </div>
+      <div class="mobile-submenu-divider"></div>
+      <div class="mobile-submenu-group">
+        <div class="mobile-submenu-row">
+          <a class="mobile-submenu-label mobile-submenu-label--link" href="/workshops">Workshops</a>
+          <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-label="Unterpunkte zu Workshops anzeigen">
+            <svg class="mobile-submenu-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="mobile-submenu-panel">
+      <a href="/ki-zum-anfassen" class="mobile-submenu-link">KI zum Anfassen</a>
+      <a href="/sprint-landingpage" class="mobile-submenu-link">Sprint Landingpage</a>
+      <a href="/workshop-moderation" class="mobile-submenu-link">Moderation deines Workshops</a>
+        </div>
+      </div>
+      <div class="mobile-submenu-divider"></div>
+      <div class="mobile-submenu-group">
+        <div class="mobile-submenu-row">
+          <a class="mobile-submenu-label mobile-submenu-label--link" href="/marketing">Marketing 2.0</a>
+          <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-label="Unterpunkte zu Marketing 2.0 anzeigen">
+            <svg class="mobile-submenu-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="mobile-submenu-panel">
+      <a href="/dashboard-digitales-marketing" class="mobile-submenu-link">MarketingEcoSystem (MES)</a>
+      <a href="/sofort-sichtbar" class="mobile-submenu-link"><img src="/assets/sofort-sichtbar-logo-ink.svg" alt="sofort sichtbar" class="nav-sofort-logo"></a>
+      <a href="/paid-ads" class="mobile-submenu-link">Paid Ads</a>
+      <a href="/medien" class="mobile-submenu-link">Medien, die Ergebnisse liefern</a>
+        </div>
+      </div>
+      <div class="mobile-submenu-divider"></div>
+      <div class="mobile-submenu-group">
+        <div class="mobile-submenu-row">
+          <a class="mobile-submenu-label mobile-submenu-label--link" href="/training-sparring">Training & Sparring</a>
+          <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-label="Unterpunkte zu Training & Sparring anzeigen">
+            <svg class="mobile-submenu-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="mobile-submenu-panel">
+      <a href="/praesentationsseminar" class="mobile-submenu-link">Teams befähigen, professionell zu kommunizieren</a>
+      <a href="/sparring" class="mobile-submenu-link">1:1 Sparring</a>
+        </div>
+      </div>
+    </div>
+<!-- ENTWICKLUNG:START (nur Sandbox – wird beim Push automatisch entfernt) -->
+<div class="dev-dd dev-dd--mobile" data-dev-dd>
+<button class="dev-dd-toggle" type="button" aria-expanded="false"><span class="dev-dd-long">/ Entwicklung /</span><span class="dev-dd-short" aria-hidden="true">/ Entw. /</span><svg class="dev-dd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<div class="dev-dd-panel">
+<p class="dev-dd-note"><b>Nur in der Entwicklungsumgebung sichtbar</b>Dieser Menüpunkt ist in der Live-Version nicht enthalten.</p>
+<p class="dev-dd-group">Unterseiten</p>
+<div class="dev-dd-sub">
+<a href="../impulsvortraege.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">IV</span><span class="dev-dd-txt"><b>Impulsvorträge</b><small>Übersicht aller Vorträge</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Vorträge</p>
+<a href="../vortrag-1.html" class="dev-dd-link"><span class="dev-dd-tag">1</span><span class="dev-dd-txt"><b>Warum sich niemand für Dein Produkt interessiert.</b><small>Relevanz</small></span></a>
+<a href="../vortrag-2.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Strategie, die endlich ankommt.</b><small>Strategie im Alltag</small></span></a>
+<a href="../vortrag-3.html" class="dev-dd-link"><span class="dev-dd-tag">3</span><span class="dev-dd-txt"><b>Gründe Deinen stärksten Konkurrenten!</b><small>Perspektivwechsel</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="../budget-retter.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">BR</span><span class="dev-dd-txt"><b>Budget-Retter</b><small>Landingpage · Varianten</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Varianten</p>
+<a href="../budget-retter-1.html" class="dev-dd-link"><span class="dev-dd-tag">B1</span><span class="dev-dd-txt"><b>Variante 1</b><small>Der gemeinsame Stand</small></span></a>
+<a href="../budget-retter-2.html" class="dev-dd-link"><span class="dev-dd-tag">B2</span><span class="dev-dd-txt"><b>Variante 2</b><small>Nach der Kritik umgebaut</small></span></a>
+<a href="../budget-retter-3.html" class="dev-dd-link"><span class="dev-dd-tag">B3</span><span class="dev-dd-txt"><b>Variante 3</b><small>Mit dem Zeichen im Aufmacher</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="../visitenkarte.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">VK</span><span class="dev-dd-txt"><b>Visitenkarten</b><small>Digitale Visitenkarte · Varianten</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Varianten</p>
+<a href="../visitenkarte-1.html" class="dev-dd-link"><span class="dev-dd-tag">V1</span><span class="dev-dd-txt"><b>Die Bühne</b><small>Wie die Startseite · auch Breitbild</small></span></a>
+<a href="../visitenkarte-4.html" class="dev-dd-link"><span class="dev-dd-tag">V4</span><span class="dev-dd-txt"><b>Gesprächsstart</b><small>Speichern, vernetzen, Termin</small></span></a>
+<a href="../visitenkarte-5.html" class="dev-dd-link"><span class="dev-dd-tag">V5</span><span class="dev-dd-txt"><b>Zeigen &amp; Teilen</b><small>App · Sperrbildschirm · QR-Code</small></span></a>
+</div></div>
+</div>
+<a href="../strategie-aufsichtsrat.html" class="dev-dd-link"><span class="dev-dd-tag">AR</span><span class="dev-dd-txt"><b>Strategie für Aufsichtsräte</b><small>Impulsvortrag &amp; Schulung</small></span></a>
+<div class="dev-dd-sub">
+<a href="../xmas.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">XM</span><span class="dev-dd-txt"><b>X-Mas</b><small>Weihnachtsseite · Varianten</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Varianten</p>
+<a href="../xmas-1.html" class="dev-dd-link"><span class="dev-dd-tag">X1</span><span class="dev-dd-txt"><b>Die Bescherung</b><small>Landschaft &amp; Geschenke</small></span></a>
+<a href="../xmas-2.html" class="dev-dd-link"><span class="dev-dd-tag">X2</span><span class="dev-dd-txt"><b>Der Adventskalender</b><small>Zwölf Türchen</small></span></a>
+<a href="../xmas-4.html" class="dev-dd-link"><span class="dev-dd-tag">X4</span><span class="dev-dd-txt"><b>Die Lichterkette</b><small>Sekundärfarben</small></span></a>
+<a href="../xmas-5.html" class="dev-dd-link"><span class="dev-dd-tag">X5</span><span class="dev-dd-txt"><b>Das Fenster</b><small>Scheiben freiwischen</small></span></a>
+<a href="../xmas-6.html" class="dev-dd-link"><span class="dev-dd-tag">X6</span><span class="dev-dd-txt"><b>Der Wunschzettel</b><small>Zum Abhaken</small></span></a>
+<a href="../xmas-8.html" class="dev-dd-link"><span class="dev-dd-tag">X8</span><span class="dev-dd-txt"><b>Der Schneesturm</b><small>Legt sich beim Öffnen</small></span></a>
+<a href="../xmas-9.html" class="dev-dd-link"><span class="dev-dd-tag">X9</span><span class="dev-dd-txt"><b>Der Baum aus Worten</b><small>Typografie statt Grafik</small></span></a>
+<a href="../xmas-10.html" class="dev-dd-link"><span class="dev-dd-tag">X10</span><span class="dev-dd-txt"><b>Das Geschenkpapier</b><small>Zum Aufreißen</small></span></a>
+<a href="../xmas-11.html" class="dev-dd-link"><span class="dev-dd-tag">X11</span><span class="dev-dd-txt"><b>Vorsätze · Der Zettel</b><small>2025/26 gestrichen · PDF</small></span></a>
+<a href="../xmas-12.html" class="dev-dd-link"><span class="dev-dd-tag">X12</span><span class="dev-dd-txt"><b>Vorsätze · Der Stapel</b><small>Drei Jahre übereinander</small></span></a>
+<a href="../xmas-13.html" class="dev-dd-link"><span class="dev-dd-tag">X13</span><span class="dev-dd-txt"><b>Vorsätze · Die Jahreszahlen</b><small>Strich wird gezogen</small></span></a>
+</div></div>
+</div>
+<a href="../capiamo.html" class="dev-dd-link"><span class="dev-dd-tag">ca</span><span class="dev-dd-txt"><b>capiamo</b><small>Fachbereich trifft IT</small></span></a>
+<p class="dev-dd-group dev-dd-group--sub">Projekte</p>
+<div class="dev-dd-sub">
+<a href="sv-akademie.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">SV</span><span class="dev-dd-txt"><b>SV Akademie</b><small>Steuerungsseite &middot; drei Module</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Module</p>
+<a href="sv-selbstverstaendnis.html" class="dev-dd-link"><span class="dev-dd-tag">1</span><span class="dev-dd-txt"><b>Selbstverständnis</b><small>Wofür stehen wir?</small></span></a>
+<a href="sv-vision.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Vision</b><small>Wie wollen wir wahrgenommen werden?</small></span></a>
+<div class="dev-dd-sub">
+<a href="sv-strategie.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">3</span><span class="dev-dd-txt"><b>Strategie</b><small>Wie kommen wir dorthin?</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Darunter</p>
+<a href="sv-strategie-ist.html" class="dev-dd-link"><span class="dev-dd-tag">IS</span><span class="dev-dd-txt"><b>Ist-Situation</b><small>SWOT-Logik und was einflie&szlig;t</small></span></a>
+<a href="sv-strategie-stossrichtungen.html" class="dev-dd-link"><span class="dev-dd-tag">ST</span><span class="dev-dd-txt"><b>Sto&szlig;richtungen</b><small>Herkunft, Auswahl, Nachweis</small></span></a>
+<a href="sv-meilensteine.html" class="dev-dd-link"><span class="dev-dd-tag">MS</span><span class="dev-dd-txt"><b>Meilensteinplan</b><small>Drei Str&auml;nge &middot; fein, hell, dunkel</small></span></a>
+<a href="sv-abstimmung-hal.html" class="dev-dd-link"><span class="dev-dd-tag">AG</span><span class="dev-dd-txt"><b>Agenda Vision &amp; Strategie</b><small>Workshop mit dem Hauptabteilungsleiter</small></span></a>
+</div></div>
+</div>
+<a href="sv-projektplanung.html" class="dev-dd-link"><span class="dev-dd-tag">PP</span><span class="dev-dd-txt"><b>Projektplanung</b><small>Termine, Agenden und der Meilensteinplan</small></span></a>
+</div></div>
+</div>
+<a href="sitemap.html" class="dev-dd-link"><span class="dev-dd-tag">&#9638;</span><span class="dev-dd-txt"><b>Sitemap</b><small>Alle Seiten der SV Akademie &middot; mit Vorschau</small></span></a>
+<div class="dev-dd-sub">
+<a href="vofe-umzug-schulen.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">VF</span><span class="dev-dd-txt"><b>Homepage VoFe Umzug</b><small>Patenwagen &middot; Entwurf Startseite</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Unterseiten</p>
+<a href="vofe-festzug.html" class="dev-dd-link"><span class="dev-dd-tag">1</span><span class="dev-dd-txt"><b>Der Festzug</b><small>Alle Wagen der Schulen &middot; Patenschaft übernehmen</small></span></a>
+<a href="vofe-ueber-uns.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Über uns</b><small>Motivation &middot; wer dahintersteckt</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="avrg.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">AV</span><span class="dev-dd-txt"><b>AVRG</b><small>Neue Altersvorsorge 2027 &middot; sofortsichtbar</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Unterseiten</p>
+<div class="dev-dd-sub">
+<a href="avrg-landingpage-1.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">1</span><span class="dev-dd-txt"><b>Landingpage AVRG</b><small>Drei Varianten &middot; mit Rechner</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Varianten</p>
+<a href="avrg-landingpage-1.html" class="dev-dd-link"><span class="dev-dd-tag">L1</span><span class="dev-dd-txt"><b>Variante 1</b><small>Nah an der Vorlage SV Owen</small></span></a>
+<a href="avrg-landingpage-2.html" class="dev-dd-link"><span class="dev-dd-tag">L2</span><span class="dev-dd-txt"><b>Variante 2</b><small>Einstieg &bdquo;Was trifft auf dich zu?&ldquo;</small></span></a>
+<a href="avrg-landingpage-3.html" class="dev-dd-link"><span class="dev-dd-tag">L3</span><span class="dev-dd-txt"><b>Variante 3</b><small>Das Klarheits-Ticket &middot; Ma&szlig;stab Volksfest</small></span></a>
+</div></div>
+</div>
+<a href="avrg-medienkonzept.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Medienkonzept</b><small>Claim, Mailings, Postings, Webinar, Print</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="darstellungsideen.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">3.0</span><span class="dev-dd-txt"><b>empiria 3.0</b><small>Konzipiert, noch nicht umgesetzt</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Ideen &amp; Konzepte</p>
+<a href="darstellungsideen.html" class="dev-dd-link"><span class="dev-dd-tag">DI</span><span class="dev-dd-txt"><b>Darstellungsideen</b><small>Gute Darstellungen f&uuml;r einzelne Stellen</small></span></a>
+<a href="header.html" class="dev-dd-link"><span class="dev-dd-tag">HV</span><span class="dev-dd-txt"><b>Header</b><small>Darstellungsarten f&uuml;r die Kopfbilder</small></span></a>
+<p class="dev-dd-group">Frühere Fassungen von 2.0</p>
+<a href="empiria-2/startseite-alt.html" class="dev-dd-link"><span class="dev-dd-tag">S1</span><span class="dev-dd-txt"><b>Startseite alt</b><small>Fassung vor dem Volksfest-Aufbau</small></span></a>
+<a href="empiria-2/startseite-alt-2.html" class="dev-dd-link"><span class="dev-dd-tag">S2</span><span class="dev-dd-txt"><b>Startseite alt 2</b><small>Variationen A und B</small></span></a>
+<a href="empiria-2/strategie-alt.html" class="dev-dd-link"><span class="dev-dd-tag">1a</span><span class="dev-dd-txt"><b>Strategie alt</b><small>frühere Fassung</small></span></a>
+</div></div>
+</div>
+<p class="dev-dd-group dev-dd-group--sub">Marketing</p>
+<div class="dev-dd-sub">
+<a href="corporate-design.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">CD</span><span class="dev-dd-txt"><b>Corporate Design</b><small>PDF-Varianten &middot; Designideen</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Vorlagen</p>
+<a href="geschaeftsausstattung.html" class="dev-dd-link"><span class="dev-dd-tag">GA</span><span class="dev-dd-txt"><b>Geschäftsausstattung</b><small>Präsentation, Dokumente, Print, LinkedIn, Hintergründe</small></span></a>
+<a href="powerpoint-master.html" class="dev-dd-link"><span class="dev-dd-tag">PPT</span><span class="dev-dd-txt"><b>PowerPoint-Master</b><small>Stufe 2 · Folientypen</small></span></a>
+<a href="ga-visitenkarten.html" class="dev-dd-link"><span class="dev-dd-tag">VK</span><span class="dev-dd-txt"><b>Visitenkarten</b><small>Entwurf</small></span></a>
+<a href="ga-rollup.html" class="dev-dd-link"><span class="dev-dd-tag">RU</span><span class="dev-dd-txt"><b>Roll-up</b><small>Entwurf</small></span></a>
+<a href="ga-word.html" class="dev-dd-link"><span class="dev-dd-tag">DOC</span><span class="dev-dd-txt"><b>Word-Vorlagen</b><small>Entwurf</small></span></a>
+<a href="ga-onepager.html" class="dev-dd-link"><span class="dev-dd-tag">A3</span><span class="dev-dd-txt"><b>One-Pager</b><small>Entwurf</small></span></a>
+<a href="ga-linkedin.html" class="dev-dd-link"><span class="dev-dd-tag">IN</span><span class="dev-dd-txt"><b>LinkedIn-Banner</b><small>Entwurf</small></span></a>
+<a href="ga-linkedin-fokus.html" class="dev-dd-link"><span class="dev-dd-tag">IF</span><span class="dev-dd-txt"><b>LinkedIn im Fokus</b><small>Sechs Themen als quadratische PDFs</small></span></a>
+<a href="ga-hintergruende.html" class="dev-dd-link"><span class="dev-dd-tag">HG</span><span class="dev-dd-txt"><b>Hintergrundbilder</b><small>Entwurf</small></span></a>
+<a href="merch.html" class="dev-dd-link"><span class="dev-dd-tag">ME</span><span class="dev-dd-txt"><b>Merch</b><small>Die Marke zum Anfassen</small></span></a>
+<a href="pdf-varianten.html" class="dev-dd-link"><span class="dev-dd-tag">PDF</span><span class="dev-dd-txt"><b>PDF-Varianten</b><small>Muster KI zum Anfassen &middot; A/B im Vergleich</small></span></a>
+<p class="dev-dd-group">Designideen</p>
+<a href="../designideen.html" class="dev-dd-link"><span class="dev-dd-tag">DI</span><span class="dev-dd-txt"><b>Designideen</b><small>Gestaltungen f&uuml;r Seiten, die wirken m&uuml;ssen</small></span></a>
+<a href="../designideen/spektrum.html" class="dev-dd-link"><span class="dev-dd-tag">SP</span><span class="dev-dd-txt"><b>Spektrum</b><small>Vollfl&auml;chige Farbb&auml;nder</small></span></a>
+<a href="../designideen/buehne.html" class="dev-dd-link"><span class="dev-dd-tag">B&Uuml;</span><span class="dev-dd-txt"><b>B&uuml;hne</b><small>Vollbildstufen mit Kapitelmarken</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="business-story.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">BS</span><span class="dev-dd-txt"><b>Business Story</b><small>Storyboard &middot; Elevator Pitch</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Unterseiten</p>
+<a href="methoden-storyboard.html" class="dev-dd-link"><span class="dev-dd-tag">SB</span><span class="dev-dd-txt"><b>Storyboard Landing Page</b><small>Antworten &middot; Fragen &middot; Skizze &middot; Final</small></span></a>
+<a href="methoden-elevator-pitch.html" class="dev-dd-link"><span class="dev-dd-tag">EP</span><span class="dev-dd-txt"><b>Elevator Pitch</b><small>Unsere Story in 30/10 Sekunden</small></span></a>
+</div></div>
+</div>
+<div class="dev-dd-sub">
+<a href="medienkonzept.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">MK</span><span class="dev-dd-txt"><b>Medienkonzept</b><small>empiria &middot; Beiträge, Kontakt, Wirkung</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Unterseiten</p>
+<a href="medienkonzept-postingformate.html" class="dev-dd-link"><span class="dev-dd-tag">PF</span><span class="dev-dd-txt"><b>Postingformate</b><small>Themen × Postingtypen · zur Entscheidung</small></span></a>
+<a href="medienkonzept-zuordnung.html" class="dev-dd-link"><span class="dev-dd-tag">LO</span><span class="dev-dd-txt"><b>Logik</b><small>Drei Töpfe → Positionierung → Themen → Postings</small></span></a>
+<a href="medienkonzept-entwuerfe.html" class="dev-dd-link"><span class="dev-dd-tag">2</span><span class="dev-dd-txt"><b>Entwürfe</b><small>Die ersten Postings zur Freigabe</small></span></a>
+<a href="medienkonzept-formate.html" class="dev-dd-link"><span class="dev-dd-tag">3</span><span class="dev-dd-txt"><b>Formate</b><small>Inhalte × Darstellungen · zwei Kanäle</small></span></a>
+</div></div>
+</div>
+<p class="dev-dd-group dev-dd-group--sub">Archiv</p>
+<div class="dev-dd-sub">
+<a class="dev-dd-link dev-dd-link--muted dev-dd-link--parent" tabindex="0" role="button" aria-label="Archiv aufklappen"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Frühere Stände</b><small>Acht Einträge</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Seiten</p>
+<a href="../leistungen/teams.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Teams befähigen, professionell zu kommunizieren</b><small>Früherer Stand der Seite</small></span></a>
+<a href="../der-beste-workshop.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Der beste Workshop</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/startseite-v1.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Startseite Version 1.0</b><small>Früherer Stand der Startseite</small></span></a>
+<a href="../archiv/sofort-sichtbar-problem.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>sofort sichtbar + Problem</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/digitale-tools-1-0.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Digitale Tools 1.0</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/marketing-1-0.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Marketing 1.0</b><small>Früherer Stand</small></span></a>
+<div class="dev-dd-sub">
+<a href="../archiv/medien.html" class="dev-dd-link dev-dd-link--muted dev-dd-link--parent"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Medien, die Ergebnisse liefern</b><small>Früherer Stand</small></span></a>
+<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">
+<p class="dev-dd-group">Die Medien</p>
+<a href="../archiv/powerpoint.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>PowerPoint</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/landingpage.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Landingpage</b><small>Früherer Stand</small></span></a>
+<a href="../archiv/rollup.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Roll-up</b><small>Früherer Stand</small></span></a>
+</div></div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<!-- ENTWICKLUNG:END -->
+    <a class="btn btn--dark" href="/kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<main class="ak">
+
+  <section class="e2-kopf ak-kopfbereich"><div class="e2-wrap">
+      <p class="e2-kicker">Projekt &middot; sofortsichtbar &middot; Vorlage am Beispiel Sandra Hild, SV Gebietsdirektion Owen</p>
+      <h1>AVRG – die neue Altersvorsorge 2027.</h1>
+      <p class="e2-lead">„Mitnehmen oder abhaken.“ – eine Kampagne für Versicherungsagenturen: Kunden bekommen in 15 Minuten Klarheit, ob die Reform sie betrifft und ob sie einen Vorteil haben. Ziel sind Termine, nicht Fachwissen.</p>
+    </div></section>
+
+  <section class="e2-sek e2-sek--hell ak-sec" style="padding-top:clamp(56px,7vw,96px)">
+    <div class="e2-wrap">
+      <p class="e2-kicker">Landingpage &middot; drei Varianten</p>
+      <div class="ak-varianten">
+        <a class="ak-karte lpv" href="/projekte/avrg-landingpage-1.html">
+          <span class="lpv-fenster"><span class="lpv-leiste"><i></i><i></i><i></i><span>agentur-beispiel.de/neue-altersvorsorge</span></span><span class="lpv-seite"><img src="/assets/projekte/avrg/lp-vorschau-voll-1.jpg?v=9" alt="Vorschau der ganzen Landingpage, Variante 1" loading="lazy"></span><span class="lpv-hinweis">Zum Durchscrollen darüberfahren</span></span>
+          <span class="ak-karte-text"><small>Landingpage &middot; Variante 1</small><b>Nah an der Vorlage</b><p>Kopf und Aufmacher exakt wie die bestehenden Landingpages von SV Owen: Foto über die volle Breite, Text mittig, roter Knopf. Darunter Problem, Lösung, Rechner, Termin.</p><span class="ak-pfeil">Variante 1 öffnen &rarr;</span></span>
+        </a>
+        <a class="ak-karte lpv" href="/projekte/avrg-landingpage-2.html">
+          <span class="lpv-fenster"><span class="lpv-leiste"><i></i><i></i><i></i><span>agentur-beispiel.de/neue-altersvorsorge-2</span></span><span class="lpv-seite"><img src="/assets/projekte/avrg/lp-vorschau-voll-2.jpg?v=9" alt="Vorschau der ganzen Landingpage, Variante 2" loading="lazy"></span><span class="lpv-hinweis">Zum Durchscrollen darüberfahren</span></span>
+          <span class="ak-karte-text"><small>Landingpage &middot; Variante 2</small><b>Was trifft auf dich zu?</b><p>Gleiche Farben und Elemente, eigene Story: Der Besucher wählt oben seine Lebenslage, die Seite antwortet mit seiner Frage. Dann das Gespräch als Zeitleiste.</p><span class="ak-pfeil">Variante 2 öffnen &rarr;</span></span>
+        </a>
+        <a class="ak-karte lpv" href="/projekte/avrg-landingpage-3.html">
+          <span class="lpv-fenster"><span class="lpv-leiste"><i></i><i></i><i></i><span>agentur-beispiel.de/neue-altersvorsorge-3</span></span><span class="lpv-seite"><img src="/assets/projekte/avrg/lp-vorschau-voll-3.jpg?v=9" alt="Vorschau der ganzen Landingpage, Variante 3" loading="lazy"></span><span class="lpv-hinweis">Zum Durchscrollen darüberfahren</span></span>
+          <span class="ak-karte-text"><small>Landingpage &middot; Variante 3</small><b>Das Klarheits-Ticket</b><p>Maßstab Volksfest-Seite: ein rotes Ticket „15 Minuten Klarheit“ als Bildidee, fünf Menschen, fünf Fragen, kräftige Flächen.</p><span class="ak-pfeil">Variante 3 öffnen &rarr;</span></span>
+        </a>
+      </div>
+      <div class="ak-abstand"><p class="e2-kicker">Medienkonzept</p></div>
+      <a class="mkv" href="/projekte/avrg-medienkonzept.html">
+        <span class="mkv-text">
+          <small>Unterseite &middot; Medienkonzept</small>
+          <b>Alles, was die Agentur zum Start braucht.</b>
+          <p>30 fertige Postings für Instagram, Facebook und LinkedIn – ohne Logo, sofort einsetzbar. Dazu drei Mailings an Bestandskunden, Webinar, Flyer, Poster, Passantenstopper und der Fahrplan bis Januar.</p>
+          <span class="mkv-kapitel"><span>Strategie</span><span>Landingpage</span><span>Mailings</span><span>Social Media</span><span>Webinar</span><span>Print</span><span>Fahrplan</span></span>
+          <span class="mkv-knopf">Medienkonzept öffnen &rarr;</span>
+        </span>
+        <span class="mkv-feed" aria-hidden="true"><span class="mkv-spalte mkv-spalte--1"><span class="mkv-band"><img src="/assets/projekte/avrg/postings/klein/posting-01.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-04.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-07.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-10.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-13.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-16.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-19.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-22.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-25.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-28.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-01.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-04.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-07.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-10.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-13.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-16.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-19.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-22.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-25.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-28.jpg" alt="" loading="lazy"></span></span><span class="mkv-spalte mkv-spalte--2"><span class="mkv-band"><img src="/assets/projekte/avrg/postings/klein/posting-02.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-05.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-08.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-11.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-14.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-17.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-20.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-23.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-26.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-29.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-02.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-05.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-08.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-11.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-14.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-17.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-20.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-23.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-26.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-29.jpg" alt="" loading="lazy"></span></span><span class="mkv-spalte mkv-spalte--3"><span class="mkv-band"><img src="/assets/projekte/avrg/postings/klein/posting-03.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-06.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-09.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-12.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-15.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-18.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-21.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-24.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-27.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-30.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-03.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-06.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-09.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-12.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-15.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-18.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-21.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-24.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-27.jpg" alt="" loading="lazy"><img src="/assets/projekte/avrg/postings/klein/posting-30.jpg" alt="" loading="lazy"></span></span></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="e2-sek ak-sec">
+    <div class="e2-wrap">
+      <div class="ak-kopf">
+        <p class="e2-kicker">Termine</p>
+        <h2 class="e2-h2">Wie es weitergeht.</h2>
+      </div>
+      <ul class="ak-termine">
+        <li><time>Mo 12.10. · 15:30</time><span><b>Arbeitsblock AVRG</b>Landingpage und Medienkonzept durchgehen, Feinschliff.</span></li>
+        <li><time>Di 13.10. · 14:00</time><span><b>AVRG next step mit Sandra Hild</b>Konzept vorstellen, offene Punkte klären: Empfehlung, Gesprächskapazität, Einwilligungen, SV-Freigabe.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="e2-sek e2-sek--hell ak-sec">
+    <div class="e2-wrap">
+      <div class="ak-kopf">
+        <p class="e2-kicker">Grundlagen</p>
+        <h2 class="e2-h2">Worauf das aufbaut.</h2>
+      </div>
+      <ul class="ak-grundlagen">
+        <li><b>Vorarbeit Story und Auftritt</b><span>Haltung, Business Story, Zielgruppen, erste Ideen für Seite, Postings und Webinar (08.10.).</span><code>claude/Ausarbeitungen/01 Projekte/sofortsichtbar – Konzept AVRG</code></li>
+        <li><b>AVRG – Management Summary</b><span>Gesetz, Förderung, Produkte und was die Reform für Versicherer bedeutet (08.10.).</span><code>claude/Ausarbeitungen/03 Recherchen/2026-10 AVRG – Management Summary</code></li>
+        <li><b>SV-Übersicht zu den Förderungen</b><span>Zulagen, Beispielrechnungen und Lösungsangebot der SV, Verkaufsstart 11.01.2027 – Grundlage für den Rechner.</span><code>…/sofortsichtbar – Konzept AVRG/Zulieferungen</code></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+<script>
+/* Landingpage-Vorschau: beim Darüberfahren scrollt die Seite einmal durch */
+document.querySelectorAll('.lpv-seite img').forEach(function (img) {
+  function setze() { var f = img.parentNode; f.style.setProperty('--weg', Math.max(0, img.offsetHeight - f.offsetHeight) + 'px'); f.style.setProperty('--dauer', Math.max(4, (img.offsetHeight - f.offsetHeight) / 260) + 's'); }
+  if (img.complete) setze(); img.addEventListener('load', setze); window.addEventListener('resize', setze);
+});
+</script>
+
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>empiria GmbH 2026</span>
+    <span class="footer-links"><a href="/impressum.html">Impressum</a> <span>|</span> <a href="/datenschutz.html">Datenschutz</a> <span>|</span> <button type="button" data-cookie-settings>Cookie-Einstellungen</button></span>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+/* empiria 2.0 · Schwarz-Weiß-Gelb (Daniel, Runde 37) – Ergänzungen, die sich nicht automatisch umfärben lassen.
+   Grundregel: auf Gelb nur Schwarz, auf Weiß/Hellgrau kein Gelb als Schrift/Linie/Punkt, auf Schwarz Gelb als Akzent. */
+
+/* Skizzen in gelben Bildflächen: weiß gezeichnet → schwarz (Umkehrung, Abstufungen bleiben) */
+html body .e2-alt .media-box-thumb:not(.e2-wk-thumb):not(.loesung-modell-thumb) svg { filter: invert(1); }
+
+/* Symbol-Kacheln: gelbe Kachel, schwarzes Symbol */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt :is(.e2-fall__sym, .e2-schritt__sym, .e2-in-sym, .e2-sp-sym) :is(svg, svg *) { stroke: #1a1817 !important; }
+
+/* Haken auf der schwarzen Paketkarte gelb */
+/* (Haken auf der gelben Paketkarte: schwarz, siehe e2-runde5) */
+
+/* Paid Ads: Umriss-Knopf in der Anzeige schwarz */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt .pa-ad .pa-ad-btn.pa-ad-btn--outline { color: #1a1817 !important; border-color: #1a1817 !important; }
+
+/* Akzent ist überall Gelb – auch auf den Strategiehandwerk-Seiten, wo er bisher fehlte (Kontakt-Knopf, Symbol-Kacheln) */
+html body .e2-alt { --e2-akzent: #fff400; }
+/* Symbol-Kacheln überall gleich: gelbe Kachel, schwarzes Symbol (auch Komplexe Themen) */
+html body main .e2-alt.e2-alt.e2-alt .e2-schritt__sym { background: #fff400 !important; }
+
+/* sofort sichtbar · Ablauf: Rahmen schwarz statt gelb (kein Gelb als Linie auf Weiß), Markenlogo in Schwarz */
+html body main .e2-alt.e2-alt.e2-alt .vergleich-timeline--outline { border-color: #1a1817 !important; }
+/* (Logo im Vergleich: gelbe Datei, siehe unten) */
+
+/* KI zum Anfassen · Tool-Logos (farbige Bilder) auf Gelb schwarz */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .tools-row-icon img { filter: brightness(0) !important; }
+/* Kicker auf schwarzen Sektionen gelb (Ergebnis-Streifen) */
+html body main .e2-alt.e2-alt.e2-alt .section--dark .kicker { color: #fff400 !important; }
+html body main .e2-alt.e2-alt.e2-alt .section--dark .kicker::before { background: #fff400 !important; }
+
+/* schwarze Kästen behalten weiße Schrift, auch auf früher farbigen Problem-Streifen */
+html body main .e2-alt.e2-alt.e2-alt :is(section, #problem) .e2-s2-kasten :is(p, li) { color: #fff !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt section#problem .e2-s2-kasten.e2-s2-kasten :is(p, li) { color: #fff !important; }
+html body main .e2-alt.e2-alt.e2-alt .e2-s2-kasten .e2-s2-kasten__label { color: rgba(255,255,255,.7) !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt section#problem .e2-s2-kasten.e2-s2-kasten .e2-s2-kasten__label { color: rgba(255,255,255,.7) !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt section .e2-s2-kasten.e2-s2-kasten li::before { background: #fff400 !important; }   /* Punkte im schwarzen Kasten immer gelb */
+/* Paid Ads · Potentialcheck: Fortschrittsbalken auf der weißen Karte schwarz */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-pc-report-rows i::after { background: #1a1817 !important; }
+/* Innovation · „Gilt als gegeben“: Trennlinie im hellen Kasten schwarz */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .inno-stein-foot::before { background: #1a1817 !important; }
+/* QS 1 · Sprint-Preiskasten: Punkte gelb (wie alle schwarzen Kästen) */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt .e2-preis__box li::before { background: #fff400 !important; }
+/* QS 1 · Paid Ads Kanal-Check: kein Gelb auf Weiß – Kante und Fortschritt schwarz */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-check::before { background: #1a1817 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-check-progress-bar { background-color: #1a1817 !important; }
+/* QS 1 · Sparring-Themen: Hellgrau wie alle hellen Kacheln (kein blasses Gelb) */
+html body main .e2-alt.e2-alt.e2-alt .e2-sp2-worueber li:not(.e2-sp2-mehr) { background: #f3f1ee !important; }
+/* Sprint · Erfolgsfaktor: Trennlinie auf Gelb schwarz; Vorschau-Karte (schwarz) mit gelbem Knopf, ohne Schatten */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vorschau-facts-list { border-top: 1.5px solid #1a1817 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--sprint-landingpage .vorschau-split-card :is(.sprint-structure-card, .media-box) { box-shadow: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--sprint-landingpage .vorschau-split-card :is(.btn, .sprint-structure-cta) { background: #fff400 !important; color: #1a1817 !important; border-color: #fff400 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--sprint-landingpage .vorschau-split-card .sprint-structure-footer { border-top: 0 !important; background: transparent !important; display: flex !important; flex-direction: column; align-items: flex-start; gap: 1rem; padding: 0 1.9rem 1.9rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--sprint-landingpage .vorschau-split-card .sprint-structure-footer > * { margin: 0 !important; }
+
+/* Feedback 10.10. · Vorschau-Fenster überall Schwarz statt Dunkelblau */
+html body .modal.modal--structure { background: #1a1817 !important; }
+html body .modal.modal--structure :is(.sprint-structure-thumb, .media-box-thumb) { background: transparent !important; }
+/* Fenster aus schwarzen Bändern („Im Fokus“): Text dunkel und gut lesbar */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .e2-fall-sonder .e2-dialog h3 { color: #1a1817 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .e2-fall-sonder .e2-dialog p { color: #3d3a37 !important; opacity: 1 !important; font-size: 1rem !important; line-height: 1.7 !important; margin: 0 0 1rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .e2-dialog p + p { margin-top: 1rem !important; }
+
+/* Feedback 10.10. · Anforderungsprofil (MES) im Stil der Volksfest-Seite: klare Kopfzeile, drei Spalten mit Linie, schwarzes Band, gelber Knopf */
+html body .modal--jobprofile { border-radius: 22px !important; padding: 2.6rem 2.8rem 2.4rem !important; }
+html body .modal--jobprofile .jobprofile-header { border-bottom: 0 !important; padding-bottom: 0 !important; margin-bottom: 2.2rem !important; }
+html body .modal--jobprofile .jobprofile-header .kicker { display: inline-flex; align-items: center; gap: .6rem; font-size: .72rem !important; font-weight: 700 !important; letter-spacing: .16em !important; text-transform: uppercase; color: #1a1817 !important; }
+html body .modal--jobprofile .jobprofile-header .kicker::before { content: ""; width: 1.3rem; height: 2px; background: #1a1817; }
+html body .modal--jobprofile .jobprofile-header h2, html body .modal--jobprofile .jobprofile-header h3 { font-size: clamp(1.8rem, 3vw, 2.4rem) !important; margin: .5rem 0 .8rem !important; }
+html body .modal--jobprofile .jobprofile-header p { max-width: 62ch; font-size: 1rem !important; line-height: 1.65 !important; color: #3d3a37 !important; }
+html body .modal--jobprofile .jobprofile-columns { gap: 2.4rem !important; }
+html body .modal--jobprofile .jobprofile-section { border-top: 1.5px solid #1a1817; padding-top: 1.2rem; }
+html body .modal--jobprofile .jobprofile-section h4, html body .modal--jobprofile .jobprofile-section h3 { font-size: 1.15rem !important; margin: 0 0 .9rem !important; }
+html body .modal--jobprofile .jobprofile-list li { font-size: .88rem !important; line-height: 1.5 !important; color: #3d3a37 !important; }
+html body .modal--jobprofile .jobprofile-list li::marker { color: #1a1817; }
+html body .modal--jobprofile .jobprofile-callout { background: #1a1817 !important; border: 0 !important; border-radius: 18px !important; padding: 1.6rem 1.9rem !important; margin-top: 2.4rem !important; }
+html body .modal--jobprofile .jobprofile-callout, html body .modal--jobprofile .jobprofile-callout * { color: #fff !important; }
+html body .modal--jobprofile .jobprofile-download { margin-top: 2rem !important; }
+html body .modal--jobprofile .jobprofile-download-item :is(svg, use) { color: #1a1817 !important; stroke: #1a1817 !important; }
+html body .modal--jobprofile .jobprofile-download .btn { background: #fff400 !important; color: #1a1817 !important; border-color: #fff400 !important; }
+
+/* Feedback 10.10. · ALLE FAQ einheitlich: Hellgrau-Sektion, schlanke Zeilen mit Linie, schwarzes Plus ohne Kreis (sofort sichtbar = Paid Ads = alle) */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-faq-item summary::after {
+  width: 18px !important; height: 18px !important; border-radius: 0 !important;
+  background: linear-gradient(#1a1817, #1a1817) center / 14px 1.8px no-repeat, linear-gradient(#1a1817, #1a1817) center / 1.8px 14px no-repeat !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-faq-list { display: block !important; gap: 0 !important; border-top: 1px solid #d9d5ce; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-faq-item.pa-faq-item { background: transparent !important; border: 0 !important; border-bottom: 1px solid #d9d5ce !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-faq-item summary { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.05rem 0 !important; font-size: .98rem !important; font-weight: 600; color: #1a1817 !important; min-height: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-faq-icon { width: 18px !important; height: 18px !important; border-radius: 0 !important; border: 0 !important; flex: 0 0 auto;
+  background: linear-gradient(#1a1817, #1a1817) center / 14px 1.8px no-repeat, linear-gradient(#1a1817, #1a1817) center / 1.8px 14px no-repeat !important; transition: transform .2s; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-faq-icon::before, html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-faq-icon::after { display: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-faq-item[open] .pa-faq-icon { transform: rotate(45deg); }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-faq-answer { padding: 0 2.6rem 1.2rem 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-faq-answer p { margin: 0 !important; font-size: .93rem !important; line-height: 1.65 !important; color: #3d3a37 !important; }
+
+/* Feedback 10.10. · sofort sichtbar „Was … mitbringt“: Bilder stehen auf der schwarzen Linie, darunter Titel und Text */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt .sofort-feature-card.sofort-feature-card { display: flex !important; flex-direction: column; border-top: 0 !important; padding-top: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt .sofort-feature-card .sofort-feature-img { order: -1; display: block; width: 100% !important; height: 13rem !important; object-fit: contain; object-position: center bottom; margin: 0 0 1.4rem !important; padding: 0 !important; border-bottom: 1.5px solid #1a1817; border-radius: 0 !important; box-shadow: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid.produkt-grid .produkt-grid-cards.produkt-grid-cards > .sofort-feature-card.sofort-feature-card.sofort-feature-card { border-top: 0 !important; padding-top: 0 !important; }
+
+/* Feedback 10.10. · sofort sichtbar „Monate werden zu Tagen“: mehr Wirkung – Sektion auf Gelb, Vergleich in einer weißen Bühne, Raketen-Kacheln schwarz mit gelber Rakete */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--sofort-sichtbar > section.produkt-section.produkt-process:nth-of-type(n) { background: #fff400 !important; }
+
+
+
+
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-rocket :is(svg, use, path) { color: #fff400 !important; stroke: #fff400 !important; }
+
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--sofort-sichtbar .produkt-process .produkt-process-step.produkt-process-step { background: #fff !important; border: 0 !important; border-radius: 18px !important; box-shadow: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--sofort-sichtbar .produkt-process .step-num { background: #fff400 !important; color: #1a1817 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--sofort-sichtbar .produkt-process .produkt-section-head p { color: #1a1817 !important; opacity: .85; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt.e2-seite--sofort-sichtbar .produkt-process-step h3 { margin-bottom: .45rem !important; }
+/* Feedback 10.10. · Paid Ads Potentialcheck: Abstand unter Eingabefeld und Knopf */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-pc form :is(.pa-pc-form-row, .pa-pc-row, .pa-pc-input-row), html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-pc :is(input[type=url], input[type=text]) { margin-bottom: .9rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-pc .pa-pc-note { margin-top: 1.1rem !important; }
+
+/* Feedback 10.10. · Paid Ads im Volksfest-Stil: Ablauf-Karten ruhig (Nummer in der Karte, nicht auf dem Rand), Potentialcheck ohne Schatten, weißes Eingabefeld, mehr Luft */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-process .produkt-process-step.produkt-process-step { padding: 1.6rem 1.5rem 1.7rem !important; overflow: visible; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-process .step-num { position: static !important; transform: none !important; display: inline-grid !important; place-items: center; width: 2.4rem !important; height: 2.4rem !important; margin: 0 0 1.1rem !important; background: #fff400 !important; color: #1a1817 !important; box-shadow: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .produkt-process-step h3 { margin: 0 0 .5rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt :is(.pa-pc, .pa-check) { box-shadow: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-pc input:not([type=hidden]):not([type=checkbox]) { background: #fff !important; border: 1.5px solid #1a1817 !important; color: #1a1817 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-pc .pa-pc-note { margin-top: 1.4rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .pa-pc-report { box-shadow: none !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt section.produkt-grid :is(.produkt-grid-cta, .pa-leist-cta) { justify-content: flex-start !important; text-align: left !important; }
+
+/* Daniel 10.10.: „Monate werden zu Tagen“ wie im PDF – schwarzer Kasten, Logo gelb, sofort-sichtbar-Zeile mit gelbem Rahmen */
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-bild { background: #1a1817 !important; border: 0 !important; box-shadow: none !important; border-radius: 22px !important; padding: 2rem 2.2rem !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-bild .vergleich-label { color: #fff !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-timeline { background: rgba(255,255,255,.06) !important; border: 1px solid transparent !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-timeline--outline { background: rgba(255,255,255,.06) !important; border: 1.5px solid rgba(255,244,0,.7) !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-pill { background: rgba(255,255,255,.12) !important; color: #fff !important; border: 0 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-rocket { background: transparent !important; border: 1px solid rgba(255,255,255,.4) !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-rocket :is(svg, use, path) { color: #fff !important; stroke: #fff !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-timeline--outline .vergleich-rocket { border-color: #fff400 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-timeline--outline .vergleich-rocket :is(svg, use, path) { color: #fff400 !important; stroke: #fff400 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-bonus { color: #fff !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-bonus :is(svg, use, path) { color: #fff400 !important; stroke: #fff400 !important; }
+html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-label-logo { filter: none !important; }
+@media (max-width: 600px) { html body main .e2-alt.e2-alt.e2-alt.e2-alt .vergleich-bild { padding: 1.4rem 1.1rem !important; } }
