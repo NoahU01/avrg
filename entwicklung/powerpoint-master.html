@@ -99,7 +99,28 @@
       <h1>PowerPoint-<span class="hl">Master</span></h1>
       <p class="e2-lead">Hier entsteht der PowerPoint-Master für die SV Owen – Schritt für Schritt nach Daniels Vorgaben.</p>
   </div></section>
+  <section class="e2-sek ak-sec" style="padding-top:0"><div class="e2-wrap">
+      <div class="pm-abschnitt"><h2>Deckblatt</h2><p>Format 16:9 (vorläufig). Größen, Schrift, Farben und Logo-Position legen wir als Erstes fest.</p>
+        <figure class="pm-folie-wrap"><div class="pm-folie" role="img" aria-label="Leeres Deckblatt"></div></figure></div>
+      <div class="pm-abschnitt"><h2>Inhaltsseite</h2><p>Grundfolie für alle Inhalte. Darauf bauen später die Folientypen auf.</p>
+        <figure class="pm-folie-wrap"><div class="pm-folie" role="img" aria-label="Leere Inhaltsseite"></div></figure></div>
+      <div class="pm-abschnitt"><h2>Schriften und Farben</h2><p>Die Grundlage für Deckblatt und Inhaltsseite.</p>
+        <div class="pm-raster"><div class="pm-feld"><b>Schriften</b><span>Noch offen</span></div><div class="pm-feld"><b>Farben</b><span>Noch offen</span></div></div></div>
+  </div></section>
 </main>
+<style>
+.pm-abschnitt { margin-top: 4rem; }
+.pm-abschnitt:first-child { margin-top: 0; }
+.pm-abschnitt h2 { font-family: "Lora", Georgia, serif; font-weight: 700; font-size: 1.7rem; margin: 0; }
+.ak .pm-abschnitt h2 + p { max-width: 50rem; margin: .7rem 0 0; color: #3d3a37; line-height: 1.6; }
+.pm-folie-wrap { margin: 1.6rem 0 0; }
+.pm-folie { aspect-ratio: 16 / 9; background: #fff; border: 1px solid #d6d2cc; border-radius: 6px; }
+.pm-raster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.6rem; }
+.pm-feld { display: flex; flex-direction: column; gap: .3rem; min-height: 9rem; padding: 1.4rem 1.6rem; border: 1px dashed #cfcac3; border-radius: 14px; }
+.pm-feld b { font-family: "Lora", Georgia, serif; font-size: 1.25rem; }
+.pm-feld span { font-size: .92rem; color: #8a847c; }
+@media (max-width: 700px) { .pm-raster { grid-template-columns: 1fr; } }
+</style>
 
 <footer class="site-footer">
   <div class="container footer-row">
