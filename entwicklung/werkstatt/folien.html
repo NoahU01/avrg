@@ -29,6 +29,32 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
 /* Inhaltsseite: Headline 28 pt, Subline 16 pt */
 .i .h{font-size:47px;line-height:1.15}
 .i .s{font-size:27px;line-height:1.35;margin-top:10px}
+/* Folientypen */
+.agenda{position:absolute;left:var(--rand);right:var(--rand);top:230px;margin:0;padding:0;list-style:none}
+.agenda li{display:flex;align-items:baseline;gap:48px;padding:26px 0;border-top:2px solid #e3e3e3;font:40px/1.2 "Sparkasse Lt"}
+.agenda li:last-child{border-bottom:2px solid #e3e3e3}
+.agenda span{font:30px/1 "Sparkasse Head";color:var(--grau);width:44px}
+.vgl{position:absolute;left:var(--rand);right:var(--rand);top:250px;display:grid;grid-template-columns:1fr 1fr;gap:96px}
+.vgl h3{margin:0 0 6px;padding-bottom:18px;border-bottom:3px solid #000;font:400 40px/1.2 "Sparkasse Head"}
+.vgl h3.vgl-a{color:var(--grau);border-color:var(--hell)}
+.vgl ul{margin:0;padding:0;list-style:none}
+.vgl li{padding:22px 0;border-bottom:2px solid #e3e3e3;font:32px/1.3 "Sparkasse Lt"}
+.kontakt{position:absolute;left:var(--rand);right:var(--rand);top:300px;display:flex;align-items:center;gap:72px}
+.kontakt-bild{width:300px;height:300px;border-radius:50%;object-fit:cover}
+.kontakt-name{margin:0;font:56px/1.1 "Sparkasse Head"}
+.kontakt-rolle{margin:10px 0 40px;font:30px/1.3 "Sparkasse Lt";color:var(--grau)}
+.kontakt dl{display:grid;grid-template-columns:150px auto;gap:14px 24px;margin:0;font:32px/1.3 "Sparkasse Lt"}
+.kontakt dt{color:var(--grau);font-size:24px;line-height:1.75}
+.kontakt dd{margin:0}
+.k-kicker{margin:0 0 18px;font:26px/1 "Sparkasse Head";letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+.k1-zahl{position:absolute;left:60px;bottom:120px;font:520px/.8 "Sparkasse Head";color:var(--rot);letter-spacing:-.04em}
+.k1-text{position:absolute;left:840px;right:var(--rand);bottom:150px}
+.k1-text .h{font-size:73px;line-height:1.08}
+.weg{position:absolute;left:var(--rand);right:var(--rand);top:50%;transform:translateY(-50%);margin:0;padding:0;list-style:none}
+.weg li{display:flex;align-items:baseline;gap:40px;font:64px/1.35 "Sparkasse Head";color:#cccccc}
+.weg span{font-size:30px;width:50px}
+.weg li.jetzt{color:#000}
+.weg li.jetzt span{color:var(--rot)}
 </style></head><body>
 
 <!-- FESTGELEGT · Deckblatt (aus D3, Headline komplett schwarz) -->
@@ -53,79 +79,74 @@ body{margin:0;background:#888;display:flex;flex-direction:column;gap:40px;paddin
   <div class="nr" style="right:var(--rand);bottom:var(--oben)">4</div>
 </div>
 
-<!-- D1 · Logo oben links, Titel unten links -->
-<div class="folie d" id="d1">
-  <div class="logo" style="left:var(--rand);top:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div style="position:absolute;left:var(--rand);right:var(--rand);bottom:150px">
-    <h1 class="h">Die neue Altersvorsorge 2027<span class="p">.</span></h1>
-    <p class="s">Optionale Subline in einer Zeile</p>
-  </div>
-  <div class="meta" style="left:var(--rand);bottom:var(--oben)">Anlass · Ort · Datum</div>
-</div>
-
-<!-- D3 · Titel oben, Logo unten links -->
-<div class="folie d" id="d3">
-  <div style="position:absolute;left:var(--rand);right:var(--rand);top:150px">
-    <h1 class="h">Die neue Altersvorsorge 2027<span class="p">.</span></h1>
-    <p class="s">Optionale Subline in einer Zeile</p>
-  </div>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="meta" style="right:var(--rand);bottom:calc(var(--oben) + 2px)">Anlass · Ort · Datum</div>
-</div>
-
-<!-- D5 · Titel unten wie D1, Logo unten links und Angaben unten rechts wie D3 -->
-<div class="folie d" id="d5">
-  <div style="position:absolute;left:var(--rand);right:var(--rand);bottom:150px">
-    <h1 class="h">Die neue Altersvorsorge 2027<span class="p">.</span></h1>
-    <p class="s">Optionale Subline in einer Zeile</p>
-  </div>
-  <div class="logo" style="left:var(--rand);bottom:var(--oben)"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="meta" style="right:var(--rand);bottom:calc(var(--oben) + 2px)">Anlass · Ort · Datum</div>
-</div>
-
-<!-- I1 · Titel oben links, Logo unten links, Seitenzahl unten rechts -->
-<div class="folie i" id="i1">
+<!-- FOLIENTYP · Agenda -->
+<div class="folie i" id="agenda">
   <div style="position:absolute;left:var(--rand);right:var(--rand);top:var(--oben)">
-    <h2 class="h">Headline der Inhaltsseite<span class="p">.</span></h2>
-    <p class="s">Optionale Subline für den Kontext</p>
+    <h2 class="h">Agenda</h2>
   </div>
-  <div class="inhalt" style="left:var(--rand);right:var(--rand);top:230px;bottom:150px">Inhalt</div>
+  <ol class="agenda"><li><span>01</span>Ausgangslage</li><li><span>02</span>Was sich 2027 ändert</li><li><span>03</span>Was das für Sie bedeutet</li><li><span>04</span>Nächste Schritte</li></ol>
   <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="nr" style="right:var(--rand);bottom:var(--oben)">4</div>
+  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--oben)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
+  <div class="nr" style="right:var(--rand);bottom:var(--oben)">2</div>
 </div>
 
-<!-- I2 · Logo oben rechts auf Höhe der Headline, Seitenzahl unten rechts -->
-<div class="folie i" id="i2">
-  <div style="position:absolute;left:var(--rand);right:320px;top:var(--oben)">
-    <h2 class="h">Headline der Inhaltsseite<span class="p">.</span></h2>
-    <p class="s">Optionale Subline für den Kontext</p>
-  </div>
-  <div class="logo" style="right:var(--rand);top:calc(var(--oben) + 10px);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="inhalt" style="left:var(--rand);right:var(--rand);top:230px;bottom:150px">Inhalt</div>
-  <div class="nr" style="right:var(--rand);bottom:var(--oben)">4</div>
-</div>
-
-<!-- I3 · Feine Linie trennt Kopf und Inhalt, Fuß: Seitenzahl links, Logo rechts -->
-<div class="folie i" id="i3">
+<!-- FOLIENTYP · Zwei Seiten im Vergleich -->
+<div class="folie i" id="vergleich">
   <div style="position:absolute;left:var(--rand);right:var(--rand);top:var(--oben)">
-    <h2 class="h">Headline der Inhaltsseite<span class="p">.</span></h2>
-    <p class="s">Optionale Subline für den Kontext</p>
+    <h2 class="h">Zwei Seiten im Vergleich</h2><p class="s">Optionale Subline für den Kontext</p>
   </div>
-  <div style="position:absolute;left:var(--rand);right:var(--rand);top:205px;border-top:2px solid var(--hell)"></div>
-  <div class="inhalt" style="left:var(--rand);right:var(--rand);top:245px;bottom:150px">Inhalt</div>
-  <div class="nr" style="left:var(--rand);bottom:var(--oben)">4</div>
-  <div class="logo" style="right:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="vgl">
+    <div><h3 class="vgl-a">Heute</h3><ul><li>Erster Punkt der linken Seite</li><li>Zweiter Punkt in einer Zeile</li><li>Dritter Punkt, kurz gehalten</li></ul></div>
+    <div><h3>Ab 2027</h3><ul><li>Erster Punkt der rechten Seite</li><li>Zweiter Punkt in einer Zeile</li><li>Dritter Punkt, kurz gehalten</li></ul></div>
+  </div>
+  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--oben)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
+  <div class="nr" style="right:var(--rand);bottom:var(--oben)">5</div>
 </div>
 
-<!-- I4 · Zwei Spalten: Titel links (ein Drittel), Inhalt rechts -->
-<div class="folie i" id="i4">
-  <div style="position:absolute;left:var(--rand);width:440px;top:var(--oben)">
-    <h2 class="h">Headline der Inhaltsseite<span class="p">.</span></h2>
-    <p class="s">Optionale Subline für den Kontext</p>
+<!-- FOLIENTYP · Kontakt -->
+<div class="folie i" id="kontakt">
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:var(--oben)">
+    <h2 class="h">Dein direkter Draht zu uns</h2>
   </div>
-  <div class="inhalt" style="left:600px;right:var(--rand);top:var(--oben);bottom:150px">Inhalt</div>
+  <div class="kontakt">
+    <img class="kontakt-bild" src="/assets/projekte/avrg/sandra.jpg" alt="">
+    <div>
+      <p class="kontakt-name">Sandra Hild</p>
+      <p class="kontakt-rolle">SV Gebietsdirektion Owen</p>
+      <dl><dt>Telefon</dt><dd>07021 9808021</dd><dt>E-Mail</dt><dd>sandra.hild@sv-owen.de</dd></dl>
+    </div>
+  </div>
   <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
-  <div class="nr" style="right:var(--rand);bottom:var(--oben)">4</div>
+  <div class="meta" style="left:0;right:0;text-align:center;bottom:var(--oben)">Optionale Fußzeile · z. B. Titel der Präsentation</div>
+  <div class="nr" style="right:var(--rand);bottom:var(--oben)">12</div>
+</div>
+
+<!-- KAPITELTRENNER K1 · Große Zahl -->
+<div class="folie" id="k1">
+  <div class="k1-zahl">02</div>
+  <div class="k1-text"><p class="k-kicker">Kapitel</p><h2 class="h">Was sich 2027 ändert</h2></div>
+  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
+</div>
+
+<!-- KAPITELTRENNER K2 · Rote Seite -->
+<div class="folie" id="k2" style="background:var(--rot);color:#fff">
+  <div style="position:absolute;left:var(--rand);right:var(--rand);top:50%;transform:translateY(-50%)">
+    <p class="k-kicker" style="color:rgba(255,255,255,.75)">Kapitel 2</p>
+    <h2 class="h" style="font-size:73px;line-height:1.08;color:#fff">Was sich 2027 ändert</h2>
+  </div>
+  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/entwicklung/ppt/sv-owen-logo-weiss.svg" alt=""></div>
+</div>
+
+<!-- KAPITELTRENNER K3 · Wegweiser -->
+<div class="folie" id="k3">
+  <ol class="weg">
+    <li><span>01</span>Ausgangslage</li>
+    <li class="jetzt"><span>02</span>Was sich 2027 ändert</li>
+    <li><span>03</span>Was das für Sie bedeutet</li>
+    <li><span>04</span>Nächste Schritte</li>
+  </ol>
+  <div class="logo" style="left:var(--rand);bottom:var(--oben);height:30px"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt=""></div>
 </div>
 
 </body></html>
