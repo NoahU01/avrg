@@ -280,3 +280,7 @@ a.kontakt-karte:hover{border-color:var(--ink)}
   .dev .wrap span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Satz „Auf jeden Euro … legt der Staat X Cent drauf“ ausgeblendet (Daniel, 15.10.2026).
+   Bewusst visibility statt display: der Platz bleibt, Hinweis und Knopf rutschen nicht hoch. */
+.rechner__satz{visibility:hidden}
