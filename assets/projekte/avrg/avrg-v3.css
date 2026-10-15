@@ -246,9 +246,13 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 @keyframes v3-huepf{0%,60%,100%{transform:none}30%{transform:translateY(-4px)}}
 @media (prefers-reduced-motion:reduce){.v3-msg{opacity:1;transform:none;animation:none!important}.v3-tippt{display:none}}
 
-/* Hochrechnung bis 67 (nur Variante 3) */
-.hoch{margin-top:30px}
-.hoch__zahl{display:flex;align-items:baseline;gap:8px;font-size:clamp(34px,4vw,46px);line-height:1.05;font-weight:500;color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.hoch__zahl small{font-size:15px;font-weight:400;color:var(--muted);letter-spacing:0}
-.hoch__weg{margin-top:8px;font-size:15px;color:var(--text);line-height:1.45}
-.hoch__hinweis{margin-top:10px;font-size:12.5px;color:var(--muted);line-height:1.5;max-width:34em}
+/* Hochrechnung bis 67 – eigener Kasten unter dem Rechner (nur Variante 3) */
+.rechner.hoch{margin-top:24px}
+.hoch .rechner__eingabe{justify-content:center}
+.hoch__titel{font-size:22px;font-weight:500;color:var(--ink);margin:0 0 6px}
+.hoch__lead{font-size:15px;color:var(--muted);line-height:1.5;margin:0}
+.hoch .rechner__ergebnis{display:flex;flex-direction:column;justify-content:center}
+.hoch__zahl{display:flex;align-items:baseline;gap:10px;font-size:clamp(40px,5vw,58px);line-height:1;font-weight:500;color:var(--ink);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.hoch__zahl small{font-size:16px;font-weight:400;color:var(--muted);letter-spacing:0}
+.hoch__weg{margin-top:12px;font-size:15px;color:var(--text);line-height:1.45}
+.hoch__hinweis{margin-top:14px;font-size:12.5px;color:var(--muted);line-height:1.5;max-width:34em}
