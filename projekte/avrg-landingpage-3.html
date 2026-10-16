@@ -7,7 +7,7 @@
 <meta name="description" content="Die neue geförderte Altersvorsorge ab 2027: Dein Klarheits-Ticket – in 15 Minuten weißt du, ob du etwas davon hast.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="/assets/projekte/avrg/avrg.css?v=3">
-<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=11">
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=12">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -121,73 +121,60 @@
 <section class="v3-sek v3-sek--hell" id="rechner"><div class="wrap">
   <p class="v3-kicker">Rechner</p>
   <h2 class="v3-h2">Spiel’s kurz durch.</h2>
-  <p class="v3-lead" style="margin-bottom:clamp(32px,4vw,48px)">Zwei Regler, ein Gefühl dafür, was der Staat dazulegt. Ob es für dich passt, klären wir im Gespräch.</p>
-  <div class="rechner">
-    <div class="rechner__eingabe">
-      <div class="regler">
-        <label for="beitrag">Dein Beitrag im Monat <output id="beitrag-wert">50 €</output></label>
+  <p class="v3-lead" style="margin-bottom:clamp(32px,4vw,48px)">Stell ein, was zu dir passt – das Ergebnis siehst du sofort. Ob es wirklich passt, klären wir im Gespräch.</p>
+
+  <div class="rk">
+    <div class="rk__ein">
+      <div class="rk__feld">
+        <div class="rk__kopf"><label for="beitrag">Dein Beitrag im Monat</label><output id="beitrag-wert" class="rk__wert">50 €</output></div>
         <input type="range" id="beitrag" min="10" max="250" step="5" value="50">
-        <div class="skala"><span>10 €</span><span>250 €</span></div>
-        <p class="regler__hinweis" id="beitrag-hinweis"></p>
       </div>
-      <div class="regler">
-        <p class="regler__titel">Kinder, für die du Kindergeld bekommst</p>
-        <div class="zaehler">
-          <button type="button" id="kind-minus" aria-label="Ein Kind weniger">−</button>
-          <output id="kinder" aria-live="polite">1</output>
-          <button type="button" id="kind-plus" aria-label="Ein Kind mehr">+</button>
-        </div>
-        <p class="regler__hinweis">Unter 25? Dann gibt es einmalig 200 € Startbonus obendrauf.</p>
-      </div>
-      <div class="beispiele">
-        <p>Oder ein Beispiel antippen</p>
-        <div class="chips">
-          <button type="button" class="beispiel" data-m="150" data-k="0">Single<small>150 € mtl.</small></button>
-          <button type="button" class="beispiel" data-m="150" data-k="1">1 Kind<small>150 € mtl.</small></button>
-          <button type="button" class="beispiel" data-m="50" data-k="2">2 Kinder<small>50 € mtl.</small></button>
+      <div class="rk__feld">
+        <div class="rk__kopf"><span id="kinder-label">Kinder mit Kindergeld</span>
+          <div class="rk__zaehler" role="group" aria-labelledby="kinder-label">
+            <button type="button" id="kind-minus" aria-label="Ein Kind weniger">−</button>
+            <output id="kinder" class="rk__wert" aria-live="polite">1</output>
+            <button type="button" id="kind-plus" aria-label="Ein Kind mehr">+</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="rechner__ergebnis" aria-live="polite">
-      <p class="kicker">Der Staat legt dazu</p>
-      <p class="gross"><span id="zulage">540 €</span><small>im Jahr</small></p>
-      <div class="balken" aria-hidden="true">
-        <div class="balken__zeile"><span>Dein Beitrag</span><span class="balken__spur"><span class="b-eigen" id="b-eigen"></span></span></div>
-        <div class="balken__zeile"><span>Vom Staat</span><span class="balken__spur"><span class="b-staat" id="b-staat"></span></span></div>
-      </div>
-      <ul class="zeilen">
-        <li><span>Du zahlst im Jahr ein</span><b id="z-eigen">600 €</b></li>
-        <li><span>Grundzulage</span><b id="z-grund">240 €</b></li>
-        <li><span>Kinderzulage</span><b id="z-kind">300 €</b></li>
-        <li class="summe"><span>Zusammen im Jahr</span><b id="z-summe">1.140 €</b></li>
-      </ul>
-      <p class="rechner__satz" id="satz" aria-hidden="true"></p>
-      <div class="rechner__fuss">
-        <p>Vereinfachte Rechnung nach den Eckdaten der Reform: Grundzulage 50 Cent je Euro bis 360 € im Jahr, 25 Cent je Euro bis 1.800 €; Kinderzulage 1 € je Euro, bis 300 € je Kind. Mindestbeitrag 120 € im Jahr. Steuervorteile nicht eingerechnet. Keine Beratung.</p>
-        <a class="knopf" href="#termin">Für mich prüfen lassen</a>
-      </div>
+    <div class="rk__aus" aria-live="polite">
+      <p class="rk__frage">Der Staat legt dazu</p>
+      <p class="rk__zahl"><span id="zulage">540 €</span><small>im Jahr</small></p>
+      <p class="rk__satz" id="z-satz">Mit deinem Beitrag sind das 1.140 € im Jahr.</p>
+      <details class="rk__info">
+        <summary>Wie wir rechnen</summary>
+        <ul class="rk__liste">
+          <li><span>Du zahlst im Jahr ein</span><b id="z-eigen">600 €</b></li>
+          <li><span>Grundzulage</span><b id="z-grund">240 €</b></li>
+          <li><span>Kinderzulage</span><b id="z-kind">300 €</b></li>
+          <li class="summe"><span>Zusammen im Jahr</span><b id="z-summe">1.140 €</b></li>
+        </ul>
+        <p>Vereinfacht nach den Eckdaten der Reform: Grundzulage 50 Cent je Euro bis 360 € im Jahr, 25 Cent je Euro bis 1.800 €. Kinderzulage 1 € je Euro, bis 300 € je Kind. Mindestbeitrag 120 € im Jahr. Unter 25 gibt es einmalig 200 € Startbonus. Steuervorteile nicht eingerechnet. Keine Beratung.</p>
+      </details>
     </div>
   </div>
-  <div class="rechner hoch">
-    <div class="rechner__eingabe">
-      <div>
-        <p class="hoch__titel">Hochrechnung</p>
-        <p class="hoch__lead">Was aus deinem Jahresbetrag von oben bis 67 werden kann.</p>
-      </div>
-      <div class="regler">
-        <label for="alter">Dein Alter heute <output id="alter-wert">35 Jahre</output></label>
+
+  <div class="rk rk--hoch">
+    <div class="rk__ein">
+      <div class="rk__feld">
+        <div class="rk__kopf"><label for="alter">Dein Alter heute</label><output id="alter-wert" class="rk__wert">35 Jahre</output></div>
         <input type="range" id="alter" min="18" max="66" step="1" value="35">
-        <div class="skala"><span>18</span><span>66</span></div>
-        <p class="regler__hinweis" id="alter-hinweis"></p>
       </div>
     </div>
-    <div class="rechner__ergebnis" aria-live="polite">
-      <p class="kicker">Mit 67 könnten es sein</p>
-      <p class="hoch__zahl"><small>rund</small><span id="hoch">86.000 €</span></p>
-      <p class="hoch__weg" id="hoch-weg"></p>
-      <p class="hoch__hinweis">Nur ein Gefühl für die Größenordnung: Die 5 % Verzinsung sind eine Annahme, keine Zusage. Beitrag und Zulagen bleiben hier jedes Jahr gleich, Kosten und Steuern fehlen. Keine Prognose und nicht Teil eines Angebots.</p>
+    <div class="rk__aus" aria-live="polite">
+      <p class="rk__frage">Mit 67 könnten es sein</p>
+      <p class="rk__zahl"><small class="rk__rund">rund</small><span id="hoch">86.000 €</span></p>
+      <p class="rk__satz" id="hoch-weg">Bei 5 % Verzinsung im Jahr – angenommen.</p>
+      <details class="rk__info">
+        <summary>Wie wir rechnen</summary>
+        <p id="hoch-info">Der Jahresbetrag von oben, jedes Jahr gleich bis 67, mit angenommenen 5 % Verzinsung im Jahr. Kosten und Steuern fehlen. Das ist ein Gefühl für die Größenordnung – keine Prognose und nicht Teil eines Angebots.</p>
+      </details>
     </div>
   </div>
+
+  <p class="rk__cta"><a class="knopf" href="#termin">Für mich prüfen lassen</a></p>
 </div></section>
 
 <section class="v3-sek" id="termin"><div class="wrap v3-termin">
@@ -276,54 +263,39 @@
 
   /* Rechner: Grundzulage 50 ct je € bis 360 €, 25 ct je € von 361 bis 1.800 €;
      Kinderzulage 1 € je eingezahltem €, bis 300 € je Kind (Eckdaten SV-Übersicht 09/2026).
-     Balken auf fester Skala (3.000 € = höchster Jahresbeitrag des Reglers), damit
-     beide Balken mit dem Beitrag wachsen und die Zulage nie optisch schrumpft. */
-  var SKALA = 3000;
-  var beitrag = document.getElementById('beitrag'), alter = document.getElementById('alter'), kinder = 1;
-  /* Hochrechnung (eigener Kasten): Jahressumme aus dem Rechner oben (Beitrag + Zulagen) gleichbleibend
-     bis 67, 5 % im Jahr angenommen, Einzahlung zum Jahresende. Bewusst gerundet – es geht um die Größenordnung. */
+     Hochrechnung: Jahressumme (Beitrag + Zulagen) gleichbleibend bis 67, 5 % im Jahr angenommen,
+     Einzahlung zum Jahresende, bewusst gerundet. Einstellwerte schwarz, Ergebnisse rot. */
   var ZINS = 0.05, ZIEL = 67;
-  var beispiele = document.querySelectorAll('.beispiel');
+  var beitrag = document.getElementById('beitrag'), alter = document.getElementById('alter'), kinder = 1;
+  var $ = function(id){ return document.getElementById(id); };
+  function fuell(r){ r.style.setProperty('--wert', ((r.value - r.min) / (r.max - r.min) * 100) + '%'); }
   function rechne(){
     var m = +beitrag.value, jahr = m * 12;
     var grund = 0.5 * Math.min(jahr, 360) + 0.25 * Math.max(0, Math.min(jahr, 1800) - 360);
     var kind = Math.min(jahr, 300 * kinder);
-    var zulage = grund + kind;
-    document.getElementById('beitrag-wert').innerHTML = m + ' € <small>/ Monat</small>';
-    document.getElementById('zulage').textContent = euro(zulage);
-    document.getElementById('z-eigen').textContent = euro(jahr);
-    document.getElementById('z-grund').textContent = euro(grund);
-    document.getElementById('z-kind').textContent = kinder ? euro(kind) : '–';
-    document.getElementById('z-summe').textContent = euro(jahr + zulage);
-    document.getElementById('b-eigen').style.width = Math.min(100, jahr / SKALA * 100) + '%';
-    document.getElementById('b-staat').style.width = Math.min(100, zulage / SKALA * 100) + '%';
-    var cent = Math.round(zulage / jahr * 100);
-    document.getElementById('satz').innerHTML = 'Auf jeden Euro, den du einzahlst, legt der Staat <b>' + (cent >= 100 ? (cent / 100).toLocaleString('de-DE', {minimumFractionDigits: 2}) + ' €' : cent + ' Cent') + '</b> drauf.';
-    var a = +alter.value, jahre = ZIEL - a, summe = jahr + zulage;
+    var zulage = grund + kind, summe = jahr + zulage;
+    var a = +alter.value, jahre = ZIEL - a;
     var end = summe * (Math.pow(1 + ZINS, jahre) - 1) / ZINS;
     var stufe = end >= 100000 ? 5000 : end >= 10000 ? 1000 : 10;
-    document.getElementById('alter-wert').innerHTML = a + ' <small>Jahre</small>';
-    document.getElementById('alter-hinweis').textContent = 'Noch ' + jahre + (jahre === 1 ? ' Jahr' : ' Jahre') + ' bis 67.';
-    document.getElementById('hoch').textContent = euro(Math.round(end / stufe) * stufe);
-    document.getElementById('hoch-weg').textContent = euro(summe) + ' im Jahr, ' + jahre + (jahre === 1 ? ' Jahr' : ' Jahre') + ' lang, mit 5 % Verzinsung im Jahr angenommen.';
-    alter.style.setProperty('--wert', ((a - alter.min) / (alter.max - alter.min) * 100) + '%');
-    var h;
-    if (jahr > 1800) h = 'Über 150 € im Monat gibt es keine zusätzliche Grundzulage mehr.';
-    else if (jahr <= 360) h = 'Bis 30 € im Monat gibt es 50 Cent auf jeden Euro.';
-    else h = 'Ab 150 € im Monat ist die volle Grundzulage erreicht.';
-    if (kinder && jahr < 300 * kinder) h = 'Für die volle Kinderzulage braucht es ' + (25 * kinder) + ' € im Monat.';
-    document.getElementById('beitrag-hinweis').textContent = h;
-    beitrag.style.setProperty('--wert', ((m - beitrag.min) / (beitrag.max - beitrag.min) * 100) + '%');
-    document.getElementById('kind-minus').disabled = kinder === 0;
-    document.getElementById('kind-plus').disabled = kinder === 5;
-    document.getElementById('kinder').textContent = kinder;
-    beispiele.forEach(function(b){ b.classList.toggle('ist-aktiv', +b.dataset.m === m && +b.dataset.k === kinder); });
+    $('beitrag-wert').textContent = m + ' €';
+    $('alter-wert').textContent = a + ' Jahre';
+    $('kinder').textContent = kinder;
+    $('zulage').textContent = euro(zulage);
+    $('z-satz').textContent = 'Mit deinem Beitrag sind das ' + euro(summe) + ' im Jahr.';
+    $('z-eigen').textContent = euro(jahr);
+    $('z-grund').textContent = euro(grund);
+    $('z-kind').textContent = kinder ? euro(kind) : '–';
+    $('z-summe').textContent = euro(summe);
+    $('hoch').textContent = euro(Math.round(end / stufe) * stufe);
+    $('hoch-info').textContent = euro(summe) + ' im Jahr, ' + jahre + (jahre === 1 ? ' Jahr' : ' Jahre') + ' lang bis 67, mit angenommenen 5 % Verzinsung im Jahr. Kosten und Steuern fehlen. Das ist ein Gefühl für die Größenordnung – keine Prognose und nicht Teil eines Angebots.';
+    $('kind-minus').disabled = kinder === 0;
+    $('kind-plus').disabled = kinder === 5;
+    fuell(beitrag); fuell(alter);
   }
-  beispiele.forEach(function(b){ b.onclick = function(){ beitrag.value = b.dataset.m; kinder = +b.dataset.k; rechne(); }; });
   beitrag.addEventListener('input', rechne);
   alter.addEventListener('input', rechne);
-  document.getElementById('kind-minus').onclick = function(){ kinder = Math.max(0, kinder - 1); rechne(); };
-  document.getElementById('kind-plus').onclick = function(){ kinder = Math.min(5, kinder + 1); rechne(); };
+  $('kind-minus').onclick = function(){ kinder = Math.max(0, kinder - 1); rechne(); };
+  $('kind-plus').onclick = function(){ kinder = Math.min(5, kinder + 1); rechne(); };
   rechne();
 
   /* Terminwahl (Attrappe): die nächsten fünf Werktage, feste Zeiten */

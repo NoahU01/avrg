@@ -246,13 +246,36 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 @keyframes v3-huepf{0%,60%,100%{transform:none}30%{transform:translateY(-4px)}}
 @media (prefers-reduced-motion:reduce){.v3-msg{opacity:1;transform:none;animation:none!important}.v3-tippt{display:none}}
 
-/* Hochrechnung bis 67 – eigener Kasten unter dem Rechner (nur Variante 3) */
-.rechner.hoch{margin-top:24px}
-.hoch .rechner__eingabe{justify-content:center}
-.hoch__titel{font-size:22px;font-weight:500;color:var(--ink);margin:0 0 6px}
-.hoch__lead{font-size:15px;color:var(--muted);line-height:1.5;margin:0}
-.hoch .rechner__ergebnis{display:flex;flex-direction:column;justify-content:center}
-.hoch__zahl{display:flex;align-items:baseline;gap:10px;font-size:clamp(40px,5vw,58px);line-height:1;font-weight:500;color:var(--ink);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.hoch__zahl small{font-size:16px;font-weight:400;color:var(--muted);letter-spacing:0}
-.hoch__weg{margin-top:12px;font-size:15px;color:var(--text);line-height:1.45}
-.hoch__hinweis{margin-top:14px;font-size:12.5px;color:var(--muted);line-height:1.5;max-width:34em}
+/* Rechner (nur Variante 3): pro Kasten links einstellen, rechts ablesen.
+   Regel: alle Einstellwerte gleich formatiert (schwarz), alle Ergebnisse gleich formatiert (rot).
+   Details stehen im aufklappbaren „Wie wir rechnen“. */
+.rk{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.rk+.rk{margin-top:20px}
+.rk__ein{padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:34px;border-right:1px solid var(--line)}
+.rk__kopf{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.rk__feld input[type=range]{margin-top:16px}
+.rk__kopf label,.rk__kopf>span{font-size:17px;font-weight:500;color:var(--ink)}
+.rk__wert{font:600 28px/1 var(--font);color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em;white-space:nowrap}
+.rk__zaehler{display:flex;align-items:center;gap:4px}
+.rk__zaehler button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;font:500 20px/1 var(--font);color:var(--ink);cursor:pointer}
+.rk__zaehler button:hover:not(:disabled){background:#f3f3f3}
+.rk__zaehler button:disabled{color:var(--line);cursor:default}
+.rk__zaehler output{min-width:40px;text-align:center}
+.rk__aus{padding:clamp(28px,4vw,44px);background:#fafafa;display:flex;flex-direction:column;justify-content:center}
+.rk__frage{font-size:15px;color:var(--muted);margin:0 0 8px}
+.rk__zahl{display:flex;align-items:baseline;gap:10px;margin:0;font:600 clamp(44px,5.4vw,64px)/1 var(--font);color:var(--rot);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.rk__zahl small{font:400 17px/1 var(--font);color:var(--ink);letter-spacing:0}
+.rk__zahl .rk__rund{color:var(--muted)}
+.rk__satz{margin:12px 0 0;font-size:15px;color:var(--text);line-height:1.45}
+.rk__info{margin-top:18px}
+.rk__info summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:500;font-size:14px}
+.rk__info summary::-webkit-details-marker{display:none}
+.rk__info summary::before{content:"i";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1.5px solid currentColor;font:600 11px/1 var(--font)}
+.rk__info[open] summary{margin-bottom:12px}
+.rk__liste{list-style:none;margin:0 0 12px;padding:0;border-top:1px solid var(--line)}
+.rk__liste li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--text)}
+.rk__liste b{font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.rk__liste li.summe b{color:var(--rot)}
+.rk__info p{margin:0;font-size:13px;line-height:1.55;color:var(--muted);max-width:36em}
+.rk__cta{margin:28px 0 0}
+@media (max-width:900px){.rk{grid-template-columns:1fr}.rk__ein{border-right:0;border-bottom:1px solid var(--line)}}
