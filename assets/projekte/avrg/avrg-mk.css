@@ -344,7 +344,7 @@
 .ps__tasche{position:relative;margin:auto -1cqi 6cqi;height:34cqi}
 .ps__tickets{position:absolute;left:6cqi;right:6cqi;top:0;height:24cqi}
 .ps__tickets i{position:absolute;bottom:0;width:30cqi;height:17cqi;background:#fff;border-radius:2cqi;box-shadow:0 1cqi 3cqi rgba(0,0,0,.2)}
-.ps__tickets i::after{content:"15 Min.";position:absolute;left:3cqi;top:2.6cqi;font-size:3.4cqi;font-weight:700;color:#ed1c24;font-style:normal}
+.ps__tickets i::after{content:"30 Min.";position:absolute;left:3cqi;top:2.6cqi;font-size:3.4cqi;font-weight:700;color:#ed1c24;font-style:normal}
 .ps__tickets i:nth-child(1){left:0;transform:rotate(-10deg)}
 .ps__tickets i:nth-child(2){left:24cqi;transform:rotate(3deg);bottom:2cqi}
 .ps__tickets i:nth-child(3){right:0;transform:rotate(12deg)}
@@ -400,3 +400,17 @@
 /* Schatten der Tickets als weiche Fläche dahinter (Safari zeichnet drop-shadow bei Masken eckig) */
 .cr__tk::before,.tf__karte::before{content:"";position:absolute;z-index:-1;left:6%;right:6%;top:14%;bottom:-5%;border-radius:8cqi;background:rgba(150,20,20,.3);filter:blur(5cqi)}
 .tf__karte--hinten::before{background:rgba(0,0,0,.18)}
+
+/* Landingpage-Kapitel: Knopf rechts neben der Überschrift */
+.mk-titelzeile{display:flex;align-items:center;justify-content:space-between;gap:16px 32px;flex-wrap:wrap}
+.mk-titelzeile .e2-h2{margin:0}
+.mk-titelzeile .e2-knopf{flex:0 0 auto}
+
+/* Postings „Nur zum Termin“: rot umrandet, mit Hinweis – dürfen nicht frei gepostet werden */
+.ig-kachel--termin::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;box-shadow:inset 0 0 0 4px #ed1c24,inset 0 0 0 7px #fff}
+.ig-kachel__termin{position:absolute;z-index:4;left:0;top:0;padding:6px 11px 6px 10px;border-radius:0 0 10px 0;background:#ed1c24;color:#fff;font:600 11px/1 'Poppins',system-ui,sans-serif;letter-spacing:.02em}
+.ig-filter button[data-th="termin"]{border-color:#ed1c24;color:#ed1c24}
+.ig-filter button[data-th="termin"][aria-pressed="true"]{background:#ed1c24;color:#fff}
+.ig-wann{margin:0 0 14px;padding:12px 14px;border:1.5px solid #ed1c24;border-radius:12px;background:#fff5f5;color:#1a1817;font-size:14px;line-height:1.5}
+.ig-wann b{display:block;color:#ed1c24;margin-bottom:2px}
+@media (max-width:600px){.ig-kachel__termin{padding:3px 6px;font-size:8.5px;border-radius:0 0 6px 0}.ig-kachel--termin::after{box-shadow:inset 0 0 0 2.5px #ed1c24,inset 0 0 0 4.5px #fff}}

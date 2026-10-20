@@ -1,4 +1,4 @@
-/* Medienkonzept AVRG: Kapitel, Landingpage-Varianten, Mails, Instagram-Raster mit Großansicht */
+/* AVRG-Übersicht (Medienkonzept): Kapitel, Mails, Instagram-Raster mit Großansicht */
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
@@ -8,7 +8,7 @@
   function setzeOben() { document.documentElement.style.setProperty('--mk-top', (kopf ? kopf.offsetHeight : 84) + 'px'); }
   setzeOben(); window.addEventListener('resize', setzeOben);
   var tabs = $$('.mk-tab'), leiste = $('.mk-kapitel');
-  var ALT = {grundidee: 'strategie', zielgruppe: 'strategie', claim: 'strategie', postings: 'social', offen: 'fahrplan'};
+  var ALT = {grundidee: 'strategie', zielgruppe: 'strategie', claim: 'strategie', postings: 'social', offen: 'strategie', fahrplan: 'strategie'};
   function zeige(id, scrollen) {
     id = ALT[id] || id;
     if (!$('#k-' + id)) id = 'strategie';
@@ -30,20 +30,6 @@
     a.addEventListener('click', function (e) { e.preventDefault(); var k = a.getAttribute('href').slice(1); history.replaceState(null, '', '#' + k); zeige(k, true); });
   });
   zeige(location.hash.slice(1), false);
-
-  /* ---------- Landingpage-Varianten ---------- */
-  $$('.mk-variante').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var v = b.dataset.v;
-      $$('.mk-variante').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      $('#mk-lp-bild').src = '/assets/projekte/avrg/lp-vorschau-voll-' + v + '.jpg?v=9';
-      $('.ak-browser-seite').scrollTop = 0;
-      $('#mk-lp-url').textContent = 'agentur-beispiel.de/neue-altersvorsorge' + (v === '1' ? '' : '-' + v);
-      $$('.mk-bausteine').forEach(function (l) { l.hidden = l.dataset.v !== v; });
-      $('#mk-lp-link').href = '/projekte/avrg-landingpage-' + v + '.html';
-      $('#mk-lp-link').firstChild.textContent = 'Variante ' + v + ' öffnen ';
-    });
-  });
 
   /* ---------- Mails ---------- */
   var mtabs = $$('.ak-tab');
@@ -69,9 +55,9 @@
     switch (p.t) {
       case 'weiss': case 'rot': case 'schwarz': return flaeche(p, p.t);
       case 'blase':
-        return '<div class="cr"><img class="cr__foto" src="' + FOTO + p.foto + '.jpg" alt="" loading="lazy"><p class="cr__blase">' + p.blase + '</p><span class="cr__tag">' + p.tag + '</span></div>';
+        return '<div class="cr"><img class="cr__foto" src="' + FOTO + p.foto + '.jpg" alt="" loading="lazy"' + (p.pos ? ' style="object-position:' + p.pos + '"' : '') + '><p class="cr__blase">' + p.blase + '</p><span class="cr__tag">' + p.tag + '</span></div>';
       case 'band':
-        return '<div class="cr cr--band"><img class="cr__foto" src="' + FOTO + p.foto + '.jpg" alt="" loading="lazy"><div class="cr__in"><p class="cr__h">' + p.h + '</p></div></div>';
+        return '<div class="cr cr--band"><img class="cr__foto" src="' + FOTO + p.foto + '.jpg" alt="" loading="lazy"' + (p.pos ? ' style="object-position:' + p.pos + '"' : '') + '><div class="cr__in"><p class="cr__h">' + p.h + '</p></div></div>';
       case 'fa':
         return '<div class="cr cr--fa"><div class="cr__frage"><p class="cr__fa-label">Frage</p><p class="cr__h">' + p.q + '</p></div><div class="cr__antwort"><p class="cr__fa-label">Antwort</p><p>' + p.a + '</p></div></div>';
       case 'durch':
@@ -91,7 +77,7 @@
       case 'notiz':
         return '<div class="cr cr--notiz"><div class="cr__zettel"><b>' + p.titel + '</b><ul>' + p.items.map(function (x) { return '<li class="' + (x[1] ? 'ok' : 'offen') + '"><i></i><span>' + x[0] + '</span></li>'; }).join('') + '</ul></div><div class="cr__in"><p class="cr__h">' + p.h + '</p></div></div>';
       case 'ticket':
-        return '<div class="cr cr--ticket"><div class="cr__in"><p class="cr__h">' + p.h + '</p></div><div class="cr__tk"><div class="cr__tk-haupt"><small>Neue Altersvorsorge 2027</small><b>15 Minuten Klarheit</b><ul><li>Betrifft mich das?</li><li>Wenn ja: wie?</li><li>Habe ich einen Vorteil?</li></ul></div><div class="cr__tk-ab"><span>Kostenlos</span></div></div></div>';
+        return '<div class="cr cr--ticket"><div class="cr__in"><p class="cr__h">' + p.h + '</p></div><div class="cr__tk"><div class="cr__tk-haupt"><small>Neue Altersvorsorge 2027</small><b>30 Minuten Klarheit</b><ul><li>Betrifft mich das?</li><li>Wenn ja: wie?</li><li>Habe ich einen Vorteil?</li></ul></div><div class="cr__tk-ab"><span>Kostenlos</span></div></div></div>';
     }
     return '';
   }
@@ -99,11 +85,12 @@
   var raster = $('#ig-raster');
   if (raster) {
     raster.innerHTML = P.map(function (p, i) {
-      return '<button type="button" class="ig-kachel" data-i="' + i + '" data-th="' + p.th + '" aria-label="Posting ' + nr(i) + ' öffnen">' + creative(p) +
+      var termin = p.th === 'termin';
+      return '<button type="button" class="ig-kachel' + (termin ? ' ig-kachel--termin' : '') + '" data-i="' + i + '" data-th="' + p.th + '" aria-label="Posting ' + nr(i) + ' öffnen' + (termin ? ', nur zum Termin posten' : '') + '">' + creative(p) + (termin ? '<span class="ig-kachel__termin">Nur zum Termin</span>' : '') +
         '<span class="ig-kachel__info">' + nr(i) + ' · Woche ' + p.w + '<small>' + TH[p.th] + '</small></span></button>';
     }).join('');
     var filter = $('#ig-filter');
-    filter.innerHTML = '<button type="button" aria-pressed="true" data-th="">Alle 30</button>' + Object.keys(TH).map(function (k) { return '<button type="button" aria-pressed="false" data-th="' + k + '">' + TH[k] + '</button>'; }).join('');
+    filter.innerHTML = '<button type="button" aria-pressed="true" data-th="">Alle ' + P.length + '</button>' + Object.keys(TH).map(function (k) { return '<button type="button" aria-pressed="false" data-th="' + k + '">' + TH[k] + '</button>'; }).join('');
     $$('button', filter).forEach(function (b) {
       b.addEventListener('click', function () {
         var th = b.dataset.th;
@@ -123,6 +110,7 @@
       jetzt = i; var p = P[i];
       $('#ig-m-bild').innerHTML = creative(p);
       $('#ig-m-format').textContent = 'Posting ' + nr(i) + ' · Woche ' + p.w + ' · ' + TH[p.th];
+      var wann = $('#ig-m-wann'); wann.hidden = !p.wann; wann.innerHTML = p.wann ? '<b>Nicht frei posten.</b>' + p.wann : '';
       $('#ig-m-meta').innerHTML = '<dt>Bild</dt><dd>' + p.bild + '</dd><dt>Ziel</dt><dd>' + p.ziel + '</dd><dt>Format</dt><dd>Einzelbild 4:5 · 1080 × 1350 · Instagram, Facebook, LinkedIn</dd>';
       $('#ig-laden').href = '/assets/projekte/avrg/postings/posting-' + nr(i) + '.jpg';
       $('#ig-laden').setAttribute('download', 'posting-' + nr(i) + '.jpg');
