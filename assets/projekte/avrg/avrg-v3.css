@@ -309,3 +309,19 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 /* „So läuft es“ und „Das Ergebnis“ als eine weiße Fläche: das Ergebnis schließt eng an die Schritte an */
 .v3-sek--anschluss{padding-top:0}
 #so-gehts{padding-bottom:clamp(64px,7vw,96px)}
+
+/* Rechner kompakt und geordnet: rechts nur zwei Stile – rote Zahl und ein Text.
+   Zeile 1: Zahl + Einheit, darunter Erklärung, ganz unten „Wie wir rechnen“. */
+.rk__ein,.rk__aus{padding:clamp(24px,3vw,36px) clamp(24px,3.4vw,40px)}
+.rk__ein{gap:26px}
+.rk__zahl{font-size:clamp(40px,4.4vw,52px);gap:12px}
+.rk__zahl small,.rk__satz,.rk__info summary{font:400 15.5px/1.5 var(--font);color:var(--text)}
+.rk__zahl small{letter-spacing:0;line-height:1}
+.rk__satz{margin:10px 0 0;max-width:34em}
+.rk__info{margin-top:12px}
+.rk__info summary{gap:8px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+.rk__info summary:hover{text-decoration-color:currentColor}
+.rk__info summary::before{width:16px;height:16px;border-width:1.2px;font-size:10px}
+.rk__info[open] summary{margin-bottom:10px}
+.rk+.rk{margin-top:16px}
+.rk__cta{margin-top:24px}

@@ -7,7 +7,7 @@
 <meta name="description" content="Die neue geförderte Altersvorsorge ab 2027: Dein Klarheits-Ticket – in 30 Minuten weißt du, ob du etwas davon hast.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="/assets/projekte/avrg/avrg.css?v=3">
-<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=15">
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=16">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -110,9 +110,8 @@
       </div>
     </div>
     <div class="rk__aus" aria-live="polite">
-      <p class="rk__frage">Der Staat legt dazu</p>
       <p class="rk__zahl"><span id="zulage">540 €</span><small>im Jahr</small></p>
-      <p class="rk__satz" id="z-satz">Mit deinem Beitrag sind das 1.140 € im Jahr.</p>
+      <p class="rk__satz" id="z-satz">So viel legt der Staat dazu. Mit deinem Beitrag sind das zusammen 1.140 € im Jahr.</p>
       <details class="rk__info">
         <summary>Wie wir rechnen</summary>
         <ul class="rk__liste">
@@ -134,9 +133,8 @@
       </div>
     </div>
     <div class="rk__aus" aria-live="polite">
-      <p class="rk__frage">Mit 67 könnten es sein</p>
-      <p class="rk__zahl"><small class="rk__rund">rund</small><span id="hoch">86.000 €</span></p>
-      <p class="rk__satz" id="hoch-weg">Bei 5 % Verzinsung im Jahr – angenommen.</p>
+      <p class="rk__zahl"><span id="hoch">86.000 €</span><small>mit 67</small></p>
+      <p class="rk__satz" id="hoch-weg">Rund so viel könnte bis 67 zusammenkommen – bei angenommenen 5 % Verzinsung im Jahr.</p>
       <details class="rk__info">
         <summary>Wie wir rechnen</summary>
         <p id="hoch-info">Der Jahresbetrag von oben, jedes Jahr gleich bis 67, mit angenommenen 5 % Verzinsung im Jahr. Kosten und Steuern fehlen. Das ist ein Gefühl für die Größenordnung – keine Prognose und nicht Teil eines Angebots.</p>
@@ -206,7 +204,6 @@
       <li><b>Tag und Uhrzeit wählen, Namen eintragen</b><span>Fertig. Die Bestätigung kommt per E-Mail.</span></li>
     </ol>
     <a class="knopf" href="https://t1p.de/SVTerminHild" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-kalender"/></svg>Zum Terminkalender</a>
-    <p class="buchung__hinweis">Öffnet den Kalender der SV SparkassenVersicherung in einem neuen Fenster.</p>
     </div>
   </div>
   <div class="v3-direkt">
@@ -268,7 +265,7 @@
     $('alter-wert').textContent = a + ' Jahre';
     $('kinder').textContent = kinder;
     $('zulage').textContent = euro(zulage);
-    $('z-satz').textContent = 'Mit deinem Beitrag sind das ' + euro(summe) + ' im Jahr.';
+    $('z-satz').textContent = 'So viel legt der Staat dazu. Mit deinem Beitrag sind das zusammen ' + euro(summe) + ' im Jahr.';
     $('z-eigen').textContent = euro(jahr);
     $('z-grund').textContent = euro(grund);
     $('z-kind').textContent = kinder ? euro(kind) : '–';
