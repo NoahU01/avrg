@@ -279,3 +279,14 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 .rk__info p{margin:0;font-size:13px;line-height:1.55;color:var(--muted);max-width:36em}
 .rk__cta{margin:28px 0 0}
 @media (max-width:900px){.rk{grid-template-columns:1fr}.rk__ein{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* Termin: echter SV-Kalender (lässt sich nicht einbetten – X-Frame-Options SAMEORIGIN), daher Absprung mit Anleitung */
+.buchung--echt{display:flex;flex-direction:column;align-self:start}
+.buchung__kicker{font-size:14px;color:var(--muted);margin:0 0 6px}
+.buchung__titel{font-size:clamp(24px,2.4vw,30px);margin:0 0 22px;color:var(--ink)}
+.buchung__schritte{list-style:none;counter-reset:s;margin:0 0 26px;padding:0;display:grid;gap:18px}
+.buchung__schritte li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;column-gap:14px;align-items:start}
+.buchung__schritte li::before{content:counter(s);grid-row:span 2;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:600 15px/1 var(--font)}
+.buchung__schritte b{font-weight:500;color:var(--ink);line-height:1.35;padding-top:6px}
+.buchung__schritte span{font-size:15px;color:var(--muted);line-height:1.45}
+.buchung__hinweis{margin:12px 0 0;font-size:13px;color:var(--muted);text-align:center}
