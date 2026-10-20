@@ -55,9 +55,9 @@
     switch (p.t) {
       case 'weiss': case 'rot': case 'schwarz': return flaeche(p, p.t);
       case 'blase':
-        return '<div class="cr"><img class="cr__foto" src="' + FOTO + p.foto + '.jpg" alt="" loading="lazy"><p class="cr__blase">' + p.blase + '</p><span class="cr__tag">' + p.tag + '</span></div>';
+        return '<div class="cr"><img class="cr__foto" src="' + FOTO + p.foto + '.jpg" alt="" loading="lazy"' + (p.pos ? ' style="object-position:' + p.pos + '"' : '') + '><p class="cr__blase">' + p.blase + '</p><span class="cr__tag">' + p.tag + '</span></div>';
       case 'band':
-        return '<div class="cr cr--band"><img class="cr__foto" src="' + FOTO + p.foto + '.jpg" alt="" loading="lazy"><div class="cr__in"><p class="cr__h">' + p.h + '</p></div></div>';
+        return '<div class="cr cr--band"><img class="cr__foto" src="' + FOTO + p.foto + '.jpg" alt="" loading="lazy"' + (p.pos ? ' style="object-position:' + p.pos + '"' : '') + '><div class="cr__in"><p class="cr__h">' + p.h + '</p></div></div>';
       case 'fa':
         return '<div class="cr cr--fa"><div class="cr__frage"><p class="cr__fa-label">Frage</p><p class="cr__h">' + p.q + '</p></div><div class="cr__antwort"><p class="cr__fa-label">Antwort</p><p>' + p.a + '</p></div></div>';
       case 'durch':
@@ -85,11 +85,12 @@
   var raster = $('#ig-raster');
   if (raster) {
     raster.innerHTML = P.map(function (p, i) {
-      return '<button type="button" class="ig-kachel" data-i="' + i + '" data-th="' + p.th + '" aria-label="Posting ' + nr(i) + ' öffnen">' + creative(p) +
+      var termin = p.th === 'termin';
+      return '<button type="button" class="ig-kachel' + (termin ? ' ig-kachel--termin' : '') + '" data-i="' + i + '" data-th="' + p.th + '" aria-label="Posting ' + nr(i) + ' öffnen' + (termin ? ', nur zum Termin posten' : '') + '">' + creative(p) + (termin ? '<span class="ig-kachel__termin">Nur zum Termin</span>' : '') +
         '<span class="ig-kachel__info">' + nr(i) + ' · Woche ' + p.w + '<small>' + TH[p.th] + '</small></span></button>';
     }).join('');
     var filter = $('#ig-filter');
-    filter.innerHTML = '<button type="button" aria-pressed="true" data-th="">Alle 30</button>' + Object.keys(TH).map(function (k) { return '<button type="button" aria-pressed="false" data-th="' + k + '">' + TH[k] + '</button>'; }).join('');
+    filter.innerHTML = '<button type="button" aria-pressed="true" data-th="">Alle ' + P.length + '</button>' + Object.keys(TH).map(function (k) { return '<button type="button" aria-pressed="false" data-th="' + k + '">' + TH[k] + '</button>'; }).join('');
     $$('button', filter).forEach(function (b) {
       b.addEventListener('click', function () {
         var th = b.dataset.th;
@@ -109,6 +110,7 @@
       jetzt = i; var p = P[i];
       $('#ig-m-bild').innerHTML = creative(p);
       $('#ig-m-format').textContent = 'Posting ' + nr(i) + ' · Woche ' + p.w + ' · ' + TH[p.th];
+      var wann = $('#ig-m-wann'); wann.hidden = !p.wann; wann.innerHTML = p.wann ? '<b>Nicht frei posten.</b>' + p.wann : '';
       $('#ig-m-meta').innerHTML = '<dt>Bild</dt><dd>' + p.bild + '</dd><dt>Ziel</dt><dd>' + p.ziel + '</dd><dt>Format</dt><dd>Einzelbild 4:5 · 1080 × 1350 · Instagram, Facebook, LinkedIn</dd>';
       $('#ig-laden').href = '/assets/projekte/avrg/postings/posting-' + nr(i) + '.jpg';
       $('#ig-laden').setAttribute('download', 'posting-' + nr(i) + '.jpg');

@@ -405,3 +405,12 @@
 .mk-titelzeile{display:flex;align-items:center;justify-content:space-between;gap:16px 32px;flex-wrap:wrap}
 .mk-titelzeile .e2-h2{margin:0}
 .mk-titelzeile .e2-knopf{flex:0 0 auto}
+
+/* Postings „Nur zum Termin“: rot umrandet, mit Hinweis – dürfen nicht frei gepostet werden */
+.ig-kachel--termin::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;box-shadow:inset 0 0 0 4px #ed1c24,inset 0 0 0 7px #fff}
+.ig-kachel__termin{position:absolute;z-index:4;left:0;top:0;padding:6px 11px 6px 10px;border-radius:0 0 10px 0;background:#ed1c24;color:#fff;font:600 11px/1 'Poppins',system-ui,sans-serif;letter-spacing:.02em}
+.ig-filter button[data-th="termin"]{border-color:#ed1c24;color:#ed1c24}
+.ig-filter button[data-th="termin"][aria-pressed="true"]{background:#ed1c24;color:#fff}
+.ig-wann{margin:0 0 14px;padding:12px 14px;border:1.5px solid #ed1c24;border-radius:12px;background:#fff5f5;color:#1a1817;font-size:14px;line-height:1.5}
+.ig-wann b{display:block;color:#ed1c24;margin-bottom:2px}
+@media (max-width:600px){.ig-kachel__termin{padding:3px 6px;font-size:8.5px;border-radius:0 0 6px 0}.ig-kachel--termin::after{box-shadow:inset 0 0 0 2.5px #ed1c24,inset 0 0 0 4.5px #fff}}
