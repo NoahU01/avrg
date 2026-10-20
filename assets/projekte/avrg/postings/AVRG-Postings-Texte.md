@@ -12,7 +12,7 @@ Ziel: Aufmerksamkeit – die Frage, die alle haben.
 
 Ab 2027 gibt es eine neue geförderte Altersvorsorge. Und überall hörst du: „Das musst du machen!“ Aber musst du wirklich?
 
-Wir erklären dir keine Paragrafen. Wir klären in 15 Minuten drei Fragen: Betrifft dich das? Wie? Und hast du einen Vorteil? Danach ist das Thema für dich erledigt.
+Wir erklären dir keine Paragrafen. Wir klären in 30 Minuten drei Fragen: Betrifft dich das? Wie? Und hast du einen Vorteil? Danach ist das Thema für dich erledigt.
 
 👉 Termin über den Link in der Bio.
 
@@ -29,7 +29,7 @@ Genau darauf konzentrieren wir uns. Kein Fachvortrag, keine Zulagentabellen – 
 → Wenn ja: wie?
 → Habe ich einen Vorteil?
 
-Nach 15 Minuten weißt du, woran du bist. Und das Thema ist erledigt.
+Nach 30 Minuten weißt du, woran du bist. Und das Thema ist erledigt.
 
 👉 Termin: [Link zur Landingpage]
 
@@ -46,7 +46,7 @@ Ziel: Wiedererkennen: „Das bin ich.“
 
 Post zur neuen Altersvorsorge bekommen – und nur Bahnhof verstanden? Völlig normal.
 
-Du musst dich da nicht einarbeiten. In 15 Minuten sagen wir dir, ob du etwas tun solltest. Oder eben nicht. 📩
+Du musst dich da nicht einarbeiten. In 30 Minuten sagen wir dir, ob du etwas tun solltest. Oder eben nicht. 📩
 
 #Altersvorsorge #Klarheit
 
@@ -58,7 +58,7 @@ Diese Frage hören wir gerade sehr oft. Die Reform der Altersvorsorge ist beschl
 
 Das ist kein Wissensproblem. Niemand muss sich in ein Gesetz einarbeiten, um eine gute Entscheidung zu treffen. Es reicht, die eigene Situation einmal sauber anzuschauen.
 
-Dafür nehmen wir uns 15 Minuten Zeit. Danach ist klar, ob es dich betrifft – oder ob du das Schreiben beruhigt abheften kannst.
+Dafür nehmen wir uns 30 Minuten Zeit. Danach ist klar, ob es dich betrifft – oder ob du das Schreiben beruhigt abheften kannst.
 
 👉 [Link zur Landingpage]
 
@@ -79,7 +79,7 @@ Mehr braucht es nicht. Diese drei Fragen klären wir mit dir – und dann weißt
 ✔️ Wenn ja: wie?
 ✔️ Habe ich einen Vorteil?
 
-15 Minuten, kostenlos. Link in der Bio.
+30 Minuten, kostenlos. Link in der Bio.
 
 #Altersvorsorge2027
 
@@ -108,7 +108,7 @@ Ziel: Den Claim verankern.
 
 ### Instagram & Facebook
 
-Nach unserem 15-Minuten-Gespräch gibt es genau zwei Ergebnisse:
+Nach unserem 30-Minuten-Gespräch gibt es genau zwei Ergebnisse:
 
 ✅ Du hast einen Vorteil – dann zeigen wir ihn dir schwarz auf weiß.
 ✅ Du brauchst es nicht – dann sagen wir dir das genauso klar, und du kannst gut schlafen.
@@ -125,7 +125,7 @@ So einfach ist das Ergebnis unserer Gespräche zur neuen Altersvorsorge. Entwede
 
 Wir halten das für den ehrlichsten Weg. Wer weiß, dass er auch Nein sagen darf, stellt bessere Fragen.
 
-👉 15 Minuten, kostenlos: [Link zur Landingpage]
+👉 30 Minuten, kostenlos: [Link zur Landingpage]
 
 #Altersvorsorge #Beratung
 
@@ -152,7 +152,7 @@ Die kurze Antwort: Nein. Bestehende Verträge laufen weiter.
 
 Die längere Antwort: Ab 2027 ist ein Wechsel in die neue Förderung möglich – allerdings einmalig und unwiderruflich. Ob das sinnvoll ist, hängt vom einzelnen Vertrag ab: Alter, Garantien, Kosten, Pläne.
 
-Genau deshalb lohnt ein Blick, bevor man sich verrückt macht. 15 Minuten, dann ist klar, ob es etwas zu tun gibt.
+Genau deshalb lohnt ein Blick, bevor man sich verrückt macht. 30 Minuten, dann ist klar, ob es etwas zu tun gibt.
 
 👉 [Link zur Landingpage]
 
@@ -189,7 +189,7 @@ Es gibt keine pauschale Antwort. Entscheidend sind:
 
 Und: Der Wechsel ist endgültig. Das ist kein Thema für eine schnelle Entscheidung zwischen Tür und Angel.
 
-Wir schauen uns das gern gemeinsam an – in 15 Minuten.
+Wir schauen uns das gern gemeinsam an – in 30 Minuten.
 
 👉 [Link zur Landingpage]
 
@@ -206,7 +206,7 @@ Ziel: Die Suche nach Antworten aufgreifen.
 
 Kennst du? Du suchst eine einfache Antwort und findest 100 Artikel. 🙃
 
-Kürzer geht’s so: 15 Minuten, deine Situation, eine klare Antwort. Link in der Bio.
+Kürzer geht es so: 30 Minuten, deine Situation, eine klare Antwort. Link in der Bio.
 
 #Altersvorsorge #Vorsorge2027
 
@@ -216,7 +216,7 @@ Was gerade gesucht wird: „Betrifft mich die neue Altersvorsorge …“ – mit
 
 Die Fragen sind sehr persönlich. Die Antworten im Netz sind es nicht.
 
-Deshalb gehen wir einen anderen Weg: Wir schauen in 15 Minuten auf die eigene Situation und beantworten genau eine Frage – betrifft es dich, und hast du etwas davon?
+Deshalb gehen wir einen anderen Weg: Wir schauen in 30 Minuten auf die eigene Situation und beantworten genau eine Frage – betrifft es dich, und hast du etwas davon?
 
 👉 [Link zur Landingpage]
 
@@ -233,7 +233,7 @@ Ziel: Familien ansprechen.
 
 Für Kinder gibt es bei der neuen Altersvorsorge eigene Zulagen. Ob sich das für euch rechnet, hängt von eurem Budget ab.
 
-Genau das klären wir in 15 Minuten – am Telefon, per Video oder bei uns im Büro.
+Genau das klären wir in 30 Minuten – am Telefon, per Video oder bei uns im Büro.
 
 #Familie #Altersvorsorge
 
@@ -245,7 +245,7 @@ Der Grund: Für Kinder gibt es eigene Zulagen. Je nach Beitrag und Anzahl der Ki
 
 Ob es zum Familienbudget passt, ist eine andere Frage – und die klären wir ehrlich. Manchmal ist die Antwort: Ja, mitnehmen. Manchmal: Passt gerade nicht.
 
-👉 15 Minuten: [Link zur Landingpage]
+👉 30 Minuten: [Link zur Landingpage]
 
 #Familie #Altersvorsorge
 
@@ -270,7 +270,7 @@ Eine Frage, die Familien gerade oft stellen: Gibt es bei der neuen Altersvorsorg
 
 Ja. Für jedes Kind gibt es eine eigene Zulage.
 
-Ob sich der Einstieg lohnt, hängt trotzdem vom Einzelfall ab – vom Budget, von bestehenden Verträgen, von den Plänen. Das klären wir in 15 Minuten.
+Ob sich der Einstieg lohnt, hängt trotzdem vom Einzelfall ab – vom Budget, von bestehenden Verträgen, von den Plänen. Das klären wir in 30 Minuten.
 
 👉 [Link zur Landingpage]
 
@@ -297,7 +297,7 @@ Eine Neuerung, die viele noch nicht auf dem Schirm haben: Mit der Reform 2027 k�
 
 Für Handwerksbetriebe, Freiberufler und Ladeninhaber ist das eine echte Option – aber nicht automatisch die beste. Es kommt darauf an, wie die übrige Vorsorge aussieht.
 
-In 15 Minuten ist klar, ob es passt.
+In 30 Minuten ist klar, ob es passt.
 
 👉 [Link zur Landingpage]
 
@@ -312,7 +312,7 @@ Ziel: Klare Nachricht für Selbstständige.
 
 ### Instagram & Facebook
 
-Selbstständige können ab 2027 die neue Förderung bekommen. Was das für dich heißt? 15 Minuten, dann weißt du’s.
+Selbstständige können ab 2027 die neue Förderung bekommen. Was das für dich heißt? 30 Minuten, dann weißt du es.
 
 #Selbstständig #Vorsorge2027
 
@@ -322,7 +322,7 @@ Selbstständige waren bei der staatlich geförderten Altersvorsorge bisher weitg
 
 Ab 2027 nicht mehr.
 
-Was das konkret bedeutet, ist für jeden anders. Deshalb bieten wir ein kurzes Gespräch an: 15 Minuten, deine Situation, eine klare Antwort.
+Was das konkret bedeutet, ist für jeden anders. Deshalb bieten wir ein kurzes Gespräch an: 30 Minuten, deine Situation, eine klare Antwort.
 
 👉 [Link zur Landingpage]
 
@@ -347,7 +347,7 @@ So beginnen gerade viele Gespräche bei uns.
 
 „Ich bin selbstständig – betrifft mich das überhaupt?“
 
-Die Antwort ist ab 2027 in vielen Fällen: ja. Ob es sich lohnt, ist eine zweite Frage. Beides klären wir in 15 Minuten, ohne Fachchinesisch.
+Die Antwort ist ab 2027 in vielen Fällen: ja. Ob es sich lohnt, ist eine zweite Frage. Beides klären wir in 30 Minuten, ohne Fachchinesisch.
 
 👉 [Link zur Landingpage]
 
@@ -376,7 +376,7 @@ Eine berechtigte Frage im ersten Job. Altersvorsorge fühlt sich mit Anfang 20 w
 
 Gleichzeitig gilt: Wer früh startet, hat am längsten etwas davon. Und bis 25 gibt es bei der neuen Altersvorsorge einen Startbonus.
 
-Ob es passt, ist trotzdem individuell. 15 Minuten reichen, um das zu klären.
+Ob es passt, ist trotzdem individuell. 30 Minuten reichen, um das zu klären.
 
 👉 [Link zur Landingpage]
 
@@ -391,7 +391,7 @@ Ziel: Konkreter Anreiz für Junge.
 
 ### Instagram & Facebook
 
-Wer unter 25 ist und bei der neuen Altersvorsorge einsteigt, bekommt einmalig einen Startbonus. Ob sich der Einstieg für dich lohnt, klären wir in 15 Minuten.
+Wer unter 25 ist und bei der neuen Altersvorsorge einsteigt, bekommt einmalig einen Startbonus. Ob sich der Einstieg für dich lohnt, klären wir in 30 Minuten.
 
 #Berufsstart
 
@@ -401,7 +401,7 @@ Ein Detail der neuen Altersvorsorge, das gerade für Berufseinsteiger interessan
 
 Kein Grund, überstürzt abzuschließen. Aber ein guter Anlass, sich die Frage einmal ernsthaft zu stellen.
 
-👉 15 Minuten: [Link zur Landingpage]
+👉 30 Minuten: [Link zur Landingpage]
 
 #Berufseinstieg #Altersvorsorge
 
@@ -416,7 +416,7 @@ Ziel: Humorvoller Zugang für Junge.
 
 Die Liste kennst du, oder? Der letzte Punkt bleibt immer offen. 📝
 
-Muss er nicht. 15 Minuten, dann weißt du, ob die neue Altersvorsorge etwas für dich ist.
+Muss er nicht. 30 Minuten, dann weißt du, ob die neue Altersvorsorge etwas für dich ist.
 
 #Berufsstart #ToDo
 
@@ -426,7 +426,7 @@ Die To-do-Liste mit Anfang 20: Wohnung, Auto, Urlaub – und ganz unten Altersvo
 
 Verständlich. Das Thema wirkt kompliziert und weit weg.
 
-Mit der neuen Altersvorsorge ab 2027 lohnt es sich aber, den Punkt einmal kurz abzuarbeiten. 15 Minuten reichen.
+Mit der neuen Altersvorsorge ab 2027 lohnt es sich aber, den Punkt einmal kurz abzuarbeiten. 30 Minuten reichen.
 
 👉 [Link zur Landingpage]
 
@@ -453,7 +453,7 @@ Die ehrliche Antwort: Das hängt davon ab. Wie viele Jahre noch eingezahlt wird,
 
 Wir rechnen das ehrlich durch. Und wenn es sich nicht lohnt, sagen wir das genauso klar.
 
-👉 15 Minuten: [Link zur Landingpage]
+👉 30 Minuten: [Link zur Landingpage]
 
 #Altersvorsorge #Ruhestand
 
@@ -499,7 +499,7 @@ Eine Frage, die wir oft hören: Lohnt sich die neue Altersvorsorge mit 55 noch?
 
 Unsere Antwort: Manchmal ja, manchmal nein. Pauschal lässt sich das nicht sagen – also rechnen wir es individuell und ehrlich durch.
 
-👉 15 Minuten: [Link zur Landingpage]
+👉 30 Minuten: [Link zur Landingpage]
 
 #Altersvorsorge
 
@@ -514,7 +514,7 @@ Ziel: Vertrauen durch Ehrlichkeit.
 
 Ehrlich gesagt: Nicht für jeden lohnt sich die neue Altersvorsorge. Und das sagen wir dir auch so. 🤝
 
-Wenn sie für dich passt, zeigen wir dir die Lösung, die wir mit Überzeugung empfehlen. Wenn nicht, ist das Thema in 15 Minuten vom Tisch.
+Wenn sie für dich passt, zeigen wir dir die Lösung, die wir mit Überzeugung empfehlen. Wenn nicht, ist das Thema in 30 Minuten vom Tisch.
 
 #Altersvorsorge
 
@@ -526,7 +526,7 @@ Bei der neuen Altersvorsorge gilt das für einige. Wer gut aufgestellt ist oder 
 
 Und wenn es passt, empfehlen wir mit Überzeugung, was wir für die beste Lösung halten.
 
-👉 15 Minuten: [Link zur Landingpage]
+👉 30 Minuten: [Link zur Landingpage]
 
 #Beratung #Altersvorsorge #Vertrauen
 
@@ -552,7 +552,7 @@ Was es in unseren Gesprächen zur neuen Altersvorsorge nicht gibt:
 ✗ Abschlussdruck
 ✗ Hausaufgaben
 
-Was es gibt: eine klare Antwort in 15 Minuten. Betrifft es dich, wie, und hast du einen Vorteil?
+Was es gibt: eine klare Antwort in 30 Minuten. Betrifft es dich, wie, und hast du einen Vorteil?
 
 👉 [Link zur Landingpage]
 
@@ -592,7 +592,7 @@ Ziel: Informationsflut aufgreifen.
 
 ### Instagram & Facebook
 
-Die Zeitung schreibt das eine, das Netz das andere. Wir schauen nur auf eins: deine Situation. 15 Minuten, dann ist Ruhe.
+Die Zeitung schreibt das eine, das Netz das andere. Wir schauen nur auf eins: deine Situation. 30 Minuten, dann ist Ruhe.
 
 #Altersvorsorge
 
@@ -602,7 +602,7 @@ Jeden Tag ein neuer Artikel zur Altersvorsorge-Reform. Und am Ende weiß man oft
 
 Das Problem sind nicht fehlende Informationen, sondern fehlende Einordnung. Was gilt für mich?
 
-Genau das klären wir – in 15 Minuten.
+Genau das klären wir – in 30 Minuten.
 
 👉 [Link zur Landingpage]
 
@@ -617,7 +617,7 @@ Ziel: Termin buchen.
 
 ### Instagram & Facebook
 
-Dein Klarheits-Ticket: 15 Minuten, drei Fragen, ein klares Ergebnis. Einlösbar am Telefon, per Video oder bei uns im Büro. 🎟️
+Dein Klarheits-Ticket: 30 Minuten, drei Fragen, ein klares Ergebnis. Einlösbar am Telefon, per Video oder bei uns im Büro. 🎟️
 
 Link in der Bio.
 
@@ -625,7 +625,7 @@ Link in der Bio.
 
 ### LinkedIn
 
-Unser Klarheits-Ticket zur neuen Altersvorsorge: 15 Minuten, drei Fragen, ein klares Ergebnis.
+Unser Klarheits-Ticket zur neuen Altersvorsorge: 30 Minuten, drei Fragen, ein klares Ergebnis.
 
 Einlösbar am Telefon, per Video oder vor Ort. Kostenlos und unverbindlich.
 
@@ -654,7 +654,7 @@ Nein. Bestehende Verträge laufen weiter, die neue Förderung startet im Januar 
 
 Ein kurzer Blick lohnt sich trotzdem – damit man in Ruhe entscheidet statt unter Zeitdruck.
 
-👉 15 Minuten: [Link zur Landingpage]
+👉 30 Minuten: [Link zur Landingpage]
 
 #Altersvorsorge
 
@@ -694,7 +694,7 @@ Ziel: Familien zum Termin bewegen.
 
 ### Instagram & Facebook
 
-Am Küchentisch entschieden – mit allen Infos, die ihr dafür braucht. 15 Minuten, gern auch per Video. Link in der Bio.
+Am Küchentisch entschieden – mit allen Infos, die ihr dafür braucht. 30 Minuten, gern auch per Video. Link in der Bio.
 
 #Familie
 
@@ -702,7 +702,7 @@ Am Küchentisch entschieden – mit allen Infos, die ihr dafür braucht. 15 Minu
 
 Viele Familien entscheiden über Vorsorge am Küchentisch. Was dort oft fehlt: eine klare Einordnung.
 
-Die liefern wir in 15 Minuten – gern per Video, damit beide dabei sein können.
+Die liefern wir in 30 Minuten – gern per Video, damit beide dabei sein können.
 
 👉 [Link zur Landingpage]
 
@@ -717,7 +717,7 @@ Ziel: Entlasten.
 
 ### Instagram & Facebook
 
-Kurz und ehrlich. 15 Minuten, und du weißt, woran du bist. Link in der Bio.
+Kurz und ehrlich. 30 Minuten, und du weißt, woran du bist. Link in der Bio.
 
 #Altersvorsorge
 
@@ -727,7 +727,7 @@ Muss man sich in die neue Altersvorsorge einarbeiten, um eine gute Entscheidung 
 
 Nein. Dafür gibt es Beratung.
 
-Unser Angebot: 15 Minuten, deine Situation, eine klare Antwort.
+Unser Angebot: 30 Minuten, deine Situation, eine klare Antwort.
 
 👉 [Link zur Landingpage]
 
@@ -752,7 +752,7 @@ Noch 30 Tage bis zum Start der neuen geförderten Altersvorsorge.
 
 Wer vorher weiß, ob sie ihn betrifft, entscheidet in Ruhe – statt im Januar unter Zeitdruck.
 
-👉 15 Minuten: [Link zur Landingpage]
+👉 30 Minuten: [Link zur Landingpage]
 
 #Altersvorsorge #Vorsorge2027
 
@@ -765,7 +765,7 @@ Ziel: Weiterempfehlung.
 
 ### Instagram & Facebook
 
-Kennst du jemanden, der sich gerade fragt, ob die neue Altersvorsorge etwas für ihn ist? Schick ihm diesen Beitrag. Wir helfen gern – in 15 Minuten.
+Kennst du jemanden, der sich gerade fragt, ob die neue Altersvorsorge etwas für ihn ist? Schick ihm diesen Beitrag. Wir helfen gern – in 30 Minuten.
 
 #Empfehlung
 
@@ -773,7 +773,7 @@ Kennst du jemanden, der sich gerade fragt, ob die neue Altersvorsorge etwas für
 
 Kennst du jemanden, der sich gerade fragt, ob die neue Altersvorsorge etwas für ihn ist?
 
-Teile diesen Beitrag gern. Wir nehmen uns 15 Minuten Zeit und geben eine klare Antwort.
+Teile diesen Beitrag gern. Wir nehmen uns 30 Minuten Zeit und geben eine klare Antwort.
 
 👉 [Link zur Landingpage]
 
@@ -788,7 +788,7 @@ Ziel: Start begleiten.
 
 ### Instagram & Facebook
 
-Ab heute gibt es die neue geförderte Altersvorsorge. Du willst wissen, ob sie dich betrifft? 15 Minuten genügen. 🚀
+Ab heute gibt es die neue geförderte Altersvorsorge. Du willst wissen, ob sie dich betrifft? 30 Minuten genügen. 🚀
 
 #Vorsorge2027
 
@@ -796,7 +796,7 @@ Ab heute gibt es die neue geförderte Altersvorsorge. Du willst wissen, ob sie d
 
 Ab heute gibt es die neue geförderte Altersvorsorge.
 
-Wer wissen will, ob sie ihn betrifft und ob er einen Vorteil hat: 15 Minuten genügen.
+Wer wissen will, ob sie ihn betrifft und ob er einen Vorteil hat: 30 Minuten genügen.
 
 👉 [Link zur Landingpage]
 

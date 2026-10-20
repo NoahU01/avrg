@@ -344,7 +344,7 @@
 .ps__tasche{position:relative;margin:auto -1cqi 6cqi;height:34cqi}
 .ps__tickets{position:absolute;left:6cqi;right:6cqi;top:0;height:24cqi}
 .ps__tickets i{position:absolute;bottom:0;width:30cqi;height:17cqi;background:#fff;border-radius:2cqi;box-shadow:0 1cqi 3cqi rgba(0,0,0,.2)}
-.ps__tickets i::after{content:"15 Min.";position:absolute;left:3cqi;top:2.6cqi;font-size:3.4cqi;font-weight:700;color:#ed1c24;font-style:normal}
+.ps__tickets i::after{content:"30 Min.";position:absolute;left:3cqi;top:2.6cqi;font-size:3.4cqi;font-weight:700;color:#ed1c24;font-style:normal}
 .ps__tickets i:nth-child(1){left:0;transform:rotate(-10deg)}
 .ps__tickets i:nth-child(2){left:24cqi;transform:rotate(3deg);bottom:2cqi}
 .ps__tickets i:nth-child(3){right:0;transform:rotate(12deg)}

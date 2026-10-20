@@ -1,4 +1,4 @@
-/* Medienkonzept AVRG: Kapitel, Landingpage-Varianten, Mails, Instagram-Raster mit Großansicht */
+/* AVRG-Übersicht (Medienkonzept): Kapitel, Mails, Instagram-Raster mit Großansicht */
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
@@ -8,7 +8,7 @@
   function setzeOben() { document.documentElement.style.setProperty('--mk-top', (kopf ? kopf.offsetHeight : 84) + 'px'); }
   setzeOben(); window.addEventListener('resize', setzeOben);
   var tabs = $$('.mk-tab'), leiste = $('.mk-kapitel');
-  var ALT = {grundidee: 'strategie', zielgruppe: 'strategie', claim: 'strategie', postings: 'social', offen: 'fahrplan'};
+  var ALT = {grundidee: 'strategie', zielgruppe: 'strategie', claim: 'strategie', postings: 'social', offen: 'strategie', fahrplan: 'strategie'};
   function zeige(id, scrollen) {
     id = ALT[id] || id;
     if (!$('#k-' + id)) id = 'strategie';
@@ -30,20 +30,6 @@
     a.addEventListener('click', function (e) { e.preventDefault(); var k = a.getAttribute('href').slice(1); history.replaceState(null, '', '#' + k); zeige(k, true); });
   });
   zeige(location.hash.slice(1), false);
-
-  /* ---------- Landingpage-Varianten ---------- */
-  $$('.mk-variante').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var v = b.dataset.v;
-      $$('.mk-variante').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      $('#mk-lp-bild').src = '/assets/projekte/avrg/lp-vorschau-voll-' + v + '.jpg?v=9';
-      $('.ak-browser-seite').scrollTop = 0;
-      $('#mk-lp-url').textContent = 'agentur-beispiel.de/neue-altersvorsorge' + (v === '1' ? '' : '-' + v);
-      $$('.mk-bausteine').forEach(function (l) { l.hidden = l.dataset.v !== v; });
-      $('#mk-lp-link').href = '/projekte/avrg-landingpage-' + v + '.html';
-      $('#mk-lp-link').firstChild.textContent = 'Variante ' + v + ' öffnen ';
-    });
-  });
 
   /* ---------- Mails ---------- */
   var mtabs = $$('.ak-tab');
@@ -91,7 +77,7 @@
       case 'notiz':
         return '<div class="cr cr--notiz"><div class="cr__zettel"><b>' + p.titel + '</b><ul>' + p.items.map(function (x) { return '<li class="' + (x[1] ? 'ok' : 'offen') + '"><i></i><span>' + x[0] + '</span></li>'; }).join('') + '</ul></div><div class="cr__in"><p class="cr__h">' + p.h + '</p></div></div>';
       case 'ticket':
-        return '<div class="cr cr--ticket"><div class="cr__in"><p class="cr__h">' + p.h + '</p></div><div class="cr__tk"><div class="cr__tk-haupt"><small>Neue Altersvorsorge 2027</small><b>15 Minuten Klarheit</b><ul><li>Betrifft mich das?</li><li>Wenn ja: wie?</li><li>Habe ich einen Vorteil?</li></ul></div><div class="cr__tk-ab"><span>Kostenlos</span></div></div></div>';
+        return '<div class="cr cr--ticket"><div class="cr__in"><p class="cr__h">' + p.h + '</p></div><div class="cr__tk"><div class="cr__tk-haupt"><small>Neue Altersvorsorge 2027</small><b>30 Minuten Klarheit</b><ul><li>Betrifft mich das?</li><li>Wenn ja: wie?</li><li>Habe ich einen Vorteil?</li></ul></div><div class="cr__tk-ab"><span>Kostenlos</span></div></div></div>';
     }
     return '';
   }

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<title>Werkstatt · Posting-Bilder AVRG</title>
+<!-- Rendert ein Posting als 1080 × 1350 (Aufruf: ?n=1 … 30). Bildsystem aus sofortsichtbar
+     (Stile avrg-mk.css, Bildfunktion aus mk.js). Daten: /assets/projekte/avrg/postings.js -->
+<link rel="stylesheet" href="/assets/projekte/avrg/fonts/ubuntu.css">
+<link rel="stylesheet" href="/assets/e2/sg/styles.css">
+<link rel="stylesheet" href="/assets/e2/sg/e2.css">
+<link rel="stylesheet" href="/assets/e2/sg/e2-seiten.css">
+<link rel="stylesheet" href="/assets/e2/sg/e2-runde5.css">
+<link rel="stylesheet" href="/assets/e2/schwarzgelb-ergaenzung.css">
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg-konzept.css">
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg-mk.css">
+<style>
+html{--rot:#ED1C24;--auf-rot:#fff;--auf-rot-leise:rgba(255,255,255,.86);--auf-rot-rand:rgba(255,255,255,.55);--auf-rot-linie:rgba(255,255,255,.3);--rot-text:#ED1C24;--rot-hell:#FF4D52;--rot-betont:#141414}
+body{margin:0;background:#888}main.ak{padding:0;margin:0}
+/* wie die Originalbilder vom 10.11. */
+.e2 main .cr .cr__tk-ab span{font-size:2.2cqi}
+#buehne{width:1080px}
+</style>
+<script src="/assets/projekte/avrg/postings.js"></script>
+</head><body class="e2"><main class="ak"><div id="buehne"></div></main>
+<script>
+/* Eine Quelle: Die Bildfunktion wird direkt aus mk.js gelesen (dieselbe, mit der die Seite die Postings zeigt). */
+fetch('/assets/projekte/avrg/mk.js').then(function (r) { return r.text(); }).then(function (js) {
+  var a = js.indexOf('  function flaeche(p, art) {'), b = js.indexOf("    return '';\n  }", a) + "    return '';\n  }".length;
+  var creative = new Function('FOTO', js.slice(a, b) + '\nreturn creative;')('/assets/projekte/avrg/fotos/');
+  var n = +(new URLSearchParams(location.search).get('n') || 1);
+  document.getElementById('buehne').innerHTML = creative(window.AVRG_POSTINGS[n - 1]);
+  document.body.dataset.fertig = '1';
+});
+</script></body></html>
