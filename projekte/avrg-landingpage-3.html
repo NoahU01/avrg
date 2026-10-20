@@ -91,7 +91,7 @@
 <section class="v3-sek" id="rechner"><div class="wrap">
   <p class="v3-kicker">Rechner</p>
   <h2 class="v3-h2">Spiele es kurz durch.</h2>
-  <p class="v3-lead" style="margin-bottom:clamp(32px,4vw,48px)">Stelle ein, was zu dir passt – das Ergebnis siehst du sofort. Ob es wirklich passt, klären wir im Gespräch.</p>
+  <p class="v3-lead" style="margin-bottom:clamp(32px,4vw,48px)">Sieh dir an, was der Staat dir jedes Jahr dazulegt – und wie viel daraus bis 67 werden kann. Ob es wirklich zu dir passt, klären wir im Gespräch.</p>
 
   <div class="rk">
     <div class="rk__ein">
@@ -133,8 +133,8 @@
       </div>
     </div>
     <div class="rk__aus" aria-live="polite">
-      <p class="rk__zahl"><span id="hoch">86.000 €</span><small>mit 67</small></p>
-      <p class="rk__satz" id="hoch-weg">Rund so viel könnte bis 67 zusammenkommen – bei angenommenen 5 % Verzinsung im Jahr.</p>
+      <p class="rk__zahl"><span id="hoch">41.000 €</span><small>bis 67</small></p>
+      <p class="rk__satz" id="hoch-weg">So viel Zulage vom Staat könnte bis 67 zusammenkommen – mit angenommenen 5 % Verzinsung im Jahr.</p>
       <details class="rk__info">
         <summary>Wie wir rechnen</summary>
         <p id="hoch-info">Der Jahresbetrag von oben, jedes Jahr gleich bis 67, mit angenommenen 5 % Verzinsung im Jahr. Kosten und Steuern fehlen. Das ist ein Gefühl für die Größenordnung – keine Prognose und nicht Teil eines Angebots.</p>
@@ -247,7 +247,7 @@
 
   /* Rechner: Grundzulage 50 ct je € bis 360 €, 25 ct je € von 361 bis 1.800 €;
      Kinderzulage 1 € je eingezahltem €, bis 300 € je Kind (Eckdaten SV-Übersicht 09/2026).
-     Hochrechnung: Jahressumme (Beitrag + Zulagen) gleichbleibend bis 67, 5 % im Jahr angenommen,
+     Hochrechnung: nur die Zulage, gleichbleibend bis 67, 5 % im Jahr angenommen,
      Einzahlung zum Jahresende, bewusst gerundet. Einstellwerte schwarz, Ergebnisse rot. */
   var ZINS = 0.05, ZIEL = 67;
   var beitrag = document.getElementById('beitrag'), alter = document.getElementById('alter'), kinder = 1;
@@ -259,7 +259,9 @@
     var kind = Math.min(jahr, 300 * kinder);
     var zulage = grund + kind, summe = jahr + zulage;
     var a = +alter.value, jahre = ZIEL - a;
-    var end = summe * (Math.pow(1 + ZINS, jahre) - 1) / ZINS;
+    /* Nur die Zulage: Sie kommt jeweils am Jahresende und wird erst ab dem Folgejahr verzinst
+       (nachschüssig), die letzte Zulage vor 67 also gar nicht mehr. */
+    var end = zulage * (Math.pow(1 + ZINS, jahre) - 1) / ZINS;
     var stufe = end >= 100000 ? 5000 : end >= 10000 ? 1000 : 10;
     $('beitrag-wert').textContent = m + ' €';
     $('alter-wert').textContent = a + ' Jahre';
@@ -271,7 +273,7 @@
     $('z-kind').textContent = kinder ? euro(kind) : '–';
     $('z-summe').textContent = euro(summe);
     $('hoch').textContent = euro(Math.round(end / stufe) * stufe);
-    $('hoch-info').textContent = euro(summe) + ' im Jahr, ' + jahre + (jahre === 1 ? ' Jahr' : ' Jahre') + ' lang bis 67, mit angenommenen 5 % Verzinsung im Jahr. Kosten und Steuern fehlen. Das ist ein Gefühl für die Größenordnung – keine Prognose und nicht Teil eines Angebots.';
+    $('hoch-info').textContent = 'Die Zulage von oben – ' + euro(zulage) + ' im Jahr – kommt jeweils am Jahresende und wird ab dem Folgejahr mit angenommenen 5 % im Jahr verzinst, ' + jahre + (jahre === 1 ? ' Jahr' : ' Jahre') + ' lang bis 67. Dein eigener Beitrag ist hier nicht eingerechnet, Kosten und Steuern fehlen. Ein Gefühl für die Größenordnung – keine Prognose und nicht Teil eines Angebots.';
     $('kind-minus').disabled = kinder === 0;
     $('kind-plus').disabled = kinder === 5;
     fuell(beitrag); fuell(alter);
