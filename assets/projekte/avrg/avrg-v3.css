@@ -306,10 +306,6 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 @media (max-width:980px){.v3-einloesen{grid-template-columns:minmax(0,1fr)}.v3-einloesen .ticket{width:min(100%,380px)}}
 @media (max-width:600px){.v3-einloesen{padding:28px 20px}.v3-einloesen .ticket{width:calc(100% - 16px);transform:rotate(-2deg)}}
 
-/* „So läuft es“ und „Das Ergebnis“ als eine weiße Fläche: das Ergebnis schließt eng an die Schritte an */
-.v3-sek--anschluss{padding-top:0}
-#so-gehts{padding-bottom:clamp(64px,7vw,96px)}
-
 /* Rechner kompakt und geordnet: rechts nur zwei Stile – rote Zahl und ein Text.
    Zeile 1: Zahl + Einheit, darunter Erklärung, ganz unten „Wie wir rechnen“. */
 .rk__ein,.rk__aus{padding:clamp(24px,3vw,36px) clamp(24px,3.4vw,40px)}
