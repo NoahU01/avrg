@@ -400,3 +400,8 @@
 /* Schatten der Tickets als weiche Fläche dahinter (Safari zeichnet drop-shadow bei Masken eckig) */
 .cr__tk::before,.tf__karte::before{content:"";position:absolute;z-index:-1;left:6%;right:6%;top:14%;bottom:-5%;border-radius:8cqi;background:rgba(150,20,20,.3);filter:blur(5cqi)}
 .tf__karte--hinten::before{background:rgba(0,0,0,.18)}
+
+/* Landingpage-Kapitel: Knopf rechts neben der Überschrift */
+.mk-titelzeile{display:flex;align-items:center;justify-content:space-between;gap:16px 32px;flex-wrap:wrap}
+.mk-titelzeile .e2-h2{margin:0}
+.mk-titelzeile .e2-knopf{flex:0 0 auto}
