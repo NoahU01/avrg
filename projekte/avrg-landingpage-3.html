@@ -95,22 +95,22 @@
   <div class="rk">
     <div class="rk__ein">
       <div class="rk__feld">
-        <div class="rk__kopf"><label for="beitrag">Dein Beitrag im Monat</label><output id="beitrag-wert" class="rk__wert">50 €</output></div>
-        <input type="range" id="beitrag" min="10" max="250" step="5" value="50">
+        <div class="rk__kopf"><label for="beitrag">Dein Beitrag im Monat</label><output id="beitrag-wert" class="rk__wert">30 €</output></div>
+        <input type="range" id="beitrag" min="10" max="250" step="5" value="30">
       </div>
       <div class="rk__feld">
         <div class="rk__kopf"><span id="kinder-label">Kinder mit Kindergeld</span>
           <div class="rk__zaehler" role="group" aria-labelledby="kinder-label">
             <button type="button" id="kind-minus" aria-label="Ein Kind weniger">−</button>
-            <output id="kinder" class="rk__wert" aria-live="polite">1</output>
+            <output id="kinder" class="rk__wert" aria-live="polite">0</output>
             <button type="button" id="kind-plus" aria-label="Ein Kind mehr">+</button>
           </div>
         </div>
       </div>
     </div>
     <div class="rk__aus" aria-live="polite">
-      <p class="rk__zahl"><span id="zulage">540 €</span><small>im Jahr</small></p>
-      <p class="rk__satz" id="z-satz">So viel legt der Staat dazu. Mit deinem Beitrag sind das zusammen 1.140 € im Jahr.</p>
+      <p class="rk__zahl"><span id="zulage">180 €</span><small>im Jahr</small></p>
+      <p class="rk__satz" id="z-satz">So viel legt der Staat dazu. Mit deinem Beitrag sind das zusammen 540 € im Jahr.</p>
       <details class="rk__info">
         <summary>Wie wir rechnen</summary>
         <ul class="rk__liste">
@@ -132,7 +132,7 @@
       </div>
     </div>
     <div class="rk__aus" aria-live="polite">
-      <p class="rk__zahl"><span id="hoch">41.000 €</span><small>bis 67</small></p>
+      <p class="rk__zahl"><span id="hoch">14.000 €</span><small>bis 67</small></p>
       <p class="rk__satz" id="hoch-weg">So viel Zulage vom Staat könnte bis 67 zusammenkommen – mit angenommenen 5 % Verzinsung im Jahr.</p>
       <details class="rk__info">
         <summary>Wie wir rechnen</summary>
@@ -249,7 +249,7 @@
      Hochrechnung: nur die Zulage, gleichbleibend bis 67, 5 % im Jahr angenommen,
      Einzahlung zum Jahresende, bewusst gerundet. Einstellwerte schwarz, Ergebnisse rot. */
   var ZINS = 0.05, ZIEL = 67;
-  var beitrag = document.getElementById('beitrag'), alter = document.getElementById('alter'), kinder = 1;
+  var beitrag = document.getElementById('beitrag'), alter = document.getElementById('alter'), kinder = 0;
   var $ = function(id){ return document.getElementById(id); };
   function fuell(r){ r.style.setProperty('--wert', ((r.value - r.min) / (r.max - r.min) * 100) + '%'); }
   function rechne(){
