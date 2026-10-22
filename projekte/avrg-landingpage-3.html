@@ -7,7 +7,7 @@
 <meta name="description" content="Die neue geförderte Altersvorsorge ab 2027: Dein Klarheits-Ticket – in 30 Minuten weißt du, ob du etwas davon hast.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="/assets/projekte/avrg/avrg.css?v=3">
-<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=43">
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=44">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -268,21 +268,23 @@
         '<div class="doppel"><span class="doppel__spur"><span class="doppel__fuell"></span></span>' +
         '<input type="range" min="0" max="' + KG_MAX + '" step="1" value="' + k.alter + '" data-r="alter" aria-label="Alter Kind ' + (i + 1) + '">' +
         '<input type="range" min="0" max="' + KG_MAX + '" step="1" value="' + k.bis + '" data-r="bis" aria-label="Kindergeld bis, Kind ' + (i + 1) + '"></div>' +
-        '<div class="doppel__skala"><span>0</span><span class="doppel__bis" data-w="bis"></span><span>25</span></div></div>';
+        '<div class="doppel__skala"><span class="doppel__lab doppel__alt" data-w="alt"></span><span class="doppel__lab doppel__bis" data-w="bis"></span></div></div>';
     }).join('');
     box.querySelectorAll('.rk__kind').forEach(function (feld) {
       var i = +feld.dataset.i, rA = feld.querySelector('[data-r="alter"]'), rB = feld.querySelector('[data-r="bis"]');
       function zeige(){
         var k = kids[i];
         feld.querySelector('[data-w="alter"]').textContent = k.alter + (k.alter === 1 ? ' Jahr' : ' Jahre');
-        var bisEl = feld.querySelector('[data-w="bis"]');
+        /* Beschriftungen fahren unter den Kreisen mit (Kreismitte = 14 px + Anteil der Restbreite).
+           Sie bleiben im Kasten und schieben sich bei Berührung auseinander – nie überlappend. */
+        var altEl = feld.querySelector('[data-w="alt"]'), bisEl = feld.querySelector('[data-w="bis"]');
+        altEl.textContent = 'Alter ' + k.alter;
         bisEl.textContent = 'Kindergeld bis ' + k.bis;
-        bisEl.style.left = (k.bis / KG_MAX * 100) + '%';
-        /* Beschriftung nie über den Rand schieben und die „25“ ausblenden, sobald sie sich berühren */
-        bisEl.style.transform = k.bis >= KG_MAX - 1 ? 'translateX(-100%)' : 'translateX(-50%)';
-        var ende = feld.querySelector('.doppel__skala > span:last-child');
-        ende.style.visibility = 'visible';
-        if (bisEl.getBoundingClientRect().right + 6 > ende.getBoundingClientRect().left) ende.style.visibility = 'hidden';
+        var W = feld.querySelector('.doppel__skala').clientWidth, wa = altEl.offsetWidth, wb = bisEl.offsetWidth, LUFT = 10;
+        var mitte = function (v) { return 14 + (W - 28) * v / KG_MAX; };
+        var La = Math.max(0, Math.min(mitte(k.alter) - wa / 2, W - wb - LUFT - wa));
+        var Lb = Math.max(La + wa + LUFT, Math.min(mitte(k.bis) - wb / 2, W - wb));
+        altEl.style.left = La + 'px'; bisEl.style.left = Lb + 'px';
         var f = feld.querySelector('.doppel__fuell');
         f.style.left = (k.alter / KG_MAX * 100) + '%';
         f.style.width = (Math.max(0, k.bis - k.alter) / KG_MAX * 100) + '%';
