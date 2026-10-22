@@ -7,7 +7,7 @@
 <meta name="description" content="Die neue geförderte Altersvorsorge ab 2027: Dein Klarheits-Ticket – in 30 Minuten weißt du, ob du etwas davon hast.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="/assets/projekte/avrg/avrg.css?v=3">
-<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=17">
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=18">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -52,17 +52,35 @@
         </ul>
         <div class="ticket__fuss"><img src="/assets/projekte/avrg/sandra.jpg" alt=""><span><small>Einlösbar bei</small><b>Sandra Hild</b>Telefon · Video · Büro</span></div>
       </div>
-      <div class="ticket__abriss"><span>Gültig ab sofort</span></div>
+      <div class="ticket__abriss"><img class="ticket__logo" src="/assets/projekte/avrg/sv-owen-logo-weiss.svg" alt="SV Owen"></div>
     </div>
   </div>
 </div></section>
 
-<section class="v3-sek v3-sek--rot" id="idee"><div class="wrap v3-zwei">
+<section class="v3-sek v3-sek--rot v3-idee-sek" id="idee" data-bg="1">
+<!-- ENTWICKLUNG:START (nur Daniels Branch – Umschalter für den Hintergrund der Idee-Sektion) -->
+<div class="bg-wahl" role="group" aria-label="Hintergrund wählen"><span>Hintergrund</span><button type="button" data-v="1" aria-pressed="true">1</button><button type="button" data-v="2" aria-pressed="false">2</button><button type="button" data-v="3" aria-pressed="false">3</button></div>
+<style>
+.bg-wahl{position:absolute;z-index:5;top:20px;right:20px;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 14px;border-radius:999px;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);font:600 12px/1 var(--font);color:#fff}
+.bg-wahl span{margin-right:4px;opacity:.85}
+.bg-wahl button{width:30px;height:30px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:transparent;color:#fff;font:600 13px/1 var(--font);cursor:pointer}
+.bg-wahl button[aria-pressed="true"]{background:#fff;color:#141414;border-color:#fff}
+</style>
+<script>
+document.querySelectorAll('.bg-wahl button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.getElementById('idee').dataset.bg = b.dataset.v;
+    document.querySelectorAll('.bg-wahl button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+  });
+});
+</script>
+<!-- ENTWICKLUNG:END -->
+<div class="wrap v3-zwei">
   <div class="v3-idee">
-    <p class="v3-kicker">Die Idee</p>
+    <p class="v3-kicker">Betrifft es dich – und was bringt es dir?</p>
     <h2 class="v3-h2">Hier wird dir nichts verkauft.</h2>
     <p class="v3-lead">Zulagen, Depots, Garantien: Wer sich in die neue Altersvorsorge einarbeiten will, braucht Wochen. Musst du nicht.</p>
-    <p class="v3-lead">Wir drehen es um. Wir erklären dir nicht das Gesetz – wir schauen auf dein Leben und sagen dir, ob das Gesetz darin eine Rolle spielt.</p>
+    <p class="v3-lead">Wir erklären dir nicht jedes Detail. Wir schauen auf dein Leben und klären mit dir, ob die neue Altersvorsorge zu dir passt.</p>
   </div>
   <div class="v3-phone" id="v3-phone" aria-label="Familienchat: drei Fragen zur neuen Altersvorsorge">
     <span class="v3-taste v3-taste--stumm" aria-hidden="true"></span><span class="v3-taste v3-taste--lauter" aria-hidden="true"></span><span class="v3-taste v3-taste--leiser" aria-hidden="true"></span><span class="v3-taste v3-taste--power" aria-hidden="true"></span>
@@ -191,7 +209,7 @@
           </ul>
           <div class="ticket__fuss"><img src="/assets/projekte/avrg/sandra.jpg" alt=""><span><small>Einlösbar bei</small><b>Sandra Hild</b>Telefon · Video · Büro</span></div>
         </div>
-        <div class="ticket__abriss"><span>Gültig ab sofort</span></div>
+        <div class="ticket__abriss"><img class="ticket__logo" src="/assets/projekte/avrg/sv-owen-logo-weiss.svg" alt="SV Owen"></div>
       </div>
     </div>
     <div class="v3-einloesen__buchung" id="buchung">

@@ -321,3 +321,14 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 .rk__info[open] summary{margin-bottom:10px}
 .rk+.rk{margin-top:16px}
 .rk__cta{margin-top:24px}
+
+/* Ticket: Logo der SV Owen in Weiß, mittig im Abriss (senkrecht) */
+.ticket__abriss{position:relative}
+.ticket__logo{position:absolute;left:50%;top:50%;height:28px;width:auto;max-width:none;transform:translate(-50%,-50%) rotate(-90deg)}
+@media (max-width:700px){.ticket__logo{height:22px}}
+
+/* Idee-Sektion: Hintergrund-Varianten (1 = Verlauf wie SV Akademie) */
+.v3-idee-sek{position:relative}
+.v3-idee-sek[data-bg="1"]{background:linear-gradient(135deg,#EE0000 0%,#6a1f66 100%)}
+.v3-idee-sek[data-bg="2"]{background:#161414}
+.v3-idee-sek[data-bg="3"]{background:linear-gradient(135deg,#a3000c 0%,#4a0710 100%)}
