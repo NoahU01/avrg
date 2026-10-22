@@ -330,11 +330,22 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 /* Idee-Sektion: Hintergrund-Varianten (1 = Verlauf wie SV Akademie) */
 .v3-idee-sek{position:relative}
 .v3-idee-sek[data-bg="1"]{background:linear-gradient(135deg,#EE0000 0%,#6a1f66 100%)}
-/* 2: Weiß, Glow in Rot und Lila strahlt hinter dem iPhone heraus */
-.v3-idee-sek[data-bg="2"]{background:#fff}
-.v3-idee-sek[data-bg="2"] .v3-phone{isolation:isolate}
-.v3-idee-sek[data-bg="2"] .v3-phone::before{content:"";position:absolute;z-index:-1;left:50%;top:50%;width:230%;height:120%;transform:translate(-50%,-50%);border-radius:50%;
-  background:radial-gradient(closest-side,rgba(238,0,0,.55) 0%,rgba(220,0,40,.38) 32%,rgba(106,31,102,.28) 62%,rgba(106,31,102,0) 100%);filter:blur(24px);pointer-events:none}
+/* 2–4: Weiß, Glow strahlt hinter dem iPhone heraus. Mehrere versetzte Farbwolken statt einer Ellipse,
+   stark weichgezeichnet – dadurch eine organische Form. Farben aus dem CD der SV Owen. */
+.v3-idee-sek[data-bg="2"],.v3-idee-sek[data-bg="3"],.v3-idee-sek[data-bg="4"]{background:#fff}
+.v3-idee-sek:not([data-bg="1"]) .v3-phone{isolation:isolate}
+.v3-idee-sek:not([data-bg="1"]) .v3-phone::before{content:"";position:absolute;z-index:-1;inset:-16% -70%;pointer-events:none;filter:blur(38px);
+  background:
+    radial-gradient(34% 30% at 40% 30%,var(--g1) 0%,transparent 100%),
+    radial-gradient(30% 34% at 64% 66%,var(--g2) 0%,transparent 100%),
+    radial-gradient(26% 24% at 30% 72%,var(--g3) 0%,transparent 100%),
+    radial-gradient(22% 22% at 72% 26%,var(--g4) 0%,transparent 100%)}
+/* 2 · Rot und Violett */
+.v3-idee-sek[data-bg="2"]{--g1:rgba(238,0,0,.42);--g2:rgba(155,52,142,.40);--g3:rgba(195,133,187,.38);--g4:rgba(238,0,0,.22)}
+/* 3 · Warm: Rot, Orange hell, Gelb hell */
+.v3-idee-sek[data-bg="3"]{--g1:rgba(238,0,0,.34);--g2:rgba(255,188,102,.55);--g3:rgba(255,223,102,.55);--g4:rgba(255,143,0,.28)}
+/* 4 · Frisch: Violett hell, Hellblau hell, Rotakzent */
+.v3-idee-sek[data-bg="4"]{--g1:rgba(195,133,187,.55);--g2:rgba(102,205,229,.50);--g3:rgba(238,0,0,.26);--g4:rgba(128,154,228,.40)}
 .v3-idee-sek:not([data-bg="1"]){color:var(--ink)}
 .v3-idee-sek:not([data-bg="1"]) h2{color:var(--ink)}
 .v3-idee-sek:not([data-bg="1"]) .v3-lead{color:var(--text)}
