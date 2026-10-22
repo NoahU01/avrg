@@ -330,23 +330,17 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 /* Idee-Sektion: Weiß mit Glow in Rot und Violett hinter dem iPhone.
    Kein Abschneiden: seitlich nur am Bildschirmrand (overflow-x:clip), oben darf der Glow minimal
    in den weißen Kopfbereich auslaufen, unten endet er weich vor dem Rechner.
-   1 = eng, 2 = breiter, 3 = eine Wolke mit durchgehendem Verlauf Rot → Lila. */
+   Festgelegt: die breitere Fassung (Auswahl 2 vom 22.10.). */
 .v3-idee-sek{position:relative;background:#fff;overflow-x:clip;overflow-y:visible;
   --g1:rgba(238,0,0,.42);--g2:rgba(155,52,142,.40);--g3:rgba(195,133,187,.38);--g4:rgba(238,0,0,.22)}
 .v3-idee-sek .v3-phone{isolation:isolate}
 .v3-idee-sek .v3-phone::before{content:"";position:absolute;z-index:-1;pointer-events:none;
-  inset:-8% -70% 2%;filter:blur(40px);
+  inset:-8% -120% 4%;filter:blur(46px);
   background:
     radial-gradient(34% 30% at 40% 30%,var(--g1) 0%,transparent 100%),
     radial-gradient(30% 34% at 64% 66%,var(--g2) 0%,transparent 100%),
     radial-gradient(26% 24% at 30% 72%,var(--g3) 0%,transparent 100%),
     radial-gradient(22% 22% at 72% 26%,var(--g4) 0%,transparent 100%)}
-.v3-idee-sek[data-bg="2"] .v3-phone::before{inset:-8% -120% 4%;filter:blur(46px)}
-/* 3 = eine Wolke: durchgehender Verlauf Rot → Lila, weich ausgeblendet (keine getrennten Farbflecken) */
-.v3-idee-sek[data-bg="3"] .v3-phone::before{inset:-6% -110% 6%;filter:blur(26px);opacity:.44;
-  background:linear-gradient(125deg,#ee0000 18%,#c8105a 42%,#9b348e 62%,#c385bb 84%);
-  -webkit-mask:radial-gradient(closest-side,#000 0%,rgba(0,0,0,.75) 35%,rgba(0,0,0,.3) 65%,transparent 100%) 46% 48%/100% 100% no-repeat,radial-gradient(closest-side,#000 0%,transparent 100%) 70% 70%/70% 80% no-repeat;
-  mask:radial-gradient(closest-side,#000 0%,rgba(0,0,0,.75) 35%,rgba(0,0,0,.3) 65%,transparent 100%) 46% 48%/100% 100% no-repeat,radial-gradient(closest-side,#000 0%,transparent 100%) 70% 70%/70% 80% no-repeat}
 .v3-idee-sek{color:var(--ink)}
 .v3-idee-sek h2{color:var(--ink)}
 .v3-idee-sek .v3-lead{color:var(--text)}
