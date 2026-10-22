@@ -350,7 +350,7 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
     radial-gradient(34% 18% at 26% 82%,rgba(195,133,187,.30) 0%,transparent 100%),
     radial-gradient(14% 16% at 94% 24%,rgba(195,133,187,.32) 0%,transparent 100%)}
 /* 4 = eine Wolke: durchgehender Verlauf Rot → Lila, weich ausgeblendet (keine getrennten Farbflecken) */
-.v3-idee-sek[data-bg="4"] .v3-phone::before{inset:-6% -110% 6%;filter:blur(26px);opacity:.55;
+.v3-idee-sek[data-bg="4"] .v3-phone::before{inset:-6% -110% 6%;filter:blur(26px);opacity:.44;
   background:linear-gradient(125deg,#ee0000 18%,#c8105a 42%,#9b348e 62%,#c385bb 84%);
   -webkit-mask:radial-gradient(closest-side,#000 0%,rgba(0,0,0,.75) 35%,rgba(0,0,0,.3) 65%,transparent 100%) 46% 48%/100% 100% no-repeat,radial-gradient(closest-side,#000 0%,transparent 100%) 70% 70%/70% 80% no-repeat;
   mask:radial-gradient(closest-side,#000 0%,rgba(0,0,0,.75) 35%,rgba(0,0,0,.3) 65%,transparent 100%) 46% 48%/100% 100% no-repeat,radial-gradient(closest-side,#000 0%,transparent 100%) 70% 70%/70% 80% no-repeat}
