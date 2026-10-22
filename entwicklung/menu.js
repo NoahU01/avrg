@@ -12,6 +12,7 @@ var MENU =
 '<a href="/entwicklung/corporate-design.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">CD</span><span class="dev-dd-txt"><b>Corporate Design</b><small>SV Owen &middot; Vorlagen</small></span></a>'+
 '<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">'+
 '<p class="dev-dd-group">Vorlagen</p>'+
+'<a href="/entwicklung/cd-manual.html" class="dev-dd-link"><span class="dev-dd-tag">CD</span><span class="dev-dd-txt"><b>CD-Manual</b><small>Logo &middot; Schriften &middot; Farben</small></span></a>'+
 '<a href="/entwicklung/powerpoint-master.html" class="dev-dd-link"><span class="dev-dd-tag">PPT</span><span class="dev-dd-txt"><b>PowerPoint-Master</b><small>SV Owen &middot; in Arbeit</small></span></a>'+
 '</div></div>'+
 '</div>'+
