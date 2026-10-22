@@ -330,5 +330,13 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 /* Idee-Sektion: Hintergrund-Varianten (1 = Verlauf wie SV Akademie) */
 .v3-idee-sek{position:relative}
 .v3-idee-sek[data-bg="1"]{background:linear-gradient(135deg,#EE0000 0%,#6a1f66 100%)}
-.v3-idee-sek[data-bg="2"]{background:#161414}
-.v3-idee-sek[data-bg="3"]{background:linear-gradient(135deg,#a3000c 0%,#4a0710 100%)}
+/* 2–5: helle Varianten – dunkle Schrift, rote Überzeile, weicher Schatten unter dem iPhone */
+.v3-idee-sek[data-bg="2"]{background:#fcefee}
+.v3-idee-sek[data-bg="3"]{background:linear-gradient(135deg,#fde8e6 0%,#efe2f0 100%)}
+.v3-idee-sek[data-bg="4"]{background:radial-gradient(46% 70% at 76% 52%,rgba(238,0,0,.26) 0%,rgba(106,31,102,.16) 42%,rgba(255,255,255,0) 72%),#fff;border-top:1px solid #eee}
+.v3-idee-sek[data-bg="5"]{background:#edf0f3}
+.v3-idee-sek:not([data-bg="1"]){color:var(--ink)}
+.v3-idee-sek:not([data-bg="1"]) h2{color:var(--ink)}
+.v3-idee-sek:not([data-bg="1"]) .v3-lead{color:var(--text)}
+.v3-idee-sek:not([data-bg="1"]) .v3-kicker{color:var(--rot)}
+.v3-idee-sek:not([data-bg="1"]) .v3-phone-rahmen{box-shadow:0 40px 80px rgba(60,10,20,.22),inset 0 0 0 1.5px rgba(255,255,255,.12)}
