@@ -327,27 +327,26 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 .ticket__logo{position:absolute;left:50%;top:50%;height:28px;width:auto;max-width:none;transform:translate(-50%,-50%) rotate(-90deg)}
 @media (max-width:700px){.ticket__logo{height:22px}}
 
-/* Idee-Sektion: Hintergrund-Varianten (1 = Verlauf wie SV Akademie) */
+/* Idee-Sektion: Hintergrund-Varianten
+   1 = Weiß, Glow frisch (Violett hell, Hellblau hell, Rotakzent) – Start
+   2 = Weiß, Glow Rot und Violett
+   3 = Verlauf Rot → Lila wie SV Akademie (weiße Schrift) */
 .v3-idee-sek{position:relative}
-.v3-idee-sek[data-bg="1"]{background:linear-gradient(135deg,#EE0000 0%,#6a1f66 100%)}
-/* 2–4: Weiß, Glow strahlt hinter dem iPhone heraus. Mehrere versetzte Farbwolken statt einer Ellipse,
+.v3-idee-sek[data-bg="3"]{background:linear-gradient(135deg,#EE0000 0%,#6a1f66 100%)}
+/* 1–2: Glow strahlt hinter dem iPhone heraus. Mehrere versetzte Farbwolken statt einer Ellipse,
    stark weichgezeichnet – dadurch eine organische Form. Farben aus dem CD der SV Owen. */
-.v3-idee-sek[data-bg="2"],.v3-idee-sek[data-bg="3"],.v3-idee-sek[data-bg="4"]{background:#fff}
-.v3-idee-sek:not([data-bg="1"]) .v3-phone{isolation:isolate}
-.v3-idee-sek:not([data-bg="1"]) .v3-phone::before{content:"";position:absolute;z-index:-1;inset:-16% -70%;pointer-events:none;filter:blur(38px);
+.v3-idee-sek[data-bg="1"],.v3-idee-sek[data-bg="2"]{background:#fff}
+.v3-idee-sek:not([data-bg="3"]) .v3-phone{isolation:isolate}
+.v3-idee-sek:not([data-bg="3"]) .v3-phone::before{content:"";position:absolute;z-index:-1;inset:-16% -70%;pointer-events:none;filter:blur(38px);
   background:
     radial-gradient(34% 30% at 40% 30%,var(--g1) 0%,transparent 100%),
     radial-gradient(30% 34% at 64% 66%,var(--g2) 0%,transparent 100%),
     radial-gradient(26% 24% at 30% 72%,var(--g3) 0%,transparent 100%),
     radial-gradient(22% 22% at 72% 26%,var(--g4) 0%,transparent 100%)}
-/* 2 · Rot und Violett */
+.v3-idee-sek[data-bg="1"]{--g1:rgba(195,133,187,.55);--g2:rgba(102,205,229,.50);--g3:rgba(238,0,0,.26);--g4:rgba(128,154,228,.40)}
 .v3-idee-sek[data-bg="2"]{--g1:rgba(238,0,0,.42);--g2:rgba(155,52,142,.40);--g3:rgba(195,133,187,.38);--g4:rgba(238,0,0,.22)}
-/* 3 · Warm: Rot, Orange hell, Gelb hell */
-.v3-idee-sek[data-bg="3"]{--g1:rgba(238,0,0,.34);--g2:rgba(255,188,102,.55);--g3:rgba(255,223,102,.55);--g4:rgba(255,143,0,.28)}
-/* 4 · Frisch: Violett hell, Hellblau hell, Rotakzent */
-.v3-idee-sek[data-bg="4"]{--g1:rgba(195,133,187,.55);--g2:rgba(102,205,229,.50);--g3:rgba(238,0,0,.26);--g4:rgba(128,154,228,.40)}
-.v3-idee-sek:not([data-bg="1"]){color:var(--ink)}
-.v3-idee-sek:not([data-bg="1"]) h2{color:var(--ink)}
-.v3-idee-sek:not([data-bg="1"]) .v3-lead{color:var(--text)}
-.v3-idee-sek:not([data-bg="1"]) .v3-kicker{color:var(--rot)}
-.v3-idee-sek:not([data-bg="1"]) .v3-phone-rahmen{box-shadow:0 40px 80px rgba(60,10,20,.22),inset 0 0 0 1.5px rgba(255,255,255,.12)}
+.v3-idee-sek:not([data-bg="3"]){color:var(--ink)}
+.v3-idee-sek:not([data-bg="3"]) h2{color:var(--ink)}
+.v3-idee-sek:not([data-bg="3"]) .v3-lead{color:var(--text)}
+.v3-idee-sek:not([data-bg="3"]) .v3-kicker{color:var(--rot)}
+.v3-idee-sek:not([data-bg="3"]) .v3-phone-rahmen{box-shadow:0 40px 80px rgba(60,10,20,.22),inset 0 0 0 1.5px rgba(255,255,255,.12)}
