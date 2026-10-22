@@ -59,6 +59,12 @@ body{margin:0;background:#9a9a9a;padding:40px;display:flex;flex-direction:column
 .v3t .tk__fuss small{color:var(--r);opacity:1}
 .v3t .tk__fuss img{border:2px solid #fff;box-shadow:0 0 0 1.5px #e3e3e3}
 .v3t .tk__senkrecht{opacity:.95}
+/* B · Logo in der unteren Zeile, rechts auf Höhe des Namens */
+.v1 .tk__fuss--logo img.tk__fuss-logo{margin-left:auto;align-self:center;width:auto;height:24px;border:0!important;border-radius:0;box-shadow:none;object-fit:contain}
+/* C · Logo senkrecht im Abriss */
+.tk__abriss--logo{position:relative}
+.tk__abriss--logo .tk__logo-senkrecht{height:30px;width:auto;transform:rotate(-90deg);max-width:none}
+.tk__abriss--logo .tk__senkrecht{position:absolute;bottom:24px;font-size:10px;opacity:.85}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><symbol id="h" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></symbol></svg>
 
@@ -73,24 +79,23 @@ body{margin:0;background:#9a9a9a;padding:40px;display:flex;flex-direction:column
   <div class="tk__abriss"><i class="tk__kerbe tk__kerbe--o"></i><i class="tk__kerbe tk__kerbe--u"></i><span class="tk__senkrecht">Gültig ab sofort · kostenlos</span></div>
 </div></div>
 
-<div class="buehne" id="t2"><div class="tk v2">
+<div class="buehne" id="t2"><div class="tk v1">
   <div class="tk__haupt">
     <p class="tk__art">Klarheits-Ticket · Altersvorsorge 2027</p>
     <p class="tk__titel">30 Minuten<small>Klarheit für dich</small></p>
     <ul class="tk__liste"><li><span class="tk__box"><svg><use href="#h"/></svg></span>Betrifft mich das?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Wenn ja: wie?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Habe ich einen Vorteil?</li></ul>
-    <div class="tk__fuss"><img src="/assets/projekte/avrg/sandra.jpg" alt=""><span><small>Einlösbar bei</small><b>Sandra Hild</b>Telefon · Video · Büro</span></div>
+    <div class="tk__fuss tk__fuss--logo"><img src="/assets/projekte/avrg/sandra.jpg" alt=""><span><small>Einlösbar bei</small><b>Sandra Hild</b>Telefon · Video · Büro</span><img class="tk__fuss-logo" src="/assets/projekte/avrg/sv-owen-logo-weiss.svg" alt="SV Owen"></div>
   </div>
-  <div class="tk__abriss"><i class="tk__kerbe tk__kerbe--o"></i><i class="tk__kerbe tk__kerbe--u"></i><div class="tk__abriss-in"><img class="tk__logo-senkrecht" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen"></div></div>
+  <div class="tk__abriss"><span class="tk__senkrecht">Gültig ab sofort · kostenlos</span></div>
 </div></div>
 
-<div class="buehne" id="t3"><div class="tk v3t">
+<div class="buehne" id="t3"><div class="tk v1">
   <div class="tk__haupt">
-    <img class="tk__logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
     <p class="tk__art">Klarheits-Ticket · Altersvorsorge 2027</p>
     <p class="tk__titel">30 Minuten<small>Klarheit für dich</small></p>
     <ul class="tk__liste"><li><span class="tk__box"><svg><use href="#h"/></svg></span>Betrifft mich das?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Wenn ja: wie?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Habe ich einen Vorteil?</li></ul>
     <div class="tk__fuss"><img src="/assets/projekte/avrg/sandra.jpg" alt=""><span><small>Einlösbar bei</small><b>Sandra Hild</b>Telefon · Video · Büro</span></div>
   </div>
-  <div class="tk__abriss"><i class="tk__kerbe tk__kerbe--o"></i><i class="tk__kerbe tk__kerbe--u"></i><span class="tk__senkrecht">Gültig ab sofort · kostenlos</span></div>
+  <div class="tk__abriss tk__abriss--logo"><img class="tk__logo-senkrecht" src="/assets/projekte/avrg/sv-owen-logo-weiss.svg" alt="SV Owen"><span class="tk__senkrecht">Kostenlos</span></div>
 </div></div>
 </body></html>
