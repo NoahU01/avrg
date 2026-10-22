@@ -350,3 +350,20 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 .v3-idee-sek:not([data-bg="3"]) .v3-lead{color:var(--text)}
 .v3-idee-sek:not([data-bg="3"]) .v3-kicker{color:var(--rot)}
 .v3-idee-sek:not([data-bg="3"]) .v3-phone-rahmen{box-shadow:0 40px 80px rgba(60,10,20,.22),inset 0 0 0 1.5px rgba(255,255,255,.12)}
+
+/* Ticket: drei Schriftstile, sonst nichts.
+   1 Überzeile  – Poppins 600, 12 px, Versalien, eine Zeile (Stempel wie vorher)
+   2 Titel      – Lora 700
+   3 Text       – Poppins 500, 16 px (Fragen, Name, Kanäle; Name nur halbfett) */
+.ticket__art{opacity:1}
+.ticket__titel{max-width:9ch;font-size:clamp(2.2rem,3.4vw,2.7rem);line-height:1.02;margin:.6rem 0 1.4rem}
+.v3-termin .ticket__titel,.v3-einloesen .ticket__titel{font-size:2.2rem}
+.ticket__fuss{align-items:center}
+.ticket__fuss span{font-size:16px;font-weight:500;line-height:1.4}
+.ticket__fuss b{font-family:var(--font);font-size:16px;font-weight:600;line-height:1.4;margin:0}
+.ticket__fuss img{width:56px;height:56px}
+@media (max-width:600px){.v3-einloesen{padding:22px 10px}.v3-einloesen .ticket{width:100%;grid-template-columns:1fr 48px}.v3-einloesen .ticket__haupt{padding:22px 16px 20px}}
+/* Ticket skaliert mit seiner eigenen Breite: Überzeile bleibt einzeilig, Fragen und Fuß gleich groß */
+.ticket__haupt{min-width:0;container-type:inline-size}
+.ticket__art{white-space:nowrap;letter-spacing:.12em;font-size:min(12px,4.1cqi)}
+.ticket__liste li,.ticket__fuss span,.ticket__fuss b{font-size:min(16px,6.4cqi)}
