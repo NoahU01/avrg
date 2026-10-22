@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<title>Werkstatt · Klarheits-Ticket mit Logo</title>
+<!-- Erzeugt die Ticket-Varianten für das Kapitel „Ticket“ (/assets/projekte/avrg/tickets/). Schriften und Farben wie Landingpage 3. -->
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg.css">
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css">
+<style>
+body{margin:0;background:#9a9a9a;padding:40px;display:flex;flex-direction:column;gap:40px;align-items:flex-start}
+.buehne{padding:60px 70px 70px;background:transparent}
+.tk{--r:#ed1c24;position:relative;display:grid;grid-template-columns:1fr 92px;width:520px;font-family:var(--font);isolation:isolate}
+.tk::before{content:"";position:absolute;z-index:-1;left:6%;right:6%;top:16%;bottom:-6%;border-radius:40px;background:rgba(120,20,20,.32);filter:blur(28px)}
+.tk__haupt{border-radius:22px 0 0 22px;padding:30px 30px 28px;position:relative}
+.tk__abriss{border-radius:0 22px 22px 0;display:grid;place-items:center;position:relative}
+/* Perforation: gestrichelte Linie + zwei Kerben */
+.tk__abriss::before{content:"";position:absolute;left:-1.25px;top:18px;bottom:18px;border-left:2.5px dashed var(--perf,rgba(255,255,255,.55))}
+/* Kerben als echte Aussparungen (transparent), damit das Ticket auf jedem Grund funktioniert */
+.tk__kerbe{display:none}
+.tk__haupt{-webkit-mask:radial-gradient(circle at 100% 0,#0000 13px,#000 13.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,#0000 13px,#000 13.5px) bottom/100% 51% no-repeat;mask:radial-gradient(circle at 100% 0,#0000 13px,#000 13.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,#0000 13px,#000 13.5px) bottom/100% 51% no-repeat}
+.tk__abriss{-webkit-mask:radial-gradient(circle at 0 0,#0000 13px,#000 13.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,#0000 13px,#000 13.5px) bottom/100% 51% no-repeat;mask:radial-gradient(circle at 0 0,#0000 13px,#000 13.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,#0000 13px,#000 13.5px) bottom/100% 51% no-repeat}
+.tk__logo{display:block;height:30px;width:auto;margin:0 0 20px}
+.tk__art{margin:0;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.tk__titel{margin:.55rem 0 1.25rem;font-family:var(--head);font-weight:700;font-size:44px;line-height:1;letter-spacing:-.02em}
+.tk__titel small{display:block;font-size:.5em;font-weight:500;margin-top:.4rem;letter-spacing:0}
+.tk__liste{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.tk__liste li{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:500}
+.tk__box{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;flex:none}
+.tk__box svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.tk__fuss{display:flex;align-items:center;gap:14px;margin-top:1.5rem;padding-top:1.15rem;font-size:13px;line-height:1.4}
+.tk__fuss img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.tk__fuss small{display:block;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.tk__fuss b{display:block;font-family:var(--head);font-weight:700;font-size:19px;line-height:1.15}
+.tk__senkrecht{writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+
+/* V1 · Ganz in Rot, Logo weiß */
+.v1 .tk__haupt,.v1 .tk__abriss{background:var(--r);color:#fff}
+.v1 .tk__box{background:#fff;color:var(--r)}
+.v1 .tk__fuss{border-top:1.5px solid rgba(255,255,255,.3)}
+.v1 .tk__fuss img{border:2px solid #fff}
+.v1 .tk__senkrecht{opacity:.9}
+
+/* V2 · Roter Hauptteil, weißer Abriss mit Originallogo (senkrecht) */
+.v2 .tk__haupt{background:var(--r);color:#fff}
+.v2 .tk__abriss{background:#fff;--perf:rgba(237,28,36,.55)}
+.v2 .tk__box{background:#fff;color:var(--r)}
+.v2 .tk__fuss{border-top:1.5px solid rgba(255,255,255,.3)}
+.v2 .tk__fuss img{border:2px solid #fff}
+.v2 .tk__logo-senkrecht{height:34px;width:auto;transform:rotate(-90deg);max-width:none}
+.v2 .tk__abriss-in{display:grid;place-items:center;width:100%;height:100%;position:relative}
+.v2 .tk__abriss-in .tk__senkrecht{position:absolute;bottom:20px;color:var(--r);font-size:10px}
+
+/* V3 · Weißes Ticket mit Originallogo, roter Abriss */
+.v3t .tk__haupt{background:#fff;color:var(--ink)}
+.v3t .tk__abriss{background:var(--r);color:#fff}
+.v3t .tk__art{color:var(--r);opacity:1}
+.v3t .tk__titel{color:var(--r)}
+.v3t .tk__titel small{color:var(--ink)}
+.v3t .tk__box{background:var(--r);color:#fff}
+.v3t .tk__fuss{border-top:1.5px solid #ececec}
+.v3t .tk__fuss small{color:var(--r);opacity:1}
+.v3t .tk__fuss img{border:2px solid #fff;box-shadow:0 0 0 1.5px #e3e3e3}
+.v3t .tk__senkrecht{opacity:.95}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="h" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></symbol></svg>
+
+<div class="buehne" id="t1"><div class="tk v1">
+  <div class="tk__haupt">
+    <img class="tk__logo" src="/assets/projekte/avrg/sv-owen-logo-weiss.svg" alt="SV Owen">
+    <p class="tk__art">Klarheits-Ticket · Altersvorsorge 2027</p>
+    <p class="tk__titel">30 Minuten<small>Klarheit für dich</small></p>
+    <ul class="tk__liste"><li><span class="tk__box"><svg><use href="#h"/></svg></span>Betrifft mich das?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Wenn ja: wie?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Habe ich einen Vorteil?</li></ul>
+    <div class="tk__fuss"><img src="/assets/projekte/avrg/sandra.jpg" alt=""><span><small>Einlösbar bei</small><b>Sandra Hild</b>Telefon · Video · Büro</span></div>
+  </div>
+  <div class="tk__abriss"><i class="tk__kerbe tk__kerbe--o"></i><i class="tk__kerbe tk__kerbe--u"></i><span class="tk__senkrecht">Gültig ab sofort · kostenlos</span></div>
+</div></div>
+
+<div class="buehne" id="t2"><div class="tk v2">
+  <div class="tk__haupt">
+    <p class="tk__art">Klarheits-Ticket · Altersvorsorge 2027</p>
+    <p class="tk__titel">30 Minuten<small>Klarheit für dich</small></p>
+    <ul class="tk__liste"><li><span class="tk__box"><svg><use href="#h"/></svg></span>Betrifft mich das?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Wenn ja: wie?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Habe ich einen Vorteil?</li></ul>
+    <div class="tk__fuss"><img src="/assets/projekte/avrg/sandra.jpg" alt=""><span><small>Einlösbar bei</small><b>Sandra Hild</b>Telefon · Video · Büro</span></div>
+  </div>
+  <div class="tk__abriss"><i class="tk__kerbe tk__kerbe--o"></i><i class="tk__kerbe tk__kerbe--u"></i><div class="tk__abriss-in"><img class="tk__logo-senkrecht" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen"></div></div>
+</div></div>
+
+<div class="buehne" id="t3"><div class="tk v3t">
+  <div class="tk__haupt">
+    <img class="tk__logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
+    <p class="tk__art">Klarheits-Ticket · Altersvorsorge 2027</p>
+    <p class="tk__titel">30 Minuten<small>Klarheit für dich</small></p>
+    <ul class="tk__liste"><li><span class="tk__box"><svg><use href="#h"/></svg></span>Betrifft mich das?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Wenn ja: wie?</li><li><span class="tk__box"><svg><use href="#h"/></svg></span>Habe ich einen Vorteil?</li></ul>
+    <div class="tk__fuss"><img src="/assets/projekte/avrg/sandra.jpg" alt=""><span><small>Einlösbar bei</small><b>Sandra Hild</b>Telefon · Video · Büro</span></div>
+  </div>
+  <div class="tk__abriss"><i class="tk__kerbe tk__kerbe--o"></i><i class="tk__kerbe tk__kerbe--u"></i><span class="tk__senkrecht">Gültig ab sofort · kostenlos</span></div>
+</div></div>
+</body></html>
