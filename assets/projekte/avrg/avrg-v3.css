@@ -350,3 +350,8 @@ h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;line-heig
 .v3-idee-sek:not([data-bg="3"]) .v3-lead{color:var(--text)}
 .v3-idee-sek:not([data-bg="3"]) .v3-kicker{color:var(--rot)}
 .v3-idee-sek:not([data-bg="3"]) .v3-phone-rahmen{box-shadow:0 40px 80px rgba(60,10,20,.22),inset 0 0 0 1.5px rgba(255,255,255,.12)}
+
+/* Ticket-Überzeile als gewollter Zweizeiler: Name in voller Stärke, darunter leiser das Thema */
+.ticket__art{opacity:1}
+.ticket__name,.ticket__jahr{display:block}
+.ticket__jahr{margin-top:4px;opacity:.72}
