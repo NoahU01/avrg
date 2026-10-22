@@ -7,7 +7,7 @@
 <meta name="description" content="Die neue geförderte Altersvorsorge ab 2027: Dein Klarheits-Ticket – in 30 Minuten weißt du, ob du etwas davon hast.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="/assets/projekte/avrg/avrg.css?v=3">
-<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=42">
+<link rel="stylesheet" href="/assets/projekte/avrg/avrg-v3.css?v=44">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -131,6 +131,7 @@
         <div class="rk__kopf"><label for="alter">Dein Alter heute</label><output id="alter-wert" class="rk__wert">35 Jahre</output></div>
         <input type="range" id="alter" min="18" max="66" step="1" value="35">
       </div>
+      <div class="rk__kinder" id="kinder-alter"></div>
     </div>
     <div class="rk__aus" aria-live="polite">
       <p class="rk__zahl"><span id="hoch">14.000 €</span><small>bis 67</small></p>
@@ -251,20 +252,64 @@
      unter 25 zu Beginn des Beitragsjahres einmalig 200 € mehr; Zulagen erst ab 120 € Mindesteigenbeitrag (Regler ab 10 €/Monat).
      Hochrechnung: nur die Zulage, gleichbleibend bis 67, 5 % im Jahr angenommen,
      Einzahlung zum Jahresende, bewusst gerundet. Einstellwerte schwarz, Ergebnisse rot. */
-  var ZINS = 0.05, ZIEL = 67;
+  var ZINS = 0.05, ZIEL = 67, KG_STANDARD = 18, KG_MAX = 25;
   var beitrag = document.getElementById('beitrag'), alter = document.getElementById('alter'), kinder = 0;
   var $ = function(id){ return document.getElementById(id); };
+  var kids = [];   /* je Kind: {alter, bis} – bis = Kindergeld bis (18, höchstens 25) */
   function fuell(r){ r.style.setProperty('--wert', ((r.value - r.min) / (r.max - r.min) * 100) + '%'); }
+  /* Ein Doppelschieber je Kind: links das Alter heute, rechts „Kindergeld bis“ */
+  function zeichneKinder(){
+    while (kids.length < kinder) kids.push({alter: 0, bis: KG_STANDARD});
+    kids.length = kinder;
+    var box = $('kinder-alter');
+    box.innerHTML = kids.map(function (k, i) {
+      return '<div class="rk__feld rk__kind" data-i="' + i + '">' +
+        '<div class="rk__kopf"><span>Alter Kind ' + (i + 1) + '</span><output class="rk__wert" data-w="alter"></output></div>' +
+        '<div class="doppel"><span class="doppel__spur"><span class="doppel__fuell"></span></span>' +
+        '<input type="range" min="0" max="' + KG_MAX + '" step="1" value="' + k.alter + '" data-r="alter" aria-label="Alter Kind ' + (i + 1) + '">' +
+        '<input type="range" min="0" max="' + KG_MAX + '" step="1" value="' + k.bis + '" data-r="bis" aria-label="Kindergeld bis, Kind ' + (i + 1) + '"></div>' +
+        '<div class="doppel__skala"><span class="doppel__lab doppel__alt" data-w="alt"></span><span class="doppel__lab doppel__bis" data-w="bis"></span></div></div>';
+    }).join('');
+    box.querySelectorAll('.rk__kind').forEach(function (feld) {
+      var i = +feld.dataset.i, rA = feld.querySelector('[data-r="alter"]'), rB = feld.querySelector('[data-r="bis"]');
+      function zeige(){
+        var k = kids[i];
+        feld.querySelector('[data-w="alter"]').textContent = k.alter + (k.alter === 1 ? ' Jahr' : ' Jahre');
+        /* Beschriftungen fahren unter den Kreisen mit (Kreismitte = 14 px + Anteil der Restbreite).
+           Sie bleiben im Kasten und schieben sich bei Berührung auseinander – nie überlappend. */
+        var altEl = feld.querySelector('[data-w="alt"]'), bisEl = feld.querySelector('[data-w="bis"]');
+        altEl.textContent = 'Alter ' + k.alter;
+        bisEl.textContent = 'Kindergeld bis ' + k.bis;
+        var W = feld.querySelector('.doppel__skala').clientWidth, wa = altEl.offsetWidth, wb = bisEl.offsetWidth, LUFT = 10;
+        var mitte = function (v) { return 14 + (W - 28) * v / KG_MAX; };
+        var La = Math.max(0, Math.min(mitte(k.alter) - wa / 2, W - wb - LUFT - wa));
+        var Lb = Math.max(La + wa + LUFT, Math.min(mitte(k.bis) - wb / 2, W - wb));
+        altEl.style.left = La + 'px'; bisEl.style.left = Lb + 'px';
+        var f = feld.querySelector('.doppel__fuell');
+        f.style.left = (k.alter / KG_MAX * 100) + '%';
+        f.style.width = (Math.max(0, k.bis - k.alter) / KG_MAX * 100) + '%';
+      }
+      rA.addEventListener('input', function(){ kids[i].alter = +rA.value; zeige(); rechne(); });
+      rB.addEventListener('input', function(){
+        var v = Math.max(KG_STANDARD, +rB.value); rB.value = v; kids[i].bis = v; zeige(); rechne(); });
+      zeige();
+    });
+  }
   function rechne(){
     var m = +beitrag.value, jahr = m * 12;
     var grund = 0.5 * Math.min(jahr, 360) + 0.25 * Math.max(0, Math.min(jahr, 1800) - 360);
-    var kind = kinder * Math.min(jahr, 300);
+    var jeKind = Math.min(jahr, 300);
+    var kind = kinder * jeKind;
     var zulage = grund + kind, summe = jahr + zulage;
     var a = +alter.value, jahre = ZIEL - a;
-    /* Nur die Zulage: Sie kommt jeweils am Jahresende und wird erst ab dem Folgejahr verzinst
-       (nachschüssig), die letzte Zulage vor 67 also gar nicht mehr. */
-    var bonus = a < 25 ? 200 : 0;   /* Startbonus mit der ersten Zulage, danach mitverzinst */
-    var end = zulage * (Math.pow(1 + ZINS, jahre) - 1) / ZINS + bonus * Math.pow(1 + ZINS, jahre - 1);
+    var s = function (n) { return n > 0 ? (Math.pow(1 + ZINS, n) - 1) / ZINS : 0; };
+    /* Zulagen kommen jeweils am Jahresende und werden erst ab dem Folgejahr verzinst (nachschüssig).
+       Grundzulage: jedes Jahr bis 67. Kinderzulage: je Kind nur, solange es Kindergeld gibt –
+       danach verzinst sich das Angesparte bis 67 weiter. Startbonus: einmalig unter 25. */
+    var bonus = a < 25 ? 200 : 0;
+    var end = grund * s(jahre) + bonus * Math.pow(1 + ZINS, jahre - 1);
+    var kindJahre = kids.map(function (k) { return Math.max(0, Math.min(k.bis - k.alter, jahre)); });
+    kindJahre.forEach(function (n) { end += jeKind * s(n) * Math.pow(1 + ZINS, jahre - n); });
     var stufe = end >= 100000 ? 5000 : end >= 10000 ? 1000 : 10;
     $('beitrag-wert').textContent = m + ' €';
     $('alter-wert').textContent = a + ' Jahre';
@@ -276,15 +321,18 @@
     $('z-kind').textContent = kinder ? euro(kind) : '–';
     $('z-summe').textContent = euro(summe);
     $('hoch').textContent = euro(Math.round(end / stufe) * stufe);
-    $('hoch-info').textContent = 'Die Zulage von oben – ' + euro(zulage) + ' im Jahr' + (bonus ? ', im ersten Jahr plus 200 € Startbonus, weil du unter 25 bist' : '') + ' – kommt jeweils am Jahresende und wird ab dem Folgejahr mit angenommenen 5 % im Jahr verzinst, ' + jahre + (jahre === 1 ? ' Jahr' : ' Jahre') + ' lang bis 67. Dein eigener Beitrag ist hier nicht eingerechnet, Kosten und Steuern fehlen. Ein Gefühl für die Größenordnung – keine Prognose und nicht Teil eines Angebots.';
+    var kText = kinder ? ' Die Kinderzulage zählt nur, solange es Kindergeld gibt – in der Regel bis 18, höchstens bis 25 (etwa in Ausbildung oder Studium): ' +
+      kindJahre.map(function (n, i) { return 'Kind ' + (i + 1) + ' noch ' + n + (n === 1 ? ' Jahr' : ' Jahre'); }).join(', ') + '. Danach verzinst sich das Angesparte weiter.' : '';
+    $('hoch-info').textContent = 'Die Grundzulage von ' + euro(grund) + ' im Jahr' + (bonus ? ' – im ersten Jahr plus 200 € Startbonus, weil du unter 25 bist –' : '') + ' kommt jeweils am Jahresende und wird ab dem Folgejahr mit angenommenen 5 % im Jahr verzinst, ' + jahre + (jahre === 1 ? ' Jahr' : ' Jahre') + ' lang bis 67.' + kText + ' Dein eigener Beitrag ist hier nicht eingerechnet, Kosten und Steuern fehlen. Ein Gefühl für die Größenordnung – keine Prognose und nicht Teil eines Angebots.';
     $('kind-minus').disabled = kinder === 0;
     $('kind-plus').disabled = kinder === 5;
     fuell(beitrag); fuell(alter);
   }
   beitrag.addEventListener('input', rechne);
   alter.addEventListener('input', rechne);
-  $('kind-minus').onclick = function(){ kinder = Math.max(0, kinder - 1); rechne(); };
-  $('kind-plus').onclick = function(){ kinder = Math.min(5, kinder + 1); rechne(); };
+  $('kind-minus').onclick = function(){ kinder = Math.max(0, kinder - 1); zeichneKinder(); rechne(); };
+  $('kind-plus').onclick = function(){ kinder = Math.min(5, kinder + 1); zeichneKinder(); rechne(); };
+  zeichneKinder();
   rechne();
 
   /* Kopf-Linie beim Scrollen, Haken in der Gesprächskarte, mobiler Knopf */
