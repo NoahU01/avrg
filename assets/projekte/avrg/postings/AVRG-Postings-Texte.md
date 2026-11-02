@@ -92,7 +92,7 @@ Die neue Altersvorsorge lässt sich auf drei Fragen herunterbrechen:
 2. Wenn ja: wie?
 3. Habe ich einen Vorteil?
 
-Mehr muss niemand wissen, um eine gute Entscheidung zu treffen. Genau diese drei Fragen klären wir in einem 15-minütigen Gespräch – am Telefon, per Video oder vor Ort.
+Mehr muss niemand wissen, um eine gute Entscheidung zu treffen. Genau diese drei Fragen klären wir in einem 30-minütigen Gespräch – am Telefon, per Video oder vor Ort.
 
 Das Ergebnis ist immer klar: Entweder es gibt einen Vorteil, den wir schwarz auf weiß zeigen. Oder das Thema ist erledigt.
 
