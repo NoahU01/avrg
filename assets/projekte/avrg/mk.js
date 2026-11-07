@@ -98,7 +98,7 @@
         $$('.ig-kachel', raster).forEach(function (k) { k.hidden = th && k.dataset.th !== th; });
       });
     });
-    var modal = $('#ig-modal'), jetzt = 0, kanal = 'ig';
+    var modal = $('#ig-modal'), jetzt = 0, kanal = 'li';
     function zeigeText() {
       var p = P[jetzt], t = kanal === 'li' ? p.li : p.ig;
       $('#ig-m-text').innerHTML = t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/(#[\wäöüÄÖÜß]+)/g, '<span class="tags">$1</span>');
@@ -107,6 +107,7 @@
     }
     function sichtbar() { return $$('.ig-kachel', raster).filter(function (k) { return !k.hidden; }).map(function (k) { return +k.dataset.i; }); }
     function oeffne(i) {
+      if (!modal.open) kanal = 'li';   /* beim Öffnen immer zuerst der LinkedIn-Text */
       jetzt = i; var p = P[i];
       $('#ig-m-bild').innerHTML = creative(p);
       $('#ig-m-format').textContent = 'Posting ' + nr(i) + ' · Woche ' + p.w + ' · ' + TH[p.th];
