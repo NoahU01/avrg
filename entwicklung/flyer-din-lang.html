@@ -127,21 +127,23 @@
       <div class="fl-kopf"><p class="e2-kicker">Entwurf 1</p><h2>Das Eintrittsticket</h2><p>Der Flyer ist das Ticket – gestaltet wie eine echte Eintrittskarte: Veranstaltung, Dauer, Ort, Preis, und der Abriss als Einlass mit QR-Code. Hinten die zwei Ausgänge: Mitnehmen oder abhaken.</p></div>
       <div class="fl-paar">
         <figure><div class="fl"><div class="fl-in w1v">
+          <span class="w1v-sicher" aria-hidden="true"></span>
+          <span class="w1v-glow" aria-hidden="true"></span>
           <div class="fl-main">
-            <div class="w1v-band"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen"><span>Klarheits-Ticket</span></div>
-            <p class="w1v-veranst">Die neue Altersvorsorge 2027</p>
-            <p class="fl-h1 w1v-titel">30 Minuten Klarheit.</p>
-            <dl class="w1v-felder">
-              <div><dt>Programm</dt><dd>Betrifft mich das? · Wenn ja: wie? · Habe ich einen Vorteil?</dd></div>
+            <div class="w1v-kopf"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen"><span>Klarheits-Ticket · Altersvorsorge 2027</span></div>
+            <p class="w1v-titel">30 Minuten<br><em>Klarheit.</em></p>
+            <ul class="w1v-fragen"><li><i><svg><use href="#f-haken"/></svg></i>Betrifft mich das?</li><li><i><svg><use href="#f-haken"/></svg></i>Wenn ja: wie?</li><li><i><svg><use href="#f-haken"/></svg></i>Habe ich einen Vorteil?</li></ul>
+            <dl class="w1v-info">
               <div><dt>Dauer</dt><dd>30 Minuten</dd></div>
               <div><dt>Ort</dt><dd>Telefon · Video · Büro</dd></div>
-              <div><dt>Eintritt</dt><dd>kostenlos</dd></div>
+              <div><dt>Eintritt</dt><dd class="rot">kostenlos</dd></div>
             </dl>
           </div>
           <div class="fl-stub w1v-stub">
-            <p class="fl-kicker fl-rot">Einlass</p>
-            <div class="fl-qr"><img src="/entwicklung/ppt/qr-sv-owen.svg" alt="QR-Code zur Landingpage"></div>
-            <p class="fl-stub-text">Termin online wählen<br><span>Nr. 2027 · gültig ab sofort</span></p>
+            <p class="w1v-einlass">Einlass</p>
+            <div class="w1v-qr"><img src="/entwicklung/ppt/qr-sv-owen.svg" alt="QR-Code zur Landingpage"></div>
+            <p class="w1v-stub-text">Termin<br>online wählen</p>
+            <span class="w1v-nr">Nº 2027 · Owen</span>
           </div>
           <span class="fl-perf"></span>
         </div><span class="fl-linien"></span></div><figcaption>Vorderseite</figcaption></figure>
@@ -156,11 +158,12 @@
           <div class="fl-main w1r-main">
             <p class="fl-kicker">Nach 30 Minuten weißt du es</p>
             <p class="fl-h2">Zwei Ausgänge. Beide sind gut.</p>
-            <div class="w1r-ausgaenge">
-              <div class="aus aus--rot"><div class="aus__bild"><small>Du hast einen Vorteil</small><svg class="aus__ico"><use href="#f-geschenk"/></svg><b>Mitnehmen.</b></div><p>Wir zeigen ihn dir – schwarz auf weiß, mit deinen Zahlen.</p></div>
-              <div class="aus aus--hell"><div class="aus__bild"><small>Du brauchst es nicht</small><svg class="aus__ico"><use href="#f-haken"/></svg><b>Abhaken.</b></div><p>Dann sagen wir dir das genauso klar. Thema erledigt.</p></div>
+            <div class="w1r-aus">
+              <div class="w1r-kachel w1r-kachel--rot"><small>Du hast einen Vorteil</small><svg><use href="#f-geschenk"/></svg><b>Mitnehmen.</b><p>Wir zeigen ihn dir – schwarz auf weiß, mit deinen Zahlen.</p></div>
+              <span class="w1r-oder">oder</span>
+              <div class="w1r-kachel w1r-kachel--hell"><small>Du brauchst es nicht</small><svg><use href="#f-haken"/></svg><b>Abhaken.</b><p>Dann sagen wir dir das genauso klar. Thema erledigt.</p></div>
             </div>
-                      </div>
+          </div>
         </div><span class="fl-linien"></span></div><figcaption>Rückseite</figcaption></figure>
       </div>
     </div>
@@ -341,7 +344,7 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .fl-in>.fl-main:first-child{flex:0 0 calc(var(--mm)*161)}
 .fl-stub{flex:0 0 calc(var(--mm)*51);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(var(--mm)*3);padding:calc(var(--mm)*4)}
 .fl-perf{position:absolute;top:0;bottom:0;left:calc(var(--mm)*161);border-left:calc(var(--mm)*.3) dashed #b9b4ad}
-.fl-rstub{flex:0 0 calc(var(--mm)*51);display:flex;flex-direction:column;justify-content:flex-end;position:relative;gap:calc(var(--mm)*2.4);padding:calc(var(--mm)*6) calc(var(--mm)*5) calc(var(--mm)*6) calc(var(--mm)*7);background:var(--hell)}
+.fl-rstub{flex:0 0 calc(var(--mm)*51);display:flex;flex-direction:column;justify-content:center;padding-top:calc(var(--mm)*16)!important;position:relative;gap:calc(var(--mm)*2.4);padding:calc(var(--mm)*6) calc(var(--mm)*5) calc(var(--mm)*6) calc(var(--mm)*7);background:var(--hell)}
 .fl-logo{display:block;height:calc(var(--mm)*6.5);width:auto}
 .fl-rstub-logo{position:absolute;left:calc(var(--mm)*7);top:calc(var(--mm)*8);height:calc(var(--mm)*6)}
 
@@ -379,30 +382,47 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .mini-stempel small{display:block;font-family:'Poppins',sans-serif;font-weight:600;font-size:calc(var(--mm)*1.6);letter-spacing:.14em;text-transform:uppercase;color:var(--rot);margin-top:calc(var(--mm)*.6)}
 .mini-ticket .mini-stempel{right:calc(var(--mm)*-2);top:calc(var(--mm)*-4)}
 
-/* Entwurf 1 – Eintrittsticket */
-.w1v .fl-main{display:flex;flex-direction:column;padding-top:calc(var(--mm)*7)}
-.w1v-band{display:flex;justify-content:space-between;align-items:center;padding-bottom:calc(var(--mm)*3.4);border-bottom:calc(var(--mm)*.5) solid var(--ink)}
-.w1v-band img{height:calc(var(--mm)*6.5);width:auto}
-.w1v-band span{font-size:calc(var(--mm)*2.8);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rot)}
-.w1v-veranst{margin-top:calc(var(--mm)*6)!important;font-size:calc(var(--mm)*3.2);font-weight:600;letter-spacing:.04em}
-.w1v-titel{margin-top:calc(var(--mm)*1.4)!important;font-size:calc(var(--mm)*13)}
-.w1v-felder{margin-top:auto!important;display:grid;grid-template-columns:2.4fr 1fr 1.2fr 1fr;border-top:calc(var(--mm)*.3) solid var(--line)}
-.w1v-felder>div{padding:calc(var(--mm)*2.6) calc(var(--mm)*3) 0 0}
-.w1v-felder>div+div{padding-left:calc(var(--mm)*3);border-left:calc(var(--mm)*.3) solid var(--line)}
-.w1v-felder dt{font-size:calc(var(--mm)*2.1);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.w1v-felder dd{margin:calc(var(--mm)*.8) 0 0;font-size:calc(var(--mm)*3);font-weight:500;line-height:1.35}
-.w1v-felder>div:last-child dd{color:var(--rot);font-weight:700}
-.w1v-stub{background:var(--hell)}
-.w1r-main{display:flex;flex-direction:column}
-.w1r-ausgaenge{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--mm)*5);margin-top:calc(var(--mm)*5)!important}
-.aus__bild{position:relative;height:calc(var(--mm)*38);border-radius:calc(var(--mm)*2.6);padding:calc(var(--mm)*3.6) calc(var(--mm)*4);display:flex;flex-direction:column;justify-content:space-between}
-.aus__bild small{font-size:calc(var(--mm)*2.2);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.aus__bild b{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9.5);line-height:1;letter-spacing:-.02em}
-.aus__ico{position:absolute;right:calc(var(--mm)*4);top:calc(var(--mm)*3.4);width:calc(var(--mm)*7);height:calc(var(--mm)*7)}
-.aus--rot .aus__bild{background:var(--rot);color:#fff}
-.aus--hell .aus__bild{background:var(--hell);color:var(--ink)}
-.aus--hell .aus__ico{color:var(--rot);stroke-width:2.6}
-.aus p{font-size:calc(var(--mm)*2.8);line-height:1.4;color:var(--text);margin-top:calc(var(--mm)*2.4)!important}
+/* Entwurf 1 – Eintrittsticket: der Flyer ist das Ticket.
+   Drei Schriftstile: Lora (Titel), Poppins Versalien (Überzeilen/Labels), Poppins Text. */
+.w1v{background:#fff}
+.w1v-sicher{position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background:repeating-linear-gradient(115deg,transparent 0 calc(var(--mm)*1.2),rgba(26,24,23,.035) calc(var(--mm)*1.2) calc(var(--mm)*1.35))}
+.w1v-glow{position:absolute;left:calc(var(--mm)*118);top:calc(var(--mm)*-24);width:calc(var(--mm)*120);height:calc(var(--mm)*150);pointer-events:none;filter:blur(calc(var(--mm)*10));opacity:.5;
+  background:radial-gradient(34% 30% at 40% 32%,rgba(238,0,0,.8) 0%,transparent 100%),radial-gradient(30% 34% at 62% 66%,rgba(155,52,142,.75) 0%,transparent 100%),radial-gradient(26% 24% at 30% 76%,rgba(195,133,187,.7) 0%,transparent 100%)}
+.w1v .fl-main{display:grid;grid-template-columns:1fr calc(var(--mm)*53);grid-template-rows:auto 1fr auto;column-gap:calc(var(--mm)*6);padding:calc(var(--mm)*8) calc(var(--mm)*8) calc(var(--mm)*7.5) calc(var(--mm)*10);z-index:1}
+.w1v-kopf{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center}
+.w1v-kopf img{height:calc(var(--mm)*6.5);width:auto}
+.w1v-kopf span{font-size:calc(var(--mm)*2.5);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rot)}
+.w1v-titel{align-self:center;font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*14.5);line-height:.98;white-space:nowrap;letter-spacing:-.025em;color:var(--ink)}
+.w1v-titel em{font-style:normal;color:var(--rot)}
+.w1v-fragen{align-self:center;list-style:none;padding:0;display:grid;gap:calc(var(--mm)*3)}
+.w1v-fragen li{display:flex;align-items:center;gap:calc(var(--mm)*2.6);font-size:calc(var(--mm)*3.7);white-space:nowrap;font-weight:500;line-height:1.2}
+.w1v-fragen i{width:calc(var(--mm)*6);height:calc(var(--mm)*6);border-radius:calc(var(--mm)*1.4);background:var(--rot);color:#fff;display:grid;place-items:center;flex:none;box-shadow:0 calc(var(--mm)*.8) calc(var(--mm)*2) rgba(237,28,36,.3)}
+.w1v-fragen i svg{width:66%;height:66%;stroke-width:3.2}
+.w1v-info{grid-column:1/-1;display:flex;gap:calc(var(--mm)*9)}
+.w1v-info dt{font-size:calc(var(--mm)*2.2);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.w1v-info dd{margin:calc(var(--mm)*.8) 0 0;font-size:calc(var(--mm)*3.9);font-weight:600;color:var(--ink)}
+.w1v-info dd.rot{color:var(--rot)}
+.w1v-stub{z-index:1;gap:calc(var(--mm)*3.4)}
+.w1v-einlass{font-size:calc(var(--mm)*2.5);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.w1v-qr{width:calc(var(--mm)*27);height:calc(var(--mm)*27);padding:calc(var(--mm)*2.2);background:#fff;border-radius:calc(var(--mm)*2.6);box-shadow:0 calc(var(--mm)*1.2) calc(var(--mm)*4) rgba(80,20,60,.18)}
+.w1v-qr img{display:block;width:100%;height:100%}
+.w1v-stub-text{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*4.4);line-height:1.08;text-align:center;color:var(--ink)}
+.w1v-nr{position:absolute;right:calc(var(--mm)*4.6);top:50%;transform:translate(50%,-50%) rotate(90deg);font-size:calc(var(--mm)*2.2);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.w1v .fl-perf{border-left-color:rgba(26,24,23,.35);z-index:2}
+/* Rückseite: zwei Ausgänge in voller Höhe */
+.w1r-main{display:flex;flex-direction:column;padding:calc(var(--mm)*8) calc(var(--mm)*10) calc(var(--mm)*8) calc(var(--mm)*9)}
+.w1r-aus{flex:1;display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:calc(var(--mm)*3);margin-top:calc(var(--mm)*5)!important}
+.w1r-kachel{position:relative;border-radius:calc(var(--mm)*3);padding:calc(var(--mm)*5) calc(var(--mm)*5.4);display:flex;flex-direction:column}
+.w1r-kachel small{font-size:calc(var(--mm)*2.3);font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.w1r-kachel svg{position:absolute;right:calc(var(--mm)*5);top:calc(var(--mm)*4.4);width:calc(var(--mm)*8);height:calc(var(--mm)*8)}
+.w1r-kachel b{margin-top:auto;font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9.5);line-height:1;letter-spacing:-.025em}
+.w1r-kachel p{margin-top:calc(var(--mm)*2.6)!important;font-size:calc(var(--mm)*2.9);line-height:1.4}
+.w1r-kachel--rot{background:var(--rot);color:#fff}
+.w1r-kachel--hell{background:var(--hell);color:var(--ink)}
+.w1r-kachel--hell svg{color:var(--rot);stroke-width:2.6}
+.w1r-kachel--hell p{color:var(--text)}
+.w1r-oder{align-self:center;font-family:'Lora',Georgia,serif;font-style:italic;font-size:calc(var(--mm)*4);color:var(--muted)}
 
 /* Entwurf 2 */
 .w2v-glow{position:absolute;right:calc(var(--mm)*-30);top:calc(var(--mm)*-10);width:calc(var(--mm)*110);height:calc(var(--mm)*120);pointer-events:none;filter:blur(calc(var(--mm)*9));opacity:.55;
