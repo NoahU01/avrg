@@ -331,10 +331,11 @@
               <span class="w4v-band-logo"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen"></span>
             </div>
           </div>
-          <div class="fl-stub w4v-stub">
-            <p class="fl-kicker fl-rot">Klarheits-Ticket</p>
-            <p class="w4v-mit">Nimm<br>es mit.</p>
-            <p class="w4v-mit-klein">Bis zu 540 € im Jahr – ob sie dir zustehen, klären wir in 30 Minuten.</p>
+          <div class="fl-stub w41v-stub">
+            <img class="w41v-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
+            <p class="w41v-mit">Nimm<br>es mit.</p>
+            <div class="w1v-qr w41v-qr"><img src="/entwicklung/ppt/qr-sv-owen.svg" alt="QR-Code zur Landingpage"></div>
+            <p class="w41v-termin">Termin online wählen</p>
           </div>
           <span class="fl-perf"></span>
         </div><span class="fl-linien"></span></div><figcaption>Vorderseite</figcaption></figure>
@@ -561,6 +562,13 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .w4v-mit{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9);line-height:1;color:var(--ink)}
 .w4v-mit-klein{font-size:calc(var(--mm)*2.9);line-height:1.4;color:var(--text)}
 .w4v .fl-perf{border-left-color:#b9b4ad}
+/* Abriss wie in Entwurf 4.1: Logo, „Nimm es mit.“, QR-Code */
+.w41v-stub{background:#fff;z-index:1;gap:calc(var(--mm)*3.6)}
+.w41v-logo{height:calc(var(--mm)*5.6);width:auto;margin-bottom:calc(var(--mm)*2)}
+.w41v-mit{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*7.4);line-height:1;text-align:center;color:var(--ink)}
+.w41v-qr{width:calc(var(--mm)*24);height:calc(var(--mm)*24);box-shadow:none;border:calc(var(--mm)*.3) solid var(--line)}
+.w41v-termin{font-size:calc(var(--mm)*3.1);font-weight:600;color:var(--ink)}
+.w4v .fl-perf{z-index:2}
 .w4r-main{overflow:hidden}
 .w4r-titel{font-size:calc(var(--mm)*11)}
 .w4r-fragen{list-style:none;padding:0;display:grid;gap:calc(var(--mm)*2.2);margin-top:calc(var(--mm)*5)!important}
