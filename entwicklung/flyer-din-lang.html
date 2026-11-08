@@ -168,25 +168,6 @@
           </div>
           <span class="fl-perf"></span>
         </div><span class="fl-linien"></span></div><figcaption>Rückseite</figcaption></figure>
-
-        <figure><div class="fl"><div class="fl-in w1r w1r2">
-          <span class="w1v-sicher" aria-hidden="true"></span>
-          <span class="w1r-glow" aria-hidden="true"></span>
-          <div class="fl-rstub w1r-stub">
-            <img class="fl-logo fl-rstub-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
-            <img class="fl-agentur" src="/entwicklung/ppt/agentur.jpg" alt="">
-            <p class="fl-rstub-titel">Wir sind<br>für dich da.</p>
-            <ul class="fl-kontakt"><li><svg><use href="#f-telefon"/></svg>07021 98080-0</li><li><svg><use href="#f-mail"/></svg>service@sv-owen.de</li><li><svg><use href="#f-ort"/></svg>Kirchheimer Straße 22, Owen</li></ul>
-          </div>
-          <div class="fl-main w1r2-main">
-            <p class="w1r2-h">Nach dem Gespräch<br>weißt du es.</p>
-            <div class="w1r2-aus">
-              <div class="w1r2-karte"><p class="w1r2-frage"><i class="w1r2-ico w1r2-ico--rot"><svg><use href="#f-geschenk"/></svg></i>Du hast einen Vorteil?</p><p class="w1r2-wort">Mitnehmen.</p><p class="w1r2-satz">Wir zeigen ihn dir –<br>mit deinen Zahlen.</p></div>
-              <div class="w1r2-karte"><p class="w1r2-frage"><i class="w1r2-ico"><svg><use href="#f-haken"/></svg></i>Du brauchst es nicht?</p><p class="w1r2-wort">Abhaken.</p><p class="w1r2-satz">Dann sagen wir dir<br>das genauso klar.</p></div>
-            </div>
-          </div>
-          <span class="fl-perf"></span>
-        </div><span class="fl-linien"></span></div><figcaption>Rückseite · neue Variante: zwei Ergebnisse</figcaption></figure>
       </div>
     </div>
 
@@ -401,29 +382,13 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .w1r-aus i svg{width:66%;height:66%;stroke-width:2.6}
 
 /* Rückseite 1 neu angeordnet: Überschrift oben, die zwei Aussagen darunter, alles linksbündig */
-.w1r-main{display:flex;flex-direction:column;align-items:flex-start}
+.w1r-main{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.w1r .w1r-glow{left:auto;right:calc(var(--mm)*-40);opacity:.4;transform:scaleX(-1)}
 .w1r-main .w1r-kopf{position:absolute;right:calc(var(--mm)*9);top:calc(var(--mm)*8)}
-.w1r-main .w1r-titel{align-self:flex-start;font-size:calc(var(--mm)*14);line-height:.98;margin-top:calc(var(--mm)*7)!important}
+.w1r-main .w1r-titel{align-self:flex-start;font-size:calc(var(--mm)*14);line-height:.98}
 .w1r-main .w1r-aus{align-self:stretch;grid-template-columns:1fr 1fr;gap:calc(var(--mm)*6);margin-top:calc(var(--mm)*9)!important}
 .w1r-main .w1r-aus li{font-size:calc(var(--mm)*3.5)}
 .w1r-main .w1r-aus b{font-size:calc(var(--mm)*3.9)}
-
-/* Rückseite 1 · neue Variante: die zwei Ergebnisse als ruhige, große Karten – ohne rote Fläche */
-.w1r2 .w1r-glow{left:auto;right:calc(var(--mm)*-40);opacity:.4;transform:scaleX(-1)}
-.w1r2-main{display:flex;flex-direction:column;gap:calc(var(--mm)*5);padding:calc(var(--mm)*8) calc(var(--mm)*9) calc(var(--mm)*8) calc(var(--mm)*9);z-index:1}
-.w1r2-h{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9);line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin-top:calc(var(--mm)*.4)!important}
-.w1r2-aus{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--mm)*5)}
-.w1r2-karte{display:flex;flex-direction:column;padding:calc(var(--mm)*5.4) calc(var(--mm)*6) calc(var(--mm)*5.8);background:rgba(255,255,255,.92);border:calc(var(--mm)*.3) solid var(--line);border-radius:calc(var(--mm)*3.2);box-shadow:0 calc(var(--mm)*1.4) calc(var(--mm)*5) rgba(80,20,40,.08)}
-.w1r2-ico{flex:none;width:calc(var(--mm)*7);height:calc(var(--mm)*7);border-radius:calc(var(--mm)*1.8);background:var(--ink);color:#fff;display:grid;place-items:center}
-.w1r2-ico svg{width:60%;height:60%;stroke-width:2.6}
-.w1r2-ico--rot{background:var(--rot);box-shadow:0 calc(var(--mm)*.8) calc(var(--mm)*2) rgba(237,28,36,.3)}
-.w1r2-frage{display:flex;align-items:center;gap:calc(var(--mm)*2.6);font-size:calc(var(--mm)*3.8);font-weight:600;color:var(--ink)}
-.w1r2-wort{margin-top:auto!important;padding-top:calc(var(--mm)*4);font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*10.5);line-height:1;letter-spacing:-.025em;color:var(--ink)}
-.w1r2-satz{margin-top:calc(var(--mm)*2.2)!important;font-size:calc(var(--mm)*3.6);line-height:1.4;color:var(--text)}
-
-/* Schlusszeile (genutzt von Entwurf 3) */
-.w2r-antwort{margin-top:auto!important;font-size:calc(var(--mm)*3.1);color:var(--text)}
-.w2r-antwort b{color:var(--ink);font-weight:600}
 
 /* Entwurf 3 */
 .w3v-kicker{margin-top:calc(var(--mm)*9)!important;color:var(--rot)}
