@@ -162,8 +162,8 @@
             <p class="w1r-kopf">Nach dem Gespräch</p>
             <p class="w1r-titel">Mitnehmen<br>oder <em>abhaken.</em></p>
             <ul class="w1r-aus">
-              <li><i><svg><use href="#f-geschenk"/></svg></i><div><b>Du hast einen Vorteil?</b>Wir zeigen ihn dir – mit deinen Zahlen.</div></li>
-              <li><i><svg><use href="#f-haken"/></svg></i><div><b>Du brauchst es nicht?</b>Dann sagen wir dir das genauso klar.</div></li>
+              <li><i><svg><use href="#f-geschenk"/></svg></i><div><b>Du hast einen Vorteil?</b>Wir zeigen ihn dir –<br>mit deinen Zahlen.</div></li>
+              <li><i><svg><use href="#f-haken"/></svg></i><div><b>Du brauchst es nicht?</b>Dann sagen wir dir<br>das genauso klar.</div></li>
             </ul>
           </div>
           <span class="fl-perf"></span>
@@ -400,7 +400,16 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .w1r-aus i{width:calc(var(--mm)*6);height:calc(var(--mm)*6);border-radius:calc(var(--mm)*1.4);background:var(--rot);color:#fff;display:grid;place-items:center;flex:none;box-shadow:0 calc(var(--mm)*.8) calc(var(--mm)*2) rgba(237,28,36,.3)}
 .w1r-aus i svg{width:66%;height:66%;stroke-width:2.6}
 
+/* Rückseite 1 neu angeordnet: Überschrift oben, die zwei Aussagen darunter, alles linksbündig */
+.w1r-main{display:flex;flex-direction:column;align-items:flex-start}
+.w1r-main .w1r-kopf{position:absolute;right:calc(var(--mm)*9);top:calc(var(--mm)*8)}
+.w1r-main .w1r-titel{align-self:flex-start;font-size:calc(var(--mm)*14);line-height:.98;margin-top:calc(var(--mm)*7)!important}
+.w1r-main .w1r-aus{align-self:stretch;grid-template-columns:1fr 1fr;gap:calc(var(--mm)*6);margin-top:calc(var(--mm)*9)!important}
+.w1r-main .w1r-aus li{font-size:calc(var(--mm)*3.5)}
+.w1r-main .w1r-aus b{font-size:calc(var(--mm)*3.9)}
+
 /* Rückseite 1 · neue Variante: die zwei Ergebnisse als ruhige, große Karten – ohne rote Fläche */
+.w1r2 .w1r-glow{left:auto;right:calc(var(--mm)*-40);opacity:.4;transform:scaleX(-1)}
 .w1r2-main{display:flex;flex-direction:column;gap:calc(var(--mm)*5);padding:calc(var(--mm)*8) calc(var(--mm)*9) calc(var(--mm)*8) calc(var(--mm)*9);z-index:1}
 .w1r2-h{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9);line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin-top:calc(var(--mm)*.4)!important}
 .w1r2-aus{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--mm)*5)}
