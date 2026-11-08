@@ -249,10 +249,11 @@
       <div class="fl-paar">
         <figure><div class="fl"><div class="fl-in w3v">
           <div class="fl-main">
+            <img class="w3v-foto" src="/assets/projekte/avrg/fotos/frau-brief.jpg" alt="">
             <img class="fl-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
             <p class="fl-kicker w3v-kicker">Die neue Altersvorsorge 2027</p>
             <ul class="w3v-fragen"><li><i><svg><use href="#f-haken"/></svg></i>Betrifft mich das?</li><li><i><svg><use href="#f-haken"/></svg></i>Wenn ja: wie?</li><li><i><svg><use href="#f-haken"/></svg></i>Habe ich einen Vorteil?</li></ul>
-            <p class="w3v-fuss"><b>Dein Klarheits-Ticket:</b> 30 Minuten, kostenlos. Wir klären das für dich.</p>
+            <p class="w3v-fuss"><b>Dein Klarheits-Ticket:</b> 30 Minuten, kostenlos.<br>Wir klären das für dich.</p>
           </div>
           <div class="fl-stub">
             <p class="fl-kicker fl-rot">Ticket einlösen</p>
@@ -487,12 +488,15 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .w2r-antwort b{color:var(--ink);font-weight:600}
 
 /* Entwurf 3 */
+.w3v .fl-main{isolation:isolate}
+.w3v-foto{position:absolute;z-index:-1;right:0;top:0;width:calc(var(--mm)*60);height:100%;object-fit:cover;object-position:74% 40%;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.35) 22%,#000 55%);mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.35) 22%,#000 55%)}
 .w3v-kicker{margin-top:calc(var(--mm)*9)!important;color:var(--rot)}
 .w3v-fragen{list-style:none;padding:0;display:grid;gap:calc(var(--mm)*2.6);margin-top:calc(var(--mm)*4)!important}
-.w3v-fragen li{display:flex;align-items:center;gap:calc(var(--mm)*4);font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9);line-height:1;letter-spacing:-.02em}
+.w3v-fragen li{display:flex;align-items:center;gap:calc(var(--mm)*4);font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*8.2);line-height:1;letter-spacing:-.02em}
 .w3v-fragen i{width:calc(var(--mm)*8.4);height:calc(var(--mm)*8.4);border-radius:calc(var(--mm)*2);background:var(--rot);color:#fff;display:grid;place-items:center;flex:none}
 .w3v-fragen i svg{width:70%;height:70%;stroke-width:3.2}
-.w3v-fuss{position:absolute;left:calc(var(--mm)*10);bottom:calc(var(--mm)*8);font-size:calc(var(--mm)*3.4);color:var(--text)}
+.w3v-fuss{position:absolute;left:calc(var(--mm)*10);bottom:calc(var(--mm)*8);font-size:calc(var(--mm)*3.4);line-height:1.45;color:var(--text)}
 .w3v-fuss b{color:var(--ink);font-weight:600}
 .w3v-stempel{left:calc(var(--mm)*151);top:calc(var(--mm)*6)}
 .w3r-main{display:flex;flex-direction:column}
