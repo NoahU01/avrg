@@ -96,11 +96,20 @@
   </div>
 </header>
 <main class="ak">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="f-haken" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7"/></symbol>
+    <symbol id="f-ticket" viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 0 0 4v5h17v-5a2 2 0 0 1 0-4v-3h-17z"/><path d="M14.5 4.5v12" stroke-dasharray="2 2"/></symbol>
+    <symbol id="f-sprechen" viewBox="0 0 24 24"><path d="M4 5.5h16v10H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+    <symbol id="f-geschenk" viewBox="0 0 24 24"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12"/><path d="M12 8.5S10.5 4 8 4.5 6.8 8.5 12 8.5zM12 8.5S13.5 4 16 4.5s1.2 4-4 4z"/></symbol>
+    <symbol id="f-telefon" viewBox="0 0 24 24"><path d="M5 3.5h3.5l1.8 4.6-2.3 1.6a12 12 0 0 0 6.3 6.3l1.6-2.3 4.6 1.8V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z"/></symbol>
+    <symbol id="f-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
+    <symbol id="f-ort" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></symbol>
+  </svg>
   <section class="e2-kopf ak-kopfbereich"><div class="e2-wrap">
       <p class="ak-wo"><a href="/projekte/avrg.html#print">&#8592; AVRG · Print</a><span aria-hidden="true">&rsaquo;</span><span aria-current="page">Flyer DIN lang</span></p>
       <p class="e2-kicker">SV Gebietsdirektion SV Owen</p>
       <h1>Flyer DIN lang – das Klarheits-Ticket</h1>
-      <p class="e2-lead">Drei Entwürfe im echten Format, jeweils Vorder- und Rückseite. Querformat, perforierter Abriss mit QR-Code zur Landingpage.</p>
+      <p class="e2-lead">Drei Entwürfe im echten Format, jeweils Vorder- und Rückseite. Jeder trägt eine Bildidee der Landingpage. Der Abriss mit QR-Code führt auf die Landingpage der SV Owen.</p>
   </div></section>
 
   <section class="e2-sek ak-sec" style="padding-top:0"><div class="e2-wrap">
@@ -108,124 +117,143 @@
       <div><b>Endformat</b><span>210 × 98 mm, quer</span></div>
       <div><b>Datenformat</b><span>212 × 100 mm (1 mm Beschnitt rundum)</span></div>
       <div><b>Sicherheitsabstand</b><span>3 mm innerhalb des Endformats</span></div>
-      <div><b>Perforation</b><span>Schmalseite, 50 mm vom rechten Rand (mind. 15 mm), Linie 0,3 mm, wird mitgedruckt – nur Vorderseite</span></div>
-      <div><b>QR-Code</b><span>avrg.sofortsichtbar.de/sv-owen · 26 mm</span></div>
+      <div><b>Perforation</b><span>Schmalseite, 50 mm vom rechten Rand (mind. 15 mm), Linie 0,3 mm, nur Vorderseite</span></div>
+      <div><b>QR-Code</b><span>avrg.sofortsichtbar.de/sv-owen · 24 mm</span></div>
     </div>
-    <label class="fl-hilfe"><input type="checkbox" id="fl-linien" checked> Hilfslinien zeigen (Beschnitt, Sicherheitsabstand)</label>
+    <label class="fl-hilfe"><input type="checkbox" id="fl-linien"> Hilfslinien zeigen (Beschnitt, Sicherheitsabstand)</label>
 
-    <!-- ===================== Entwurf 1 ===================== -->
+    <!-- ===================== Entwurf 1: Ticket im Ticket ===================== -->
     <div class="fl-entwurf">
-      <div class="fl-kopf"><p class="e2-kicker">Entwurf 1</p><h2>Das Ticket</h2><p>Ganz nah an der Landingpage: rotes Ticket, die drei Fragen, Sandra. Der Abriss trägt den QR-Code – wer ihn abtrennt, gibt den Weg zum Termin weiter.</p></div>
+      <div class="fl-kopf"><p class="e2-kicker">Entwurf 1</p><h2>Ticket im Ticket</h2><p>Vorne liegt das Klarheits-Ticket der Landingpage als Objekt auf dem Flyer – schräg, mit Stempel. Hinten die zwei Ausgänge: Mitnehmen oder abhaken.</p></div>
       <div class="fl-paar">
-        <figure><div class="fl"><div class="fl-in t1-v">
-          <div class="t1-haupt">
-            <img class="t1-logo" src="/assets/projekte/avrg/sv-owen-logo-weiss.svg" alt="SV Owen">
-            <p class="fl-kicker">Klarheits-Ticket · Altersvorsorge</p>
-            <p class="t1-titel">30 Minuten Klarheit</p>
-            <ul class="fl-haken"><li><i></i>Betrifft mich das?</li><li><i></i>Wenn ja: wie?</li><li><i></i>Habe ich einen Vorteil?</li></ul>
-            <div class="t1-fuss"><img src="/assets/projekte/avrg/sandra.jpg" alt=""><span><b>Sandra Hild</b>Telefon · Video · Büro</span></div>
+        <figure><div class="fl"><div class="fl-in w1v">
+          <div class="fl-main">
+            <img class="fl-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
+            <div class="w1v-text">
+              <p class="fl-kicker">Die neue Altersvorsorge ab 2027</p>
+              <p class="fl-h1">Mitnehmen<br>oder abhaken.</p>
+              <p class="fl-lead">Du musst dich nicht einarbeiten. Wir klären das in 30 Minuten für dich.</p>
+            </div>
+            <div class="mini-ticket w1v-ticket"><span class="mini-stempel">Mitnehmen<small>kostenlos</small></span>
+              <div class="mini-ticket__haupt"><p class="mini-ticket__art">Klarheits-Ticket</p><p class="mini-ticket__titel">30 Minuten Klarheit</p>
+                <ul><li><i><svg><use href="#f-haken"/></svg></i>Betrifft mich das?</li><li><i><svg><use href="#f-haken"/></svg></i>Wenn ja: wie?</li><li><i><svg><use href="#f-haken"/></svg></i>Habe ich einen Vorteil?</li></ul></div>
+              <div class="mini-ticket__abriss"><img src="/assets/projekte/avrg/sv-owen-logo-weiss.svg" alt=""></div></div>
           </div>
-          <div class="fl-abriss t1-abriss">
+          <div class="fl-stub">
+            <p class="fl-kicker fl-rot">Ticket einlösen</p>
             <div class="fl-qr"><img src="/entwicklung/ppt/qr-sv-owen.svg" alt="QR-Code zur Landingpage"></div>
-            <p class="fl-abriss-text"><b>Termin buchen</b>kostenlos · unverbindlich</p>
+            <p class="fl-stub-text">Termin online wählen<br><span>kostenlos · unverbindlich</span></p>
           </div>
           <span class="fl-perf"></span>
         </div><span class="fl-linien"></span></div><figcaption>Vorderseite</figcaption></figure>
 
-        <figure><div class="fl"><div class="fl-in t1-r">
-          <div class="fl-abriss-r t1-abriss-r">
-            <p class="fl-weiter-kicker">Zum Weitergeben</p>
-            <p class="fl-weiter">Kennst du jemanden, der sich das auch fragt?</p>
-            <p class="fl-weiter-klein">Abschnitt abtrennen und weitergeben – der QR-Code auf der Vorderseite führt direkt zum Termin.</p>
+        <figure><div class="fl"><div class="fl-in w1r">
+          <div class="fl-rstub">
+            <img class="fl-logo fl-rstub-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
+            <img class="fl-agentur" src="/entwicklung/ppt/agentur.jpg" alt="">
+            <p class="fl-rstub-titel">Wir sind für dich da.</p>
+            <ul class="fl-kontakt"><li><svg><use href="#f-telefon"/></svg>07021 98080-0</li><li><svg><use href="#f-mail"/></svg>service@sv-owen.de</li><li><svg><use href="#f-ort"/></svg>Kirchheimer Straße 22, Owen</li></ul>
           </div>
-          <div class="t1-r-haupt">
-            <p class="fl-kicker fl-rot">Neue Altersvorsorge 2027</p>
-            <p class="t1-r-titel">Mitnehmen oder abhaken.</p>
-            <div class="fl-zahlen">
-              <div><b>bis 540 €</b><span>Grundzulage im Jahr</span></div>
-              <div><b>+ 300 €</b><span>je Kind und Jahr</span></div>
-              <div><b>+ 200 €</b><span>Startbonus unter 25</span></div>
+          <div class="fl-main w1r-main">
+            <p class="fl-kicker">Nach 30 Minuten weißt du es</p>
+            <p class="fl-h2">Zwei Ausgänge. Beide sind gut.</p>
+            <div class="w1r-ausgaenge">
+              <div class="aus aus--rot"><div class="aus__bild"><small>Du hast einen Vorteil</small><svg class="aus__ico"><use href="#f-geschenk"/></svg><b>Mitnehmen.</b></div><p>Wir zeigen ihn dir – schwarz auf weiß, mit deinen Zahlen.</p></div>
+              <div class="aus aus--hell"><div class="aus__bild"><small>Du brauchst es nicht</small><svg class="aus__ico"><use href="#f-haken"/></svg><b>Abhaken.</b></div><p>Dann sagen wir dir das genauso klar. Thema erledigt.</p></div>
             </div>
-            <p class="fl-kontakt"><b>Sandra Hild</b> · SV Gebietsdirektion Owen<br>+49 7021 98080-21 · sandra.hild@sv-owen.de<br>Kirchheimer Straße 22 · avrg.sofortsichtbar.de/sv-owen</p>
-            <img class="t1-r-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
+                      </div>
+        </div><span class="fl-linien"></span></div><figcaption>Rückseite</figcaption></figure>
+      </div>
+    </div>
+
+    <!-- ===================== Entwurf 2: Der Familienchat ===================== -->
+    <div class="fl-entwurf">
+      <div class="fl-kopf"><p class="e2-kicker">Entwurf 2</p><h2>Der Familienchat</h2><p>Vorne das iPhone mit dem Chat aus der Landingpage, angeschnitten am unteren Rand, dahinter der Glow in Rot und Violett. Hinten die fünf Leben mit ihrer einen Frage.</p></div>
+      <div class="fl-paar">
+        <figure><div class="fl"><div class="fl-in w2v">
+          <div class="fl-main">
+            <span class="w2v-glow" aria-hidden="true"></span>
+            <img class="fl-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
+            <div class="w2v-text">
+              <p class="fl-kicker fl-rot">Klarheits-Ticket · Altersvorsorge</p>
+              <p class="fl-h1">Hier wird dir nichts verkauft.</p>
+              <p class="fl-lead">Wir schauen auf dein Leben und klären in 30 Minuten, ob die neue Altersvorsorge zu dir passt.</p>
+            </div>
+            <div class="phone"><div class="phone__schirm">
+              <p class="phone__kopf"><b>Familie</b>Mama, Julia, Tom, du</p>
+              <p class="msg"><small>Mama</small>Ich habe Post bekommen und verstehe nur Bahnhof.</p>
+              <p class="msg"><small>Julia</small>Ist mein Riester-Vertrag jetzt schlecht?</p>
+              <p class="msg"><small>Tom</small>Alle sagen, das muss man machen. Muss ich?</p>
+              <p class="msg msg--du">Ich habe für uns alle ein Klarheits-Ticket: 30 Minuten, dann wissen wir es.</p>
+            </div></div>
+          </div>
+          <div class="fl-stub">
+            <p class="fl-kicker fl-rot">Ticket einlösen</p>
+            <div class="fl-qr"><img src="/entwicklung/ppt/qr-sv-owen.svg" alt="QR-Code zur Landingpage"></div>
+            <p class="fl-stub-text">Termin online wählen<br><span>kostenlos · unverbindlich</span></p>
+          </div>
+          <span class="fl-perf"></span>
+        </div><span class="fl-linien"></span></div><figcaption>Vorderseite</figcaption></figure>
+
+        <figure><div class="fl"><div class="fl-in w2r">
+          <div class="fl-rstub">
+            <img class="fl-logo fl-rstub-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
+            <img class="fl-agentur" src="/entwicklung/ppt/agentur.jpg" alt="">
+            <p class="fl-rstub-titel">Wir sind für dich da.</p>
+            <ul class="fl-kontakt"><li><svg><use href="#f-telefon"/></svg>07021 98080-0</li><li><svg><use href="#f-mail"/></svg>service@sv-owen.de</li><li><svg><use href="#f-ort"/></svg>Kirchheimer Straße 22, Owen</li></ul>
+          </div>
+          <div class="fl-main w2r-main">
+            <p class="fl-kicker">Für wen</p>
+            <p class="fl-h2">Fünf Leben. Eine Frage.</p>
+            <div class="w2r-leben">
+              <figure><img src="/assets/projekte/avrg/fotos/junger-mann.jpg" alt=""><small>Anfang 20</small><b>„Lohnt sich das für mich schon?“</b></figure>
+              <figure><img src="/assets/projekte/avrg/fotos/vater-kinder.jpg" alt=""><small>Familie</small><b>„Was bringt uns das mit Kindern?“</b></figure>
+              <figure><img src="/assets/projekte/avrg/fotos/frau-40.jpg" alt=""><small>Mitte 40</small><b>„Ist mein Riester jetzt schlecht?“</b></figure>
+              <figure><img src="/assets/projekte/avrg/fotos/handwerker.jpg" alt=""><small>Selbstständig</small><b>„Bin ich diesmal dabei?“</b></figure>
+              <figure><img src="/assets/projekte/avrg/fotos/frau-55.jpg" alt=""><small>Mitte 50</small><b>„Lohnt sich das so spät noch?“</b></figure>
+            </div>
+            <p class="w2r-antwort">Für alle dieselbe Antwort: <b>30 Minuten – dann weißt du es.</b></p>
           </div>
         </div><span class="fl-linien"></span></div><figcaption>Rückseite</figcaption></figure>
       </div>
     </div>
 
-    <!-- ===================== Entwurf 2 ===================== -->
+    <!-- ===================== Entwurf 3: Drei Fragen, drei Schritte ===================== -->
     <div class="fl-entwurf">
-      <div class="fl-kopf"><p class="e2-kicker">Entwurf 2</p><h2>Der 540-€-Schein</h2><p>Das Ticket als Geldschein: feine Guilloche-Linien, Seriennummer, die Zahl, um die es geht. Man nimmt ihn in die Hand wie einen Gutschein – und fragt sich sofort, ob er für einen gilt.</p></div>
+      <div class="fl-kopf"><p class="e2-kicker">Entwurf 3</p><h2>Drei Fragen. Drei Schritte.</h2><p>Vorne die drei Fragen des Tickets ganz groß, mit roten Haken – das Versprechen. Der Stempel sitzt auf der Perforation. Hinten die drei Schritte der Landingpage als Karten.</p></div>
       <div class="fl-paar">
-        <figure><div class="fl"><div class="fl-in t2-v">
-          <div class="t2-haupt">
-            <span class="t2-guilloche" aria-hidden="true"></span>
-            <div class="t2-oben"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen"><span class="t2-nr">Klarheits-Ticket · Nr. 2027</span></div>
-            <p class="t2-bis">bis zu</p>
-            <p class="t2-zahl">540&nbsp;€</p>
-            <p class="t2-unter">legt der Staat ab 2027 jedes Jahr auf deine Altersvorsorge.<br><b>Gilt der Schein für dich?</b></p>
+        <figure><div class="fl"><div class="fl-in w3v">
+          <div class="fl-main">
+            <img class="fl-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
+            <p class="fl-kicker w3v-kicker">Klarheits-Ticket · Altersvorsorge</p>
+            <ul class="w3v-fragen"><li><i><svg><use href="#f-haken"/></svg></i>Betrifft mich das?</li><li><i><svg><use href="#f-haken"/></svg></i>Wenn ja: wie?</li><li><i><svg><use href="#f-haken"/></svg></i>Habe ich einen Vorteil?</li></ul>
+            <p class="w3v-fuss"><b>30 Minuten Klarheit.</b> Wir klären das für dich.</p>
           </div>
-          <div class="fl-abriss t2-abriss">
-            <p class="fl-abriss-kicker">In 30 Minuten wissen</p>
+          <div class="fl-stub">
+            <p class="fl-kicker fl-rot">Ticket einlösen</p>
             <div class="fl-qr"><img src="/entwicklung/ppt/qr-sv-owen.svg" alt="QR-Code zur Landingpage"></div>
-            <p class="fl-abriss-text"><b>Einlösen bei Sandra Hild</b>kostenlos · unverbindlich</p>
+            <p class="fl-stub-text">Termin online wählen<br><span>kostenlos · unverbindlich</span></p>
           </div>
           <span class="fl-perf"></span>
+          <span class="mini-stempel w3v-stempel">Mitnehmen<small>kostenlos</small></span>
         </div><span class="fl-linien"></span></div><figcaption>Vorderseite</figcaption></figure>
 
-        <figure><div class="fl"><div class="fl-in t2-r">
-          <div class="fl-abriss-r t2-abriss-r">
-            <p class="fl-weiter-kicker">Zum Weitergeben</p>
-            <p class="fl-weiter">Gilt der Schein auch für jemanden, den du kennst?</p>
+        <figure><div class="fl"><div class="fl-in w3r">
+          <div class="fl-rstub">
+            <img class="fl-logo fl-rstub-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
+            <img class="fl-agentur" src="/entwicklung/ppt/agentur.jpg" alt="">
+            <p class="fl-rstub-titel">Wir sind für dich da.</p>
+            <ul class="fl-kontakt"><li><svg><use href="#f-telefon"/></svg>07021 98080-0</li><li><svg><use href="#f-mail"/></svg>service@sv-owen.de</li><li><svg><use href="#f-ort"/></svg>Kirchheimer Straße 22, Owen</li></ul>
           </div>
-          <div class="t2-r-haupt">
-            <p class="fl-kicker fl-rot">So viel legt der Staat dazu</p>
-            <table class="t2-tab">
-              <tr><td>Auf die ersten 360 € im Jahr</td><td>50 Cent je Euro</td></tr>
-              <tr><td>Von 360 € bis 1.800 € im Jahr</td><td>25 Cent je Euro</td></tr>
-              <tr><td>Für jedes Kind mit Kindergeld</td><td>bis 300 € im Jahr</td></tr>
-              <tr><td>Einstieg unter 25 Jahren</td><td>200 € Startbonus</td></tr>
-            </table>
-            <div class="t2-r-fuss">
-              <img src="/assets/projekte/avrg/sandra.jpg" alt="">
-              <p><b>Sandra Hild</b> · SV Gebietsdirektion Owen<br>+49 7021 98080-21 · sandra.hild@sv-owen.de</p>
+          <div class="fl-main w3r-main">
+            <p class="fl-kicker">So läuft es</p>
+            <p class="fl-h2">In drei Schritten zur Klarheit.</p>
+            <div class="w3r-schritte">
+              <div class="schritt"><span class="schritt__nr">01</span><span class="schritt__ico"><svg><use href="#f-ticket"/></svg></span><b>Ticket einlösen</b><p>Termin wählen – am Telefon, per Video oder bei uns in Owen.</p></div>
+              <div class="schritt"><span class="schritt__nr">02</span><span class="schritt__ico"><svg><use href="#f-sprechen"/></svg></span><b>30 Minuten sprechen</b><p>Drei Fragen, deine Situation. Keine Unterlagen nötig.</p></div>
+              <div class="schritt schritt--rot"><span class="schritt__nr">03</span><span class="schritt__ico"><svg><use href="#f-haken"/></svg></span><b>Mitnehmen oder abhaken</b><p>Ein klares Ergebnis. Du entscheidest in Ruhe.</p></div>
             </div>
-          </div>
-        </div><span class="fl-linien"></span></div><figcaption>Rückseite</figcaption></figure>
-      </div>
-    </div>
-
-    <!-- ===================== Entwurf 3 ===================== -->
-    <div class="fl-entwurf">
-      <div class="fl-kopf"><p class="e2-kicker">Entwurf 3</p><h2>Zum Abhaken</h2><p>Hell und ruhig. Die drei Fragen stehen als leere Kästchen da – im Gespräch werden sie mit dem Stift abgehakt. Der rote Abriss ist das Ticket selbst.</p></div>
-      <div class="fl-paar">
-        <figure><div class="fl"><div class="fl-in t3-v">
-          <div class="t3-haupt">
-            <img class="t3-logo" src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen">
-            <p class="t3-titel">Mitnehmen oder <span>abhaken?</span></p>
-            <ul class="t3-fragen"><li><i></i>Betrifft mich das?</li><li><i></i>Wenn ja: wie?</li><li><i></i>Habe ich einen Vorteil?</li></ul>
-          </div>
-          <div class="fl-abriss t3-abriss">
-            <p class="t3-abriss-titel">30 Minuten Klarheit</p>
-            <div class="fl-qr"><img src="/entwicklung/ppt/qr-sv-owen.svg" alt="QR-Code zur Landingpage"></div>
-            <p class="fl-abriss-text">kostenlos · unverbindlich</p>
-          </div>
-          <span class="fl-perf"></span>
-        </div><span class="fl-linien"></span></div><figcaption>Vorderseite</figcaption></figure>
-
-        <figure><div class="fl"><div class="fl-in t3-r">
-          <div class="fl-abriss-r t3-abriss-r">
-            <p class="fl-weiter-kicker">Zum Weitergeben</p>
-            <p class="fl-weiter">Für jemanden, der sich das auch fragt.</p>
-          </div>
-          <div class="t3-r-haupt">
-            <img class="t3-r-foto" src="/assets/projekte/avrg/sandra.jpg" alt="">
-            <div class="t3-r-text">
-              <p class="fl-kicker">Dein Klarheits-Ticket</p>
-              <p class="t3-r-titel">Einlösbar bei Sandra Hild.</p>
-              <p class="t3-r-satz">Am Telefon, per Video oder bei uns im Büro. Danach weißt du, ob du die neue Förderung mitnimmst – oder das Thema abhaken kannst.</p>
-              <p class="fl-kontakt">+49 7021 98080-21 · sandra.hild@sv-owen.de<br>SV Gebietsdirektion Owen · Kirchheimer Straße 22</p>
-            </div>
+            <p class="w2r-antwort">Kostenlos, unverbindlich und ohne Fachchinesisch.</p>
           </div>
         </div><span class="fl-linien"></span></div><figcaption>Rückseite</figcaption></figure>
       </div>
@@ -242,110 +270,117 @@
 .fl-kopf h2{font-family:'Lora',Georgia,serif;font-size:1.8rem;margin:0 0 8px}
 .fl-kopf p:last-child{max-width:46rem;color:#3d3a37;line-height:1.6;margin:0}
 .fl-paar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:24px}
-.fl-paar figure{margin:0}
-.fl-paar figcaption{margin-top:10px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#8a847c}
-@media (max-width:900px){.fl-paar{grid-template-columns:1fr}}
+.fl-paar>figure{margin:0}
+.fl-paar>figure>figcaption{margin-top:10px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#8a847c}
+@media (max-width:1100px){.fl-paar{grid-template-columns:1fr}}
 
-/* ---------- Flyer im echten Format: 212 × 100 mm Datenformat, 1 mm = 100cqw/212 ---------- */
+/* ---------- Format: 212 × 100 mm Datenformat; 1 mm = 100cqw/212 ---------- */
 .fl{position:relative;container-type:inline-size;aspect-ratio:212/100;box-shadow:0 12px 30px rgba(0,0,0,.12);background:#fff}
-.fl-in{position:absolute;inset:0;overflow:hidden;--mm:calc(100cqw / 212);font-family:'Poppins',system-ui,sans-serif;color:#1a1817;display:flex}
+.fl-in{position:absolute;inset:0;overflow:hidden;--mm:calc(100cqw / 212);--rot:#ed1c24;--ink:#1a1817;--text:#3d3a37;--muted:#6f6a64;--hell:#f6f5f2;--line:#e8e5e0;
+  font-family:'Poppins',system-ui,sans-serif;color:var(--ink);display:flex;background:#fff}
 .fl-in *{margin:0;box-sizing:border-box}
-.fl-linien{position:absolute;inset:0;pointer-events:none;
-  box-shadow:inset 0 0 0 calc(100cqw/212) rgba(0,170,255,.18);outline:1px dashed rgba(0,140,220,.0)}
+.fl-in svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fl-linien{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 calc(100cqw/212) rgba(0,170,255,.18)}
 .fl-linien::before{content:"";position:absolute;inset:calc(100cqw/212);border:1px solid rgba(0,150,230,.85)}
 .fl-linien::after{content:"";position:absolute;inset:calc(100cqw/212*4);border:1px dashed rgba(230,0,180,.6)}
 body:not(.fl-zeigen) .fl-linien{display:none}
-/* Bereiche: Hauptteil bis Perforation (1 mm Beschnitt + 160 mm), Abriss 50 mm + 1 mm Beschnitt */
-.fl-in>div:first-child{flex:0 0 calc(var(--mm)*161);position:relative}
-.fl-in>.fl-abriss-r:first-child{flex:0 0 calc(var(--mm)*51)}
-.fl-in>.fl-abriss-r+div{flex:1;position:relative}
-.fl-abriss{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(var(--mm)*3);padding:calc(var(--mm)*4) calc(var(--mm)*4) calc(var(--mm)*4) calc(var(--mm)*3)}
-.fl-perf{position:absolute;top:0;bottom:0;left:calc(var(--mm)*161);width:0;border-left:calc(var(--mm)*.3) dashed currentColor}
-.fl-qr{width:calc(var(--mm)*26);height:calc(var(--mm)*26);padding:calc(var(--mm)*2);background:#fff;border-radius:calc(var(--mm)*2)}
+
+/* Bereiche: Vorderseite Hauptteil 1 + 160 mm, Abriss 50 + 1 mm; Rückseite gespiegelt */
+.fl-main{position:relative;flex:1;padding:calc(var(--mm)*8) calc(var(--mm)*9) calc(var(--mm)*8) calc(var(--mm)*10)}
+.fl-in>.fl-main:first-child{flex:0 0 calc(var(--mm)*161)}
+.fl-stub{flex:0 0 calc(var(--mm)*51);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(var(--mm)*3);padding:calc(var(--mm)*4)}
+.fl-perf{position:absolute;top:0;bottom:0;left:calc(var(--mm)*161);border-left:calc(var(--mm)*.3) dashed #b9b4ad}
+.fl-rstub{flex:0 0 calc(var(--mm)*51);display:flex;flex-direction:column;justify-content:flex-end;position:relative;gap:calc(var(--mm)*2.4);padding:calc(var(--mm)*6) calc(var(--mm)*5) calc(var(--mm)*6) calc(var(--mm)*7);background:var(--hell)}
+.fl-logo{display:block;height:calc(var(--mm)*6.5);width:auto}
+.fl-rstub-logo{position:absolute;left:calc(var(--mm)*7);top:calc(var(--mm)*8);height:calc(var(--mm)*6)}
+
+.fl-kicker{display:flex;align-items:center;gap:calc(var(--mm)*2);font-size:calc(var(--mm)*2.6);font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.fl-kicker::before{content:"";width:calc(var(--mm)*4.5);height:calc(var(--mm)*.7);border-radius:calc(var(--mm)*.4);background:currentColor;flex:none}
+.fl-rot{color:var(--rot)}
+.fl-h1{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*12);line-height:1.02;letter-spacing:-.02em}
+.fl-h2{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*7.6);line-height:1.05;letter-spacing:-.02em;margin-top:calc(var(--mm)*2.2)!important}
+.fl-lead{font-size:calc(var(--mm)*3.4);line-height:1.45;color:var(--text)}
+.fl-qr{width:calc(var(--mm)*24);height:calc(var(--mm)*24)}
 .fl-qr img{display:block;width:100%;height:100%}
-.fl-abriss-text{text-align:center;font-size:calc(var(--mm)*2.6);line-height:1.35}
-.fl-abriss-text b{display:block;font-size:calc(var(--mm)*3.2);font-weight:600}
-.fl-abriss-kicker{font-size:calc(var(--mm)*2.6);font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:center}
-.fl-kicker{font-size:calc(var(--mm)*2.8);font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-.fl-rot{color:#ed1c24}
-.fl-haken{list-style:none;padding:0;display:grid;gap:calc(var(--mm)*2.2)}
-.fl-haken li{display:flex;align-items:center;gap:calc(var(--mm)*2.6);font-size:calc(var(--mm)*4);font-weight:500}
-.fl-haken i{width:calc(var(--mm)*5);height:calc(var(--mm)*5);border-radius:calc(var(--mm)*1.2);background:#fff;flex:none;position:relative}
-.fl-haken i::after{content:"";position:absolute;left:32%;top:18%;width:28%;height:48%;border:solid #ed1c24;border-width:0 calc(var(--mm)*.8) calc(var(--mm)*.8) 0;transform:rotate(45deg)}
-.fl-abriss-r{flex:0 0 calc(var(--mm)*51);display:flex;flex-direction:column;justify-content:center;gap:calc(var(--mm)*2);padding:calc(var(--mm)*4) calc(var(--mm)*4) calc(var(--mm)*4) calc(var(--mm)*5)}
-.fl-weiter-kicker{font-size:calc(var(--mm)*2.6);font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-.fl-weiter{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*5);line-height:1.15}
-.fl-weiter-klein{font-size:calc(var(--mm)*2.6);line-height:1.45}
-.fl-kontakt{font-size:calc(var(--mm)*2.9);line-height:1.5}
-.fl-kontakt b{font-weight:600}
+.fl-stub-text{text-align:center;font-size:calc(var(--mm)*3.2);font-weight:600;line-height:1.35}
+.fl-stub-text span{font-size:calc(var(--mm)*2.6);font-weight:400;color:var(--muted)}
+.fl-stub .fl-kicker::before{display:none}
+.fl-agentur{width:calc(var(--mm)*16);height:calc(var(--mm)*16);border-radius:50%;object-fit:cover;border:calc(var(--mm)*.7) solid #fff;box-shadow:0 calc(var(--mm)*1) calc(var(--mm)*3) rgba(0,0,0,.12)}
+.fl-rstub-titel{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*4.6);line-height:1.1;margin-top:calc(var(--mm)*1)!important}
+.fl-kontakt{list-style:none;padding:0;display:grid;gap:calc(var(--mm)*1.6)}
+.fl-kontakt li{display:flex;align-items:center;gap:calc(var(--mm)*1.8);font-size:calc(var(--mm)*2.7);line-height:1.3}
+.fl-kontakt svg{width:calc(var(--mm)*3.4);height:calc(var(--mm)*3.4);color:var(--rot);flex:none}
+
+/* Mini-Ticket wie im Kopf der Landingpage */
+.mini-ticket{position:absolute;display:grid;grid-template-columns:1fr calc(var(--mm)*12);transform:rotate(-5deg);isolation:isolate}
+.mini-ticket::before{content:"";position:absolute;z-index:-1;left:6%;right:6%;top:16%;bottom:-6%;border-radius:calc(var(--mm)*6);background:rgba(150,20,20,.35);filter:blur(calc(var(--mm)*4))}
+.mini-ticket__haupt,.mini-ticket__abriss{background:var(--rot);color:#fff}
+.mini-ticket__haupt{border-radius:calc(var(--mm)*3) 0 0 calc(var(--mm)*3);padding:calc(var(--mm)*5) calc(var(--mm)*5) calc(var(--mm)*5.5)}
+.mini-ticket__abriss{border-radius:0 calc(var(--mm)*3) calc(var(--mm)*3) 0;border-left:calc(var(--mm)*.4) dashed rgba(255,255,255,.6);position:relative}
+.mini-ticket__abriss img{position:absolute;left:50%;top:50%;height:calc(var(--mm)*4.4);width:auto;max-width:none;transform:translate(-50%,-50%) rotate(-90deg)}
+.mini-ticket__art{font-size:calc(var(--mm)*2);font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.mini-ticket__titel{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*7);line-height:1;margin:calc(var(--mm)*1.6) 0 calc(var(--mm)*3.4)!important;max-width:calc(var(--mm)*44)}
+.mini-ticket ul{list-style:none;padding:0;display:grid;gap:calc(var(--mm)*1.6)}
+.mini-ticket li{display:flex;align-items:center;gap:calc(var(--mm)*2);font-size:calc(var(--mm)*2.8);font-weight:500;white-space:nowrap}
+.mini-ticket i{width:calc(var(--mm)*4);height:calc(var(--mm)*4);border-radius:calc(var(--mm)*1);background:#fff;color:var(--rot);display:grid;place-items:center;flex:none}
+.mini-ticket i svg{width:72%;height:72%;stroke-width:3.2}
+.mini-stempel{position:absolute;z-index:3;width:calc(var(--mm)*19);height:calc(var(--mm)*19);border-radius:50%;background:#fff;border:calc(var(--mm)*.6) solid var(--ink);display:grid;place-content:center;text-align:center;transform:rotate(10deg);box-shadow:0 calc(var(--mm)*2) calc(var(--mm)*4) rgba(0,0,0,.18);font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*2.5);line-height:1.02;color:var(--ink)}
+.mini-stempel small{display:block;font-family:'Poppins',sans-serif;font-weight:600;font-size:calc(var(--mm)*1.6);letter-spacing:.14em;text-transform:uppercase;color:var(--rot);margin-top:calc(var(--mm)*.6)}
+.mini-ticket .mini-stempel{right:calc(var(--mm)*-2);top:calc(var(--mm)*-4)}
 
 /* Entwurf 1 */
-.t1-v{background:#ed1c24;color:#fff}
-.t1-haupt{padding:calc(var(--mm)*7) calc(var(--mm)*8) calc(var(--mm)*7) calc(var(--mm)*10);display:flex;flex-direction:column}
-.t1-logo{height:calc(var(--mm)*6);width:auto;align-self:flex-start;margin-bottom:calc(var(--mm)*6)!important}
-.t1-titel{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*11);line-height:1;letter-spacing:-.02em;margin:calc(var(--mm)*2) 0 calc(var(--mm)*6)!important}
-.t1-fuss{margin-top:auto;display:flex;align-items:center;gap:calc(var(--mm)*3);padding-top:calc(var(--mm)*4);border-top:calc(var(--mm)*.3) solid rgba(255,255,255,.35);font-size:calc(var(--mm)*3);line-height:1.35}
-.t1-fuss img{width:calc(var(--mm)*11);height:calc(var(--mm)*11);border-radius:50%;border:calc(var(--mm)*.6) solid #fff;object-fit:cover}
-.t1-fuss b{display:block;font-weight:600;font-size:calc(var(--mm)*3.6)}
-.t1-abriss{color:#fff}
-.t1-v .fl-perf{color:rgba(255,255,255,.75)}
-.t1-r{background:#fff}
-.t1-abriss-r{background:#ed1c24;color:#fff}
-.t1-r-haupt{padding:calc(var(--mm)*7) calc(var(--mm)*10) calc(var(--mm)*7) calc(var(--mm)*9);display:flex;flex-direction:column;position:relative}
-.t1-r-titel{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9.5);line-height:1.05;margin:calc(var(--mm)*2) 0 calc(var(--mm)*7)!important}
-.fl-zahlen{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--mm)*4);margin-bottom:auto}
-.fl-zahlen b{display:block;font-weight:700;font-size:calc(var(--mm)*9);color:#ed1c24;letter-spacing:-.02em;line-height:1.05}
-.fl-zahlen span{font-size:calc(var(--mm)*3.2);line-height:1.35;color:#3d3a37}
-.t1-r .fl-kontakt{margin-top:calc(var(--mm)*5)!important;padding-top:calc(var(--mm)*4);border-top:calc(var(--mm)*.3) solid #e3e3e3}
-.t1-r-logo{position:absolute;right:calc(var(--mm)*10);bottom:calc(var(--mm)*8);height:calc(var(--mm)*5.5);width:auto}
+.w1v-text{position:absolute;left:calc(var(--mm)*10);bottom:calc(var(--mm)*9);width:calc(var(--mm)*78);display:flex;flex-direction:column;gap:calc(var(--mm)*3)}
+.w1v-ticket{right:calc(var(--mm)*8);top:calc(var(--mm)*22);width:calc(var(--mm)*64)}
+.w1r-main{display:flex;flex-direction:column}
+.w1r-ausgaenge{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--mm)*5);margin-top:calc(var(--mm)*5)!important}
+.aus__bild{position:relative;height:calc(var(--mm)*38);border-radius:calc(var(--mm)*2.6);padding:calc(var(--mm)*3.6) calc(var(--mm)*4);display:flex;flex-direction:column;justify-content:space-between}
+.aus__bild small{font-size:calc(var(--mm)*2.2);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.aus__bild b{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9.5);line-height:1;letter-spacing:-.02em}
+.aus__ico{position:absolute;right:calc(var(--mm)*4);top:calc(var(--mm)*3.4);width:calc(var(--mm)*7);height:calc(var(--mm)*7)}
+.aus--rot .aus__bild{background:var(--rot);color:#fff}
+.aus--hell .aus__bild{background:var(--hell);color:var(--ink)}
+.aus--hell .aus__ico{color:var(--rot);stroke-width:2.6}
+.aus p{font-size:calc(var(--mm)*2.8);line-height:1.4;color:var(--text);margin-top:calc(var(--mm)*2.4)!important}
 
 /* Entwurf 2 */
-.t2-v{background:#fbf6f1}
-.t2-haupt{padding:calc(var(--mm)*7) calc(var(--mm)*9) calc(var(--mm)*7) calc(var(--mm)*10);display:flex;flex-direction:column;overflow:hidden}
-.t2-guilloche{position:absolute;inset:0;pointer-events:none;opacity:.55;
-  background:repeating-radial-gradient(circle at 78% 60%,transparent 0 calc(var(--mm)*1.6),rgba(237,28,36,.16) calc(var(--mm)*1.6) calc(var(--mm)*1.9)),
-             repeating-radial-gradient(circle at 105% 0%,transparent 0 calc(var(--mm)*2.2),rgba(155,52,142,.10) calc(var(--mm)*2.2) calc(var(--mm)*2.45))}
-.t2-oben{position:relative;display:flex;justify-content:space-between;align-items:center}
-.t2-oben img{height:calc(var(--mm)*6);width:auto}
-.t2-nr{font-size:calc(var(--mm)*2.6);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8a847c}
-.t2-bis{position:relative;margin-top:calc(var(--mm)*7)!important;font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*6);color:#1a1817}
-.t2-zahl{position:relative;font-weight:700;font-size:calc(var(--mm)*30);line-height:.9;letter-spacing:-.04em;color:#ed1c24}
-.t2-unter{position:relative;margin-top:calc(var(--mm)*4)!important;font-size:calc(var(--mm)*3.6);line-height:1.4;max-width:calc(var(--mm)*120)}
-.t2-unter b{font-weight:600}
-.t2-abriss{background:#ed1c24;color:#fff}
-.t2-v .fl-perf{color:#ed1c24}
-.t2-r{background:#fff}
-.t2-abriss-r{background:#fbf6f1}
-.t2-abriss-r .fl-weiter-kicker{color:#ed1c24}
-.t2-r-haupt{padding:calc(var(--mm)*7) calc(var(--mm)*10) calc(var(--mm)*7) calc(var(--mm)*9);display:flex;flex-direction:column}
-.t2-tab{width:100%;border-collapse:collapse;margin:calc(var(--mm)*3) 0 auto!important}
-.t2-tab td{padding:calc(var(--mm)*2.1) 0;border-bottom:calc(var(--mm)*.3) solid #e3e3e3;font-size:calc(var(--mm)*3.4)}
-.t2-tab td:last-child{text-align:right;font-weight:600;color:#ed1c24;white-space:nowrap}
-.t2-r-fuss{display:flex;align-items:center;gap:calc(var(--mm)*3);margin-top:calc(var(--mm)*5)!important}
-.t2-r-fuss img{width:calc(var(--mm)*11);height:calc(var(--mm)*11);border-radius:50%;object-fit:cover}
-.t2-r-fuss p{font-size:calc(var(--mm)*2.9);line-height:1.5}
-.t2-r-fuss b{font-weight:600}
+.w2v-glow{position:absolute;right:calc(var(--mm)*-30);top:calc(var(--mm)*-10);width:calc(var(--mm)*110);height:calc(var(--mm)*120);pointer-events:none;filter:blur(calc(var(--mm)*9));opacity:.55;
+  background:radial-gradient(34% 30% at 40% 30%,rgba(238,0,0,.75) 0%,transparent 100%),radial-gradient(30% 34% at 64% 66%,rgba(155,52,142,.7) 0%,transparent 100%),radial-gradient(26% 24% at 30% 72%,rgba(195,133,187,.7) 0%,transparent 100%)}
+.w2v-text{position:absolute;left:calc(var(--mm)*10);bottom:calc(var(--mm)*9);width:calc(var(--mm)*86);display:flex;flex-direction:column;gap:calc(var(--mm)*3)}
+.w2v-text .fl-h1{font-size:calc(var(--mm)*10.5)}
+.phone{position:absolute;right:calc(var(--mm)*9);top:calc(var(--mm)*12);width:calc(var(--mm)*50);height:calc(var(--mm)*104);border-radius:calc(var(--mm)*7);background:linear-gradient(150deg,#2b2b2b,#0d0d0d 42%,#202020);padding:calc(var(--mm)*1.6);box-shadow:0 calc(var(--mm)*6) calc(var(--mm)*12) rgba(60,10,20,.28)}
+.phone__schirm{height:100%;border-radius:calc(var(--mm)*5.6);background:#f3efe9;padding:calc(var(--mm)*4) calc(var(--mm)*3);display:flex;flex-direction:column;gap:calc(var(--mm)*2)}
+.phone__kopf{font-size:calc(var(--mm)*1.9);color:var(--muted);line-height:1.3;padding-bottom:calc(var(--mm)*2.2);border-bottom:calc(var(--mm)*.25) solid #e0dbd3;margin-bottom:calc(var(--mm)*1)!important}
+.phone__kopf b{display:block;font-size:calc(var(--mm)*2.6);color:var(--ink);font-weight:600}
+.msg{align-self:flex-start;max-width:86%;background:#fff;border-radius:calc(var(--mm)*2.4) calc(var(--mm)*2.4) calc(var(--mm)*2.4) calc(var(--mm)*.6);padding:calc(var(--mm)*1.8) calc(var(--mm)*2.2);font-size:calc(var(--mm)*2.2);line-height:1.35}
+.msg small{display:block;font-size:calc(var(--mm)*1.7);font-weight:600;color:var(--rot)}
+.msg--du{align-self:flex-end;background:var(--rot);color:#fff;font-weight:600;border-radius:calc(var(--mm)*2.4) calc(var(--mm)*2.4) calc(var(--mm)*.6) calc(var(--mm)*2.4)}
+.w2r-main{display:flex;flex-direction:column}
+.w2r-leben{display:grid;grid-template-columns:repeat(5,1fr);gap:calc(var(--mm)*3.6);margin-top:calc(var(--mm)*5)!important}
+.w2r-leben figure{margin:0;display:flex;flex-direction:column;gap:calc(var(--mm)*1.2)}
+.w2r-leben img{width:100%;aspect-ratio:1;border-radius:calc(var(--mm)*2.4);object-fit:cover;margin-bottom:calc(var(--mm)*1)}
+.w2r-leben small{font-size:calc(var(--mm)*2.1);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rot)}
+.w2r-leben b{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*3.1);line-height:1.18}
+.w2r-antwort{margin-top:auto!important;font-size:calc(var(--mm)*3.1);color:var(--text)}
+.w2r-antwort b{color:var(--ink);font-weight:600}
 
 /* Entwurf 3 */
-.t3-v{background:#fff}
-.t3-haupt{padding:calc(var(--mm)*7) calc(var(--mm)*9) calc(var(--mm)*7) calc(var(--mm)*10);display:flex;flex-direction:column}
-.t3-logo{height:calc(var(--mm)*6);width:auto;align-self:flex-start}
-.t3-titel{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*14);line-height:1;letter-spacing:-.02em;margin:calc(var(--mm)*6) 0 auto!important;max-width:calc(var(--mm)*125)}
-.t3-titel span{color:#ed1c24}
-.t3-fragen{list-style:none;padding:0;display:flex;gap:calc(var(--mm)*7)}
-.t3-fragen li{display:flex;align-items:center;gap:calc(var(--mm)*2.4);font-size:calc(var(--mm)*3.8);font-weight:500}
-.t3-fragen i{width:calc(var(--mm)*5.5);height:calc(var(--mm)*5.5);border:calc(var(--mm)*.5) solid #1a1817;border-radius:calc(var(--mm)*1);flex:none}
-.t3-abriss{background:#ed1c24;color:#fff}
-.t3-abriss-titel{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*5);line-height:1.05;text-align:center}
-.t3-v .fl-perf{color:#ed1c24}
-.t3-r{background:#fff}
-.t3-abriss-r{background:#fff;border-right:calc(var(--mm)*.3) solid #ececec}
-.t3-r-haupt{display:flex;align-items:center;gap:calc(var(--mm)*8);padding:calc(var(--mm)*7) calc(var(--mm)*10) calc(var(--mm)*7) calc(var(--mm)*9)}
-.t3-r-foto{width:calc(var(--mm)*26);height:calc(var(--mm)*26);border-radius:50%;object-fit:cover;flex:none}
-.t3-r-text{display:flex;flex-direction:column;gap:calc(var(--mm)*2.4)}
-.t3-r-text .fl-kicker{color:#ed1c24}
-.t3-r-titel{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*7.5);line-height:1.05}
-.t3-r-satz{font-size:calc(var(--mm)*3.2);line-height:1.45;color:#3d3a37}
+.w3v-kicker{margin-top:calc(var(--mm)*9)!important;color:var(--rot)}
+.w3v-fragen{list-style:none;padding:0;display:grid;gap:calc(var(--mm)*2.6);margin-top:calc(var(--mm)*4)!important}
+.w3v-fragen li{display:flex;align-items:center;gap:calc(var(--mm)*4);font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9);line-height:1;letter-spacing:-.02em}
+.w3v-fragen i{width:calc(var(--mm)*8.4);height:calc(var(--mm)*8.4);border-radius:calc(var(--mm)*2);background:var(--rot);color:#fff;display:grid;place-items:center;flex:none}
+.w3v-fragen i svg{width:70%;height:70%;stroke-width:3.2}
+.w3v-fuss{position:absolute;left:calc(var(--mm)*10);bottom:calc(var(--mm)*8);font-size:calc(var(--mm)*3.4);color:var(--text)}
+.w3v-fuss b{color:var(--ink);font-weight:600}
+.w3v-stempel{left:calc(var(--mm)*151);top:calc(var(--mm)*6)}
+.w3r-main{display:flex;flex-direction:column}
+.w3r-schritte{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--mm)*3.6);margin-top:calc(var(--mm)*5)!important}
+.schritt{position:relative;border:calc(var(--mm)*.3) solid var(--line);border-radius:calc(var(--mm)*2.6);padding:calc(var(--mm)*4) calc(var(--mm)*3.6) calc(var(--mm)*4.6);display:flex;flex-direction:column;gap:calc(var(--mm)*1.6)}
+.schritt__nr{position:absolute;right:calc(var(--mm)*3.6);top:calc(var(--mm)*3.6);font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*3);color:#c9c4bd}
+.schritt__ico{width:calc(var(--mm)*8.4);height:calc(var(--mm)*8.4);border-radius:calc(var(--mm)*2);background:var(--ink);color:#fff;display:grid;place-items:center;margin-bottom:calc(var(--mm)*2)}
+.schritt__ico svg{width:58%;height:58%}
+.schritt--rot .schritt__ico{background:var(--rot)}
+.schritt b{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*4);line-height:1.1}
+.schritt p{font-size:calc(var(--mm)*2.7);line-height:1.4;color:var(--text)}
 </style>
 <script>
 (function(){var c=document.getElementById('fl-linien');function s(){document.body.classList.toggle('fl-zeigen',c.checked);}c.addEventListener('change',s);s();})();
