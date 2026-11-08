@@ -15,6 +15,6 @@ if (process.env.TRANSPARENT) await send('Emulation.setDefaultBackgroundColorOver
 await send('Runtime.enable'); await send('Page.enable'); await send('Page.navigate',{url}); await sleep(3000);
 if (js) { await send('Runtime.evaluate',{expression:js,awaitPromise:true}); await sleep(700); }
 if (process.env.MESS) { const e=await send('Runtime.evaluate',{expression:process.env.MESS,returnByValue:true}); console.log(e.result.value); }
-let clip; if (process.env.CLIP){ const e=await send('Runtime.evaluate',{expression:`JSON.stringify(document.querySelector('${process.env.CLIP}').getBoundingClientRect())`,returnByValue:true}); const b=JSON.parse(e.result.value); clip={x:b.x,y:b.y,width:b.width,height:b.height,scale:1}; }
+let clip; if (process.env.CLIP){ const e=await send('Runtime.evaluate',{expression:`JSON.stringify(document.querySelector('${process.env.CLIP}').getBoundingClientRect())`,returnByValue:true}); const b=JSON.parse(e.result.value); const sy=(await send('Runtime.evaluate',{expression:'scrollY',returnByValue:true})).result.value; clip={x:b.x,y:b.y+sy,width:b.width,height:b.height,scale:1}; }
 const r = await send('Page.captureScreenshot', clip?{format:'png',clip,captureBeyondViewport:true}:{format:'png'});
 fs.writeFileSync(out, Buffer.from(r.data,'base64')); chrome.kill(); process.exit(0);
