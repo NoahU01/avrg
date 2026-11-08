@@ -109,7 +109,7 @@
       <p class="ak-wo"><a href="/projekte/avrg.html#print">&#8592; AVRG · Print</a><span aria-hidden="true">&rsaquo;</span><span aria-current="page">Flyer DIN lang</span></p>
       <p class="e2-kicker">SV Gebietsdirektion SV Owen</p>
       <h1>Flyer DIN lang – das Klarheits-Ticket</h1>
-      <p class="e2-lead">Drei Entwürfe im echten Format, jeweils Vorder- und Rückseite. Jeder trägt eine Bildidee der Landingpage. Der Abriss mit QR-Code führt auf die Landingpage der SV Owen.</p>
+      <p class="e2-lead">Drei Entwürfe im echten Format, jeweils Vorder- und Rückseite. Der Abriss mit QR-Code und Adresse führt auf die Landingpage der SV Owen.</p>
   </div></section>
 
   <section class="e2-sek ak-sec" style="padding-top:0"><div class="e2-wrap">
@@ -118,7 +118,7 @@
       <div><b>Datenformat</b><span>212 × 100 mm (1 mm Beschnitt rundum)</span></div>
       <div><b>Sicherheitsabstand</b><span>3 mm innerhalb des Endformats</span></div>
       <div><b>Perforation</b><span>Schmalseite, 50 mm vom rechten Rand (mind. 15 mm), Linie 0,3 mm, nur Vorderseite</span></div>
-      <div><b>QR-Code</b><span>avrg.sofortsichtbar.de/sv-owen · 24 mm</span></div>
+      <div><b>QR-Code</b><span>avrg.sofortsichtbar.de/sv-owen<br>20 bis 24 mm</span></div>
     </div>
     <label class="fl-hilfe"><input type="checkbox" id="fl-linien"> Hilfslinien zeigen (Beschnitt, Sicherheitsabstand)</label>
 
@@ -171,9 +171,9 @@
       </div>
     </div>
 
-    <!-- ===================== Entwurf 3: Drei Fragen, drei Schritte ===================== -->
+    <!-- ===================== Entwurf 2: Drei Fragen, drei Schritte ===================== -->
     <div class="fl-entwurf">
-      <div class="fl-kopf"><p class="e2-kicker">Entwurf 3</p><h2>Drei Fragen. Drei Schritte.</h2><p>Vorne die drei Fragen des Tickets ganz groß, mit roten Haken – das Versprechen. Der Stempel sitzt auf der Perforation. Hinten die drei Schritte der Landingpage als Karten.</p></div>
+      <div class="fl-kopf"><p class="e2-kicker">Entwurf 2</p><h2>Drei Fragen. Drei Schritte.</h2><p>Vorne die drei Fragen des Tickets ganz groß, mit roten Haken – das Versprechen. Der Stempel sitzt auf der Perforation. Hinten die drei Schritte der Landingpage als Karten.</p></div>
       <div class="fl-paar">
         <figure><div class="fl"><div class="fl-in w3v">
           <div class="fl-main">
@@ -213,9 +213,9 @@
       </div>
     </div>
 
-    <!-- ===================== Entwurf 4: Der 540-€-Schein ===================== -->
+    <!-- ===================== Entwurf 3: Der 540-€-Schein ===================== -->
     <div class="fl-entwurf">
-      <div class="fl-kopf"><p class="e2-kicker">Entwurf 4</p><h2>Der 540-€-Schein</h2><p>Nach deiner Skizze: vorne ein Geldschein über 540 Euro – in eigener Gestaltung mit Guilloche-Linien statt Euro-Motiven, in Violett statt Rot. Der Abriss sagt „Nimm es mit.“ Hinten „Mitnehmen oder abhaken.“, die Eckdaten der Reform im Kreis und die Adresse zum Abtippen.</p></div>
+      <div class="fl-kopf"><p class="e2-kicker">Entwurf 3</p><h2>Der 540-€-Schein</h2><p>Nach deiner Skizze: vorne ein Geldschein über 540 Euro – in eigener Gestaltung mit Guilloche-Linien statt Euro-Motiven, in Violett statt Rot. Der Abriss sagt „Nimm es mit.“ und trägt den QR-Code. Hinten „Mitnehmen oder abhaken.“ mit den drei Fragen und die Eckdaten der Reform im großen Kreis.</p></div>
       <div class="fl-paar">
         <figure><div class="fl"><div class="fl-in w4v">
           <div class="fl-main w4v-schein">
@@ -255,7 +255,7 @@
               <ul>
                 <li>bis zu <b>540 € staatliche Förderung</b> pro Jahr</li>
                 <li>zusätzlich bis zu <b>300 € Kinderzulage</b> pro Kind und Jahr</li>
-                <li>einmalig <b>200 € Berufseinsteigerbonus</b> für junge Sparer</li>
+                <li>einmalig <b>200 € Startbonus</b> für alle unter 25</li>
                 <li>zusätzlicher <b>Steuervorteil</b> möglich</li>
                 <li><b>neue Produkte:</b> neben Garantieprodukten auch Fonds- und ETF-Lösungen</li>
               </ul>
@@ -390,7 +390,8 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .w1r-main .w1r-aus li{font-size:calc(var(--mm)*3.5)}
 .w1r-main .w1r-aus b{font-size:calc(var(--mm)*3.9)}
 
-/* Entwurf 3 */
+/* Entwurf 2 – Drei Fragen */
+.w2r-antwort{margin-top:auto!important;font-size:calc(var(--mm)*3.1);color:var(--text)}
 .w3v-kicker{margin-top:calc(var(--mm)*9)!important;color:var(--rot)}
 .w3v-fragen{list-style:none;padding:0;display:grid;gap:calc(var(--mm)*2.6);margin-top:calc(var(--mm)*4)!important}
 .w3v-fragen li{display:flex;align-items:center;gap:calc(var(--mm)*4);font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9);line-height:1;letter-spacing:-.02em}
@@ -408,7 +409,7 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .schritt--rot .schritt__ico{background:var(--rot)}
 .schritt b{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*4);line-height:1.1}
 .schritt p{font-size:calc(var(--mm)*2.7);line-height:1.4;color:var(--text)}
-/* Entwurf 4 – 540-€-Schein (eigene Gestaltung, keine Euro-Motive) */
+/* Entwurf 3 – 540-€-Schein (eigene Gestaltung, keine Euro-Motive) */
 .w4v{--v:#6a2d6e;--v2:#9b348e;--vh:#f4ecf3}
 .w4v-schein{background:linear-gradient(115deg,#f7f1f6 0%,#efe3ee 55%,#e7d8ea 100%);overflow:hidden}
 .w4v-muster{position:absolute;inset:0;pointer-events:none;opacity:.7;
@@ -432,7 +433,7 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .w4v-mit{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*9);line-height:1;color:var(--ink)}
 .w4v-mit-klein{font-size:calc(var(--mm)*2.9);line-height:1.4;color:var(--text)}
 .w4v .fl-perf{border-left-color:#b9b4ad}
-/* Abriss wie in Entwurf 4.1: Logo, „Nimm es mit.“, QR-Code */
+/* Abriss Entwurf 3: Logo, „Nimm es mit.“, QR-Code */
 .w41v-stub{background:#fff;z-index:1;gap:calc(var(--mm)*3.6)}
 .w41v-logo{height:calc(var(--mm)*5.6);width:auto;margin-bottom:calc(var(--mm)*2)}
 .w41v-mit{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*7.4);line-height:1;text-align:center;color:var(--ink)}
