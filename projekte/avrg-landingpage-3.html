@@ -357,5 +357,45 @@
   });
 })();
 </script>
+<!-- ENTWICKLUNG:START (nur Daniels Branch – nie auf main) -->
+<!-- Header-Ticket im Look des Flyers (540-€-Schein): Varianten 1 · 2 · 3 zum Durchklicken -->
+<style>
+.ticket-buehne [hidden]{display:none!important}
+.tk540{position:relative;width:min(100%,540px);aspect-ratio:210/98;display:grid;grid-template-columns:1fr 24%;container-type:inline-size;transform:rotate(-4deg);isolation:isolate;transition:transform .4s ease}
+.tk540:hover{transform:rotate(-2deg) translateY(-4px)}
+.tk540::before{content:"";position:absolute;z-index:-1;left:6%;right:6%;top:14%;bottom:-6%;border-radius:8cqi;background:rgba(80,30,90,.35);filter:blur(5cqi)}
+.tk540__schein{position:relative;overflow:hidden;border-radius:3.4cqi 0 0 3.4cqi;background:#f3f2f4 url(/assets/projekte/avrg/flyer/geldschein-540.svg) no-repeat;background-size:auto 83%;background-position:center top}
+.tk540__band{position:absolute;left:0;right:0;bottom:0;height:17%;background:#6a2d6e;color:#fff;display:flex;align-items:center;padding:0 4.5cqi;font-family:var(--head);font-weight:700;font-size:4.6cqi;letter-spacing:-.01em;white-space:nowrap}
+.tk540__abriss{position:relative;background:#fff;border-radius:0 3.4cqi 3.4cqi 0;border-left:.5cqi dashed #b9b4ad;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3.6cqi;text-align:center}
+.tk540__abriss img{height:4.6cqi;width:auto}
+.tk540__abriss b{font-family:var(--head);font-weight:700;font-size:5.6cqi;line-height:1;color:#1a1817}
+/* Variante 3: nur die große 540 aus dem Schein, dazu eine klare Zeile */
+.tk540--zoom .tk540__schein{background-size:auto 190%;background-position:88% 4%}
+.tk540--zoom .tk540__band{height:24%;flex-direction:column;align-items:flex-start;justify-content:center;gap:1.2cqi}
+.tk540--zoom .tk540__band small{font-family:var(--font);font-weight:500;font-size:3cqi;letter-spacing:.02em;opacity:.9}
+.tk-wahl{position:fixed;left:16px;bottom:16px;z-index:9999;display:flex;align-items:center;gap:6px;padding:6px 8px 6px 12px;background:#1a1817;color:#fff;border-radius:999px;font:600 12px/1 var(--font);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.tk-wahl button{width:30px;height:30px;border-radius:50%;border:0;background:#3a3633;color:#fff;font:700 13px/1 var(--font);cursor:pointer}
+.tk-wahl button[aria-pressed="true"]{background:#fff;color:#1a1817}
+</style>
+<script>
+(function(){
+  var b=document.querySelector('.v3-hero .ticket-buehne')||document.querySelector('.ticket-buehne'); if(!b) return;
+  var alt=b.querySelector('.ticket');
+  function karte(zoom){
+    var d=document.createElement('div'); d.className='tk540'+(zoom?' tk540--zoom':''); d.hidden=true;
+    d.setAttribute('aria-label','Klarheits-Ticket: bis zu 540 Euro im Jahr');
+    d.innerHTML='<div class="tk540__schein"><div class="tk540__band">'+(zoom?'Bis zu 540 € im Jahr.<small>Dein Klarheits-Ticket zur Altersvorsorge 2027</small>':'Dein Klarheits-Ticket')+'</div></div>'+
+      '<div class="tk540__abriss"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen"><b>Nimm<br>es mit.</b></div>';
+    b.appendChild(d); return d;
+  }
+  var v=[alt,karte(false),karte(true)];
+  var w=document.createElement('div'); w.className='tk-wahl'; w.innerHTML='Header-Ticket';
+  function zeige(n){ v.forEach(function(e,i){ e.hidden=(i!==n); }); w.querySelectorAll('button').forEach(function(x,i){ x.setAttribute('aria-pressed', i===n?'true':'false'); }); try{localStorage.setItem('tk540',n);}catch(e){} }
+  [1,2,3].forEach(function(n){ var x=document.createElement('button'); x.type='button'; x.textContent=n; x.onclick=function(){zeige(n-1);}; w.appendChild(x); });
+  document.body.appendChild(w);
+  var s=0; try{s=+localStorage.getItem('tk540')||0;}catch(e){} zeige(s);
+})();
+</script>
+<!-- ENTWICKLUNG:END -->
 </body>
 </html>
