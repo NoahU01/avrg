@@ -215,19 +215,13 @@
 
     <!-- ===================== Entwurf 3: Der 540-€-Schein ===================== -->
     <div class="fl-entwurf">
-      <div class="fl-kopf"><p class="e2-kicker">Entwurf 3</p><h2>Der 540-€-Schein</h2><p>Nach deiner Skizze: vorne ein Geldschein über 540 Euro – in eigener Gestaltung mit Guilloche-Linien statt Euro-Motiven, in Violett statt Rot. Der Abriss sagt „Nimm es mit.“ und trägt den QR-Code. Hinten „Mitnehmen oder abhaken.“ mit den drei Fragen und die Eckdaten der Reform im großen Kreis.</p></div>
+      <div class="fl-kopf"><p class="e2-kicker">Entwurf 3</p><h2>Der 540-€-Schein</h2><p>Vorne der Geldschein über 540 Euro aus der Terminkarte der SV, darunter das violette Band mit dem Klarheits-Ticket. Der Abriss sagt „Nimm es mit.“ und trägt den QR-Code. Hinten „Mitnehmen oder abhaken.“ mit den drei Fragen und die Eckdaten der Reform im großen Kreis.</p></div>
       <div class="fl-paar">
         <figure><div class="fl"><div class="fl-in w4v">
           <div class="fl-main w4v-schein">
-            <span class="w4v-muster" aria-hidden="true"></span>
-            <p class="w4v-zahl w4v-zahl--klein">540</p>
-            <p class="w4v-zahl w4v-zahl--gross">540</p>
-            <p class="w4v-euro">Euro</p>
-            <div class="w4v-banderole"><b>Altersvorsorge 2027</b><span>Dein Klarheits-Ticket</span></div>
-            <p class="w4v-serie">Nr. AV 2027 · 0540</p>
+            <img class="w4v-bild" src="/assets/projekte/avrg/flyer/geldschein-540.svg" alt="Geldschein über 540 Euro">
             <div class="w4v-band">
-              <span>30 Minuten · kostenlos · unverbindlich</span>
-              <span class="w4v-band-logo"><img src="/assets/projekte/avrg/sv-owen-logo.svg" alt="SV Owen"></span>
+              <span class="w4v-band-text"><b>Altersvorsorge 2027 – dein Klarheits-Ticket</b>30 Minuten · kostenlos · unverbindlich</span>
             </div>
           </div>
           <div class="fl-stub w41v-stub">
@@ -424,6 +418,10 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 .w4v-banderole b{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*6);line-height:1;color:var(--ink)}
 .w4v-banderole span{font-size:calc(var(--mm)*2.6);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rot)}
 .w4v-serie{position:absolute;right:calc(var(--mm)*9);top:calc(var(--mm)*9);font-family:ui-monospace,Menlo,monospace;font-size:calc(var(--mm)*2.4);letter-spacing:.12em;color:var(--v)}
+.w4v-schein:has(.w4v-bild){background:#f3f2f4}
+.w4v-bild{position:absolute;left:0;top:0;width:100%;height:calc(100% - var(--mm)*15);object-fit:cover;object-position:center top}
+.w4v-band .w4v-band-text{display:flex;flex-direction:column;gap:calc(var(--mm)*.8);font-size:calc(var(--mm)*3)!important;font-weight:500!important;letter-spacing:.01em}
+.w4v-band-text b{font-family:'Lora',Georgia,serif;font-weight:700;font-size:calc(var(--mm)*4.6);line-height:1}
 .w4v-band{position:absolute;left:0;right:0;bottom:0;height:calc(var(--mm)*15);background:var(--v);color:#fff;display:flex;align-items:center;gap:calc(var(--mm)*4);padding:0 calc(var(--mm)*6) calc(var(--mm)*1) calc(var(--mm)*10)}
 .w4v-band span:first-child{flex:1;font-size:calc(var(--mm)*3.6);font-weight:600;letter-spacing:.02em}
 .w4v-band-qr{width:calc(var(--mm)*11);height:calc(var(--mm)*11)}
