@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Flyer DIN lang als Druck-PDF: je Entwurf eine Datei, Seite 1 Vorderseite, Seite 2 Rückseite,
-212 × 100 mm (Endformat 210 × 98 mm plus 1 mm Beschnitt rundum).
+212 × 100 mm quer bzw. 100 × 212 mm hochkant (Endformat 210 × 98 mm plus 1 mm Beschnitt rundum).
 
 Quelle ist projekte/avrg-flyer.html – nichts doppelt pflegen. Liegt in entwicklung/, geht nie auf main.
 
@@ -27,7 +27,7 @@ def entwurf(t, nr):
     a = t.index(f"<!-- ===================== Entwurf {nr} ")
     b = t.find("<!-- =====================", a + 10)
     b = b if b > 0 else t.index("</main>")
-    return re.findall(r'<div class="fl">.*?<span class="fl-linien"></span></div>', t[a:b], re.S)
+    return re.findall(r'<div class="fl(?: fl--hoch)?">.*?<span class="fl-linien"></span></div>', t[a:b], re.S)
 
 
 def kreise(cx, cy, schritt, farbe, deckkraft):
@@ -75,12 +75,13 @@ def main(nummern):
                   for i, s in enumerate(seiten)]
         seiten = [re.sub(r'(<img class="w63-foto" src=")([^"]+)"', lambda m: m.group(1) + foto_gross(m.group(2)) + '"', s)
                   for s in seiten]
+        breite, hoehe = (100, 212) if "fl--hoch" in seiten[0] else (212, 100)
         html = f"""<!doctype html><html lang="de"><head><meta charset="utf-8">
 <link rel="stylesheet" href="{basis}/assets/fonts/fonts.local.css">
 <style>{stil}
-@page{{size:212mm 100mm;margin:0}}
+@page{{size:{breite}mm {hoehe}mm;margin:0}}
 html,body{{margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-.fl{{width:212mm;height:100mm;aspect-ratio:auto;box-shadow:none;break-after:page;overflow:hidden}}
+.fl{{width:{breite}mm;height:{hoehe}mm;aspect-ratio:auto;box-shadow:none;break-after:page;overflow:hidden}}
 .fl:last-child{{break-after:auto}}
 .fl *{{box-shadow:none!important;filter:none!important;text-shadow:none!important}}
 .fl .w62r .w62-muster{{transform:none}}
