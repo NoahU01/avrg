@@ -8,7 +8,13 @@ var MENU =
 '<div class="dev-dd-panel">'+
 '<p class="dev-dd-note"><b>Nur in der Entwicklungsumgebung sichtbar</b>Dieser Menüpunkt ist in der Live-Version nicht enthalten.</p>'+
 '<p class="dev-dd-group">Unterseiten</p>'+
-'<a href="/projekte/avrg-flyer.html" class="dev-dd-link"><span class="dev-dd-tag">DL</span><span class="dev-dd-txt"><b>Flyer DIN lang</b><small>Klarheits-Ticket &middot; drei Entwürfe</small></span></a>'+
+'<div class="dev-dd-sub">'+
+'<a href="/projekte/avrg-flyer.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">DL</span><span class="dev-dd-txt"><b>Flyer DIN lang</b><small>Favorit 6.2 &middot; Bordkarte</small></span></a>'+
+'<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">'+
+'<p class="dev-dd-group">Archiv</p>'+
+'<a href="/entwicklung/archiv/avrg-flyer-archiv.html" class="dev-dd-link dev-dd-link--muted"><span class="dev-dd-tag">&#8962;</span><span class="dev-dd-txt"><b>Frühere Flyer-Entwürfe</b><small>1 bis 6.3 ohne 6.2</small></span></a>'+
+'</div></div>'+
+'</div>'+
 '<div class="dev-dd-sub">'+
 '<a href="/entwicklung/corporate-design.html" class="dev-dd-link dev-dd-link--parent"><span class="dev-dd-tag">CD</span><span class="dev-dd-txt"><b>Corporate Design</b><small>SV Owen &middot; Vorlagen</small></span></a>'+
 '<div class="dev-dd-flyout"><div class="dev-dd-flyout-panel">'+
