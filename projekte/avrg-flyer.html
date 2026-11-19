@@ -192,7 +192,7 @@
             <p class="bp-label">Ziel</p>
             <p class="w5v-thema">Altersvorsorgedepot 2027</p>
             <div class="bp-unten">
-              <div class="bp-passagier"><p class="bp-label">Passagier</p><p class="bp-adresse"><span>Vorname Nachname</span><span>Straße Hausnummer</span><span>PLZ Ort</span></p></div>
+              <div class="bp-passagier"><p class="bp-label">Passagier</p><div class="bp-adresse" aria-label="Feld zum Eintragen der Adresse"></div></div>
               <div class="bp-gepaeck">
                 <p class="bp-label">Im Gepäck</p>
                 <ul class="w5v-fragen"><li><i><svg><use href="#f-haken"/></svg></i>Betrifft mich das?</li><li><i><svg><use href="#f-haken"/></svg></i>Wenn ja: wie?</li><li><i><svg><use href="#f-haken"/></svg></i>Habe ich einen Vorteil?</li></ul>
@@ -794,7 +794,7 @@ body:not(.fl-zeigen) .fl-linien{display:none}
 /* Entwurf 6.2.2: Adressfeld „Passagier“ links, „Im Gepäck“ rechts – rechte Kante auf der rechten Kante von „KLR“ */
 .bp-unten{display:grid;grid-template-columns:auto auto;justify-content:space-between;align-items:start}
 .bp-gepaeck{justify-self:end}
-.bp-adresse{display:grid;gap:calc(var(--mm)*1.2);margin-top:calc(var(--mm)*2)!important;font-family:'Poppins',sans-serif;font-weight:500;font-size:calc(var(--mm)*3.6);line-height:1.25;color:var(--muted)}
+.bp-adresse{width:calc(var(--mm)*68);height:calc(var(--mm)*19);margin-top:calc(var(--mm)*2);background:#fff;border-radius:calc(var(--mm)*1.5)}
 </style>
 <script>
 (function(){var c=document.getElementById('fl-linien');function s(){document.body.classList.toggle('fl-zeigen',c.checked);}c.addEventListener('change',s);s();})();
